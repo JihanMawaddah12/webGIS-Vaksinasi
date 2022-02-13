@@ -34,7 +34,7 @@ class HomeController extends Controller
         $kec3 = [];
         $jumlah3 = [];
         if ($tematik_id) {
-            $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $tematik_id]])->select(DB::raw('DATE(created_at) as date'), 'tematik_id')
+            $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $tematik_id]])->select('*',DB::raw('DATE(created_at) as date'), 'tematik_id')
                 ->groupBy(['date', 'tematik_id'])
                 ->get();
 
@@ -46,7 +46,8 @@ class HomeController extends Controller
                 $id += 1;
 
             }
-            $dosis2 = HalamanData::with('tematik')->where([['kelompok', 'dosis 2'], ['tematik_id', $tematik_id]])->select(DB::raw('DATE(created_at) as date'), 'tematik_id')
+            dd($dosis1);
+            $dosis2 = HalamanData::with('tematik')->where([['kelompok', 'dosis 2'], ['tematik_id', $tematik_id]])->select('*',DB::raw('DATE(created_at) as date'), 'tematik_id')
                 ->groupBy(['date', 'tematik_id'])
                 ->get();
 
