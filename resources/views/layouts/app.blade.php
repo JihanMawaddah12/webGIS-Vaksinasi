@@ -159,6 +159,11 @@
                                             <p>Data Lokasi</p>
                                         </a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('halaman tematik') }}" class="nav-link">
+                                            <p>Data Tematik</p>
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="nav-item">
