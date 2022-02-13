@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\HalamanData;
+use App\Models\HalamanData2;
 use App\Models\Tematik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -77,7 +78,7 @@ class HomeController extends Controller
         $index = 0;
         $index2 = 0;
         $tematik = Tematik::all();
-        $data = HalamanData::all();
+        $data = HalamanData2::all();
         foreach ($tematik as $item) {
             $geofile[$index] = 'storage/' . $item->geojson;
             $index++;
