@@ -11,8 +11,6 @@
 
                         <p>Target</p>
                     </div>
-
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -24,7 +22,6 @@
 
                         <p>Dosis 1</p>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -36,8 +33,6 @@
 
                         <p>Dosis 2</p>
                     </div>
-
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -49,8 +44,6 @@
 
                         <p>Dosis 3</p>
                     </div>
-
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -64,33 +57,45 @@
                             Grafik
                         </h3>
                         <div class="card-tools">
-                            <ul class="nav nav-pills ml-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#grafik1-button" data-bs-toggle="tab">Dosis 1</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#grafik2-button" data-bs-toggle="tab">Dosis 2</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#grafik2-button" data-bs-toggle="tab">Dosis 3</a>
-                                </li>
-                            </ul>
+                            <form action="{{ route('home') }}" method="get" id="form-graph">
+                                <select class="form-control" id="kecamatan">
+                                    <option disabled selected value="">--Pilih Kecamatan--</option>
+                                    @foreach ($tematik as $item)
+                                        <option value="{{ $item->id }}" {{$state == $item->id? 'selected':''}}>{{ $item->kecamatan }}</option>
+                                    @endforeach
+                                </select>
+                            </form>
                         </div>
                     </div><!-- /.card-header -->
                     <div class="card-body">
-                        <div class="tab-content p-0">
-                            <!-- Morris chart - Sales -->
-                            <div class="chart tab-pane active" id="grafik1-button"
-                                style="position: relative; height: 300px;">
-                                <canvas id="grafik1" height="300" style="height: 300px;"></canvas>
+                        @if ($state)
+                            <div class="card-tools">
+                                <ul class="nav nav-pills ml-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#grafik1-button" data-bs-toggle="tab">Dosis 1</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#grafik2-button" data-bs-toggle="tab">Dosis 2</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#grafik2-button" data-bs-toggle="tab">Dosis 3</a>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="chart tab-pane" id="grafik2-button" style="position: relative; height: 300px;">
-                                <canvas id="grafik2" height="300" style="height: 300px;"></canvas>
+                            <div class="tab-content p-0">
+                                <!-- Morris chart - Sales -->
+                                <div class="chart tab-pane active" id="grafik1-button"
+                                    style="position: relative; height: 300px;">
+                                    <canvas id="grafik1" height="300" style="height: 300px;"></canvas>
+                                </div>
+                                <div class="chart tab-pane" id="grafik2-button" style="position: relative; height: 300px;">
+                                    <canvas id="grafik2" height="300" style="height: 300px;"></canvas>
+                                </div>
+                                <div class="chart tab-pane" id="grafik3-button" style="position: relative; height: 300px;">
+                                    <canvas id="grafik3" height="300" style="height: 300px;"></canvas>
+                                </div>
                             </div>
-                            <div class="chart tab-pane" id="grafik3-button" style="position: relative; height: 300px;">
-                                <canvas id="grafik3" height="300" style="height: 300px;"></canvas>
-                            </div>
-                        </div>
+                        @endif
                     </div><!-- /.card-body -->
                 </div>
             </section>
@@ -156,6 +161,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
         integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $('#kecamatan').change(function() {
+            window.location.href = '/home/' + this.value;
+        });
+    </script>
     <script>
         var labels = {!! json_encode($kec) !!};
         const data = {

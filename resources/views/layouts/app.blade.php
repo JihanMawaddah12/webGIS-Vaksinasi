@@ -79,8 +79,7 @@
 
                         <div id="drop" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                                                                         document.getElementById('logout-form').submit();">
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
@@ -98,7 +97,6 @@
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <!-- Brand Logo -->
                 <a href="index3.html" class="brand-link">
-
                     <span class="brand-text font-weight-light">RK</span>
                 </a>
 
@@ -107,8 +105,6 @@
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                         <div class="info text-white">
-
-
                             {{ Auth::user()->name }}
                         </div>
                     </div>
@@ -145,12 +141,11 @@
                                     </p>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item menu-open">
                                 <a href="#" class="nav-link ">
                                     <i class="nav-icon fa-solid fa-database"></i>
                                     <p>
                                         Data
-                                        <i class="right fas fa-angle-left"></i>
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
