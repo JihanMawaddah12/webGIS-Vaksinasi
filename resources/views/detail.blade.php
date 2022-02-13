@@ -17,6 +17,10 @@
                                     <td>{{ $data->lokasi }}</td>
                                 </tr>
                                 <tr>
+                                    <td>Lokasi</td>
+                                    <td>{{ $data->tanggal }}</td>
+                                </tr>
+                                <tr>
                                     <td>Alamat</td>
                                     <td>{{ $data->alamat }}</td>
                                 </tr>

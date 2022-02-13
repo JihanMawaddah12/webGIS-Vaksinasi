@@ -45,6 +45,7 @@ class HalamanData extends Controller
             'tematik_id' => $request->kecamatan,
             'kelompok' => $request->kelompok,
             'nakes' => $request->nakes,
+            'tanggal'=>$request->tangggal,
             'petugas_publik' => $request->petugas_publik,
             'lansia' => $request->lansia,
             'masyarakat_umum' => $request->masyarakat_umum,
@@ -95,6 +96,7 @@ class HalamanData extends Controller
         ModelsHalamanData::find($id)->update([
             'tematik_id' => $request->kecamatan,
             'kelompok' => $request->kelompok,
+            'tanggal'=>$request->tangggal,
             'nakes' => $request->nakes,
             'petugas_publik' => $request->petugas_publik,
             'lansia' => $request->lansia,

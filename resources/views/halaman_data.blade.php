@@ -39,7 +39,7 @@
                                 <td>
                                     {{ $loop->iteration }}
                                 </td>
-                                <td>{{ $item->created_at->format('Y-M-D') }}</td>
+                                <td>{{ $item->tanggal->format('Y-M-D') }}</td>
                                 <td>{{ $item->tematik->kecamatan }}</td>
                                 <td>{{ $item->Kelompok }}</td>
                                 <td>{{ $item->nakes }}</td>

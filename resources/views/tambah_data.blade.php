@@ -35,6 +35,10 @@
                             <label>Petugas Publik</label>
                             <input name="petugas_publik" type="number" class="form-control" required>
                         </div>
+                        <div class="form-group">
+                            <label>Tanggal</label>
+                            <input name="tanggal" type="date" class="form-control" required>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
