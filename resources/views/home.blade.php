@@ -315,6 +315,7 @@
             };
 
         }
+        alert(color[feature.properties.NAMOBJ])
         //memunculkan highlight pada peta
         function highlightFeature(e) {
             var layer = e.target;
