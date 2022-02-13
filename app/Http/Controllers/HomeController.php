@@ -34,7 +34,7 @@ class HomeController extends Controller
         $kec3 = [];
         $jumlah3 = [];
         if ($tematik_id) {
-            $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $tematik_id]])->select(DB::raw('DATE(created_at) as date'), DB::raw('count(*) as views'), 'tematik_id')
+            $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $tematik_id]])->select(DB::raw('DATE(created_at) as date'), 'tematik_id')
                 ->groupBy(['date', 'tematik_id'])
                 ->get();
 
@@ -42,21 +42,21 @@ class HomeController extends Controller
             $id = 0;
             foreach ($dosis1 as $value) {
                 $kec[$id] = $value->date;
-                $jumlah[$id] = $value->views;
+                $jumlah[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
                 $id += 1;
+
             }
-            $dosis2 = HalamanData::with('tematik')->where([['kelompok', 'dosis 2'], ['tematik_id', $tematik_id]])->select(DB::raw('DATE(created_at) as date'), DB::raw('count(*) as views'), 'tematik_id')
+            $dosis2 = HalamanData::with('tematik')->where([['kelompok', 'dosis 2'], ['tematik_id', $tematik_id]])->select(DB::raw('DATE(created_at) as date'), 'tematik_id')
                 ->groupBy(['date', 'tematik_id'])
                 ->get();
-
 
             $id = 0;
             foreach ($dosis2 as $value) {
                 $kec2[$id] = $value->date;
-                $jumlah2[$id] = $value->views;
+                $jumlah2[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
                 $id += 1;
             }
-            $dosis3 = HalamanData::with('tematik')->where([['kelompok', 'dosis 3'], ['tematik_id', $tematik_id]])->select(DB::raw('DATE(created_at) as date'), DB::raw('count(*) as views'), 'tematik_id')
+            $dosis3 = HalamanData::with('tematik')->where([['kelompok', 'dosis 3'], ['tematik_id', $tematik_id]])->select(DB::raw('DATE(created_at) as date'), 'tematik_id')
                 ->groupBy(['date', 'tematik_id'])
                 ->get();
 
@@ -64,7 +64,7 @@ class HomeController extends Controller
             $id = 0;
             foreach ($dosis3 as $value) {
                 $kec3[$id] = $value->date;
-                $jumlah3[$id] = $value->views;
+                $jumlah3[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
                 $id += 1;
             }
         }
