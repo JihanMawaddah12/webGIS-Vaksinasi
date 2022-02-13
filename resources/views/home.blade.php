@@ -184,6 +184,14 @@
             data: data,
             options: {
                 maintainAspectRatio: false,
+                  scales: {
+                    y: {
+                        min: 0,
+                        ticks: {
+                            stepSize: 5
+                        }
+                    }
+                }
             }
         };
         const myChart = new Chart(
@@ -209,6 +217,14 @@
             data: data2,
             options: {
                 maintainAspectRatio: false,
+                  scales: {
+                    y: {
+                        min: 0,
+                        ticks: {
+                            stepSize: 5
+                        }
+                    }
+                }
             }
         };
         const myChart2 = new Chart(
@@ -234,6 +250,14 @@
             data: data3,
             options: {
                 maintainAspectRatio: false,
+                  scales: {
+                    y: {
+                        min: 0,
+                        ticks: {
+                            stepSize: 5
+                        }
+                    }
+                }
             }
         };
         const myChart3 = new Chart(
