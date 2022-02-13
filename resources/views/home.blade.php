@@ -78,7 +78,7 @@
                                         <a class="nav-link" href="#grafik2-button" data-bs-toggle="tab">Dosis 2</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#grafik2-button" data-bs-toggle="tab">Dosis 3</a>
+                                        <a class="nav-link" href="#grafik3-button" data-bs-toggle="tab">Dosis 3</a>
                                     </li>
                                 </ul>
                             </div>
