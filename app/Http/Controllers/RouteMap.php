@@ -16,7 +16,7 @@ class RouteMap extends Controller
         $data = HalamanData2::all();
 
         foreach ($data as $item) {
-            $info[$index] = [$item->alamat, $item->lat, $item->long];
+            $info[$index] = [$item->alamat, $item->lat, $item->long,$item->lokasi];
             $index++;
         }
         return view('routeMap', [

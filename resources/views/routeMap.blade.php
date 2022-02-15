@@ -15,7 +15,7 @@
         crossorigin="" />
     <style>
         #map {
-            min-height: 500px;
+            min-height: 600px;
         }
 
         .leaflet-control-attribution {
@@ -54,7 +54,9 @@
             background-color: white;
             padding: 1rem
         }
-
+        .leaflet-right{
+            max-width: 50%;
+        }
     </style>
 @endsection
 
@@ -121,7 +123,7 @@
             marker = new L.marker([data[i][1], data[i][2]], {
                     icon: icon
                 })
-                .bindPopup("<button onclick='return keSini(" + data[i][1] + "," + data[i][2] + ")'>Ke Sini</button>")
+                .bindPopup("<strong>"+data[i][3]+"</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i][1] + "," + data[i][2] + ")'>Ke Sini</button>")
                 .addTo(map);
         }
 
