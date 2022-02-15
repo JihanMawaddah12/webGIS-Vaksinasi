@@ -135,9 +135,17 @@
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('maps') }}" class="nav-link">
-                                    <i class="nav-icon fa-solid fa-map-location"></i>
+                                    <i class="nav-icon fa-solid fa-map"></i>
                                     <p>
                                         Maps
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('Rute') }}" class="nav-link">
+                                    <i class="nav-icon fa-solid fa-map-location"></i>
+                                    <p>
+                                        Rute Map
                                     </p>
                                 </a>
                             </li>

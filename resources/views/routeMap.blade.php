@@ -50,6 +50,11 @@
             opacity: 0.7;
         }
 
+        .leaflet-routing-container {
+            background-color: white;
+            padding: 1rem
+        }
+
     </style>
 @endsection
 
@@ -65,26 +70,19 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
 
-    <script src="{{ asset('storage/js/heatmap/build/heatmap.min.js')}}">
+    <script src="{{ asset('storage/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}">
     </script>
-    <script src="{{ asset('storage/js/leaflet-heatmap.js') }}">
-    </script>
+
     <script type="text/javascript">
         var s = [5.554630942893766, 95.31709742351293];
         var data = {!! json_encode($data) !!}
         var map = L.map('map').setView(
             s, 11
         );
-
-
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-            maxZoom: 18
         }).addTo(map);
-
-
         var info = L.control();
-
         info.onAdd = function(map) {
             this._div = L.DomUtil.create('div', 'info');
             this.update();
@@ -113,13 +111,20 @@
 
             info.update(layer.feature.properties);
         }
+        var icon = L.icon({
+            iconUrl: "{{ asset('storage/img/hospital.png') }}",
+            iconSize: [38,38], // size of the icon
+         
+        });
+        var userMarker =  new L.marker();
         for (var i = 0; i < data.length; i++) {
-            marker = new L.marker([data[i][1], data[i][2]])
-                .bindPopup(data[i][0])
+            marker = new L.marker([data[i][1], data[i][2]], {
+                    icon: icon
+                })
+                .bindPopup("<button onclick='return keSini(" + data[i][1] + "," + data[i][2] + ")'>Ke Sini</button>")
                 .addTo(map);
         }
 
-        
         function zoomToFeature(e) {
             map.fitBounds(e.target.getBounds());
         }
@@ -131,11 +136,39 @@
                 click: zoomToFeature
             });
         }
-       
-        var legend = L.control({
-            position: 'bottomright'
-        });
+        var latPoint = "";
+        var longPoint = "";
 
-      
+        function updateMarker(lat, lng) {
+            latPoint = lat;
+            longPoint = lng;
+            userMarker
+                .setLatLng([lat, lng]);
+            return false;
+        };
+        // var dataPoint = [];
+        // for (var i = 0; i < data.length; i++) {
+        //     dataPoint[i] = L.latLng(data[i][1], data[i][2]);
+        // }
+        var control = L.Routing.control({
+            waypoints: [],
+            routeWhileDragging: true,
+        });
+        control.addTo(map);
+
+        function keSini(lat, lng) {
+            var latLng = L.latLng(lat, lng);
+            control.spliceWaypoints(control.getWaypoints().length - 1, 1, latLng);
+        }
+
+        map.on('click', function(e) {
+            let latitude = e.latlng.lat.toString().substring(0, 15);
+            let longitude = e.latlng.lng.toString().substring(0, 15);
+            control.setWaypoints(L.latLng(latitude, longitude))
+            $('#latitude').val(latitude);
+            $('#longitude').val(longitude);
+            updateMarker(latitude, longitude);
+           
+        });
     </script>
 @endpush
