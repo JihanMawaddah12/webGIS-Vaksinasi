@@ -39,7 +39,7 @@
                                 <td>
                                     {{ $loop->iteration }}
                                 </td>
-                                <td>{{ $item->tanggal}}</td>
+                                <td>{{ $item->tanggal }}</td>
                                 <td>{{ $item->tematik->kecamatan }}</td>
                                 <td>{{ $item->Kelompok }}</td>
                                 <td>{{ $item->nakes }}</td>
@@ -88,7 +88,10 @@
                 });
         });
         $(document).ready(function() {
-            $('#table').DataTable();
+            $('#table').DataTable({
+                pageLength: 100,
+                fixedHeader: true,
+            });
         });
     </script>
 @endsection
