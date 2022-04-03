@@ -19,6 +19,9 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/pendaftaran', [App\Http\Controllers\RouteMap::class, 'pendaftaran'])->name('pendaftaran map');
+Route::post('/daftar', [App\Http\Controllers\RouteMap::class, 'daftar'])->name('daftar');
+
 Route::group(
     ['middleware' => ['AuthCheck:admin']],
     function () {
@@ -46,9 +49,7 @@ Route::group(
         Route::get('/delete_data2/{id}', [App\Http\Controllers\HalamanData2::class, 'destroy'])->name('delete data2');
         Route::get('/tambah_data2', [App\Http\Controllers\HalamanData2::class, 'create'])->name('tambah data2');
         Route::get('/detail_map/{id}', [App\Http\Controllers\HalamanData2::class, 'show'])->name('detail map');
-        Route::get('/pendaftaran', [App\Http\Controllers\RouteMap::class, 'pendaftaran'])->name('pendaftaran map');
         Route::get('/rumah-sakit', [App\Http\Controllers\RumahSakitController::class, 'index'])->name('rumah sakit');
-        Route::post('/daftar', [App\Http\Controllers\RouteMap::class, 'daftar'])->name('daftar');
         Route::post('/rumahsakit-post', [App\Http\Controllers\RumahSakitController::class, 'store'])->name('post rumahsakit');
         Route::get('/rumahsakit-delete/{id}', [App\Http\Controllers\RumahSakitController::class, 'destroy'])->name('delete rumahsakit');
         Route::get('/rumahsakit-tambah', [App\Http\Controllers\RumahSakitController::class, 'create'])->name('tambah rumahsakit');

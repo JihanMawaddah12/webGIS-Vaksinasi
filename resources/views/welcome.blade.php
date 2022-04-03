@@ -108,7 +108,7 @@ http://www.tooplate.com/view/2091-ziggy
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <a href="#" class="btn btn-outline-info py-2">
+                    <a href="{{route('pendaftaran map')}}" class="btn btn-outline-info py-2">
                         <div class="service-item">
                             <div class="icon">
                                 <i class="fa-solid fa-pen h1"></i>
