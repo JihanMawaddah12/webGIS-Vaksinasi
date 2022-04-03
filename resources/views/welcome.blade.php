@@ -107,6 +107,18 @@ http://www.tooplate.com/view/2091-ziggy
                         </div>
                     </a>
                 </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#" class="btn btn-outline-info py-2">
+                        <div class="service-item">
+                            <div class="icon">
+                                <i class="fa-solid fa-pen h1"></i>
+                            </div>
+                            <h4>Pendaftaran vaksin</h4>
+                            <p>Aliquam ex velit, viverra eu tristique vel, rhoncus nec ligula. In vel massa sed dolor
+                                pharetra interdum vitae posuere.</p>
+                        </div>
+                    </a>
+                </div>
 
             </div>
         </div>

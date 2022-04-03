@@ -129,55 +129,73 @@
                     <nav class="mt-2">
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                             data-accordion="false">
+
+                            @if (auth()->user()->level == 'admin')
+                                <li class="nav-item">
+                                    <a href="{{ route('home') }}" class="nav-link">
+                                        <i class="nav-icon fas fa-th"></i>
+                                        <p>
+                                            Dashboard
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('maps') }}" class="nav-link">
+                                        <i class="nav-icon fa-solid fa-map"></i>
+                                        <p>
+                                            Maps
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('Rute') }}" class="nav-link">
+                                        <i class="nav-icon fa-solid fa-map-location"></i>
+                                        <p>
+                                            Rute Map
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item menu-open">
+                                    <a href="#" class="nav-link ">
+                                        <i class="nav-icon fa-solid fa-database"></i>
+                                        <p>
+                                            Data
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{ route('halaman data') }}" class="nav-link ">
+                                                <p>Data Vaksinasi</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{ route('halaman data2') }}" class="nav-link">
+                                                <p>Data Lokasi</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{ route('halaman tematik') }}" class="nav-link">
+                                                <p>Data Tematik</p>
+                                            </a>
+                                        </li>
+                                         <li class="nav-item">
+                                            <a href="{{ route('rumah sakit') }}" class="nav-link">
+                                                <p>Data Rumah Sakit</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            @else
                             <li class="nav-item">
-                                <a href="{{ route('home') }}" class="nav-link">
-                                    <i class="nav-icon fas fa-th"></i>
-                                    <p>
-                                        Dashboard
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('maps') }}" class="nav-link">
-                                    <i class="nav-icon fa-solid fa-map"></i>
-                                    <p>
-                                        Maps
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('Rute') }}" class="nav-link">
-                                    <i class="nav-icon fa-solid fa-map-location"></i>
-                                    <p>
-                                        Rute Map
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item menu-open">
-                                <a href="#" class="nav-link ">
-                                    <i class="nav-icon fa-solid fa-database"></i>
-                                    <p>
-                                        Data
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{ route('halaman data') }}" class="nav-link ">
-                                            <p>Data Vaksinasi</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('halaman data2') }}" class="nav-link">
-                                            <p>Data Lokasi</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('halaman tematik') }}" class="nav-link">
-                                            <p>Data Tematik</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
+                                    <a href="{{ route('rm dashboard') }}" class="nav-link">
+                                        <i class="nav-icon fas fa-th"></i>
+                                        <p>
+                                            Dashboard
+                                        </p>
+                                    </a>
+                                </li>
+                            @endif
                             <li class="nav-item">
                                 <a href="{{ route('maps') }}" class="nav-link">
                                     <i class="nav-icon fa-solid fa-book"></i>

@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\HalamanData;
-use App\Models\HalamanData2;
-use App\Models\Tematik;
+use App\Models\Pendaftaran;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class MapController extends Controller
+class RumahSakit extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,31 +15,9 @@ class MapController extends Controller
      */
     public function index()
     {
-        $geofile = [];
-        $color = [];
-        $coor = [];
-        $index = 0;
-        $index2 = 0;
-        $tematik = Tematik::all();
-        $data = HalamanData2::all();
-        foreach ($tematik as $item) {
-            $geofile[$index] = 'storage/' . $item->geojson;
-            $index++;
-        }
-        foreach ($tematik as $item) {
-            $color[$item->kecamatan] = $item->warna;
-        }
-        foreach ($data as $item) {
-            $coor[$index2] = [$item->alamat, $item->lat, $item->long];
-            $index2++;
-        }
-       
-       
-        return view('maps', [
-            'geofile' => $geofile,
-            'color' => $color,
-            'data' => $coor
-        ]);
+        
+        $data = Pendaftaran::where('halaman_data2_id',auth()->user()->rm->halaman_data2_id)->get();
+        return view('rm.dashboard', ['data' => $data]);
     }
 
     /**
@@ -83,7 +60,8 @@ class MapController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+
     }
 
     /**
@@ -106,6 +84,7 @@ class MapController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Pendaftaran::find($id)->delete();
+        return back();
     }
 }

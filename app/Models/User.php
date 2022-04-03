@@ -41,4 +41,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function rm(){
+        return $this->hasOne(RumahSakit::class,'user_id','id');
+    }
 }
