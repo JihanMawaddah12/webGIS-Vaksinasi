@@ -6,7 +6,7 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>Data <b>Tematik</b></h2>
+                            <h2>Data <b>Rumah Sakit</b></h2>
                         </div>
                         <div class="col-sm-6">
                             <a href="{{ route('tambah rumahsakit') }}" class="btn btn-success"><i
