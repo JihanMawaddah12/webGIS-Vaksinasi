@@ -44,6 +44,7 @@ class RumahSakitController extends Controller
         $user = User::create([
             'email'=>$request->email,
             'name' => $rm->lokasi,
+            'level'=> 'rs',
             'password' => Hash::make($request->password) 
         ]);
         RumahSakit::create([

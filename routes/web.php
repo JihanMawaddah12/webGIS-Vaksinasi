@@ -58,6 +58,6 @@ Route::group(
     }
 );
 Route::group(['middleware' => ['AuthCheck:rm']], function () {
-    Route::get('/rm/dashboard', [App\Http\Controllers\RumahSakit::class, 'index'])->name('rm dashboard');
-    Route::get('/rm/pendaftaran-delete/{id}', [App\Http\Controllers\RumahSakit::class, 'destroy'])->name('pendaftaran hapus');
+    Route::get('/rs/dashboard', [App\Http\Controllers\RumahSakit::class, 'index'])->name('rm dashboard');
+    Route::get('/rs/pendaftaran-delete/{id}', [App\Http\Controllers\RumahSakit::class, 'destroy'])->name('pendaftaran hapus');
 });

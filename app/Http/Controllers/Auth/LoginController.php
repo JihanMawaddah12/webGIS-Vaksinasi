@@ -32,9 +32,9 @@ class LoginController extends Controller
     {
         if (Auth::user()->level == "admin") {
             return "/halaman_data";
-        } else if (Auth::user()->level == "rm") {
+        } else if (Auth::user()->level == "rs") {
          
-            return "rm/dashboard";
+            return "rs/dashboard";
         } else {
             Auth::logout();
             return '/login';
