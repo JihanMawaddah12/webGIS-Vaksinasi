@@ -17,7 +17,7 @@ class RumahSakit extends Controller
     {
         
         $data = Pendaftaran::where('halaman_data2_id',auth()->user()->rm->halaman_data2_id)->get();
-        return view('rm.dashboard', ['data' => $data]);
+        return view('rs.dashboard', ['data' => $data]);
     }
 
     /**
