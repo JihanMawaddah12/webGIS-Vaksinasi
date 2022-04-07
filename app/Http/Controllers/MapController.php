@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Desa;
 use App\Models\HalamanData;
 use App\Models\HalamanData2;
 use App\Models\Tematik;
@@ -42,7 +43,50 @@ class MapController extends Controller
             'data' => $coor
         ]);
     }
+    public function indexTitik()
+    {
+        $geofile = [];
+        $color = [];
+        $coor = [];
+        $index = 0;
+        $index2 = 0;
+        $data = HalamanData2::all();
+      
+        foreach ($data as $item) {
+            $coor[$index2] = [$item->alamat, $item->lat, $item->long];
+            $index2++;
+        }
 
+        return view('maps_titik', [
+            'data' => $coor
+        ]);
+    }
+    public function indexDesa()
+    {
+        $geofile = [];
+        $color = [];
+        $coor = [];
+        $index = 0;
+        $index2 = 0;
+        $desa = Desa::all();
+        $data = HalamanData2::all();
+        foreach ($desa as $item) {
+            $geofile[$index] = 'storage/' . $item->geojson;
+            $index++;
+        }
+        foreach ($desa as $item) {
+            $color[$item->desa] = $item->warna;
+        }
+        foreach ($data as $item) {
+            $coor[$index2] = [$item->alamat, $item->lat, $item->long];
+            $index2++;
+        }
+        return view('maps_desa', [
+            'geofile' => $geofile,
+            'color' => $color,
+            'data' => $coor
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *

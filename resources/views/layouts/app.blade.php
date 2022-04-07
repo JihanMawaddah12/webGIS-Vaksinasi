@@ -140,10 +140,26 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="{{ route('maps lokasi') }}" class="nav-link">
+                                        <i class="nav-icon fa-solid fa-map"></i>
+                                        <p>
+                                            Maps Lokasi
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('maps desa') }}" class="nav-link">
+                                        <i class="nav-icon fa-solid fa-map"></i>
+                                        <p>
+                                            Maps Desa
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="{{ route('maps') }}" class="nav-link">
                                         <i class="nav-icon fa-solid fa-map"></i>
                                         <p>
-                                            Maps
+                                            Maps Tematik
                                         </p>
                                     </a>
                                 </li>
@@ -174,6 +190,11 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
+                                            <a href="{{ route('halaman desa') }}" class="nav-link">
+                                                <p>Data Desa</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
                                             <a href="{{ route('halaman tematik') }}" class="nav-link">
                                                 <p>Data Tematik</p>
                                             </a>
@@ -188,7 +209,7 @@
 
                             @else
                             <li class="nav-item">
-                                    <a href="{{ route('rm dashboard') }}" class="nav-link">
+                                    <a href="{{ route('rs dashboard') }}" class="nav-link">
                                         <i class="nav-icon fas fa-th"></i>
                                         <p>
                                             Dashboard

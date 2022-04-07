@@ -69,7 +69,6 @@
 
     <script type="text/javascript">
         var s = [5.554630942893766, 95.31709742351293];
-        var color = {!! json_encode($color) !!};
         var data = {!! json_encode($data) !!}
 
         var map = L.map('map').setView(
@@ -98,16 +97,7 @@
 
         info.addTo(map);
 
-        function style(feature) {
-            return {
-                weight: 2,
-                opacity: 1,
-                color: 'white',
-                dashArray: '3',
-                fillOpacity: 0.7,
-                fillColor: color[feature.properties.NAMOBJ]
-            };
-        }
+     
         // munculkan highlight pada peta
         function highlightFeature(e) {
             var layer = e.target;
@@ -125,12 +115,10 @@
 
             info.update(layer.feature.properties);
         }
-     
-        var geojson;
-
-        function resetHighlight(e) {
-            geojsonLayer.resetStyle(e.target);
-            info.update();
+        for (var i = 0; i < data.length; i++) {
+            marker = new L.marker([data[i][1], data[i][2]])
+                .bindPopup(data[i][0])
+                .addTo(map);
         }
 
         function zoomToFeature(e) {
@@ -144,12 +132,7 @@
                 click: zoomToFeature
             });
         }
-        var geojsonLayer = new L.GeoJSON.AJAX({!! json_encode($geofile) !!}, {
-            style: style,
-            onEachFeature: onEachFeature
-        });
-        geojsonLayer.addTo(map);
-
+       
         var legend = L.control({
             position: 'bottomright'
         });

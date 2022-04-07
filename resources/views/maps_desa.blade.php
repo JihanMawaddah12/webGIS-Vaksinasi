@@ -89,9 +89,8 @@
             this.update();
             return this._div;
         };
-        // menampilkan pop upp info tematik
         info.update = function(props) {
-            this._div.innerHTML = '<h4>Kecamatan</h4>' + (props ?
+            this._div.innerHTML = '<h4>Desa</h4>' + (props ?
                 '<b>' + props.NAMOBJ + '</b><br />' + props.MhsSIF + ' orang' :
                 'Gerakkan mouse Anda');
         };

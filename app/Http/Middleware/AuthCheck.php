@@ -15,17 +15,15 @@ class AuthCheck
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next, $roles)
+    public function handle(Request $request, Closure $next,$roles)
     {
         if (!Auth::check()) {
-            return redirect('login');
+            return response('Unauthorized.', 401);
         }
         $user = Auth::user();
 
         if ($user->level == $roles)
             return $next($request);
-
-
-        return redirect('login')->with('error', "Akun Tidak Ditemukan");
+    
     }
 }

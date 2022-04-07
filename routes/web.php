@@ -41,7 +41,15 @@ Route::group(
         Route::get('/edit_tematik/{id}', [App\Http\Controllers\TematikController::class, 'edit'])->name('edit tematik');
         Route::post('/update_tematik/{id}', [App\Http\Controllers\TematikController::class, 'update'])->name('update tematik');
         Route::get('/delete_tematik/{id}', [App\Http\Controllers\TematikController::class, 'destroy'])->name('delete tematik');
+        Route::get('/halaman_desa', [App\Http\Controllers\DesaController::class, 'index'])->name('halaman desa');
+        Route::get('/tambah_desa', [App\Http\Controllers\DesaController::class, 'create'])->name('tambah desa');
+        Route::post('/input_desa', [App\Http\Controllers\DesaController::class, 'store'])->name('data desa');
+        Route::get('/edit_desa/{id}', [App\Http\Controllers\DesaController::class, 'edit'])->name('edit desa');
+        Route::post('/update_desa/{id}', [App\Http\Controllers\DesaController::class, 'update'])->name('update desa');
+        Route::get('/delete_desa/{id}', [App\Http\Controllers\DesaController::class, 'destroy'])->name('delete desa');
         Route::get('/maps', [App\Http\Controllers\MapController::class, 'index'])->name('maps');
+        Route::get('/maps_lokasi', [App\Http\Controllers\MapController::class, 'indexTitik'])->name('maps lokasi');
+        Route::get('/maps_desa', [App\Http\Controllers\MapController::class, 'indexDesa'])->name('maps desa');
         Route::get('/halaman_data2', [App\Http\Controllers\HalamanData2::class, 'index'])->name('halaman data2');
         Route::post('/input_data2', [App\Http\Controllers\HalamanData2::class, 'store'])->name('data lokasi');
         Route::get('/edit_data2/{id}', [App\Http\Controllers\HalamanData2::class, 'edit'])->name('edit data2');
@@ -57,7 +65,8 @@ Route::group(
         Route::post('/rumahsakit-update', [App\Http\Controllers\RumahSakitController::class, 'update'])->name('update rumahsakit');
     }
 );
-Route::group(['middleware' => ['AuthCheck:rm']], function () {
-    Route::get('/rs/dashboard', [App\Http\Controllers\RumahSakit::class, 'index'])->name('rm dashboard');
+Route::group(['middleware' => ['AuthCheck:rs']], function () {
+    Route::get('/home/{tematik_id?}', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/rs/dashboard', [App\Http\Controllers\RumahSakit::class, 'index'])->name('rs dashboard');
     Route::get('/rs/pendaftaran-delete/{id}', [App\Http\Controllers\RumahSakit::class, 'destroy'])->name('pendaftaran hapus');
 });

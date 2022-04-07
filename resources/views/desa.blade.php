@@ -6,10 +6,10 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>Data <b>Tematik</b></h2>
+                            <h2>Data <b>Desa</b></h2>
                         </div>
                         <div class="col-sm-6">
-                            <a href="{{ route('tambah tematik') }}" class="btn btn-success"><i
+                            <a href="{{ route('tambah desa') }}" class="btn btn-success"><i
                                     class="material-icons">&#xE147;</i> <span>Masukkan Data Baru</span></a>
 
                         </div>
@@ -21,7 +21,7 @@
                             <th>
                                 no
                             </th>
-                            <th>Kecamatan</th>
+                            <th>Desa</th>
                             <th>Warna</th>
                             <th>Actions</th>
                         </tr>
@@ -32,12 +32,12 @@
                                 <td>
                                     {{ $loop->iteration }}
                                 </td>
-                                <td>{{ $item->kecamatan }}</td>
+                                <td>{{ $item->desa }}</td>
                                 <td><input type="color" disabled value="{{ $item->warna }}"></td>
                                 <td class="w-25">
 
-                                    <form action="{{ route('delete tematik', ['id' => $item->id]) }}" method="get">
-                                        <a href="{{ route('edit tematik', ['id' => $item->id]) }}"
+                                    <form action="{{ route('delete desa', ['id' => $item->id]) }}" method="get">
+                                        <a href="{{ route('edit desa', ['id' => $item->id]) }}"
                                             class="edit"><i class="material-icons" data-toggle="tooltip"
                                                 title="Edit">&#xE254;</i></a>
                                         <button type="submit" class="delete show_confirm border-0 p-0 bg-transparent"><i
@@ -49,7 +49,7 @@
                         @endforeach
                     </tbody>
                 </table>
-             
+              
             </div>
         </div>
     </div>
