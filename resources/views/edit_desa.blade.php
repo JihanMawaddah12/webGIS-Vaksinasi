@@ -9,9 +9,9 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Kecamatan</label>
-                            <input name="kecamatan" type="text" class="form-control" required
-                                value="{{ $data->kecamatan }}">
+                            <label>Desa</label>
+                            <input name="desa" type="text" class="form-control" required
+                                value="{{ $data->desa }}">
                         </div>
                         <div class="form-group">
                             <label>Warna</label>

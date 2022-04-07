@@ -39,10 +39,8 @@ class DesaController extends Controller
     public function store(Request $request)
     {
         $fileName = "";
-        if ($request->hasFile('geojson')) {
             $fileName = $request->geojson->store('public/geojson');
             $fileName = str_replace("public/", "", $fileName);
-        }
         Desa::create([
             'desa' => $request->desa,
             'warna' => $request->warna,
