@@ -49,6 +49,7 @@ class HalamanData2 extends Controller
         ModelsHalamanData2::create([
             'tematik_id' => $request->kecamatan,
             'lokasi' => $request->lokasi,
+            'kapasitas' => $request->kapasitas,
             'alamat' => $request->alamat,
             'deskripsi' => $request->deskripsi,
             'gambar' => $fileName,
@@ -109,6 +110,7 @@ class HalamanData2 extends Controller
         ModelsHalamanData2::find($id)->update([
             'tematik_id' => $request->kecamatan,
             'lokasi' => $request->lokasi,
+            'kapasitas' => $request->kapasitas,
             'alamat' => $request->alamat,
             'deskripsi' => $request->deskripsi,
             'gambar' => $fileName,

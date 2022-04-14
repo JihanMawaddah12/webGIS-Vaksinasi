@@ -16,6 +16,7 @@
                             <th>
                                 no
                             </th>
+                            <th>Dosis</th>
                             <th>Nama</th>
                             <th>NIK</th>
                             <th>Jenis Kelamin</th>
@@ -29,13 +30,14 @@
                                 <td>
                                     {{ $loop->iteration }}
                                 </td>
+                                <td>{{ $item->dosis }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->nik }}</td>
                                 <td>{{ $item->jk }}</td>
                                 <td>{{ $item->no_hp }}</td>
                                 <td class="w-25">
-
                                     <form action="{{ route('pendaftaran hapus', ['id' => $item->id]) }}" method="get">
+                                        <button class="btn btn-success">Verifikasi</button>
                                         <button type="submit" class="delete show_confirm border-0 p-0 bg-transparent"><i
                                                 class="material-icons" data-toggle="tooltip"
                                                 title="Delete">&#xE872;</i></button>

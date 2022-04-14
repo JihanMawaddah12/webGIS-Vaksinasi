@@ -15,8 +15,8 @@ class RumahSakit extends Controller
      */
     public function index()
     {
-        
-        $data = Pendaftaran::where('halaman_data2_id',auth()->user()->rm->halaman_data2_id)->get();
+
+        $data = Pendaftaran::where(['halaman_data2_id' => auth()->user()->rm->halaman_data2_id, 'status' => 0])->get();
         return view('rs.dashboard', ['data' => $data]);
     }
 
@@ -60,8 +60,6 @@ class RumahSakit extends Controller
      */
     public function edit($id)
     {
-        
-
     }
 
     /**

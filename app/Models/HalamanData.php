@@ -13,4 +13,12 @@ class HalamanData extends Model
     {
         return $this->belongsTo(Tematik::class, 'tematik_id', 'id');
     }
+    public function pendaftaran()
+    {
+        return $this->hasMany(Pendaftaran::class, 'tematik_id', 'tematik_id');
+    }
+    public function desa()
+    {
+        return $this->belongsTo(Desa::class);
+    }
 }

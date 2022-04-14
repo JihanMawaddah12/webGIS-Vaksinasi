@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Desa;
 use App\Models\HalamanData as ModelsHalamanData;
 use App\Models\Tematik;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class HalamanData extends Controller
     public function index()
     {
         return view("halaman_data", [
-            'data' => ModelsHalamanData::with('tematik')->get()
+            'data' => ModelsHalamanData::get()
         ]);
     }
 
@@ -29,7 +30,8 @@ class HalamanData extends Controller
     public function create()
     {
         $tematik = Tematik::all();
-        return view('tambah_data', ['tematik' => $tematik]);
+        $desa = Desa::all();
+        return view('tambah_data', ['tematik' => $tematik, 'desa' => $desa]);
     }
 
     /**
@@ -41,16 +43,7 @@ class HalamanData extends Controller
     public function store(Request $request)
     {
 
-        ModelsHalamanData::create([
-            'tematik_id' => $request->kecamatan,
-            'kelompok' => $request->kelompok,
-            'nakes' => $request->nakes,
-            'tanggal'=>$request->tanggal,
-            'petugas_publik' => $request->petugas_publik,
-            'lansia' => $request->lansia,
-            'masyarakat_umum' => $request->masyarakat_umum,
-            'remaja' => $request->remaja,
-        ]);
+        ModelsHalamanData::create($request->all());
         return redirect()->route('halaman data');
     }
 
@@ -93,16 +86,7 @@ class HalamanData extends Controller
     public function update(Request $request, $id)
     {
 
-        ModelsHalamanData::find($id)->update([
-            'tematik_id' => $request->kecamatan,
-            'kelompok' => $request->kelompok,
-            'tanggal'=>$request->tanggal,
-            'nakes' => $request->nakes,
-            'petugas_publik' => $request->petugas_publik,
-            'lansia' => $request->lansia,
-            'masyarakat_umum' => $request->masyarakat_umum,
-            'remaja' => $request->remaja,
-        ]);
+        ModelsHalamanData::find($id)->update($request->all());
         return redirect()->route('halaman data');
     }
 

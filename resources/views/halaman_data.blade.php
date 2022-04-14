@@ -18,36 +18,51 @@
                 <table class="table table-striped table-hover" id="table">
                     <thead>
                         <tr>
-                            <th>
-                                no
-                            </th>
-                            <th>Tanggal</th>
-                            <th>Kecamatan</th>
-                            <th>Kelompok</th>
-                            <th>Nakes</th>
-                            <th>Petugas Publik</th>
-                            <th>Lansia</th>
-                            <th>masyarakat umum</th>
-                            <th>Remaja</th>
-                            <th>Total</th>
-                            <th>Actions</th>
+                            <th rowspan="2" class="align-middle py-0">no</th>
+                            <th rowspan="2" class="align-middle py-0">Tanggal</th>
+                            <th rowspan="2" class="align-middle py-0">Kecamatan</th>
+                            <th rowspan="2" class="align-middle py-0">Desa</th>
+                            <th rowspan="2" class="align-middle py-0">Dosis</th>
+                            <th colspan="6" class="align-middle py-0 text-center">Kelompok</th>
+                            <th rowspan="2" class="align-middle py-0">Total</th>
+                            <th rowspan="2" class="align-middle py-0">Actions</th>
+                        </tr>
+                        <tr>
+                            <th class="py-0 align-top">Nakes</th>
+                            <th class="py-0 align-top" style="width:15%">Petugas Publik</th>
+                            <th class="py-0 align-top">Lansia</th>
+                            <th class="py-0 align-top" style="width:20%">masyarakat umum</th>
+                            <th class="py-0 align-top">Remaja</th>
+                            <th class="py-0 align-top" style="width:25%">usia 6-11 tahun</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($data as $item)
                             <tr>
-                                <td>
-                                    {{ $loop->iteration }}
-                                </td>
+                                <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->tanggal }}</td>
                                 <td>{{ $item->tematik->kecamatan }}</td>
+                                <td>{{ $item->desa ? $item->desa->desa : '' }}</td>
                                 <td>{{ $item->Kelompok }}</td>
-                                <td>{{ $item->nakes }}</td>
-                                <td>{{ $item->petugas_publik }}</td>
-                                <td>{{ $item->lansia }}</td>
-                                <td>{{ $item->masyarakat_umum }}</td>
-                                <td>{{ $item->remaja }}</td>
-                                <td>{{ $item->nakes + $item->petugas_publik + $item->lansia + $item->masyarakat_umum + $item->remaja }}
+                                <td>{{ $item->nakes +$item->pendaftaran->where('kelompok', 'nakes')->where('desa_id', $item->desa_id)->count() }}
+                                </td>
+                                <td>{{ $item->petugas_publik +$item->pendaftaran->where('kelompok', 'petugas publik')->where('desa_id', $item->desa_id)->count() }}
+                                </td>
+                                <td>{{ $item->lansia +$item->pendaftaran->where('kelompok', 'lansia')->where('desa_id', $item->desa_id)->count() }}
+                                </td>
+                                <td>{{ $item->masyarakat_umum +$item->pendaftaran->where('kelompok', 'masyarakat umum')->where('desa_id', $item->desa_id)->count() }}
+                                </td>
+                                <td>{{ $item->remaja +$item->pendaftaran->where('kelompok', 'remaja')->where('desa_id', $item->desa_id)->count() }}
+                                </td>
+                                <td>{{ $item->usia +$item->pendaftaran->where('kelompok', 'usia 6-11 tahun')->where('desa_id', $item->desa_id)->count() }}
+                                </td>
+                                <td>{{ $item->nakes +
+                                    $item->petugas_publik +
+                                    $item->lansia +
+                                    $item->masyarakat_umum +
+                                    $item->remaja +
+                                    $item->usia +
+                                    +$item->pendaftaran->where('desa_id', $item->desa_id)->count() }}
                                 </td>
 
                                 <td class="w-25">

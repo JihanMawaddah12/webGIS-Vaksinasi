@@ -9,6 +9,10 @@ class HalamanData2 extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    function pendaftaran()
+    {
+        return $this->hasMany(Pendaftaran::class);
+    }
     function tematik()
     {
         return $this->belongsTo(Tematik::class, 'tematik_id', 'id');

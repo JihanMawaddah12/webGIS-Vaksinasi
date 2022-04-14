@@ -109,8 +109,7 @@ http://www.tooplate.com/view/2091-ziggy
         <a href="#" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Rute</h4>
         </a>
-        <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
-            >
+        <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Data</h4>
         </a>
         <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
@@ -165,14 +164,69 @@ http://www.tooplate.com/view/2091-ziggy
                                 </div>
 
                             </div>
-                             <div class="form-group mt-3">
+                            <div class="form-group mt-3">
                                 <label>No HP aktif</label>
                                 <input type="text" class="form-control" name="no_hp" required>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group my-3">
+                                        <label>Dosis</label>
+                                        <select name="dosis" id="" class="form-control">
+                                            <option value="">--Pilih Dosis--</option>
+                                            <option value="Dosis 1">Dosis 1</option>
+                                            <option value="Dosis 2">Dosis 2</option>
+                                            <option value="Dosis 3">Dosis 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group my-3">
+                                        <label>Kelompok</label>
+                                        <select name="kelompok" id="" class="form-control">
+                                            <option value="">--Pilih Kelompok--</option>
+                                            <option value="nakes">nakes</option>
+                                            <option value="petugas publik">petugas publik</option>
+                                            <option value="lansia">lansia</option>
+                                            <option value="masyarakat umum">masyarakat umum</option>
+                                            <option value="remaja">remaja</option>
+                                            <option value="usia 6-11 tahun">usia 6-11 tahun</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group my-3">
                                 <label>Alamat Lengkap Sesuai KTP</label>
                                 <input type="text" class="form-control" name="alamat" required>
                             </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group my-3">
+                                        <select name="tematik_id" id="" class="form-control">
+                                            <option value="">--Pilih Kecamatan--</option>
+                                            @foreach ($kecamatan as $item)
+                                                <option value="{{ $item->id }}">{{ $item->kecamatan }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group my-3">
+                                        <select name="desa_id" id="" class="form-control">
+                                            <option value="">--Pilih Desa--</option>
+                                            @foreach ($desa as $item)
+                                                <option value="{{ $item->id }}">{{ $item->desa }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            @if (session('error'))
+                                <div class="alert alert-danger">
+                                    Data telah terdaftar
+                                </div>
+                            @endif
                             <button class="float-end btn btn-success" type="submit">Daftar</button>
                         </form>
                     </div>
@@ -261,10 +315,9 @@ http://www.tooplate.com/view/2091-ziggy
                     icon: icon
                 })
                 .bindPopup("<strong>" + data[i][3] +
-                    "</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(&quot;" + data[
-                        i][
-                        4
-                    ] + "&quot;,&quot;" + data[i][3] + "&quot;)'>Ke Sini</button>")
+                    "</strong><br/> <div class='text-center'><strong>Kapasitas " + data[i][5] +
+                    "</strong></div><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(&quot;" +
+                    data[i][4] + "&quot;,&quot;" + data[i][3] + "&quot;)'>Ke Sini</button>")
                 .addTo(map);
         }
 

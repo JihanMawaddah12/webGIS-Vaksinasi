@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="container">
         <div class="card p-4">
             <form action="{{ route('update data2', ['id' => $id]) }}" method="post" enctype="multipart/form-data">
@@ -32,6 +31,11 @@
                             <input value="{{ $data->deskripsi }}" name="deskripsi" type="text" class="form-control"
                                 required>
                         </div>
+                        <div class="form-group">
+                            <label>Kapasitas</label>
+                            <input name="kapasitas" value="{{ $data->kapasitas }}" type="text" class="form-control"
+                                required>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -50,6 +54,7 @@
                             <input id='latitude' name="lat" type="text" class="form-control" required
                                 value="{{ $data->lat }}">
                         </div>
+
                     </div>
                 </div>
                 <div class="container mt-4" id="mapid"></div>
@@ -57,7 +62,6 @@
             </form>
         </div>
     </div>
-
 @endsection
 
 @section('styles')
@@ -74,7 +78,6 @@
 @endsection
 
 @push('scripts')
-
     <!-- Leaflet JavaScript -->
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"

@@ -72,7 +72,7 @@ class UserController extends Controller
             ->get();
 
 
-            $id = 0;
+            
             foreach ($dosis3 as $value) {
                 $kec3[$id] = $value->date;
                 $jumlah3[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;

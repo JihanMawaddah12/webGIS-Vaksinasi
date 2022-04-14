@@ -18,12 +18,11 @@
                 <table class="table table-striped table-hover" id="table">
                     <thead>
                         <tr>
-                            <th>
-                                no
-                            </th>
+                            <th>no</th>
                             <th>Kecamatan</th>
                             <th>Lokasi</th>
                             <th>Alamat</th>
+                            <th>Kapasitas</th>
                             <th>Deskripsi</th>
                             <th>Actions</th>
                         </tr>
@@ -37,6 +36,7 @@
                                 <td>{{ $item->tematik->kecamatan }}</td>
                                 <td>{{ $item->lokasi }}</td>
                                 <td>{{ $item->alamat }}</td>
+                                <td>{{ $item->kapasitas }}</td>
                                 <td>{{ $item->deskripsi }}</td>
 
                                 <td class="w-25">

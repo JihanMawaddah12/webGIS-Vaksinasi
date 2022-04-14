@@ -9,7 +9,7 @@
                     <div class="inner">
                         <h3>{{ $target }}</h3>
 
-                        <p>Target</p>
+                        <p>Sasaran Vaksinasi</p>
                     </div>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                     <div class="inner">
                         <h3>{{ $dosis1 }}</h3>
 
-                        <p>Dosis 1</p>
+                        <p>Total Vaksinasi Dosis 1</p>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                     <div class="inner">
                         <h3>{{ $dosis2 }}</h3>
 
-                        <p>Dosis 2</p>
+                        <p>Total Vaksinasi Dosis 2</p>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                     <div class="inner">
                         <h3>{{ $dosis3 }}</h3>
 
-                        <p>Dosis 3</p>
+                        <p>Total Vaksinasi Dosis 3</p>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,8 @@
                                 <select class="form-control" id="kecamatan">
                                     <option disabled selected value="">--Pilih Kecamatan--</option>
                                     @foreach ($tematik as $item)
-                                        <option value="{{ $item->id }}" {{$state == $item->id? 'selected':''}}>{{ $item->kecamatan }}</option>
+                                        <option value="{{ $item->id }}" {{ $state == $item->id ? 'selected' : '' }}>
+                                            {{ $item->kecamatan }}</option>
                                     @endforeach
                                 </select>
                             </form>
@@ -184,7 +185,7 @@
             data: data,
             options: {
                 maintainAspectRatio: false,
-                  scales: {
+                scales: {
                     y: {
                         min: 0,
                         ticks: {
@@ -217,7 +218,7 @@
             data: data2,
             options: {
                 maintainAspectRatio: false,
-                  scales: {
+                scales: {
                     y: {
                         min: 0,
                         ticks: {
@@ -250,7 +251,7 @@
             data: data3,
             options: {
                 maintainAspectRatio: false,
-                  scales: {
+                scales: {
                     y: {
                         min: 0,
                         ticks: {
