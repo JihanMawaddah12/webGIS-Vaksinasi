@@ -21,6 +21,7 @@
                             <th>NIK</th>
                             <th>Jenis Kelamin</th>
                             <th>No Hp</th>
+                            <th>Tanggal Pendaftaran</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -35,6 +36,7 @@
                                 <td>{{ $item->nik }}</td>
                                 <td>{{ $item->jk }}</td>
                                 <td>{{ $item->no_hp }}</td>
+                                <td>{{ $item->created_at }}</td>
                                 <td class="w-25">
                                     <form action="{{ route('pendaftaran hapus', ['id' => $item->id]) }}" method="get">
                                         <button type="submit" class="delete show_confirm border-0 p-0 bg-transparent"><i

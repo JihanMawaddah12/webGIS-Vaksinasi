@@ -10,7 +10,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Kecamatan</label>
-                            <select class="form-select" name="kecamatan" required>
+                            <select class="form-select" name="tematik_id" required>
                                 <option value="">Pilih Kecamatan</option>
                                 @foreach ($tematik as $kecamatan)
                                     <option {{ $kecamatan->id == $data->tematik->id ? 'selected' : '' }}
@@ -47,6 +47,16 @@
                         </div>
                     </div>
                     <div class="col-md-6">
+                         <div class="form-group">
+                             
+                            <label>Desa</label>
+                            <select class="form-select" name="desa_id" required>
+                         
+                                @foreach ($desa as $item)
+                                    <option {{ $data->desa ? $item->id == $data->desa->id ? 'selected' : '':'' }} value="{{ $item->id }}">{{ $item->desa }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label>Lansia</label>
                             <input value="{{ $data->lansia }}" name="lansia" type="number" class="form-control" required>

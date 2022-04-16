@@ -114,8 +114,8 @@ http://www.tooplate.com/view/2091-ziggy
                         Grafik
                     </h3>
                     <div class="card-tools">
-                        <form action="{{ route('home') }}" method="get" id="form-graph">
-                            <select class="form-control" id="kecamatan">
+                        <form action="{{ route('portal') }}" method="get" id="form-graph">
+                            <select class="form-control" id="kecamatan" name="tematik_id">
                                 <option disabled selected value="">--Pilih Kecamatan--</option>
                                 @foreach ($tematik as $item)
                                     <option value="{{ $item->id }}" {{ $state == $item->id ? 'selected' : '' }}>
@@ -188,7 +188,7 @@ http://www.tooplate.com/view/2091-ziggy
     </script>
     <script>
         $('#kecamatan').change(function() {
-            window.location.href = '/data-user/' + this.value;
+            window.location.href = '/portal/' + this.value;
         });
     </script>
 </body>

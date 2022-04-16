@@ -37,7 +37,7 @@ class UserController extends Controller
             'data' => $coor
         ]);
     }
-    public function data($id_param = false)
+    public function data($tematik_id = false)
     {
         $kec = [];
         $jumlah = [];
@@ -45,8 +45,8 @@ class UserController extends Controller
         $jumlah2 = [];
         $kec3 = [];
         $jumlah3 = [];
-        if ($id_param) {
-            $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $id_param]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id', 'id')
+        if ($tematik_id) {
+            $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $tematik_id]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id', 'id')
             ->groupBy(['date', 'tematik_id'])
             ->get();
 
@@ -57,7 +57,7 @@ class UserController extends Controller
                 $jumlah[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
                 $id += 1;
             }
-            $dosis2 = HalamanData::with('tematik')->where([['kelompok', 'dosis 2'], ['tematik_id', $id_param]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
+            $dosis2 = HalamanData::with('tematik')->where([['kelompok', 'dosis 2'], ['tematik_id', $tematik_id]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
             ->groupBy(['date', 'tematik_id'])
             ->get();
 
@@ -67,7 +67,7 @@ class UserController extends Controller
                 $jumlah2[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
                 $id += 1;
             }
-            $dosis3 = HalamanData::with('tematik')->where([['kelompok', 'dosis 3'], ['tematik_id', $id_param]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
+            $dosis3 = HalamanData::with('tematik')->where([['kelompok', 'dosis 3'], ['tematik_id', $tematik_id]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
             ->groupBy(['date', 'tematik_id'])
             ->get();
 
@@ -114,7 +114,7 @@ class UserController extends Controller
             'dosis2' => $jmlh_dosis2,
             'dosis3' => $jmlh_dosis3,
             'tematik'=> $tematik,
-            'state' => $id_param
+            'state' => $tematik_id
         ]);
     }
 }

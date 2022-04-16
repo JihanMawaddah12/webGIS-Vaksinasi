@@ -49,6 +49,97 @@
             <!-- ./col -->
         </div>
         <div class="row">
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <h4>Dosis terendah</h4>
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h4>Dosis 1</h4>
+                        <h6>Kecamatan {{ $krendah1->tematik->kecamatan }}</h6>
+                        <h6>Jumlah {{ $krendah1->total }}</h6>
+                        <h6>persentase {{ number_format((float) ($krendah1->total / $krpersen1) * 100, 2, '.', '') }}%
+                        </h6>
+                        <hr class="text-white bg-white" />
+                        <h4>Dosis 2</h4>
+                        <h6>Kecamatan {{ $krendah2->tematik->kecamatan }}</h6>
+                        <h6>Jumlah {{ $krendah2->total }}</h6>
+                        <h6>persentase {{ number_format((float) ($krendah2->total / $krpersen2) * 100, 2, '.', '') }}%
+                        </h6>
+                        <hr class="text-white bg-white" />
+                        <h4>Dosis 3</h4>
+                        <h6>Kecamatan {{ $krendah3->tematik->kecamatan }}</h6>
+                        <h6>Jumlah {{ $krendah3->total }}</h6>
+                        <h6>persentase {{ number_format((float) ($krendah3->total / $krpersen3) * 100, 2, '.', '') }}%
+                        </h6>
+                    </div>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <h4>Dosis tertinggi</h4>
+                <div class="small-box text-white" style="background-color:rgb(99, 70, 227)">
+                    <div class="inner">
+                        <h4>Dosis 1</h4>
+                        <h6>Kecamatan {{ $ktinggi1->tematik->kecamatan }}</h6>
+                        <h6>Jumlah {{ $ktinggi1->total }}</h6>
+                        <h6>Persentase {{ number_format((float) ($ktinggi1->total / $ktpersen1) * 100, 2, '.', '') }}%
+                        </h6>
+                        <hr class="text-white bg-white" />
+                        <h4>Dosis 2</h4>
+                        <h6>Kecamatan {{ $ktinggi2->tematik->kecamatan }}</h6>
+                        <h6>Jumlah {{ $ktinggi2->total }}</h6>
+                        <h6>Persentase {{ number_format((float) ($ktinggi2->total / $ktpersen2) * 100, 2, '.', '') }}%
+                        </h6>
+                        <hr class="text-white bg-white" />
+                        <h4>Dosis 3</h4>
+                        <h6>Kecamatan {{ $ktinggi3->tematik->kecamatan }}</h6>
+                        <h6>Jumlah {{ $ktinggi3->total }}</h6>
+                        <h6>Persentase {{ number_format((float) ($ktinggi3->total / $ktpersen3) * 100, 2, '.', '') }}%
+                        </h6>
+                    </div>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <h4>Dosis desa terendah</h4>
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h4>Dosis 1</h4>
+                        <h6>Desa {{ $drendah1->desa->desa }}</h6>
+                        <h6>Jumlah {{ $drendah1->total }}</h6>
+                        <h6>persentase {{ number_format((float) ($drendah1->total / $drpersen1) * 100, 2, '.', '') }}%
+                        </h6>
+                        <hr class="text-white bg-white" />
+                        <h4>Dosis 2</h4>
+                        <h6>Desa {{ $drendah2->desa->desa }}</h6>
+                        <h6>Jumlah {{ $drendah2->total }}</h6>
+                        <h6>persentase {{ number_format((float) ($drendah2->total / $drpersen2) * 100, 2, '.', '') }}%
+                        </h6>
+                        <hr class="text-white bg-white" />
+                        <h4>Dosis 3</h4>
+                        <h6>Desa {{ $drendah3->desa->desa }}</h6>
+                        <h6>Jumlah {{ $drendah3->total }}</h6>
+                        <h6>persentase {{ number_format((float) ($drendah3->total / $drpersen3) * 100, 2, '.', '') }}%
+                        </h6>
+                    </div>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h3>{{ $dosis3 }}</h3>
+
+                        <p>Total Vaksinasi Dosis 3</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ./col -->
+        </div>
+        <div class="row">
             <section class="col-lg-7 connectedSortable">
                 <div class="card">
                     <div class="card-header">

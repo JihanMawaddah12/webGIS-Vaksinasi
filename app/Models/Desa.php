@@ -9,4 +9,8 @@ class Desa extends Model
 {
     use HasFactory;
     protected $guarded =[];
+    function data1()
+    {
+        return $this->hasMany(HalamanData::class, 'desa_id', 'id');
+    }
 }

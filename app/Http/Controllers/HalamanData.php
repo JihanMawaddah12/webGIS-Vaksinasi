@@ -68,11 +68,14 @@ class HalamanData extends Controller
      */
     public function edit($id)
     {
+        $desa = Desa::all();
+
         $tematik = Tematik::all();
         return view('edit', [
             'data' => ModelsHalamanData::with('tematik')->find($id),
             'id' => $id,
             'tematik' => $tematik,
+            'desa'=>$desa
         ]);
     }
 
