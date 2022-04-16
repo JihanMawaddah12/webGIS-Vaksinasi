@@ -43,18 +43,18 @@ http://www.tooplate.com/view/2091-ziggy
         <a href="{{ route('login') }}" class="text-decoration-none text-white m-4 py-1 btn btn-outline-info me-2">
             <h4>Log in</h4>
         </a>
-        <a href="{{ route('Map user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Maps</h4>
-        </a>
-        <a href="#" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Rute</h4>
-        </a>
         <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
             style="border-bottom:1px solid cyan;">
-            <h4>Data</h4>
+            <h4>Home</h4>
+        </a>
+        <a href="{{ route('Rute') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
+            <h4>Rute</h4>
         </a>
         <a href="#" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Panduan</h4>
+        </a>
+        <a href="{{ route('pendaftaran') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
+            <h4>Pendaftaran</h4>
         </a>
     </section>
 
