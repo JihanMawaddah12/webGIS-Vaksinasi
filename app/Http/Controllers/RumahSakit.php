@@ -20,6 +20,18 @@ class RumahSakit extends Controller
         return view('rs.dashboard', ['data' => $data]);
     }
 
+    public function verifikasi($id)
+    {
+        Pendaftaran::find($id)->update(['status'=> 1]);
+        return back();
+    }
+    public function verif()
+    {
+
+        $data = Pendaftaran::where(['halaman_data2_id' => auth()->user()->rm->halaman_data2_id, 'status' => 1])->get();
+        return view('rs.verifikasi', ['data' => $data]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

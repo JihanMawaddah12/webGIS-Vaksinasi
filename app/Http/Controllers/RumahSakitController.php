@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\HalamanData2;
+use App\Models\Pendaftaran;
 use App\Models\RumahSakit;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -53,7 +54,7 @@ class RumahSakitController extends Controller
         ]);
         return redirect()->route('rumah sakit');
     }
-
+   
     /**
      * Display the specified resource.
      *

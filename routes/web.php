@@ -63,4 +63,6 @@ Route::get('/rumahsakit-edit/{id}', [App\Http\Controllers\RumahSakitController::
 Route::post('/rumahsakit-update', [App\Http\Controllers\RumahSakitController::class, 'update'])->name('update rumahsakit');
 Route::get('/home/{tematik_id?}', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/rs/dashboard', [App\Http\Controllers\RumahSakit::class, 'index'])->name('rs dashboard');
+Route::get('/rs/verif', [App\Http\Controllers\RumahSakit::class, 'verif'])->name('verif');
+Route::get('/rs/verifikasi/{id}', [App\Http\Controllers\RumahSakit::class, 'verifikasi'])->name('verifikasi');
 Route::get('/rs/pendaftaran-delete/{id}', [App\Http\Controllers\RumahSakit::class, 'destroy'])->name('pendaftaran hapus');

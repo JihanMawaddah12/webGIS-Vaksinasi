@@ -199,20 +199,27 @@
                                                 <p>Data Tematik</p>
                                             </a>
                                         </li>
-                                         <li class="nav-item">
+                                        <li class="nav-item">
                                             <a href="{{ route('rumah sakit') }}" class="nav-link">
                                                 <p>Data Rumah Sakit</p>
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-
                             @else
-                            <li class="nav-item">
+                                <li class="nav-item">
                                     <a href="{{ route('rs dashboard') }}" class="nav-link">
                                         <i class="nav-icon fas fa-th"></i>
                                         <p>
                                             Dashboard
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('verif') }}" class="nav-link">
+                                        <i class="nav-icon fas fa-th"></i>
+                                        <p>
+                                            Verifikasi
                                         </p>
                                     </a>
                                 </li>
