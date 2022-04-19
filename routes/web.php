@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
-Route::get('/', [App\Http\Controllers\UserController::class, 'data'])->name('Data user');
+Route::get('/', [ App\Http\Controllers\UserController::class, 'data'])->name('Data user');
+Route::get('/panduan', [App\Http\Controllers\PanduanController::class, 'index'])->name('panduan');
 Route::get('/portal/{tematik_id?}', [App\Http\Controllers\UserController::class, 'data'])->name('portal');
 Route::get('/pendaftaran', [App\Http\Controllers\RouteMap::class, 'pendaftaran'])->name('pendaftaran');
 Route::post('/daftar', [App\Http\Controllers\RouteMap::class, 'daftar'])->name('daftar');

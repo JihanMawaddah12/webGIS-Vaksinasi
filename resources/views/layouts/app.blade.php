@@ -98,7 +98,7 @@
         </nav>
         @guest
         @else
-            <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <aside class="main-sidebar sidebar-dark-primary elevation-4 position-fixed">
                 <!-- Brand Logo -->
                 <a href="index3.html" class="brand-link">
                     <span class="brand-text font-weight-light">RK</span>
@@ -139,72 +139,64 @@
                                         </p>
                                     </a>
                                 </li>
+
                                 <li class="nav-item">
-                                    <a href="{{ route('maps lokasi') }}" class="nav-link">
+                                    <a data-bs-toggle="collapse" href="#map"
+                                        class="nav-link btn bg-transparent text-white text-start w-100"
+                                        aria-controls="manajemen" role="button" aria-expanded="true">
                                         <i class="nav-icon fa-solid fa-map"></i>
-                                        <p>
-                                            Maps Lokasi
-                                        </p>
+                                        Maps
+                                        <i class="fas fa-sort-down float-end"></i>
                                     </a>
+
+                                    <div class="collapse " id="map" style="">
+                                        <ul class="nav ms-4 ps-3">
+                                            <li class="nav-item w-100">
+                                                <a class="dropdown-item" href="{{ route('maps lokasi') }}">Lokasi</a>
+                                            </li>
+                                            <li class="nav-item  w-100">
+                                                <a class="dropdown-item" href="{{ route('maps desa') }}">Desa</a>
+                                            </li>
+                                            <li class="nav-item w-100">
+                                                <a class="dropdown-item" href="{{ route('maps') }}">Tematik</a>
+                                            </li>
+                                            <li class="nav-item w-100 ">
+                                                <a class="dropdown-item" href="{{ route('Rute') }}">Rute</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('maps desa') }}" class="nav-link">
-                                        <i class="nav-icon fa-solid fa-map"></i>
-                                        <p>
-                                            Maps Desa
-                                        </p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('maps') }}" class="nav-link">
-                                        <i class="nav-icon fa-solid fa-map"></i>
-                                        <p>
-                                            Maps Tematik
-                                        </p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('Rute') }}" class="nav-link">
-                                        <i class="nav-icon fa-solid fa-map-location"></i>
-                                        <p>
-                                            Rute Map
-                                        </p>
-                                    </a>
-                                </li>
-                                <li class="nav-item menu-open">
-                                    <a href="#" class="nav-link ">
+                                    <a data-bs-toggle="collapse" href="#data"
+                                        class="nav-link btn bg-transparent text-white text-start w-100"
+                                        aria-controls="manajemen" role="button" aria-expanded="true">
                                         <i class="nav-icon fa-solid fa-database"></i>
-                                        <p>
-                                            Data
-                                        </p>
+                                        Data
+                                        <i class="fas fa-sort-down float-end"></i>
                                     </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="{{ route('halaman data') }}" class="nav-link ">
-                                                <p>Data Vaksinasi</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{ route('halaman data2') }}" class="nav-link">
-                                                <p>Data Lokasi</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{ route('halaman desa') }}" class="nav-link">
-                                                <p>Data Desa</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{ route('halaman tematik') }}" class="nav-link">
-                                                <p>Data Tematik</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{ route('rumah sakit') }}" class="nav-link">
-                                                <p>Data Rumah Sakit</p>
-                                            </a>
-                                        </li>
-                                    </ul>
+
+                                    <div class="collapse " id="data" style="">
+                                        <ul class="nav ms-4 ps-3">
+                                            <li class="nav-item w-100">
+                                                <a class="dropdown-item"
+                                                    href="{{ route('halaman data') }}">Vaksinasi</a>
+                                            </li>
+                                            <li class="nav-item  w-100">
+                                                <a class="dropdown-item" href="{{ route('halaman data2') }}">Lokasi</a>
+                                            </li>
+                                            <li class="nav-item w-100">
+                                                <a class="dropdown-item" href="{{ route('halaman desa') }}">Desa</a>
+                                            </li>
+                                            <li class="nav-item w-100">
+                                                <a class="dropdown-item"
+                                                    href="{{ route('halaman tematik') }}">Tematik</a>
+                                            </li>
+                                            <li class="nav-item w-100 ">
+                                                <a class="dropdown-item" href="{{ route('rumah sakit') }}">Rumah
+                                                    Sakit</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
                             @else
                                 <li class="nav-item">
@@ -225,7 +217,7 @@
                                 </li>
                             @endif
                             <li class="nav-item">
-                                <a href="{{ route('maps') }}" class="nav-link">
+                                <a href="{{ route('panduan') }}" class="nav-link">
                                     <i class="nav-icon fa-solid fa-book"></i>
                                     <p>
                                         Panduan

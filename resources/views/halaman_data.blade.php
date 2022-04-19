@@ -82,8 +82,19 @@
             </div>
         </div>
     </div>
-
+    <style>
+        .buttons-pdf{
+            background-color: red;
+            border-radius: 12px;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: 12px;
+            color: white;
+        }
+    </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+
     <script type="text/javascript">
         $('.show_confirm').click(function(event) {
             var form = $(this).closest("form");
@@ -105,8 +116,20 @@
         $(document).ready(function() {
             $('#table').DataTable({
                 pageLength: 100,
+                dom: 'Bfrtip',
                 fixedHeader: true,
+                buttons: [{
+                    extend: 'pdfHtml5',
+                    orientation: 'landscape',
+                    pageSize: 'LEGAL'
+                }]
             });
         });
     </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
 @endsection

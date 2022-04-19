@@ -1,13 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="container">
         <div class="card p-4">
             <div id="map"></div>
         </div>
     </div>
-
 @endsection
 
 @section('styles')
@@ -56,7 +54,6 @@
 @endsection
 
 @push('scripts')
-
     <!-- Leaflet JavaScript -->
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
@@ -66,12 +63,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
         integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+  <link rel="stylesheet" href="{{ asset('storage/Leaflet.BigImage/dist/Leaflet.BigImage.min.css') }}">
+    <script src="{{ asset('storage/Leaflet.BigImage/dist/Leaflet.BigImage.min.js') }}">
+    </script>
     <script type="text/javascript">
         var s = [5.554630942893766, 95.31709742351293];
         var color = {!! json_encode($color) !!};
         var data = {!! json_encode($data) !!}
-
+        var tematik = {!! json_encode($tematik) !!}
+        var jumlah = {!! json_encode($jumlah) !!}
+        var target = {!! json_encode($jmlh_target) !!}
+        console.log(jumlah)
         var map = L.map('map').setView(
             s, 11
         );
@@ -92,8 +94,14 @@
         // menampilkan pop upp info tematik
         info.update = function(props) {
             this._div.innerHTML = '<h4>Kecamatan</h4>' + (props ?
-                '<b>' + props.NAMOBJ + '</b><br />' + props.MhsSIF + ' orang' :
-                'Gerakkan mouse Anda');
+                '<b>' + props.NAMOBJ + '</b><br /> Jumlah Vaksin <br/> Dosis 1: ' + jumlah['1'][props.NAMOBJ] +
+                ' orang (' +
+                ((jumlah['1'][props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> '+
+                'Dosis 2: ' + jumlah['2'][props.NAMOBJ] + ' orang (' +
+                ((jumlah['2'][props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> '+
+                'Dosis 3: ' + jumlah['3'][props.NAMOBJ] + ' orang (' +
+                ((jumlah['3'][props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> '+
+                'Gerakkan mouse Anda':"");
         };
 
         info.addTo(map);
@@ -125,7 +133,7 @@
 
             info.update(layer.feature.properties);
         }
-     
+
         var geojson;
 
         function resetHighlight(e) {
@@ -159,22 +167,18 @@
 
             var div = L.DomUtil.create('div', 'info legend'),
                 grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
-                labels = [],
                 from, to;
-
-            for (var i = 0; i < grades.length; i++) {
-                from = grades[i];
-                to = grades[i + 1];
-
+            labels = []
+            for (var i = 0; i < 10; i++) {
                 labels.push(
-                    '<i style="background:' + getColor(from + 1) + '"></i> ' +
-                    from + (to ? '&ndash;' + to : '+'));
+                    '<i style="background:' + color[tematik[i]] + '"></i> - ' + tematik[i]);
             }
 
-            div.innerHTML = '<h4>Legenda:</h4><br>' + labels.join('<br>');
+            div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
             return div;
         };
 
         legend.addTo(map);
+        L.control.BigImage().addTo(map);
     </script>
 @endpush

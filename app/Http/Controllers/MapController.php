@@ -7,6 +7,7 @@ use App\Models\HalamanData;
 use App\Models\HalamanData2;
 use App\Models\Tematik;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MapController extends Controller
 {
@@ -20,10 +21,46 @@ class MapController extends Controller
         $geofile = [];
         $color = [];
         $coor = [];
+        $jmlh = [];
+        $jmlh_target = [];
         $index = 0;
         $index2 = 0;
         $tematik = Tematik::all();
         $data = HalamanData2::all();
+        $vaksins1 = HalamanData::where('kelompok', 'Dosis 1')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('tematik_id'))->get();
+        $vaksins2 = HalamanData::where('kelompok', 'Dosis 3')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('tematik_id'))->get();
+        $vaksins3 = HalamanData::where('kelompok', 'Dosis 3')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('tematik_id'))->get();
+        $targets = HalamanData::where('kelompok', 'Target')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('tematik_id'))->get();
+
+        foreach ($vaksins1 as $vaksin) {
+            if (isset($jmlh[$vaksin->tematik->kecamatan])) {
+                $jmlh['1'][$vaksin->tematik->kecamatan] = +$vaksin->total;
+            } else {
+                $jmlh['1'][$vaksin->tematik->kecamatan] = $vaksin->total;
+            }
+        }
+        foreach ($vaksins2 as $vaksin) {
+            if (isset($jmlh[$vaksin->tematik->kecamatan])) {
+                $jmlh['2'][$vaksin->tematik->kecamatan] = +$vaksin->total;
+            } else {
+                $jmlh['2'][$vaksin->tematik->kecamatan] = $vaksin->total;
+            }
+        }
+        foreach ($vaksins3 as $vaksin) {
+            if (isset($jmlh[$vaksin->tematik->kecamatan])) {
+                $jmlh['3'][$vaksin->tematik->kecamatan] = +$vaksin->total;
+            } else {
+                $jmlh['3'][$vaksin->tematik->kecamatan] = $vaksin->total;
+            }
+        }
+        foreach ($targets as $target) {
+            if (isset($jmlh_target[$target->tematik->kecamatan])) {
+                $jmlh_target[$target->tematik->kecamatan] = +$target->total;
+            } else {
+                $jmlh_target[$target->tematik->kecamatan] = $target->total;
+            }
+        }
+
         foreach ($tematik as $item) {
             $geofile[$index] = 'storage/' . $item->geojson;
             $index++;
@@ -31,16 +68,18 @@ class MapController extends Controller
         foreach ($tematik as $item) {
             $color[$item->kecamatan] = $item->warna;
         }
+        $kecamatan = $tematik->pluck('kecamatan');
         foreach ($data as $item) {
             $coor[$index2] = [$item->alamat, $item->lat, $item->long];
             $index2++;
         }
-       
-       
         return view('maps', [
             'geofile' => $geofile,
+            'tematik' =>  $kecamatan,
             'color' => $color,
-            'data' => $coor
+            'jumlah' => $jmlh,
+            'data' => $coor,
+            'jmlh_target' => $jmlh_target
         ]);
     }
     public function indexTitik()
@@ -51,7 +90,7 @@ class MapController extends Controller
         $index = 0;
         $index2 = 0;
         $data = HalamanData2::all();
-      
+
         foreach ($data as $item) {
             $coor[$index2] = [$item->alamat, $item->lat, $item->long];
             $index2++;
@@ -70,6 +109,47 @@ class MapController extends Controller
         $index2 = 0;
         $desa = Desa::all();
         $data = HalamanData2::all();
+        $jmlh = [];
+        $jmlh_target = [];
+        $vaksins1 = HalamanData::where('kelompok', 'Dosis 1')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('desa_id'))->get();
+        $vaksins2 = HalamanData::where('kelompok', 'Dosis 3')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('desa_id'))->get();
+        $vaksins3 = HalamanData::where('kelompok', 'Dosis 3')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('desa_id'))->get();
+        $targets = HalamanData::where('kelompok', 'Target')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('desa_id'))->get();
+
+        
+        foreach ($vaksins1 as $vaksin) {
+            if (isset($jmlh[$vaksin->desa->desa])) {
+                $jmlh['1'][$vaksin->desa->desa] = +$vaksin->total;
+            } else {
+                $jmlh['1'][$vaksin->desa->desa] = $vaksin->total;
+            }
+        }
+        foreach ($vaksins2 as $vaksin) {
+            if (isset($jmlh[$vaksin->desa->desa])) {
+                $jmlh['2'][$vaksin->desa->desa] = +$vaksin->total;
+            } else {
+                $jmlh['2'][$vaksin->desa->desa] = $vaksin->total;
+            }
+        }
+        foreach ($vaksins3 as $vaksin) {
+            if (isset($jmlh[$vaksin->desa->desa])) {
+                $jmlh['3'][$vaksin->desa->desa] = +$vaksin->total;
+            } else {
+                $jmlh['3'][$vaksin->desa->desa] = $vaksin->total;
+            }
+        }
+      
+        foreach ($targets as $target) {
+            if ($target->desa) {
+                if (isset($jmlh_target[$target->desa->desa])) {
+                    $jmlh_target[$target->desa->desa] = +$target->total;
+                } else {
+                    $jmlh_target[$target->desa->desa] = $target->total;
+                }
+            }
+          
+        }
+
         foreach ($desa as $item) {
             $geofile[$index] = 'storage/' . $item->geojson;
             $index++;
@@ -81,10 +161,15 @@ class MapController extends Controller
             $coor[$index2] = [$item->alamat, $item->lat, $item->long];
             $index2++;
         }
+        $desa = $desa->pluck('desa');
+
         return view('maps_desa', [
             'geofile' => $geofile,
+            'tematik' =>  $desa,
             'color' => $color,
-            'data' => $coor
+            'jumlah' => $jmlh,
+            'data' => $coor,
+            'jmlh_target' => $jmlh_target
         ]);
     }
     /**
