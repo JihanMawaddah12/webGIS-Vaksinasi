@@ -141,7 +141,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a data-bs-toggle="collapse" href="#map"
+                                    <a data-bs-toggle="collapse" href="#maps"
                                         class="nav-link btn bg-transparent text-white text-start w-100"
                                         aria-controls="manajemen" role="button" aria-expanded="true">
                                         <i class="nav-icon fa-solid fa-map"></i>
@@ -149,7 +149,7 @@
                                         <i class="fas fa-sort-down float-end"></i>
                                     </a>
 
-                                    <div class="collapse " id="map" style="">
+                                    <div class="collapse " id="maps" style="">
                                         <ul class="nav ms-4 ps-3">
                                             <li class="nav-item w-100">
                                                 <a class="dropdown-item" href="{{ route('maps lokasi') }}">Lokasi</a>
@@ -230,7 +230,7 @@
                 <!-- /.sidebar -->
             </aside>
             @endif
-            @guest
+          @guest
                 <main class="mt-4">
                 @else
                     <main class="content-wrapper mt-4">

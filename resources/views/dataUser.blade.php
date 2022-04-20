@@ -607,7 +607,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
             data: {!! json_encode($jumlah) !!},
-
         }],
     };
     const plugin = {
