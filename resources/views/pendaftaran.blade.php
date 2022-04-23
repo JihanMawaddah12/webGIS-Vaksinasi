@@ -16,7 +16,7 @@ Template 2091 Ziggy
 http://www.tooplate.com/view/2091-ziggy
 
 -->
-    <title>Ziggy HTML Template</title>
+    <title>Vaksinasi COVID-19 Dinas Kesehatan Kota Banda Aceh</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -99,25 +99,22 @@ http://www.tooplate.com/view/2091-ziggy
 
 <body>
 
-    <section class="w-100" style="background-color: #2B333F">
-        <a href="{{ route('login') }}" class="text-decoration-none text-white m-4 py-1 btn btn-outline-info me-2">
+    <section class="w-100" style="background-color: #4F8A8B">
+        <a href="{{ route('login') }}" class="text-decoration-none text-white m-4 py-1 btn btn-outline-light me-2">
             <h4>Log in</h4>
         </a>
-        <a href="{{ route('Map user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Maps</h4>
+        <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
+            <h4>Home</h4>
         </a>
-        <a href="#" class="text-decoration-none text-white m-4 py-1 me-2 btn">
+        <a href="{{ route('Rute') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Rute</h4>
         </a>
-        <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Data</h4>
-        </a>
-        <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
-            style="border-bottom:1px solid cyan;">
-            <h4>Pendaftaran</h4>
-        </a>
-        <a href="#" class="text-decoration-none text-white m-4 py-1 me-2 btn">
+        <a href="{{ route('panduan') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Panduan</h4>
+        </a>
+        <a href="{{ route('pendaftaran') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
+            style="border-bottom:1px solid white;">
+            <h4>Daftar Vaksinasi</h4>
         </a>
     </section>
 
@@ -135,7 +132,7 @@ http://www.tooplate.com/view/2091-ziggy
                         <form action="{{ route('daftar') }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <label for="rm">Rumah sakit</label>
+                                <label for="rm">Lokasi Vaksinasi</label>
                                 <input type="text" id="rm" class="form-control" required disabled>
                                 <input type="hidden" id="rm_id" name="halaman_data2_id" required>
                             </div>
@@ -163,6 +160,33 @@ http://www.tooplate.com/view/2091-ziggy
 
                                 </div>
 
+                            </div>
+                            <div class="form-group my-3">
+                                <label>Alamat Lengkap Sesuai KTP</label>
+                                <input type="text" class="form-control" name="alamat" required>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group my-3">
+                                        <select name="tematik_id" id="" class="form-control">
+                                            <option value="">--Pilih Kecamatan--</option>
+                                            @foreach ($kecamatan as $item)
+                                                <option value="{{ $item->id }}">{{ $item->kecamatan }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group my-3">
+                                        <select name="desa_id" id="" class="form-control">
+                                            <option value="">--Pilih Desa--</option>
+                                            @foreach ($desa as $item)
+                                                <option value="{{ $item->id }}">{{ $item->desa }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group mt-3">
                                 <label>No HP aktif</label>
@@ -195,33 +219,6 @@ http://www.tooplate.com/view/2091-ziggy
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group my-3">
-                                <label>Alamat Lengkap Sesuai KTP</label>
-                                <input type="text" class="form-control" name="alamat" required>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group my-3">
-                                        <select name="tematik_id" id="" class="form-control">
-                                            <option value="">--Pilih Kecamatan--</option>
-                                            @foreach ($kecamatan as $item)
-                                                <option value="{{ $item->id }}">{{ $item->kecamatan }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group my-3">
-                                        <select name="desa_id" id="" class="form-control">
-                                            <option value="">--Pilih Desa--</option>
-                                            @foreach ($desa as $item)
-                                                <option value="{{ $item->id }}">{{ $item->desa }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
                             @if (session('error'))
                                 <div class="alert alert-danger">
                                     Data telah terdaftar
@@ -241,16 +238,12 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 <div class="col-md-12">
                     <ul>
-                        <li><a href="https://www.facebook.com/tooplate"><i class="fa fa-facebook"></i></a>
+                        <li><a href="https://web.facebook.com/profile.php?id=100066531401790"><i
+                                    class="fab fa-facebook-f"></i></a>
                         </li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="https://dinkes.bandaacehkota.go.id/"><i class="fa fa-globe"></i></a></li>
                     </ul>
-                    <p class="text-white">Copyright &copy; 2017 Company Name
-
-                        | Design: <a href="https://www.facebook.com/tooplate" target="_parent">Tooplate</a>
+                    <p class="text-white">Dinas Kesehatan Kota Banda Aceh | 2022
                     </p>
                 </div>
             </div>

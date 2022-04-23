@@ -16,7 +16,7 @@ Template 2091 Ziggy
 http://www.tooplate.com/view/2091-ziggy
 
 -->
-    <title>Ziggy HTML Template</title>
+    <title>Vaksinasi COVID-19 Dinas Kesehatan Kota Banda Aceh</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -89,9 +89,11 @@ http://www.tooplate.com/view/2091-ziggy
             background-color: white;
             padding: 1rem
         }
-        .leaflet-right{
+
+        .leaflet-right {
             max-width: 50%;
         }
+
     </style>
 </head>
 

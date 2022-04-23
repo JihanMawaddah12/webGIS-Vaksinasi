@@ -116,7 +116,7 @@
                 opacity: 1,
                 color: 'white',
                 dashArray: '3',
-                fillOpacity: 0.7,
+                fillOpacity: 1.0,
                 fillColor: color[feature.properties.NAMOBJ]
             };
         }

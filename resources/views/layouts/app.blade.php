@@ -45,15 +45,15 @@
 
 <body>
     <div id="app">
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="background-color: #EDE6DB">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+                    <a class="nav-link" data-widget="pushmenu" href="{{ route('Data user') }}" role="button"><i
                             class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
+                    <a href={{ route('Data user') }} class="nav-link">Home</a>
                 </li>
 
             </ul>
@@ -67,12 +67,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
-                    @endif
-
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
                     @endif
                 @else
                     <li class="nav-item dropdown">
@@ -98,10 +92,11 @@
         </nav>
         @guest
         @else
-            <aside class="main-sidebar sidebar-dark-primary elevation-4 position-fixed">
+            <aside class="main-sidebar sidebar-dark-primary elevation-4 position-fixed" style="background-color: #417D7A">
                 <!-- Brand Logo -->
-                <a href="index3.html" class="brand-link">
-                    <span class="brand-text font-weight-light">RK</span>
+                <a href="{{ route('Data user') }}" class="brand-link">
+
+                    <h2 class="brand-text font-weight-light">Dinas Kesehatan <br> Kota Banda Aceh</>
                 </a>
 
                 <!-- Sidebar -->
@@ -113,18 +108,6 @@
                         </div>
                     </div>
 
-                    <!-- SidebarSearch Form -->
-                    <div class="form-inline">
-                        <div class="input-group" data-widget="sidebar-search">
-                            <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                                aria-label="Search">
-                            <div class="input-group-append">
-                                <button class="btn btn-sidebar">
-                                    <i class="fas fa-search fa-fw"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                     <!-- Sidebar Menu -->
                     <nav class="mt-2">
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
@@ -152,13 +135,14 @@
                                     <div class="collapse " id="maps" style="">
                                         <ul class="nav ms-4 ps-3">
                                             <li class="nav-item w-100">
-                                                <a class="dropdown-item" href="{{ route('maps lokasi') }}">Lokasi</a>
+                                                <a class="dropdown-item" href="{{ route('maps lokasi') }}">Lokasi
+                                                    Vaksinasi</a>
                                             </li>
                                             <li class="nav-item  w-100">
                                                 <a class="dropdown-item" href="{{ route('maps desa') }}">Desa</a>
                                             </li>
                                             <li class="nav-item w-100">
-                                                <a class="dropdown-item" href="{{ route('maps') }}">Tematik</a>
+                                                <a class="dropdown-item" href="{{ route('maps') }}">Kecamatan</a>
                                             </li>
                                             <li class="nav-item w-100 ">
                                                 <a class="dropdown-item" href="{{ route('Rute') }}">Rute</a>
@@ -178,22 +162,23 @@
                                     <div class="collapse " id="data" style="">
                                         <ul class="nav ms-4 ps-3">
                                             <li class="nav-item w-100">
-                                                <a class="dropdown-item"
-                                                    href="{{ route('halaman data') }}">Vaksinasi</a>
+                                                <a class="dropdown-item" href="{{ route('halaman data') }}"> Data
+                                                    Vaksinasi</a>
                                             </li>
                                             <li class="nav-item  w-100">
-                                                <a class="dropdown-item" href="{{ route('halaman data2') }}">Lokasi</a>
+                                                <a class="dropdown-item" href="{{ route('halaman data2') }}">Data Lokasi
+                                                    Vaksinasi</a>
                                             </li>
                                             <li class="nav-item w-100">
-                                                <a class="dropdown-item" href="{{ route('halaman desa') }}">Desa</a>
+                                                <a class="dropdown-item" href="{{ route('halaman desa') }}">Data
+                                                    Desa</a>
                                             </li>
                                             <li class="nav-item w-100">
-                                                <a class="dropdown-item"
-                                                    href="{{ route('halaman tematik') }}">Tematik</a>
+                                                <a class="dropdown-item" href="{{ route('halaman tematik') }}">Data
+                                                    Kecamatan</a>
                                             </li>
                                             <li class="nav-item w-100 ">
-                                                <a class="dropdown-item" href="{{ route('rumah sakit') }}">Rumah
-                                                    Sakit</a>
+                                                <a class="dropdown-item" href="{{ route('rumah sakit') }}">Data User</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -230,7 +215,7 @@
                 <!-- /.sidebar -->
             </aside>
             @endif
-          @guest
+            @guest
                 <main class="mt-4">
                 @else
                     <main class="content-wrapper mt-4">

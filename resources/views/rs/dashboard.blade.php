@@ -14,7 +14,7 @@
                     <thead>
                         <tr>
                             <th>
-                                no
+                                No
                             </th>
                             <th>Dosis</th>
                             <th>Nama</th>
@@ -39,7 +39,8 @@
                                 <td>{{ $item->created_at }}</td>
                                 <td class="w-25">
                                     <form action="{{ route('pendaftaran hapus', ['id' => $item->id]) }}" method="get">
-                                        <a href="{{route('verifikasi',['id'=>$item->id])}}" class="btn btn-success">Verifikasi</a>
+                                        <a href="{{ route('verifikasi', ['id' => $item->id]) }}"
+                                            class="btn btn-success">Verifikasi</a>
                                         <button type="submit" class="delete show_confirm border-0 p-0 bg-transparent"><i
                                                 class="material-icons" data-toggle="tooltip"
                                                 title="Delete">&#xE872;</i></button>

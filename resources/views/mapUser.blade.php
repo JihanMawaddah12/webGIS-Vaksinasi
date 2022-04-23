@@ -16,7 +16,7 @@ Template 2091 Ziggy
 http://www.tooplate.com/view/2091-ziggy
 
 -->
-    <title>Ziggy HTML Template</title>
+    <title>Vaksinasi COVID-19 Dinas Kesehatan Kota Banda Aceh</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -50,7 +50,7 @@ http://www.tooplate.com/view/2091-ziggy
         <a href="#" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Heatmaps</h4>
         </a>
-        <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn" >
+        <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Data</h4>
         </a>
         <a href="#" class="text-decoration-none text-white m-4 py-1 me-2 btn">

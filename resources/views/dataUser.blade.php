@@ -16,7 +16,7 @@ Template 2091 Ziggy
 http://www.tooplate.com/view/2091-ziggy
 
 -->
-    <title>Ziggy HTML Template</title>
+    <title>Vaksinasi COVID-19 Dinas Kesehatan Kota Banda Aceh</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,8 +46,8 @@ http://www.tooplate.com/view/2091-ziggy
         .info {
             padding: 6px 8px;
             font: 14px/16px Arial, Helvetica, sans-serif;
-            background: white;
-            background: rgba(255, 255, 255, 0.8);
+            background: #EEEEEE;
+            background: #EEEEEE(255, 255, 255, 0.8);
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             border-radius: 5px;
         }
@@ -77,42 +77,43 @@ http://www.tooplate.com/view/2091-ziggy
 <body>
 
 
-    <section class="w-100" style="background-color: #2B333F">
-        <a href="{{ route('login') }}" class="text-decoration-none text-white m-4 py-1 btn btn-outline-info me-2">
-            <h2>Log in</h2>
+    <section class="w-100" style="background-color: #4F8A8B">
+        <a href="{{ route('login') }}" class="text-decoration-none text-white m-4 py-1 btn btn-outline-light me-2">
+            <h4>Log in</h4>
         </a>
         <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
-            style="border-bottom:1px solid cyan;">
-            <h2>Home</h2>
+            style="border-bottom:1px solid white;">
+            <h4>Home</h4>
         </a>
         <a href="{{ route('Rute') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h2>Rute</h2>
+            <h4>Rute</h4>
         </a>
-        <a href="#" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h2>Panduan</h2>
+        <a href="{{ route('panduan') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
+            <h4>Panduan</h4>
         </a>
         <a href="{{ route('pendaftaran') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h2>Pendaftaran</h2>
+            <h4>Daftar Vaksinasi</h4>
         </a>
     </section>
 
-    <section class="second-section">
+    <section class="second-section" style=" background-color: #EDE6DB">
+        <h1>Vaksinasi COVID-19 Kota Banda Aceh</h1><br>
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="card p-2 text-white bg-info">
+                    <div class="card p-2 text-black text-white" style="background-color:#639476">
                         <div class="inner">
                             <h3>{{ $target }}</h3>
 
-                            <p class="text-white">Sasaran Vaksinasi</p>
+                            <h4 class="text-white">Sasaran Vaksinasi</h4>
                         </div>
                     </div>
                 </div>
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="card p-2 text-white bg-success">
+                    <div class="card p-2 text-white text-white" style="background-color:rgb(65, 125, 122)">
                         <div class="inner">
                             <div class="row">
                                 <div class="col">
@@ -124,7 +125,7 @@ http://www.tooplate.com/view/2091-ziggy
                                     </h3>
                                 </div>
                             </div>
-                            <p class="text-white">Total Vaksinasi Dosis 1</p>
+                            <h4 class="text-white">Total Vaksinasi Dosis 1</h4>
 
                         </div>
                     </div>
@@ -132,7 +133,7 @@ http://www.tooplate.com/view/2091-ziggy
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="card p-2 text-white bg-warning">
+                    <div class="card p-2 text-white text-white" style="background-color:rgb(29, 92, 99)">
                         <div class="inner">
                             <div class="row">
                                 <div class="col">
@@ -144,7 +145,7 @@ http://www.tooplate.com/view/2091-ziggy
                                     </h3>
                                 </div>
                             </div>
-                            <p class="text-white">Total Vaksinasi Dosis 2</p>
+                            <h4 class="text-white">Total Vaksinasi Dosis 2</h4>
 
                         </div>
                     </div>
@@ -152,7 +153,7 @@ http://www.tooplate.com/view/2091-ziggy
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="card p-2 text-white bg-danger">
+                    <div class="card p-2 text-white text-white" style="background-color:rgb(26, 60, 64)">
                         <div class="inner">
                             <div class="row">
                                 <div class="col">
@@ -164,7 +165,7 @@ http://www.tooplate.com/view/2091-ziggy
                                     </h3>
                                 </div>
                             </div>
-                            <p class="text-white">Total Vaksinasi Dosis 3</p>
+                            <h4 class="text-white">Total Vaksinasi Dosis 3</h4>
 
                         </div>
                     </div>
@@ -174,8 +175,10 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <h2>Dosis terendah</h2>
-                    <div class="card p-2 text-white bg-info">
+                    <br>
+                    <div class="card p-2 text-white" style="background-color:#112031">
+                        <h3>Dosis Terendah (Kecamatan)</h3>
+                        <hr class="text-white bg-white" />
                         <div class="inner">
                             <h2>Dosis 1</h2>
                             <h6>Kecamatan {{ $krendah1->tematik->kecamatan }}</h6>
@@ -203,8 +206,10 @@ http://www.tooplate.com/view/2091-ziggy
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <h2>Dosis tertinggi</h2>
-                    <div class="card p-2 text-white text-white" style="background-color:rgb(99, 70, 227)">
+                    <br>
+                    <div class="card p-2 text-white text-white" style="background-color:rgb(52, 91, 99)">
+                        <h3>Dosis tertinggi (Kecamatan)</h3>
+                        <hr class="text-white bg-white" />
                         <div class="inner">
                             <h2>Dosis 1</h2>
                             <h6>Kecamatan {{ $ktinggi1->tematik->kecamatan }}</h6>
@@ -232,8 +237,10 @@ http://www.tooplate.com/view/2091-ziggy
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <h2>Dosis desa terendah</h2>
-                    <div class="card p-2 text-white bg-info">
+                    <br>
+                    <div class="card p-2 text-white" style="background-color:#112031">
+                        <h3>Dosis Terendah<br>(Desa)</h3>
+                        <hr class="text-white bg-white" />
                         <div class="inner">
                             <h2>Dosis 1</h2>
                             <h6>Desa {{ $drendah1->desa->desa }}</h6>
@@ -261,8 +268,10 @@ http://www.tooplate.com/view/2091-ziggy
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <h2>Dosis desa tertinggi</h2>
-                    <div class="card p-2 text-white bg-info">
+                    <br>
+                    <div class="card p-2 text-white" style="background-color:rgb(52, 91, 99)">
+                        <h3>Dosis Tertinggi <br>(Desa)</h3>
+                        <hr class="text-white bg-white" />
                         <div class="inner">
                             <h2>Dosis 1</h2>
                             <h6>Desa {{ $dtinggi1->desa->desa }}</h6>
@@ -291,9 +300,11 @@ http://www.tooplate.com/view/2091-ziggy
 
                 <!-- ./col -->
             </div>
-            <div class="mb-2">
-                <h2>Nakes</h2>
-                <div class="p-4 w-100 rounded shadow bg-info text-white">
+            <div class="col-lg-6 col-6">
+                <br>
+                <div class="p-4 w-100 rounded shadow text-white" style="background-color:#417D7A">
+                    <h3>Tenaga Kesehatan</h3>
+                    <hr class="text-white bg-white" />
                     <div class="inner">
                         <div class="row">
                             <div class="col">
@@ -322,161 +333,174 @@ http://www.tooplate.com/view/2091-ziggy
                     </div>
 
                 </div>
-                <div class="mb-2">
+            </div>
+            <div class="col-lg-6 col-6">
+                <br>
+                <div class="p-4 w-100 rounded shadow text-white" style="background-color:#1D5C63">
                     <h2>Petugas Publik</h2>
-                    <div class="p-4 w-100 rounded shadow bg-info text-white">
-                        <div class="inner">
-                            <div class="row">
-                                <div class="col">
-                                    <h2>Dosis 1</h2>
-                                    <h6>Jumlah {{ $dosis1_petugas }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis1_petugas / $target_petugas) * 100, 2, '.', '') }}%
-                                    </h3>
-                                </div>
-                                <div class="col">
-                                    <h2>Dosis 2</h2>
+                    <hr class="text-white bg-white" />
+                    <div class="inner">
+                        <div class="row">
+                            <div class="col">
+                                <h2>Dosis 1</h2>
+                                <h6>Jumlah {{ $dosis1_petugas }}</h6>
+                                <h3>
+                                    {{ number_format((float) ($dosis1_petugas / $target_petugas) * 100, 2, '.', '') }}%
+                                </h3>
+                            </div>
+                            <div class="col">
+                                <h2>Dosis 2</h2>
 
-                                    <h6>Jumlah {{ $dosis2_petugas }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis2_petugas / $target_petugas) * 100, 2, '.', '') }}%
-                                    </h3>
-                                </div>
-                                <div class="col">
-                                    <h2>Dosis 3</h2>
-                                    <h6>Jumlah {{ $dosis3_petugas }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis3_petugas / $target_petugas) * 100, 2, '.', '') }}%
-                                        </h6>
-                                </div>
+                                <h6>Jumlah {{ $dosis2_petugas }}</h6>
+                                <h3>
+                                    {{ number_format((float) ($dosis2_petugas / $target_petugas) * 100, 2, '.', '') }}%
+                                </h3>
+                            </div>
+                            <div class="col">
+                                <h2>Dosis 3</h2>
+                                <h6>Jumlah {{ $dosis3_petugas }}</h6>
+                                <h3>
+                                    {{ number_format((float) ($dosis3_petugas / $target_petugas) * 100, 2, '.', '') }}%
+                                    </h6>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="mb-2">
+            </div>
+            <div class="col-lg-6 col-6">
+                <br>
+                <div class="p-4 w-100 rounded shadow text-white" style="background-color:#1A3C40">
                     <h2>Lansia</h2>
-                    <div class="p-4 w-100 rounded shadow bg-info text-white">
-                        <div class="inner">
-                            <div class="row">
-                                <div class="col">
-                                    <h2>Dosis 1</h2>
-                                    <h6>Jumlah {{ $dosis1_lansia }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis1_lansia / $target_lansia) * 100, 2, '.', '') }}%
-                                    </h3>
-                                </div>
-                                <div class="col">
-                                    <h2>Dosis 2</h2>
+                    <hr class="text-white bg-white" />
+                    <div class="inner">
+                        <div class="row">
+                            <div class="col">
+                                <h2>Dosis 1</h2>
+                                <h6>Jumlah {{ $dosis1_lansia }}</h6>
+                                <h3>
+                                    {{ number_format((float) ($dosis1_lansia / $target_lansia) * 100, 2, '.', '') }}%
+                                </h3>
+                            </div>
+                            <div class="col">
+                                <h2>Dosis 2</h2>
 
-                                    <h6>Jumlah {{ $dosis2_lansia }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis2_lansia / $target_lansia) * 100, 2, '.', '') }}%
-                                    </h3>
-                                </div>
-                                <div class="col">
-                                    <h2>Dosis 3</h2>
-                                    <h6>Jumlah {{ $dosis3_lansia }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis3_lansia / $target_lansia) * 100, 2, '.', '') }}%
-                                        </h6>
-                                </div>
+                                <h6>Jumlah {{ $dosis2_lansia }}</h6>
+                                <h3>
+                                    {{ number_format((float) ($dosis2_lansia / $target_lansia) * 100, 2, '.', '') }}%
+                                </h3>
+                            </div>
+                            <div class="col">
+                                <h2>Dosis 3</h2>
+                                <h6>Jumlah {{ $dosis3_lansia }}</h6>
+                                <h3>
+                                    {{ number_format((float) ($dosis3_lansia / $target_lansia) * 100, 2, '.', '') }}%
+                                    </h6>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="mb-2">
+            </div>
+            <div class="col-lg-6 col-6">
+                <br>
+                <div class="p-4 w-100 rounded shadow text-white" style="background-color:#417D7A">
                     <h2>Masyarakat</h2>
-                    <div class="p-4 w-100 rounded shadow bg-info text-white">
-                        <div class="inner">
-                            <div class="row">
-                                <div class="col">
-                                    <h2>Dosis 1</h2>
-                                    <h6>Jumlah {{ $dosis1_masyarakat }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis1_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
-                                    </h3>
-                                </div>
-                                <div class="col">
-                                    <h2>Dosis 2</h2>
+                    <hr class="text-white bg-white" />
+                    <div class="inner">
+                        <div class="row">
+                            <div class="col">
+                                <h2>Dosis 1</h2>
+                                <h6>Jumlah {{ $dosis1_masyarakat }}</h6>
+                                <h3>
+                                    {{ number_format((float) ($dosis1_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
+                                </h3>
+                            </div>
+                            <div class="col">
+                                <h2>Dosis 2</h2>
 
-                                    <h6>Jumlah {{ $dosis2_masyarakat }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis2_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
-                                    </h3>
-                                </div>
-                                <div class="col">
-                                    <h2>Dosis 3</h2>
-                                    <h6>Jumlah {{ $dosis3_masyarakat }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis3_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
-                                        </h6>
-                                </div>
+                                <h6>Jumlah {{ $dosis2_masyarakat }}</h6>
+                                <h3>
+                                    {{ number_format((float) ($dosis2_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
+                                </h3>
+                            </div>
+                            <div class="col">
+                                <h2>Dosis 3</h2>
+                                <h6>Jumlah {{ $dosis3_masyarakat }}</h6>
+                                <h3>
+                                    {{ number_format((float) ($dosis3_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
+                                    </h6>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="mb-2">
+            </div>
+            <div class="col-lg-6 col-6">
+                <br>
+                <div class="p-4 w-100 rounded shadow text-white" style="background-color:#1D5C63">
                     <h2>Remaja</h2>
-                    <div class="p-4 w-100 rounded shadow bg-info text-white">
-                        <div class="inner">
-                            <div class="row">
-                                <div class="col">
-                                    <h2>Dosis 1</h2>
-                                    <h6>Jumlah {{ $dosis1_remaja }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis1_remaja / $target_remaja) * 100, 2, '.', '') }}%
-                                    </h3>
-                                </div>
-                                <div class="col">
-                                    <h2>Dosis 2</h2>
+                    <hr class="text-white bg-white" />
+                    <div class="inner">
+                        <div class="row">
+                            <div class="col">
+                                <h2>Dosis 1</h2>
+                                <h6>Jumlah {{ $dosis1_remaja }}</h6>
+                                <h3>
+                                    {{ number_format((float) ($dosis1_remaja / $target_remaja) * 100, 2, '.', '') }}%
+                                </h3>
+                            </div>
+                            <div class="col">
+                                <h2>Dosis 2</h2>
 
-                                    <h6>Jumlah {{ $dosis2_remaja }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis2_remaja / $target_remaja) * 100, 2, '.', '') }}%
-                                    </h3>
-                                </div>
-                                <div class="col">
-                                    <h2>Dosis 3</h2>
-                                    <h6>Jumlah {{ $dosis3_remaja }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis3_remaja / $target_remaja) * 100, 2, '.', '') }}%
-                                        </h6>
-                                </div>
+                                <h6>Jumlah {{ $dosis2_remaja }}</h6>
+                                <h3>
+                                    {{ number_format((float) ($dosis2_remaja / $target_remaja) * 100, 2, '.', '') }}%
+                                </h3>
+                            </div>
+                            <div class="col">
+                                <h2>Dosis 3</h2>
+                                <h6>Jumlah {{ $dosis3_remaja }}</h6>
+                                <h3>
+                                    {{ number_format((float) ($dosis3_remaja / $target_remaja) * 100, 2, '.', '') }}%
+                                    </h6>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="mb-2">
+            </div>
+            <div class="col-lg-6 col-6">
+                <br>
+                <div class="p-4 w-100 rounded shadow text-white" style="background-color:#1A3C40">
                     <h2>Usia 6-11 tahun</h2>
-                    <div class="p-4 w-100 rounded shadow bg-info text-white">
-                        <div class="inner">
-                            <div class="row">
-                                <div class="col">
-                                    <h2>Dosis 1</h2>
-                                    <h6>Jumlah {{ $dosis1_usia }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis1_usia / $target_usia) * 100, 2, '.', '') }}%
-                                    </h3>
-                                </div>
-                                <div class="col">
-                                    <h2>Dosis 2</h2>
+                    <hr class="text-white bg-white" />
+                    <div class="inner">
+                        <div class="row">
+                            <div class="col">
+                                <h2>Dosis 1</h2>
+                                <h6>Jumlah {{ $dosis1_usia }}</h6>
+                                <h3>
+                                    {{ number_format((float) ($dosis1_usia / $target_usia) * 100, 2, '.', '') }}%
+                                </h3>
+                            </div>
+                            <div class="col">
+                                <h2>Dosis 2</h2>
 
-                                    <h6>Jumlah {{ $dosis2_usia }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis2_usia / $target_usia) * 100, 2, '.', '') }}%
-                                    </h3>
-                                </div>
-                                <div class="col">
-                                    <h2>Dosis 3</h2>
-                                    <h6>Jumlah {{ $dosis3_usia }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis3_usia / $target_usia) * 100, 2, '.', '') }}%
-                                        </h6>
-                                </div>
+                                <h6>Jumlah {{ $dosis2_usia }}</h6>
+                                <h3>
+                                    {{ number_format((float) ($dosis2_usia / $target_usia) * 100, 2, '.', '') }}%
+                                </h3>
+                            </div>
+                            <div class="col">
+                                <h2>Dosis 3</h2>
+                                <h6>Jumlah {{ $dosis3_usia }}</h6>
+                                <h3>
+                                    {{ number_format((float) ($dosis3_usia / $target_usia) * 100, 2, '.', '') }}%
+                                    </h6>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="mb-2">
+
                 <div class="row">
 
                     <section class="col-lg-7 connectedSortable">
@@ -565,17 +589,12 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 <div class="col-md-12">
                     <ul>
-                        <li><a href="https://www.facebook.com/tooplate"><i class="fa fa-facebook"></i></a>
+                        <li><a href="https://web.facebook.com/search/top?q=dinas%20kesehatan%20kota%20banda%20aceh"><i
+                                    class="fab fa-facebook-f"></i></a>
                         </li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="https://dinkes.bandaacehkota.go.id/"><i class="fa fa-globe"></i></a></li>
                     </ul>
-                    <p class="text-white">Copyright &copy; 2017 Company Name
-
-                        | Design: <a href="https://www.facebook.com/tooplate" target="_parent">Tooplate</a>
-                    </p>
+                    <p class="text-white">Dinas Kesehatan Kota Banda Aceh | 2022 </p>
                 </div>
             </div>
         </div>
@@ -763,8 +782,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     //menampilkan pop up info tematik
     info.update = function(props) {
         this._div.innerHTML = '<h2>Kecamatan</h2>' + (props ?
-            '<b>' + props.NAMOBJ + '</b><br />' + props.MhsSIF + ' orang' :
-            'Gerakkan mouse Anda');
+            '<b>' + props.NAMOBJ :
+            'Klik wilayah');
     };
 
     info.addTo(map);
@@ -773,7 +792,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         return {
             weight: 2,
             opacity: 1,
-            color: 'white',
+            color: 'black',
             dashArray: '3',
             fillOpacity: 0.7,
             fillColor: color[feature.properties.NAMOBJ]

@@ -16,7 +16,7 @@ Template 2091 Ziggy
 http://www.tooplate.com/view/2091-ziggy
 
 -->
-    <title>Ziggy HTML Template</title>
+    <title>Vaksinasi COVID-19 Dinas Kesehatan Kota Banda Aceh</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -47,7 +47,7 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-content">
-                        <h2>Welcome To Ziggy</h2>
+                        <h2>Vaksinasi COVID-19 Dinas Kesehatan Kota Banda Aceh</h2>
                         <div class="line-dec"></div>
                         <span>This is clean &amp; professional html template</span>
                     </div>
@@ -60,14 +60,12 @@ http://www.tooplate.com/view/2091-ziggy
         <div class="container">
             <div class="row mx-auto">
                 <div class="col-md-3 col-sm-6">
-                    <a href="{{route('Map user')}}" class="btn btn-outline-info py-2">
+                    <a href="{{ route('Map user') }}" class="btn btn-outline-info py-2">
                         <div class="service-item">
                             <div class="icon">
                                 <i class="fa-solid fa-map-location h1"></i>
                             </div>
                             <h4>Maps</h4>
-                            <p>Aliquam ex velit, viverra eu tristique vel, rhoncus nec ligula. In vel massa sed dolor
-                                pharetra interdum vitae posuere.</p>
                         </div>
                     </a>
                 </div>
@@ -78,20 +76,16 @@ http://www.tooplate.com/view/2091-ziggy
                                 <i class="fa-solid fa-map h1"></i>
                             </div>
                             <h4>Rute</h4>
-                            <p>Sed pulvinar ipsum id leo volutpat, in convallis lectus molestie. Aliquam nisi sapien,
-                                faucibus eu consequat id, egestas vitae augue.</p>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-7">
-                    <a href="{{route('Data user')}}" class="btn btn-outline-info py-2">
+                    <a href="{{ route('Data user') }}" class="btn btn-outline-info py-2">
                         <div class="service-item">
                             <div class="icon">
                                 <i class="fa-solid fa-database h1"></i>
                             </div>
                             <h4>Data</h4>
-                            <p>Sed pulvinar ipsum id leo volutpat, in convallis lectus molestie. Aliquam nisi sapien,
-                                faucibus eu consequat id, egestas vitae augue.</p>
                         </div>
                     </a>
                 </div>
@@ -102,81 +96,20 @@ http://www.tooplate.com/view/2091-ziggy
                                 <i class="fa-solid fa-book h1"></i>
                             </div>
                             <h4>Panduan</h4>
-                            <p>Aliquam ex velit, viverra eu tristique vel, rhoncus nec ligula. In vel massa sed dolor
-                                pharetra interdum vitae posuere.</p>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <a href="{{route('pendaftaran map')}}" class="btn btn-outline-info py-2">
+                    <a href="{{ route('pendaftaran map') }}" class="btn btn-outline-info py-2">
                         <div class="service-item">
                             <div class="icon">
                                 <i class="fa-solid fa-pen h1"></i>
                             </div>
                             <h4>Pendaftaran vaksin</h4>
-                            <p>Aliquam ex velit, viverra eu tristique vel, rhoncus nec ligula. In vel massa sed dolor
-                                pharetra interdum vitae posuere.</p>
                         </div>
                     </a>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <section class="third-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="left-image col-md-4">
-                        <img src="{{ asset('storage/img/left-image.png') }}" alt="">
-                    </div>
-                    <div class="right-text col-md-8">
-                        <h4><em>Integer suscipit</em><br>Nullam volutpat mi vel</h4>
-                        <p>Nulla tempor lectus at mauris bibendum porttitor. Aenean ultrices orci id nibh sodales, vel
-                            suscipit arcu vulputate. Pellentesque hendrerit diam quis leo dignissim, lacinia interdum
-                            nunc volutpat. Morbi lobortis mattis lectus, a dictum augue lobortis non. Fusce eu nulla
-                            sagittis, scelerisque eros fringilla, commodo dolor.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="fivth-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="left-text col-md-8">
-                        <h4><em>Aliquam efficitur</em><br>augue et libero vulputate feugiat</h4>
-                        <p>Mauris eget orci porta, aliquam neque sit amet, porttitor dui. Donec efficitur vehicula justo
-                            quis varius. Vivamus pharetra lorem eget turpis ornare tempus. Vivamus ac sodales lectus.
-                            Morbi rhoncus feugiat neque ultrices rhoncus. Maecenas ultrices, nisl pellentesque hendrerit
-                            dignissim, ante purus hendrerit urna, eu tristique est massa quis risus.</p>
-                    </div>
-                    <div class="right-image col-md-4">
-                        <img src="{{ asset('storage/img/right-image.png') }}" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="sixth-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-
-                </div>
-                <div class="col-md-5">
-                    <div class="right-info">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-envelope"></i>hello@company.com</a></li>
-                            <li><a href="#"><i class="fa fa-phone"></i>050 060 0780 / 050 060 0110</a></li>
-                            <li><a href="#"><i class="fa fa-map-marker"></i>1186 New Street, ST 10990</a></li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -186,15 +119,12 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 <div class="col-md-12">
                     <ul>
-                        <li><a href="https://www.facebook.com/tooplate"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="https://web.facebook.com/search/top?q=dinas%20kesehatan%20kota%20banda%20aceh"><i
+                                    class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="https://dinkes.bandaacehkota.go.id/"><i class="fa fa-globe"></i></a></li>
                     </ul>
-                    <p>Copyright &copy; 2017 Company Name
-
-                        | Design: <a href="https://www.facebook.com/tooplate" target="_parent">Tooplate</a></p>
+                    <p class="text-white">Dinas Kesehatan Kota Banda Aceh | 2022 </p>
                 </div>
             </div>
         </div>

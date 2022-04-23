@@ -37,9 +37,8 @@
                                 <td class="w-25">
 
                                     <form action="{{ route('delete desa', ['id' => $item->id]) }}" method="get">
-                                        <a href="{{ route('edit desa', ['id' => $item->id]) }}"
-                                            class="edit"><i class="material-icons" data-toggle="tooltip"
-                                                title="Edit">&#xE254;</i></a>
+                                        <a href="{{ route('edit desa', ['id' => $item->id]) }}" class="edit"><i
+                                                class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                         <button type="submit" class="delete show_confirm border-0 p-0 bg-transparent"><i
                                                 class="material-icons" data-toggle="tooltip"
                                                 title="Delete">&#xE872;</i></button>
@@ -49,7 +48,7 @@
                         @endforeach
                     </tbody>
                 </table>
-              
+
             </div>
         </div>
     </div>

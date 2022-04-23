@@ -63,7 +63,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
         integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <link rel="stylesheet" href="{{ asset('storage/Leaflet.BigImage/dist/Leaflet.BigImage.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('storage/Leaflet.BigImage/dist/Leaflet.BigImage.min.css') }}">
     <script src="{{ asset('storage/Leaflet.BigImage/dist/Leaflet.BigImage.min.js') }}">
     </script>
     <script type="text/javascript">
@@ -96,12 +96,12 @@
             this._div.innerHTML = '<h4>Kecamatan</h4>' + (props ?
                 '<b>' + props.NAMOBJ + '</b><br /> Jumlah Vaksin <br/> Dosis 1: ' + jumlah['1'][props.NAMOBJ] +
                 ' orang (' +
-                ((jumlah['1'][props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> '+
+                ((jumlah['1'][props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
                 'Dosis 2: ' + jumlah['2'][props.NAMOBJ] + ' orang (' +
-                ((jumlah['2'][props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> '+
+                ((jumlah['2'][props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
                 'Dosis 3: ' + jumlah['3'][props.NAMOBJ] + ' orang (' +
-                ((jumlah['3'][props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> '+
-                'Gerakkan mouse Anda':"");
+                ((jumlah['3'][props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
+                'Gerakkan mouse Anda' : "");
         };
 
         info.addTo(map);
@@ -112,7 +112,7 @@
                 opacity: 1,
                 color: 'white',
                 dashArray: '3',
-                fillOpacity: 0.7,
+                fillOpacity: 1.0,
                 fillColor: color[feature.properties.NAMOBJ]
             };
         }

@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-info">
+                <div class="small-box" style="background-color:#D4ECDD">
                     <div class="inner">
                         <h3>{{ $target }}</h3>
 
@@ -16,7 +16,7 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-success">
+                <div class="small-box text-white" style="background-color:rgb(65, 125, 122)">
                     <div class="inner">
                         <div class="row">
                             <div class="col">
@@ -36,7 +36,7 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-warning">
+                <div class="small-box text-white" style="background-color:rgb(29, 92, 99)">
                     <div class="inner">
                         <div class="row">
                             <div class="col">
@@ -56,7 +56,7 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-danger">
+                <div class="small-box text-white" style="background-color:rgb(26, 60, 64)">
                     <div class="inner">
                         <div class="row">
                             <div class="col">
@@ -75,312 +75,8 @@
             </div>
             <!-- ./col -->
         </div>
-        <div class="row">
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <h4>Dosis terendah</h4>
-                <div class="small-box bg-info">
-                    <div class="inner">
-                        <h4>Dosis 1</h4>
-                        <h6>Kecamatan {{ $krendah1->tematik->kecamatan }}</h6>
-                        <h6>Jumlah {{ $krendah1->total }}</h6>
-                        <h3>
-                            {{ $krpersen1 ? number_format((float) ($krendah1->total / $krpersen1) * 100, 2, '.', '') : 0 }}%
-                            </h6>
-                            <hr class="text-white bg-white" />
-                            <h4>Dosis 2</h4>
-                            <h6>Kecamatan {{ $krendah2->tematik->kecamatan }}</h6>
-                            <h6>Jumlah {{ $krendah2->total }}</h6>
-                            <h3>
-                                {{ $krpersen2 ? number_format((float) ($krendah2->total / $krpersen2) * 100, 2, '.', '') : 0 }}%
-                                </h6>
-                                <hr class="text-white bg-white" />
-                                <h4>Dosis 3</h4>
-                                <h6>Kecamatan {{ $krendah3->tematik->kecamatan }}</h6>
-                                <h6>Jumlah {{ $krendah3->total }}</h6>
-                                <h3>
-                                    {{ $krpersen3 ? number_format((float) ($krendah3->total / $krpersen3) * 100, 2, '.', '') : 0 }}%
-                                    </h6>
-                    </div>
-                </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <h4>Dosis tertinggi</h4>
-                <div class="small-box text-white" style="background-color:rgb(99, 70, 227)">
-                    <div class="inner">
-                        <h4>Dosis 1</h4>
-                        <h6>Kecamatan {{ $ktinggi1->tematik->kecamatan }}</h6>
-                        <h6>Jumlah {{ $ktinggi1->total }}</h6>
-                        <h3>
-                            {{ $ktpersen1 ? number_format((float) ($ktinggi1->total / $ktpersen1) * 100, 2, '.', '') : 0 }}%
-                        </h3>
-                        <hr class="text-white bg-white" />
-                        <h4>Dosis 2</h4>
-                        <h6>Kecamatan {{ $ktinggi2->tematik->kecamatan }}</h6>
-                        <h6>Jumlah {{ $ktinggi2->total }}</h6>
-                        <h3>
-                            {{ $ktpersen2 ? number_format((float) ($ktinggi2->total / $ktpersen2) * 100, 2, '.', '') : 0 }}%
-                        </h3>
-                        <hr class="text-white bg-white" />
-                        <h4>Dosis 3</h4>
-                        <h6>Kecamatan {{ $ktinggi3->tematik->kecamatan }}</h6>
-                        <h6>Jumlah {{ $ktinggi3->total }}</h6>
-                        <h3>
-                            {{ $ktpersen3 ? number_format((float) ($ktinggi3->total / $ktpersen3) * 100, 2, '.', '') : 0 }}%
-                        </h3>
-                    </div>
-                </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <h4>Dosis desa terendah</h4>
-                <div class="small-box bg-info">
-                    <div class="inner">
-                        <h4>Dosis 1</h4>
-                        <h6>Desa {{ $drendah1->desa->desa }}</h6>
-                        <h6>Jumlah {{ $drendah1->total }}</h6>
-                        <h3>
-                            {{ $drpersen1 ? number_format((float) ($drendah1->total / $drpersen1) * 100, 2, '.', '') : 0 }}%
-                            </h6>
-                            <hr class="text-white bg-white" />
-                            <h4>Dosis 2</h4>
-                            <h6>Desa {{ $drendah2->desa->desa }}</h6>
-                            <h6>Jumlah {{ $drendah2->total }}</h6>
-                            <h3>
-                                {{ $drpersen2 ? number_format((float) ($drendah2->total / $drpersen2) * 100, 2, '.', '') : 0 }}%
-                                </h6>
-                                <hr class="text-white bg-white" />
-                                <h4>Dosis 3</h4>
-                                <h6>Desa {{ $drendah3->desa->desa }}</h6>
-                                <h6>Jumlah {{ $drendah3->total }}</h6>
-                                <h3>
-                                    {{ $drpersen3 ? number_format((float) ($drendah3->total / $drpersen3) * 100, 2, '.', '') : 0 }}%
-                                    </h6>
-                    </div>
-                </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <h4>Dosis desa tertinggi</h4>
-                <div class="small-box bg-info">
-                    <div class="inner">
-                        <h4>Dosis 1</h4>
-                        <h6>Desa {{ $dtinggi1->desa->desa }}</h6>
-                        <h6>Jumlah {{ $dtinggi1->total }}</h6>
-                        <h3>
-                            {{ $dtpersen1 ? number_format((float) ($dtinggi1->total / $dtpersen1) * 100, 2, '.', '') : 0 }}%
-                            </h6>
-                            <hr class="text-white bg-white" />
-                            <h4>Dosis 2</h4>
-                            <h6>Desa {{ $dtinggi2->desa->desa }}</h6>
-                            <h6>Jumlah {{ $dtinggi2->total }}</h6>
-                            <h3>
-                                {{ $dtpersen2 ? number_format((float) ($dtinggi2->total / $dtpersen2) * 100, 2, '.', '') : 0 }}%
-                                </h6>
-                                <hr class="text-white bg-white" />
-                                <h4>Dosis 3</h4>
-                                <h6>Desa {{ $dtinggi3->desa->desa }}</h6>
-                                <h6>Jumlah {{ $dtinggi3->total }}</h6>
-                                <h3>
-                                    {{ $dtpersen3 ? number_format((float) ($dtinggi3->total / $dtpersen3) * 100, 2, '.', '') : 0 }}%
-                                    </h6>
-                    </div>
-                </div>
-            </div>
 
-
-            <!-- ./col -->
-        </div>
         <div class="mb-2">
-            <h4>Nakes</h4>
-            <div class="p-4 w-100 rounded shadow bg-info">
-                <div class="inner">
-                    <div class="row">
-                        <div class="col">
-                            <h4>Dosis 1</h4>
-                            <h6>Jumlah {{ $dosis1_nakes }}</h6>
-                            <h3>
-                                {{ number_format((float) ($dosis1_nakes / $target_nakes) * 100, 2, '.', '') }}%
-                                </h6>
-                        </div>
-                        <div class="col">
-                            <h4>Dosis 2</h4>
-
-                            <h6>Jumlah {{ $dosis2_nakes }}</h6>
-                            <h3>
-                                {{ number_format((float) ($dosis2_nakes / $target_nakes) * 100, 2, '.', '') }}%
-                                </h6>
-                        </div>
-                        <div class="col">
-                            <h4>Dosis 3</h4>
-                            <h6>Jumlah {{ $dosis3_nakes }}</h6>
-                            <h3>
-                                {{ number_format((float) ($dosis3_nakes / $target_nakes) * 100, 2, '.', '') }}%
-                                </h6>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="mb-2">
-                <h4>Petugas Publik</h4>
-                <div class="p-4 w-100 rounded shadow bg-info">
-                    <div class="inner">
-                        <div class="row">
-                            <div class="col">
-                                <h4>Dosis 1</h4>
-                                <h6>Jumlah {{ $dosis1_petugas }}</h6>
-                                <h3>
-                                    {{ number_format((float) ($dosis1_petugas / $target_petugas) * 100, 2, '.', '') }}%
-                                </h3>
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 2</h4>
-
-                                <h6>Jumlah {{ $dosis2_petugas }}</h6>
-                                <h3>
-                                    {{ number_format((float) ($dosis2_petugas / $target_petugas) * 100, 2, '.', '') }}%
-                                </h3>
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 3</h4>
-                                <h6>Jumlah {{ $dosis3_petugas }}</h6>
-                                <h3>
-                                    {{ number_format((float) ($dosis3_petugas / $target_petugas) * 100, 2, '.', '') }}%
-                                    </h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-2">
-                <h4>Lansia</h4>
-                <div class="p-4 w-100 rounded shadow bg-info">
-                    <div class="inner">
-                        <div class="row">
-                            <div class="col">
-                                <h4>Dosis 1</h4>
-                                <h6>Jumlah {{ $dosis1_lansia }}</h6>
-                                <h3>
-                                    {{ number_format((float) ($dosis1_lansia / $target_lansia) * 100, 2, '.', '') }}%
-                                </h3>
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 2</h4>
-
-                                <h6>Jumlah {{ $dosis2_lansia }}</h6>
-                                <h3>
-                                    {{ number_format((float) ($dosis2_lansia / $target_lansia) * 100, 2, '.', '') }}%
-                                </h3>
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 3</h4>
-                                <h6>Jumlah {{ $dosis3_lansia }}</h6>
-                                <h3>
-                                    {{ number_format((float) ($dosis3_lansia / $target_lansia) * 100, 2, '.', '') }}%
-                                    </h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-2">
-                <h4>Masyarakat</h4>
-                <div class="p-4 w-100 rounded shadow bg-info">
-                    <div class="inner">
-                        <div class="row">
-                            <div class="col">
-                                <h4>Dosis 1</h4>
-                                <h6>Jumlah {{ $dosis1_masyarakat }}</h6>
-                                <h3>
-                                    {{ number_format((float) ($dosis1_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
-                                </h3>
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 2</h4>
-
-                                <h6>Jumlah {{ $dosis2_masyarakat }}</h6>
-                                <h3>
-                                    {{ number_format((float) ($dosis2_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
-                                </h3>
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 3</h4>
-                                <h6>Jumlah {{ $dosis3_masyarakat }}</h6>
-                                <h3>
-                                    {{ number_format((float) ($dosis3_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
-                                    </h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-2">
-                <h4>Remaja</h4>
-                <div class="p-4 w-100 rounded shadow bg-info">
-                    <div class="inner">
-                        <div class="row">
-                            <div class="col">
-                                <h4>Dosis 1</h4>
-                                <h6>Jumlah {{ $dosis1_remaja }}</h6>
-                                <h3>
-                                    {{ number_format((float) ($dosis1_remaja / $target_remaja) * 100, 2, '.', '') }}%
-                                </h3>
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 2</h4>
-
-                                <h6>Jumlah {{ $dosis2_remaja }}</h6>
-                                <h3>
-                                    {{ number_format((float) ($dosis2_remaja / $target_remaja) * 100, 2, '.', '') }}%
-                                </h3>
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 3</h4>
-                                <h6>Jumlah {{ $dosis3_remaja }}</h6>
-                                <h3>
-                                    {{ number_format((float) ($dosis3_remaja / $target_remaja) * 100, 2, '.', '') }}%
-                                    </h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-2">
-                <h4>Usia 6-11 tahun</h4>
-                <div class="p-4 w-100 rounded shadow bg-info">
-                    <div class="inner">
-                        <div class="row">
-                            <div class="col">
-                                <h4>Dosis 1</h4>
-                                <h6>Jumlah {{ $dosis1_usia }}</h6>
-                                <h3>
-                                    {{ number_format((float) ($dosis1_usia / $target_usia) * 100, 2, '.', '') }}%
-                                </h3>
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 2</h4>
-
-                                <h6>Jumlah {{ $dosis2_usia }}</h6>
-                                <h3>
-                                    {{ number_format((float) ($dosis2_usia / $target_usia) * 100, 2, '.', '') }}%
-                                </h3>
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 3</h4>
-                                <h6>Jumlah {{ $dosis3_usia }}</h6>
-                                <h3>
-                                    {{ number_format((float) ($dosis3_usia / $target_usia) * 100, 2, '.', '') }}%
-                                    </h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="row">
 
                 <section class="col-lg-7 connectedSortable">
@@ -390,7 +86,7 @@
                                 <i class="fas fa-chart-pie mr-1"></i>
                                 Grafik
                             </h3>
-                       
+
                             <div class="card-tools mx-2">
                                 <form action="{{ route('home') }}" method="get" id="form-graph">
                                     <select class="form-control" id="kecamatan">
@@ -404,7 +100,7 @@
                                 </form>
                             </div>
                         </div><!-- /.card-header -->
-                        <div class="card-body">
+                        <div class="card-body" style="background-color: #D4ECDD">
                             @if ($state)
                                 <div class="card-tools">
                                     <ul class="nav nav-pills ml-auto">
@@ -445,7 +141,7 @@
                     </div>
                 </section>
                 <section class="col-lg-5 ">
-                    <div class="card bg-gradient-primary">
+                    <div class="card" style="background-color: #D4ECDD">
                         <div class="card-header border-0">
                             <h3 class="card-title">
                                 <i class="fas fa-map-marker-alt mr-1"></i>
@@ -454,12 +150,343 @@
 
                         </div>
                         <div class="card-body">
-                            <div id="map" style="height: 300px; width: 100%;"></div>
+                            <div id="map" style="height: 350px; width: 100%;"></div>
                         </div>
 
                     </div>
                 </section>
 
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <br>
+                <div class="small-box text-white" style="background-color:#152D35">
+                    <h4>Dosis Terendah (Kecamatan)</h4>
+                    <hr class="text-white bg-white" />
+                    <div class="inner">
+                        <h4>Dosis 1</h4>
+                        <h6>Kecamatan {{ $krendah1->tematik->kecamatan }}</h6>
+                        <h6>Jumlah {{ $krendah1->total }}</h6>
+                        <h3>
+                            {{ $krpersen1 ? number_format((float) ($krendah1->total / $krpersen1) * 100, 2, '.', '') : 0 }}%
+                            </h6>
+                            <hr class="text-white bg-white" />
+                            <h4>Dosis 2</h4>
+                            <h6>Kecamatan {{ $krendah2->tematik->kecamatan }}</h6>
+                            <h6>Jumlah {{ $krendah2->total }}</h6>
+                            <h3>
+                                {{ $krpersen2 ? number_format((float) ($krendah2->total / $krpersen2) * 100, 2, '.', '') : 0 }}%
+                                </h6>
+                                <hr class="text-white bg-white" />
+                                <h4>Dosis 3</h4>
+                                <h6>Kecamatan {{ $krendah3->tematik->kecamatan }}</h6>
+                                <h6>Jumlah {{ $krendah3->total }}</h6>
+                                <h3>
+                                    {{ $krpersen3 ? number_format((float) ($krendah3->total / $krpersen3) * 100, 2, '.', '') : 0 }}%
+                                    </h6>
+                    </div>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <br>
+                <div class="small-box text-black" style="background-color:#D4ECDD">
+                    <h4>Dosis Tertinggi<br> (Kecamatan)</h4>
+                    <hr class="text-white bg-green" />
+                    <div class="inner">
+                        <h4>Dosis 1</h4>
+                        <h6>Kecamatan {{ $ktinggi1->tematik->kecamatan }}</h6>
+                        <h6>Jumlah {{ $ktinggi1->total }}</h6>
+                        <h3>
+                            {{ $ktpersen1 ? number_format((float) ($ktinggi1->total / $ktpersen1) * 100, 2, '.', '') : 0 }}%
+                        </h3>
+                        <hr class="text-white bg-green" />
+                        <h4>Dosis 2</h4>
+                        <h6>Kecamatan {{ $ktinggi2->tematik->kecamatan }}</h6>
+                        <h6>Jumlah {{ $ktinggi2->total }}</h6>
+                        <h3>
+                            {{ $ktpersen2 ? number_format((float) ($ktinggi2->total / $ktpersen2) * 100, 2, '.', '') : 0 }}%
+                        </h3>
+                        <hr class="text-white bg-green" />
+                        <h4>Dosis 3</h4>
+                        <h6>Kecamatan {{ $ktinggi3->tematik->kecamatan }}</h6>
+                        <h6>Jumlah {{ $ktinggi3->total }}</h6>
+                        <h3>
+                            {{ $ktpersen3 ? number_format((float) ($ktinggi3->total / $ktpersen3) * 100, 2, '.', '') : 0 }}%
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <br>
+                <div class="small-box text-white" style="background-color:rgb(26, 60, 64)">
+                    <h4>Dosis Terendah <br>(Desa)</h4>
+                    <hr class="text-white bg-white" />
+                    <div class="inner">
+                        <h4>Dosis 1</h4>
+                        <h6>Desa {{ $drendah1->desa->desa }}</h6>
+                        <h6>Jumlah {{ $drendah1->total }}</h6>
+                        <h3>
+                            {{ $drpersen1 ? number_format((float) ($drendah1->total / $drpersen1) * 100, 2, '.', '') : 0 }}%
+                            </h6>
+                            <hr class="text-white bg-white" />
+                            <h4>Dosis 2</h4>
+                            <h6>Desa {{ $drendah2->desa->desa }}</h6>
+                            <h6>Jumlah {{ $drendah2->total }}</h6>
+                            <h3>
+                                {{ $drpersen2 ? number_format((float) ($drendah2->total / $drpersen2) * 100, 2, '.', '') : 0 }}%
+                                </h6>
+                                <hr class="text-white bg-white" />
+                                <h4>Dosis 3</h4>
+                                <h6>Desa {{ $drendah3->desa->desa }}</h6>
+                                <h6>Jumlah {{ $drendah3->total }}</h6>
+                                <h3>
+                                    {{ $drpersen3 ? number_format((float) ($drendah3->total / $drpersen3) * 100, 2, '.', '') : 0 }}%
+                                    </h6>
+                    </div>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <br>
+                <div class="small-box" style="background-color:#D4ECDD">
+                    <h4>Dosis Tertinggi <br>(Desa)</h4>
+                    <hr class="text-white bg-green" />
+                    <div class="inner">
+                        <h4>Dosis 1</h4>
+                        <h6>Desa {{ $dtinggi1->desa->desa }}</h6>
+                        <h6>Jumlah {{ $dtinggi1->total }}</h6>
+                        <h3>
+                            {{ $dtpersen1 ? number_format((float) ($dtinggi1->total / $dtpersen1) * 100, 2, '.', '') : 0 }}%
+                            </h6>
+                            <hr class="text-white bg-green" />
+                            <h4>Dosis 2</h4>
+                            <h6>Desa {{ $dtinggi2->desa->desa }}</h6>
+                            <h6>Jumlah {{ $dtinggi2->total }}</h6>
+                            <h3>
+                                {{ $dtpersen2 ? number_format((float) ($dtinggi2->total / $dtpersen2) * 100, 2, '.', '') : 0 }}%
+                                </h6>
+                                <hr class="text-white bg-green" />
+                                <h4>Dosis 3</h4>
+                                <h6>Desa {{ $dtinggi3->desa->desa }}</h6>
+                                <h6>Jumlah {{ $dtinggi3->total }}</h6>
+                                <h3>
+                                    {{ $dtpersen3 ? number_format((float) ($dtinggi3->total / $dtpersen3) * 100, 2, '.', '') : 0 }}%
+                                    </h6>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ./col -->
+        </div>
+        <div class="col-lg-6 col-6">
+
+            <br>
+            <div class="p-4 w-100 rounded shadow text-white" style="background-color:#417D7A">
+                <h3>Tenaga Kesehatan</h3>
+                <hr class="text-white bg-white" />
+                <div class="inner">
+                    <div class="row">
+                        <div class="col">
+                            <h4>Dosis 1</h4>
+                            <h6>Jumlah {{ $dosis1_nakes }}</h6>
+                            <h3>
+                                {{ number_format((float) ($dosis1_nakes / $target_nakes) * 100, 2, '.', '') }}%
+                                </h6>
+                        </div>
+                        <div class="col">
+                            <h4>Dosis 2</h4>
+
+                            <h6>Jumlah {{ $dosis2_nakes }}</h6>
+                            <h3>
+                                {{ number_format((float) ($dosis2_nakes / $target_nakes) * 100, 2, '.', '') }}%
+                                </h6>
+                        </div>
+                        <div class="col">
+                            <h4>Dosis 3</h4>
+                            <h6>Jumlah {{ $dosis3_nakes }}</h6>
+                            <h3>
+                                {{ number_format((float) ($dosis3_nakes / $target_nakes) * 100, 2, '.', '') }}%
+                                </h6>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-6 col-6">
+            <br>
+            <div class="p-4 w-100 rounded shadow text-white" style="background-color:#1D5C63">
+                <h2>Petugas Publik</h2>
+                <hr class="text-white bg-white" />
+                <div class="inner">
+                    <div class="row">
+                        <div class="col">
+                            <h4>Dosis 1</h4>
+                            <h6>Jumlah {{ $dosis1_petugas }}</h6>
+                            <h3>
+                                {{ number_format((float) ($dosis1_petugas / $target_petugas) * 100, 2, '.', '') }}%
+                            </h3>
+                        </div>
+                        <div class="col">
+                            <h4>Dosis 2</h4>
+
+                            <h6>Jumlah {{ $dosis2_petugas }}</h6>
+                            <h3>
+                                {{ number_format((float) ($dosis2_petugas / $target_petugas) * 100, 2, '.', '') }}%
+                            </h3>
+                        </div>
+                        <div class="col">
+                            <h4>Dosis 3</h4>
+                            <h6>Jumlah {{ $dosis3_petugas }}</h6>
+                            <h3>
+                                {{ number_format((float) ($dosis3_petugas / $target_petugas) * 100, 2, '.', '') }}%
+                                </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-6">
+            <br>
+            <div class="p-4 w-100 rounded shadow text-white" style="background-color:#1A3C40">
+                <h2>Lansia</h2>
+                <hr class="text-white bg-white" />
+                <div class="inner">
+                    <div class="row">
+                        <div class="col">
+                            <h4>Dosis 1</h4>
+                            <h6>Jumlah {{ $dosis1_lansia }}</h6>
+                            <h3>
+                                {{ number_format((float) ($dosis1_lansia / $target_lansia) * 100, 2, '.', '') }}%
+                            </h3>
+                        </div>
+                        <div class="col">
+                            <h4>Dosis 2</h4>
+
+                            <h6>Jumlah {{ $dosis2_lansia }}</h6>
+                            <h3>
+                                {{ number_format((float) ($dosis2_lansia / $target_lansia) * 100, 2, '.', '') }}%
+                            </h3>
+                        </div>
+                        <div class="col">
+                            <h4>Dosis 3</h4>
+                            <h6>Jumlah {{ $dosis3_lansia }}</h6>
+                            <h3>
+                                {{ number_format((float) ($dosis3_lansia / $target_lansia) * 100, 2, '.', '') }}%
+                                </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-6">
+            <br>
+            <div class="p-4 w-100 rounded shadow text-white" style="background-color:#417D7A">
+                <h2>Masyarakat</h2>
+                <hr class="text-white bg-white" />
+                <div class="inner">
+                    <div class="row">
+                        <div class="col">
+                            <h4>Dosis 1</h4>
+                            <h6>Jumlah {{ $dosis1_masyarakat }}</h6>
+                            <h3>
+                                {{ number_format((float) ($dosis1_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
+                            </h3>
+                        </div>
+                        <div class="col">
+                            <h4>Dosis 2</h4>
+
+                            <h6>Jumlah {{ $dosis2_masyarakat }}</h6>
+                            <h3>
+                                {{ number_format((float) ($dosis2_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
+                            </h3>
+                        </div>
+                        <div class="col">
+                            <h4>Dosis 3</h4>
+                            <h6>Jumlah {{ $dosis3_masyarakat }}</h6>
+                            <h3>
+                                {{ number_format((float) ($dosis3_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
+                                </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-6">
+            <br>
+            <div class="p-4 w-100 rounded shadow text-white" style="background-color:#1D5C63">
+                <h2>Remaja</h2>
+                <hr class="text-white bg-white" />
+                <div class="inner">
+                    <div class="row">
+                        <div class="col">
+                            <h4>Dosis 1</h4>
+                            <h6>Jumlah {{ $dosis1_remaja }}</h6>
+                            <h3>
+                                {{ number_format((float) ($dosis1_remaja / $target_remaja) * 100, 2, '.', '') }}%
+                            </h3>
+                        </div>
+                        <div class="col">
+                            <h4>Dosis 2</h4>
+
+                            <h6>Jumlah {{ $dosis2_remaja }}</h6>
+                            <h3>
+                                {{ number_format((float) ($dosis2_remaja / $target_remaja) * 100, 2, '.', '') }}%
+                            </h3>
+                        </div>
+                        <div class="col">
+                            <h4>Dosis 3</h4>
+                            <h6>Jumlah {{ $dosis3_remaja }}</h6>
+                            <h3>
+                                {{ number_format((float) ($dosis3_remaja / $target_remaja) * 100, 2, '.', '') }}%
+                                </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-6">
+            <br>
+            <div class="p-4 w-100 rounded shadow text-white" style="background-color:#1A3C40">
+                <h2>Usia 6-11 tahun</h2>
+                <hr class="text-white bg-white" />
+                <div class="inner">
+                    <div class="row">
+                        <div class="col">
+                            <h4>Dosis 1</h4>
+                            <h6>Jumlah {{ $dosis1_usia }}</h6>
+                            <h3>
+                                {{ number_format((float) ($dosis1_usia / $target_usia) * 100, 2, '.', '') }}%
+                            </h3>
+                        </div>
+                        <div class="col">
+                            <h4>Dosis 2</h4>
+
+                            <h6>Jumlah {{ $dosis2_usia }}</h6>
+                            <h3>
+                                {{ number_format((float) ($dosis2_usia / $target_usia) * 100, 2, '.', '') }}%
+                            </h3>
+                        </div>
+                        <div class="col">
+                            <h4>Dosis 3</h4>
+                            <h6>Jumlah {{ $dosis3_usia }}</h6>
+                            <h3>
+                                {{ number_format((float) ($dosis3_usia / $target_usia) * 100, 2, '.', '') }}%
+                                </h6>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     @endsection
@@ -476,8 +503,8 @@
             .info {
                 padding: 6px 8px;
                 font: 14px/16px Arial, Helvetica, sans-serif;
-                background: white;
-                background: rgba(255, 255, 255, 0.8);
+                background: #EDE6DB;
+                background: #EDE6DB;
                 box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
                 border-radius: 5px;
             }
@@ -504,7 +531,6 @@
         </style>
     @endsection
     @push('scripts')
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
                 integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
                 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -689,9 +715,9 @@
                 return {
                     weight: 2,
                     opacity: 1,
-                    color: 'white',
+                    color: 'black',
                     dashArray: '3',
-                    fillOpacity: 0.7,
+                    fillOpacity: 0.9,
                     fillColor: color[feature.properties.NAMOBJ]
                 };
 
@@ -768,6 +794,5 @@
             };
 
             legend.addTo(map);
-           
         </script>
     @endpush
