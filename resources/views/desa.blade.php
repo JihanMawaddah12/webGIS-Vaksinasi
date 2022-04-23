@@ -15,7 +15,7 @@
                         </div>
                     </div>
                 </div>
-                <table class="table table-striped table-hover">
+                <table class="table table-striped table-hover" id="table">
                     <thead>
                         <tr>
                             <th>
@@ -52,76 +52,7 @@
             </div>
         </div>
     </div>
-    <!-- Edit Modal HTML -->
-    {{-- modal edit --}}
-    <div id="editModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form action="" method="post">
-                    @csrf
-                    <div class="modal-header">
-                        <h4 class="modal-title">Tambah Data</h4>
-                        <button type="button" class="close" data-bs-dismiss="modal"
-                            aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Alamat</label>
-                            <input name="alamat" type="text" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Jumlah Kecelakaan Tunggal</label>
-                            <input name="tunggal" type="number" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Jumlah Kecelakaan Genap</label>
-                            <input name="ganda" type="number" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-success" value="Add">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- Edit Modal HTML -->
-    <div id="editEmployeeModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form>
-                    <div class="modal-header">
-                        <h4 class="modal-title">Edit Employee</h4>
-                        <button type="button" class="close" data-dismiss="modal"
-                            aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Address</label>
-                            <textarea class="form-control" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-info" value="Save">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+   
     <!-- Delete Modal HTML -->
     <div id="deleteEmployeeModal" class="modal fade">
         <div class="modal-dialog">
@@ -162,6 +93,9 @@
                         form.submit();
                     }
                 });
+        });
+        $(document).ready(function() {
+            $('#table').DataTable();
         });
     </script>
 @endsection

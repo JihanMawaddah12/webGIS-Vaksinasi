@@ -33,39 +33,40 @@ class HomeController extends Controller
         $jumlah2 = [];
         $kec3 = [];
         $jumlah3 = [];
-        if ($id_param) {
-            $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $id_param]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id', 'id')
-                ->groupBy(['date', 'tematik_id'])
-                ->get();
+        if (!$id_param) {
+            $id_param = Tematik::first()->id;
+        }
+        $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $id_param]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id', 'id')
+            ->groupBy(['date', 'tematik_id'])
+            ->get();
 
 
-            $id = 0;
-            foreach ($dosis1 as $value) {
-                $kec[$id] = $value->date;
-                $jumlah[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
-                $id += 1;
-            }
-            $dosis2 = HalamanData::with('tematik')->where([['kelompok', 'dosis 2'], ['tematik_id', $id_param]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
-                ->groupBy(['date', 'tematik_id'])
-                ->get();
+        $id = 0;
+        foreach ($dosis1 as $value) {
+            $kec[$id] = $value->date;
+            $jumlah[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
+            $id += 1;
+        }
+        $dosis2 = HalamanData::with('tematik')->where([['kelompok', 'dosis 2'], ['tematik_id', $id_param]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
+            ->groupBy(['date', 'tematik_id'])
+            ->get();
 
-            $id = 0;
-            foreach ($dosis2 as $value) {
-                $kec2[$id] = $value->date;
-                $jumlah2[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
-                $id += 1;
-            }
-            $dosis3 = HalamanData::with('tematik')->where([['kelompok', 'dosis 3'], ['tematik_id', $id_param]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
-                ->groupBy(['date', 'tematik_id'])
-                ->get();
+        $id = 0;
+        foreach ($dosis2 as $value) {
+            $kec2[$id] = $value->date;
+            $jumlah2[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
+            $id += 1;
+        }
+        $dosis3 = HalamanData::with('tematik')->where([['kelompok', 'dosis 3'], ['tematik_id', $id_param]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
+            ->groupBy(['date', 'tematik_id'])
+            ->get();
 
 
-            $id = 0;
-            foreach ($dosis3 as $value) {
-                $kec3[$id] = $value->date;
-                $jumlah3[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
-                $id += 1;
-            }
+        $id = 0;
+        foreach ($dosis3 as $value) {
+            $kec3[$id] = $value->date;
+            $jumlah3[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
+            $id += 1;
         }
         $target = HalamanData::where('kelompok', 'target')->sum(DB::raw('nakes + petugas_publik + lansia + masyarakat_umum + remaja'));
         $jmlh_dosis1 = HalamanData::where('kelompok', 'dosis 1')->sum(DB::raw('nakes + petugas_publik + lansia + masyarakat_umum + remaja'));
@@ -174,8 +175,8 @@ class HomeController extends Controller
         $target_masyarakat = HalamanData::where('kelompok', 'Target')->sum('masyarakat_umum');
         $target_remaja = HalamanData::where('kelompok', 'Target')->sum('remaja');
         $target_usia = HalamanData::where('kelompok', 'Target')->sum('usia');
-        
-        
+
+
 
         $dosis2_nakes = HalamanData::where('kelompok', 'Dosis 2')->sum('nakes');
         $dosis2_petugas = HalamanData::where('kelompok', 'Dosis 2')->sum('petugas_publik');

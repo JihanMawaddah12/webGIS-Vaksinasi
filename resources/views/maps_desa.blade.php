@@ -173,7 +173,7 @@
                 grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
                 from, to;
             labels = []
-            for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < tematik.length; i++) {
                 labels.push(
                     '<i style="background:' + color[tematik[i]] + '"></i> - ' + tematik[i]);
             }

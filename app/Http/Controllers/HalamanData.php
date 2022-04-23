@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\Vaksin;
 use App\Models\Desa;
 use App\Models\HalamanData as ModelsHalamanData;
 use App\Models\Tematik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HalamanData extends Controller
 {
@@ -33,7 +35,11 @@ class HalamanData extends Controller
         $desa = Desa::all();
         return view('tambah_data', ['tematik' => $tematik, 'desa' => $desa]);
     }
-
+    public function import(Request $request)
+    {
+        Excel::import(new Vaksin, $request->file('file')->store('temp'));
+        return back();
+    }
     /**
      * Store a newly created resource in storage.
      *

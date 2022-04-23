@@ -92,7 +92,7 @@ class MapController extends Controller
         $data = HalamanData2::all();
 
         foreach ($data as $item) {
-            $coor[$index2] = [$item->alamat, $item->lat, $item->long];
+            $coor[$index2] = [$item->lokasi, $item->lat, $item->long];
             $index2++;
         }
 

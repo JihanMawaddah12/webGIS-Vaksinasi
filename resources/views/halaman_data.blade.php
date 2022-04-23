@@ -8,10 +8,26 @@
                         <div class="col-sm-6">
                             <h2>Data <b>Vaksinasi</b></h2>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 text-end">
+                            
                             <a href="{{ route('tambah data') }}" class="btn btn-success"><i
                                     class="material-icons">&#xE147;</i> <span>Masukkan Data Baru</span></a>
-
+                           
+                        </div>
+                        <div class="col mb-2">
+                             <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input type="button" class="btn btn-danger" onclick="document.getElementById('import').click()"
+                                    value="Upload Kolektif" 
+                                    
+                                    />
+                                <input type="file"
+                                    id="import"
+                                    name="file"
+                                    onchange="form.submit()"
+                                    accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+                                    class="btn btn-danger d-none">
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -83,7 +99,7 @@
         </div>
     </div>
     <style>
-        .buttons-pdf{
+        .buttons-pdf {
             background-color: red;
             border-radius: 12px;
             padding: 5px;
@@ -92,6 +108,7 @@
             margin-left: 12px;
             color: white;
         }
+
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 
