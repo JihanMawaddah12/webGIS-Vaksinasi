@@ -18,7 +18,7 @@ class RumahSakitController extends Controller
      */
     public function index()
     {
-        $data = RumahSakit::all();
+        $data = RumahSakit::orderBy('created_at','DESC')->get();
         return view('rumahsakit', ['data' => $data]);
     }
 

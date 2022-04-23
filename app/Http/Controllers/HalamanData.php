@@ -20,7 +20,7 @@ class HalamanData extends Controller
     public function index()
     {
         return view("halaman_data", [
-            'data' => ModelsHalamanData::get()
+            'data' => ModelsHalamanData::orderBy('tanggal','DESC')->get()
         ]);
     }
 
