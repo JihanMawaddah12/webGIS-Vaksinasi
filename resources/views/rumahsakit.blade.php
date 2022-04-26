@@ -8,7 +8,7 @@
                         <div class="col-sm-6">
                             <h2>Data <b>Rumah Sakit</b></h2>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 text-end">
                             <a href="{{ route('tambah rumahsakit') }}" class="btn btn-success"><i
                                     class="material-icons">&#xE147;</i> <span>Masukkan Data Baru</span></a>
                         </div>
@@ -35,7 +35,8 @@
                                 <td>{{ $item->user->email }}</td>
                                 <td class="w-25">
 
-                                    <form action="{{ route('delete rumahsakit', ['id' => $item->user->id]) }}" method="get">
+                                    <form action="{{ route('delete rumahsakit', ['id' => $item->user->id]) }}"
+                                        method="get">
                                         <a href="{{ route('edit rumahsakit', ['id' => $item->user->id]) }}"
                                             class="edit"><i class="material-icons" data-toggle="tooltip"
                                                 title="Edit">&#xE254;</i></a>
@@ -163,7 +164,7 @@
                 });
         });
     </script>
-     <script>
+    <script>
         $(document).ready(function() {
             $('#table').DataTable();
         });

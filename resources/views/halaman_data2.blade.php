@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @section('content')
     <div class="container-xl">
-        <div class="table-responsive">
+        <div class="table-responsive" style="background-color: white">
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
                             <h2>Data <b>Lokasi Vaksinasi</b></h2>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 text-end">
                             <a href="{{ route('tambah data2') }}" class="btn btn-success"><i
                                     class="material-icons">&#xE147;</i> <span>Masukkan Data Baru</span></a>
 
