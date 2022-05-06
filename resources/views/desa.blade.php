@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @section('content')
     <div class="container-xl">
-        <div class="table-responsive">
+        <div class="table-responsive" style="background-color: #EDE6DB">
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
                             <h2>Data <b>Desa</b></h2>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 text-end">
                             <a href="{{ route('tambah desa') }}" class="btn btn-success"><i
                                     class="material-icons">&#xE147;</i> <span>Masukkan Data Baru</span></a>
 
@@ -52,7 +52,7 @@
             </div>
         </div>
     </div>
-   
+
     <!-- Delete Modal HTML -->
     <div id="deleteEmployeeModal" class="modal fade">
         <div class="modal-dialog">

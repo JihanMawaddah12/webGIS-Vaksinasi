@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container-xl">
-        <div class="table-responsive">
+        <div class="table-responsive" style="background-color: white">
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
@@ -9,22 +9,17 @@
                             <h2>Data <b>Vaksinasi</b></h2>
                         </div>
                         <div class="col-sm-6 text-end">
-                            
+
                             <a href="{{ route('tambah data') }}" class="btn btn-success"><i
                                     class="material-icons">&#xE147;</i> <span>Masukkan Data Baru</span></a>
-                           
+
                         </div>
                         <div class="col mb-2">
-                             <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <input type="button" class="btn btn-danger" onclick="document.getElementById('import').click()"
-                                    value="Upload Kolektif" 
-                                    
-                                    />
-                                <input type="file"
-                                    id="import"
-                                    name="file"
-                                    onchange="form.submit()"
+                                <input type="button" class="btn text-white" style="background-color: #1A3C40"
+                                    onclick="document.getElementById('import').click()" value="Tambah csv" />
+                                <input type="file" id="import" name="file" onchange="form.submit()"
                                     accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
                                     class="btn btn-danger d-none">
                             </form>
@@ -100,7 +95,7 @@
     </div>
     <style>
         .buttons-pdf {
-            background-color: red;
+            background-color: #1A3C40;
             border-radius: 12px;
             padding: 5px;
             padding-left: 10px;

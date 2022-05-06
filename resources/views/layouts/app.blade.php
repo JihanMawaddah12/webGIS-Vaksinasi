@@ -110,15 +110,16 @@
 
                     <!-- Sidebar Menu -->
                     <nav class="mt-2">
-                        
+
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                             data-accordion="false">
 
                             @if (auth()->user()->level == 'admin')
                                 <li class="nav-item">
-                                    <a href="{{ route('home') }}" class="nav-link btn bg-transparent text-white text-start">
+                                    <a href="{{ route('home') }}"
+                                        class="nav-link btn bg-transparent text-white text-start">
                                         <i class="nav-icon fas fa-th"></i>
-                                        <p >
+                                        <p>
                                             Dashboard
                                         </p>
                                     </a>
@@ -167,7 +168,8 @@
                                                     Vaksinasi</a>
                                             </li>
                                             <li class="nav-item  w-100">
-                                                <a class="dropdown-item btn" href="{{ route('halaman data2') }}">Data Lokasi
+                                                <a class="dropdown-item btn" href="{{ route('halaman data2') }}">Data
+                                                    Lokasi
                                                     Vaksinasi</a>
                                             </li>
                                             <li class="nav-item w-100">
@@ -179,22 +181,25 @@
                                                     Kecamatan</a>
                                             </li>
                                             <li class="nav-item w-100 ">
-                                                <a class="dropdown-item btn" href="{{ route('rumah sakit') }}">Data User</a>
+                                                <a class="dropdown-item btn" href="{{ route('rumah sakit') }}">Data
+                                                    User</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </li>
                             @else
                                 <li class="nav-item">
-                                    <a href="{{ route('rs dashboard') }}" class="nav-link">
+                                    <a href="{{ route('rs dashboard') }}"
+                                        class="nav-link btn bg-transparent text-white text-start">
                                         <i class="nav-icon fas fa-th"></i>
                                         <p>
-                                            Dashboard
+                                            Data Pendaftaran
                                         </p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('verif') }}" class="nav-link">
+                                    <a href="{{ route('verif') }}"
+                                        class="nav-link btn bg-transparent text-white text-start">
                                         <i class="nav-icon fas fa-th"></i>
                                         <p>
                                             Verifikasi
@@ -203,7 +208,8 @@
                                 </li>
                             @endif
                             <li class="nav-item">
-                                <a href="{{ route('panduan') }}" class="nav-link btn bg-transparent text-white text-start w-100">
+                                <a href="{{ route('panduan') }}"
+                                    class="nav-link btn bg-transparent text-white text-start w-100">
                                     <i class="nav-icon fa-solid fa-book"></i>
                                     <p>
                                         Panduan

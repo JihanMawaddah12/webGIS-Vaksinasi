@@ -8,7 +8,7 @@
                         <div class="col-sm-6">
                             <h2>Data <b>Tematik</b></h2>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 text-end">
                             <a href="{{ route('tambah tematik') }}" class="btn btn-success"><i
                                     class="material-icons">&#xE147;</i> <span>Masukkan Data Baru</span></a>
 
