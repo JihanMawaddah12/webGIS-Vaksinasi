@@ -38,7 +38,7 @@ class RouteMap extends Controller
         $kecamatan = Tematik::all();
         $desa = Desa::all();
         foreach ($data as $item) {
-            $info[$index] = [$item->alamat, $item->lat, $item->long, $item->lokasi, $item->id, $item->kapasitas - $item->pendaftaran->count()];
+            $info[$index] = [$item->alamat, $item->lat, $item->long, $item->lokasi, $item->id, $item->kapasitas - $item->pendaftaran->count(),$item->deskripsi];
             $index++;
         }
         return view('pendaftaran', [
