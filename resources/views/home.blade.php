@@ -162,7 +162,7 @@
         <div class="row">
             <div class="col-lg-3 mb-2">
                 <!-- small box -->
-                
+
                 <div class="small-box text-white" style="background-color:#152D35">
                     <h4>Dosis Terendah (Kecamatan)</h4>
                     <hr class="text-white bg-white" />
@@ -193,9 +193,9 @@
             <!-- ./col -->
             <div class="col-lg-3 mb-2">
                 <!-- small box -->
-                
+
                 <div class="small-box text-black" style="background-color:#D4ECDD">
-                    <h4>Dosis Tertinggi (Kecamatan)</h4>
+                    <h4>Dosis Tertinggi<br> (Kecamatan)</h4>
                     <hr class="text-white bg-green" />
                     <div class="inner">
                         <h4>Dosis 1</h4>
@@ -226,9 +226,9 @@
             <!-- ./col -->
             <div class="col-lg-3 mb-2">
                 <!-- small box -->
-                
+
                 <div class="small-box text-white" style="background-color:rgb(26, 60, 64)">
-                    <h4>Dosis Terendah (Desa)</h4>
+                    <h4>Dosis Terendah <br> (Desa)</h4>
                     <hr class="text-white bg-white" />
                     <div class="inner">
                         <h4>Dosis 1</h4>
@@ -257,9 +257,9 @@
             <!-- ./col -->
             <div class="col-lg-3 mb-2">
                 <!-- small box -->
-                
+
                 <div class="small-box" style="background-color:#D4ECDD">
-                    <h4>Dosis Tertinggi (Desa)</h4>
+                    <h4>Dosis Tertinggi <br> (Desa)</h4>
                     <hr class="text-white bg-green" />
                     <div class="inner">
                         <h4>Dosis 1</h4>
@@ -356,7 +356,7 @@
                 </div>
             </div>
             <div class="col-lg-6 mb-2">
-                
+
                 <div class="p-4 w-100 rounded shadow text-white" style="background-color:#1A3C40">
                     <h2>Lansia</h2>
                     <hr class="text-white bg-white" />
@@ -389,7 +389,7 @@
                 </div>
             </div>
             <div class="col-lg-6 mb-2">
-                
+
                 <div class="p-4 w-100 rounded shadow text-white" style="background-color:#417D7A">
                     <h2>Masyarakat</h2>
                     <hr class="text-white bg-white" />
@@ -422,7 +422,7 @@
                 </div>
             </div>
             <div class="col-lg-6 mb-2">
-                
+
                 <div class="p-4 w-100 rounded shadow text-white" style="background-color:#1D5C63">
                     <h2>Remaja</h2>
                     <hr class="text-white bg-white" />
@@ -455,7 +455,7 @@
                 </div>
             </div>
             <div class="col-lg-6 mb-2">
-                
+
                 <div class="p-4 w-100 rounded shadow text-white" style="background-color:#1A3C40">
                     <h2>Usia 6-11 tahun</h2>
                     <hr class="text-white bg-white" />

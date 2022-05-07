@@ -94,9 +94,15 @@
         @else
             <aside class="main-sidebar sidebar-dark-primary elevation-4 position-fixed" style="background-color: #417D7A">
                 <!-- Brand Logo -->
-                <a href="{{ route('Data user') }}" class="brand-link">
-
-                    <h2 class="brand-text font-weight-light">Dinas Kesehatan <br> Kota Banda Aceh</>
+                <a href="#" class="brand-link" style="text-decoration: none">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="{{ asset('storage/img/logoBNA.png') }}" width="450" alt="">
+                        </div>
+                        <div class="col">
+                            <span class=" font-weight-light">VAKSINASI <br>BANDA ACEH</span>
+                        </div>
+                    </div>
                 </a>
 
                 <!-- Sidebar -->
@@ -164,7 +170,8 @@
                                     <div class="collapse " id="data" style="">
                                         <ul class="nav ms-4 ps-3">
                                             <li class="nav-item w-100">
-                                                <a class="dropdown-item btn" href="{{ route('halaman data') }}"> Data
+                                                <a class="dropdown-item btn" href="{{ route('halaman data') }}">
+                                                    Data
                                                     Vaksinasi</a>
                                             </li>
                                             <li class="nav-item  w-100">
