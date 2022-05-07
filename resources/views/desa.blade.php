@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container-xl">
-        <div class="table-responsive" style="background-color: #EDE6DB">
+        <div class="table-responsive">
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
