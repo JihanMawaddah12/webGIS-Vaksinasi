@@ -18,12 +18,14 @@ Auth::routes();
 Route::post('/import', [ App\Http\Controllers\HalamanData::class, 'import'])->name('import');
 Route::get('/', [App\Http\Controllers\UserController::class, 'data'])->name('Data user');
 Route::get('/panduan', [App\Http\Controllers\PanduanController::class, 'index'])->name('panduan');
+Route::get('/panduan-user', [App\Http\Controllers\PanduanController::class, 'user'])->name('panduan-user');
 Route::get('/portal/{tematik_id?}', [App\Http\Controllers\UserController::class, 'data'])->name('portal');
 Route::get('/pendaftaran', [App\Http\Controllers\RouteMap::class, 'pendaftaran'])->name('pendaftaran');
 Route::post('/daftar', [App\Http\Controllers\RouteMap::class, 'daftar'])->name('daftar');
 
 Route::get('/home/{tematik_id?}', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/rute', [App\Http\Controllers\RouteMap::class, 'index'])->name('Rute');
+Route::get('/rute-user', [App\Http\Controllers\RouteMap::class, 'user'])->name('RuteUser');
 Route::get('/maps-user', [App\Http\Controllers\UserController::class, 'map'])->name('Map user');
 Route::get('/halaman_data', [App\Http\Controllers\HalamanData::class, 'index'])->name('halaman data');
 Route::post('/input_data', [App\Http\Controllers\HalamanData::class, 'store'])->name('data vaksin');

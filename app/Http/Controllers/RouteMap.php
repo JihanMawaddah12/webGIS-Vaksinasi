@@ -29,6 +29,23 @@ class RouteMap extends Controller
             'data' => $info,
         ]);
     }
+    public function user()
+    {
+        $coor = [];
+        $arr = [];
+        $index = 0;
+        $data = HalamanData2::all();
+
+        foreach ($data as $item) {
+            $info[$index] = [$item->alamat, $item->lat, $item->long, $item->lokasi];
+            $index++;
+        }
+        return view('routeMapUser', [
+            'geofile' => [],
+            'color' => [],
+            'data' => $info,
+        ]);
+    }
     public function pendaftaran()
     {
         $coor = [];
@@ -62,4 +79,5 @@ class RouteMap extends Controller
         Pendaftaran::create($request->all());
         return redirect('/');
     }
+    
 }

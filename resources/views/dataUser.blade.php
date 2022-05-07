@@ -85,10 +85,10 @@ http://www.tooplate.com/view/2091-ziggy
             style="border-bottom:1px solid white;">
             <h4>Home</h4>
         </a>
-        <a href="{{ route('Rute') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
+        <a href="{{ route('RuteUser') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Rute</h4>
         </a>
-        <a href="{{ route('panduan') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
+        <a href="{{ route('panduanUser') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Panduan</h4>
         </a>
         <a href="{{ route('pendaftaran') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">

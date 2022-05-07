@@ -15,7 +15,10 @@ class PanduanController extends Controller
     {
         return view('panduan');
     }
-
+    public function user()
+    {
+        return view('panduanUser');
+    }
     /**
      * Show the form for creating a new resource.
      *
