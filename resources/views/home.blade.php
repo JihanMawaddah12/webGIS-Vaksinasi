@@ -164,29 +164,31 @@
                 <!-- small box -->
 
                 <div class="small-box text-white" style="background-color:#152D35">
-                    <h4>Dosis Terendah (Kecamatan)</h4>
-                    <hr class="text-white bg-white" />
-                    <div class="inner">
-                        <h4>Dosis 1</h4>
-                        <h6>Kecamatan {{ $krendah1->tematik->kecamatan }}</h6>
-                        <h6>Jumlah {{ $krendah1->total }}</h6>
-                        <h3>
-                            {{ $krpersen1 ? number_format((float) ($krendah1->total / $krpersen1) * 100, 2, '.', '') : 0 }}%
-                            </h6>
-                            <hr class="text-white bg-white" />
-                            <h4>Dosis 2</h4>
-                            <h6>Kecamatan {{ $krendah2->tematik->kecamatan }}</h6>
-                            <h6>Jumlah {{ $krendah2->total }}</h6>
+                    <div class="text-center">
+                        <h4>Dosis Terendah (Kecamatan)</h4>
+                        <hr class="text-white bg-white" />
+                        <div class="inner">
+                            <h4>Dosis 1</h4>
+                            <h6>Kecamatan {{ $krendah1->tematik->kecamatan }}</h6>
+                            <h6>Jumlah {{ $krendah1->total }}</h6>
                             <h3>
-                                {{ $krpersen2 ? number_format((float) ($krendah2->total / $krpersen2) * 100, 2, '.', '') : 0 }}%
+                                {{ $krpersen1 ? number_format((float) ($krendah1->total / $krpersen1) * 100, 2, '.', '') : 0 }}%
                                 </h6>
                                 <hr class="text-white bg-white" />
-                                <h4>Dosis 3</h4>
-                                <h6>Kecamatan {{ $krendah3->tematik->kecamatan }}</h6>
-                                <h6>Jumlah {{ $krendah3->total }}</h6>
+                                <h4>Dosis 2</h4>
+                                <h6>Kecamatan {{ $krendah2->tematik->kecamatan }}</h6>
+                                <h6>Jumlah {{ $krendah2->total }}</h6>
                                 <h3>
-                                    {{ $krpersen3 ? number_format((float) ($krendah3->total / $krpersen3) * 100, 2, '.', '') : 0 }}%
+                                    {{ $krpersen2 ? number_format((float) ($krendah2->total / $krpersen2) * 100, 2, '.', '') : 0 }}%
                                     </h6>
+                                    <hr class="text-white bg-white" />
+                                    <h4>Dosis 3</h4>
+                                    <h6>Kecamatan {{ $krendah3->tematik->kecamatan }}</h6>
+                                    <h6>Jumlah {{ $krendah3->total }}</h6>
+                                    <h3>
+                                        {{ $krpersen3 ? number_format((float) ($krendah3->total / $krpersen3) * 100, 2, '.', '') : 0 }}%
+                                        </h6>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -195,29 +197,31 @@
                 <!-- small box -->
 
                 <div class="small-box text-black" style="background-color:#D4ECDD">
-                    <h4>Dosis Tertinggi<br> (Kecamatan)</h4>
-                    <hr class="text-white bg-green" />
-                    <div class="inner">
-                        <h4>Dosis 1</h4>
-                        <h6>Kecamatan {{ $ktinggi1->tematik->kecamatan }}</h6>
-                        <h6>Jumlah {{ $ktinggi1->total }}</h6>
-                        <h3>
-                            {{ $ktpersen1 ? number_format((float) ($ktinggi1->total / $ktpersen1) * 100, 2, '.', '') : 0 }}%
-                        </h3>
+                    <div class="text-center">
+                        <h4>Dosis Tertinggi<br> (Kecamatan)</h4>
                         <hr class="text-white bg-green" />
-                        <h4>Dosis 2</h4>
-                        <h6>Kecamatan {{ $ktinggi2->tematik->kecamatan }}</h6>
-                        <h6>Jumlah {{ $ktinggi2->total }}</h6>
-                        <h3>
-                            {{ $ktpersen2 ? number_format((float) ($ktinggi2->total / $ktpersen2) * 100, 2, '.', '') : 0 }}%
-                        </h3>
-                        <hr class="text-white bg-green" />
-                        <h4>Dosis 3</h4>
-                        <h6>Kecamatan {{ $ktinggi3->tematik->kecamatan }}</h6>
-                        <h6>Jumlah {{ $ktinggi3->total }}</h6>
-                        <h3>
-                            {{ $ktpersen3 ? number_format((float) ($ktinggi3->total / $ktpersen3) * 100, 2, '.', '') : 0 }}%
-                        </h3>
+                        <div class="inner">
+                            <h4>Dosis 1</h4>
+                            <h6>Kecamatan {{ $ktinggi1->tematik->kecamatan }}</h6>
+                            <h6>Jumlah {{ $ktinggi1->total }}</h6>
+                            <h3>
+                                {{ $ktpersen1 ? number_format((float) ($ktinggi1->total / $ktpersen1) * 100, 2, '.', '') : 0 }}%
+                            </h3>
+                            <hr class="text-white bg-green" />
+                            <h4>Dosis 2</h4>
+                            <h6>Kecamatan {{ $ktinggi2->tematik->kecamatan }}</h6>
+                            <h6>Jumlah {{ $ktinggi2->total }}</h6>
+                            <h3>
+                                {{ $ktpersen2 ? number_format((float) ($ktinggi2->total / $ktpersen2) * 100, 2, '.', '') : 0 }}%
+                            </h3>
+                            <hr class="text-white bg-green" />
+                            <h4>Dosis 3</h4>
+                            <h6>Kecamatan {{ $ktinggi3->tematik->kecamatan }}</h6>
+                            <h6>Jumlah {{ $ktinggi3->total }}</h6>
+                            <h3>
+                                {{ $ktpersen3 ? number_format((float) ($ktinggi3->total / $ktpersen3) * 100, 2, '.', '') : 0 }}%
+                            </h3>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -228,29 +232,31 @@
                 <!-- small box -->
 
                 <div class="small-box text-white" style="background-color:rgb(26, 60, 64)">
-                    <h4>Dosis Terendah <br> (Desa)</h4>
-                    <hr class="text-white bg-white" />
-                    <div class="inner">
-                        <h4>Dosis 1</h4>
-                        <h6>Desa {{ $drendah1->desa->desa }}</h6>
-                        <h6>Jumlah {{ $drendah1->total }}</h6>
-                        <h3>
-                            {{ $drpersen1 ? number_format((float) ($drendah1->total / $drpersen1) * 100, 2, '.', '') : 0 }}%
-                            </h6>
-                            <hr class="text-white bg-white" />
-                            <h4>Dosis 2</h4>
-                            <h6>Desa {{ $drendah2->desa->desa }}</h6>
-                            <h6>Jumlah {{ $drendah2->total }}</h6>
+                    <div class="text-center">
+                        <h4>Dosis Terendah <br> (Desa)</h4>
+                        <hr class="text-white bg-white" />
+                        <div class="inner">
+                            <h4>Dosis 1</h4>
+                            <h6>Desa {{ $drendah1->desa->desa }}</h6>
+                            <h6>Jumlah {{ $drendah1->total }}</h6>
                             <h3>
-                                {{ $drpersen2 ? number_format((float) ($drendah2->total / $drpersen2) * 100, 2, '.', '') : 0 }}%
+                                {{ $drpersen1 ? number_format((float) ($drendah1->total / $drpersen1) * 100, 2, '.', '') : 0 }}%
                                 </h6>
                                 <hr class="text-white bg-white" />
-                                <h4>Dosis 3</h4>
-                                <h6>Desa {{ $drendah3->desa->desa }}</h6>
-                                <h6>Jumlah {{ $drendah3->total }}</h6>
+                                <h4>Dosis 2</h4>
+                                <h6>Desa {{ $drendah2->desa->desa }}</h6>
+                                <h6>Jumlah {{ $drendah2->total }}</h6>
                                 <h3>
-                                    {{ $drpersen3 ? number_format((float) ($drendah3->total / $drpersen3) * 100, 2, '.', '') : 0 }}%
+                                    {{ $drpersen2 ? number_format((float) ($drendah2->total / $drpersen2) * 100, 2, '.', '') : 0 }}%
                                     </h6>
+                                    <hr class="text-white bg-white" />
+                                    <h4>Dosis 3</h4>
+                                    <h6>Desa {{ $drendah3->desa->desa }}</h6>
+                                    <h6>Jumlah {{ $drendah3->total }}</h6>
+                                    <h3>
+                                        {{ $drpersen3 ? number_format((float) ($drendah3->total / $drpersen3) * 100, 2, '.', '') : 0 }}%
+                                        </h6>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -259,29 +265,31 @@
                 <!-- small box -->
 
                 <div class="small-box" style="background-color:#D4ECDD">
-                    <h4>Dosis Tertinggi <br> (Desa)</h4>
-                    <hr class="text-white bg-green" />
-                    <div class="inner">
-                        <h4>Dosis 1</h4>
-                        <h6>Desa {{ $dtinggi1->desa->desa }}</h6>
-                        <h6>Jumlah {{ $dtinggi1->total }}</h6>
-                        <h3>
-                            {{ $dtpersen1 ? number_format((float) ($dtinggi1->total / $dtpersen1) * 100, 2, '.', '') : 0 }}%
-                            </h6>
-                            <hr class="text-white bg-green" />
-                            <h4>Dosis 2</h4>
-                            <h6>Desa {{ $dtinggi2->desa->desa }}</h6>
-                            <h6>Jumlah {{ $dtinggi2->total }}</h6>
+                    <div class="text-center">
+                        <h4>Dosis Tertinggi <br> (Desa)</h4>
+                        <hr class="text-white bg-green" />
+                        <div class="inner">
+                            <h4>Dosis 1</h4>
+                            <h6>Desa {{ $dtinggi1->desa->desa }}</h6>
+                            <h6>Jumlah {{ $dtinggi1->total }}</h6>
                             <h3>
-                                {{ $dtpersen2 ? number_format((float) ($dtinggi2->total / $dtpersen2) * 100, 2, '.', '') : 0 }}%
+                                {{ $dtpersen1 ? number_format((float) ($dtinggi1->total / $dtpersen1) * 100, 2, '.', '') : 0 }}%
                                 </h6>
                                 <hr class="text-white bg-green" />
-                                <h4>Dosis 3</h4>
-                                <h6>Desa {{ $dtinggi3->desa->desa }}</h6>
-                                <h6>Jumlah {{ $dtinggi3->total }}</h6>
+                                <h4>Dosis 2</h4>
+                                <h6>Desa {{ $dtinggi2->desa->desa }}</h6>
+                                <h6>Jumlah {{ $dtinggi2->total }}</h6>
                                 <h3>
-                                    {{ $dtpersen3 ? number_format((float) ($dtinggi3->total / $dtpersen3) * 100, 2, '.', '') : 0 }}%
+                                    {{ $dtpersen2 ? number_format((float) ($dtinggi2->total / $dtpersen2) * 100, 2, '.', '') : 0 }}%
                                     </h6>
+                                    <hr class="text-white bg-green" />
+                                    <h4>Dosis 3</h4>
+                                    <h6>Desa {{ $dtinggi3->desa->desa }}</h6>
+                                    <h6>Jumlah {{ $dtinggi3->total }}</h6>
+                                    <h3>
+                                        {{ $dtpersen3 ? number_format((float) ($dtinggi3->total / $dtpersen3) * 100, 2, '.', '') : 0 }}%
+                                        </h6>
+                        </div>
                     </div>
                 </div>
             </div>

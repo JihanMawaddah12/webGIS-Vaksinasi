@@ -50,7 +50,7 @@ http://www.tooplate.com/view/2091-ziggy
         crossorigin="" />
     <style>
         #map {
-            min-height: 600px;
+            min-height: 500px;
         }
 
         .leaflet-control-attribution {
@@ -92,6 +92,7 @@ http://www.tooplate.com/view/2091-ziggy
 
         .leaflet-right {
             max-width: 50%;
+
         }
 
     </style>

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+    <link rel="stylesheet" href="{{ asset('storage/css/halaman-data.css') }}">
     <div class="container-xl">
         <div class="table-responsive" style="background-color: white">
             <div class="table-wrapper">
@@ -9,11 +10,12 @@
                             <h2>Data <b>Lokasi Vaksinasi</b></h2>
                         </div>
                         <div class="col-sm-6 text-end">
-                            <a href="{{ route('tambah data2') }}" class="btn btn-success"><i
-                                    class="material-icons">&#xE147;</i> <span>Masukkan Data Baru</span></a>
-
+                            <a href="{{ route('tambah data2') }}" class="btn"
+                                style="background-color: #417D7A"><i class="material-icons">&#xE147;</i>
+                                <span>Masukkan Data Baru</span></a>
                         </div>
                     </div>
+
                 </div>
                 <table class="table table-striped table-hover" id="table">
                     <thead>
@@ -44,8 +46,9 @@
                                     <form action="{{ route('delete data2', ['id' => $item->id]) }}" method="get">
                                         <a href="{{ route('detail map', ['id' => $item->id]) }}" class="edit"><i
                                                 class="fas fa-map-marker-alt text-danger"></i></a>
-                                        <a href="{{ route('edit data2', ['id' => $item->id]) }}" class="edit"><i
-                                                class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                        <a href="{{ route('edit data2', ['id' => $item->id]) }}"
+                                            class="edit"><i class="material-icons" data-toggle="tooltip"
+                                                title="Edit">&#xE254;</i></a>
                                         <button type="submit" class="delete show_confirm border-0 p-0 bg-transparent"><i
                                                 class="material-icons" data-toggle="tooltip"
                                                 title="Delete">&#xE872;</i></button>

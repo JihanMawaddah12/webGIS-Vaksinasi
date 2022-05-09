@@ -50,7 +50,7 @@ http://www.tooplate.com/view/2091-ziggy
         crossorigin="" />
     <style>
         #map {
-            min-height: 600px;
+            min-height: 665px;
         }
 
         .leaflet-control-attribution {
@@ -309,7 +309,7 @@ http://www.tooplate.com/view/2091-ziggy
                 })
                 .bindPopup("<strong> <div class='text-center'><strong>" + data[i][3] +
                     "</strong><br/> <div class='text-center'><strong>Kapasitas " + data[i][5] +
-                    "</strong><br/> <div class='text-center'><strong>Deskripsi " + data[i][6] +
+                    "</strong><br/> <div class='text-center'><strong>Jenis Vaksin " + data[i][6] +
                     "</strong></div><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(&quot;" +
                     data[i][4] + "&quot;,&quot;" + data[i][3] + "&quot;)'>Ke Sini</button>")
                 .addTo(map);

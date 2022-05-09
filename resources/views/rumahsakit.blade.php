@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+    <link rel="stylesheet" href="{{ asset('storage/css/halaman-data.css') }}">
     <div class="container-xl">
         <div class="table-responsive">
             <div class="table-wrapper">
@@ -9,8 +10,9 @@
                             <h2>Data <b>Rumah Sakit</b></h2>
                         </div>
                         <div class="col-sm-6 text-end">
-                            <a href="{{ route('tambah rumahsakit') }}" class="btn btn-success"><i
-                                    class="material-icons">&#xE147;</i> <span>Masukkan Data Baru</span></a>
+                            <a href="{{ route('tambah rumahsakit') }}" class="btn"
+                                style="background-color: #417D7A"><i class="material-icons">&#xE147;</i> <span>Masukkan Data
+                                    Baru</span></a>
                         </div>
                     </div>
                 </div>
