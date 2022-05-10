@@ -1,13 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="container">
         <div class="card p-4">
             <div id="map"></div>
         </div>
     </div>
-
 @endsection
 
 @section('styles')
@@ -56,13 +54,11 @@
 @endsection
 
 @push('scripts')
-
     <!-- Leaflet JavaScript -->
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin="">
-    </script>
+        crossorigin=""></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
         integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -90,14 +86,14 @@
         };
         // menampilkan pop upp info tematik
         info.update = function(props) {
-            this._div.innerHTML = '<h4>Kecamatan</h4>' + (props ?
+            this._div.innerHTML = '<h4>Lokasi Vaksinasi</h4>' + (props ?
                 '<b>' + props.NAMOBJ + '</b><br />' + props.MhsSIF + ' orang' :
                 'Gerakkan mouse Anda');
         };
 
         info.addTo(map);
 
-     
+
         // munculkan highlight pada peta
         function highlightFeature(e) {
             var layer = e.target;
@@ -132,7 +128,7 @@
                 click: zoomToFeature
             });
         }
-       
+
         var legend = L.control({
             position: 'bottomright'
         });

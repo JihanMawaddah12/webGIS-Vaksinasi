@@ -41,7 +41,7 @@ http://www.tooplate.com/view/2091-ziggy
     <!-- Leaflet CSS -->
     <style>
         #map {
-            min-height: 600px;
+            min-height: 500px;
         }
 
         .leaflet-control-attribution {
@@ -112,8 +112,19 @@ http://www.tooplate.com/view/2091-ziggy
     </section>
 
     <section class="second-section" style=" background-color: #EDE6DB">
-        <div class="card p-4">
-            <div id="map"></div>
+        <div class="card m-4" style="background-color: #99C4C8">
+
+            <div class="card-header border-0">
+                <h3 class="card-title text-white">
+                    <i class="fas fa-map-marker-alt mr-1 "></i>
+                    Maps
+                </h3>
+
+            </div>
+            <div class="card-body">
+                <div id="map" style="height: 300px; width: 100%;"></div>
+            </div>
+
         </div>
 
     </section>
@@ -145,15 +156,13 @@ http://www.tooplate.com/view/2091-ziggy
 <!-- Make sure you put this AFTER Leaflet's CSS -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
 integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin="">
-</script>
+crossorigin=""></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
 integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
 
-<script src="{{ asset('storage/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}">
-</script>
+<script src="{{ asset('storage/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}"></script>
 
 <script type="text/javascript">
     var s = [5.554630942893766, 95.31709742351293];
@@ -205,7 +214,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             })
             .bindPopup("<strong>" + data[i][3] +
                 "</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i][
-                1] + "," + data[i][2] + ")'>Ke Sini</button>")
+                    1
+                ] + "," + data[i][2] + ")'>Ke Sini</button>")
             .addTo(map);
     }
 

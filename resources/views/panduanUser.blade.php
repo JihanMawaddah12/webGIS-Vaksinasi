@@ -9,6 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
     <!--
 
 Template 2091 Ziggy
@@ -112,25 +113,49 @@ http://www.tooplate.com/view/2091-ziggy
     </section>
 
     <section class="second-section" style=" background-color: #EDE6DB">
-        <div class="card p-4">
-            <div class="row">
-                <div class="col">
-                    <div class="row">
-                        <div class="col-md-1">
-                            <h4 class="bg-info text-white rounded-circle px-2" style="width: fit-content">
-                                1
-                            </h4>
+        <div class="container">
+            <div class="card p-4">
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <h4 class="bg-info text-white rounded-circle px-1" style="width: fit-content">
+                                    1
+                                </h4>
+                            </div>
+                            <div class="col-md-6">
+                                Text
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            Text
-                        </div>
+                        <img width="200" src="{{ asset('storage/img/left-image.png') }}" alt="">
                     </div>
-                    <img width="200" src="{{ asset('storage/img/left-image.png') }}" alt="">
+                    <div class="col">
+                    </div>
                 </div>
-                <div class="col">
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="card p-4">
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <h4 class="bg-info text-white rounded-circle px-1" style="width: fit-content">
+                                    1
+                                </h4>
+                            </div>
+                            <div class="col-md-6">
+                                Text
+                            </div>
+                        </div>
+                        <img width="200" src="{{ asset('storage/img/left-image.png') }}" alt="">
+                    </div>
+                    <div class="col">
+                    </div>
                 </div>
             </div>
-
         </div>
 
     </section>

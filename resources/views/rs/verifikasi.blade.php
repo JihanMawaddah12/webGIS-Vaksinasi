@@ -1,12 +1,13 @@
 @extends('layouts.app')
 @section('content')
+    <link rel="stylesheet" href="{{ asset('storage/css/halaman-data.css') }}">
     <div class="container-xl">
         <div class="table-responsive">
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>Pendaftaran <b>Vaksinasi</b></h2>
+                            <h2>verifikasi <b>Vaksinasi</b></h2>
                         </div>
                     </div>
                 </div>

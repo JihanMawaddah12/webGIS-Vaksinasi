@@ -40,8 +40,8 @@
                                 <td>{{ $item->created_at }}</td>
                                 <td class="w-25">
                                     <form action="{{ route('pendaftaran hapus', ['id' => $item->id]) }}" method="get">
-                                        <a href="{{ route('verifikasi', ['id' => $item->id]) }}" class="btn"
-                                            style="background-color: #1A3C40">Verifikasi</a>
+                                        <a href="{{ route('verifikasi', ['id' => $item->id]) }}" class="edit"><i
+                                                class="fas fa fa-check text-success"></i></a>
                                         <button type="submit" class="delete show_confirm border-0 p-0 bg-transparent"><i
                                                 class="material-icons" data-toggle="tooltip"
                                                 title="Delete">&#xE872;</i></button>
