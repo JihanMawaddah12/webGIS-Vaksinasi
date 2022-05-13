@@ -99,8 +99,8 @@
                         <div class="col-md-4">
                             <img src="{{ asset('storage/img/logoBNA.png') }}" width="450" alt="">
                         </div>
-                        <div class="col">
-                            <span class=" font-weight-light">VAKSINASI <br>BANDA ACEH</span>
+                        <div class="col-md-7">
+                            <span class=" font-weight-light">VAKSINASI<br> COVID-19 <br>BANDA ACEH</span>
                         </div>
                     </div>
                 </a>
