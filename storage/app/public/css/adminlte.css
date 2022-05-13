@@ -3626,17 +3626,17 @@ input[type="button"].btn-block {
 .dropdown-item:hover, .dropdown-item:focus {
   color: #16181b;
   text-decoration: none;
-  background-color: #f8f9fa;
+  background-color: #1A3C40;
 }
 
 .dropdown-item.active, .dropdown-item:active {
-  color: #fff;
+  color: #417D7A;
   text-decoration: none;
-  background-color: #007bff;
+  background-color: #15ab54;
 }
 
 .dropdown-item.disabled, .dropdown-item:disabled {
-  color: #6c757d;
+  color: #2e302e;
   pointer-events: none;
   background-color: transparent;
 }

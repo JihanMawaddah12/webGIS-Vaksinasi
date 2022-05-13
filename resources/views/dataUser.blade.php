@@ -27,7 +27,7 @@ http://www.tooplate.com/view/2091-ziggy
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('storage/css/adminlte.min.css') }}" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
@@ -99,63 +99,63 @@ http://www.tooplate.com/view/2091-ziggy
     </section>
 
     <section class="second-section text-center" style=" background-color: #EDE6DB">
-        <h1>Vaksinasi COVID-19 Kota Banda Aceh</h1><br>
+        <h1><b> Vaksinasi COVID-19 Kota Banda Aceh</h1><br>
         <div class="me-5 ms-5">
             <div class="row">
-                <div class="col-lg-3 col-6">
+                <div class="col-lg-3 mb-2">
                     <!-- small box -->
-                    <div class="card p-2 text-black text-white" style="background-color:#639476">
+                    <div class="small-box" style="background-color:#D4ECDD">
                         <div class="inner">
                             <h3>{{ $target }}</h3>
 
-                            <h4 class="text-white">Sasaran Vaksinasi</h4>
+                            <p>Sasaran Vaksinasi</p>
                         </div>
                     </div>
                 </div>
                 <!-- ./col -->
-                <div class="col-lg-3 col-6">
+                <div class="col-lg-3 mb-2">
                     <!-- small box -->
-                    <div class="card p-2 text-white text-white" style="background-color:rgb(65, 125, 122)">
-                        <div class="inner ">
-                            <div class="row ">
+                    <div class="small-box text-white" style="background-color:rgb(65, 125, 122)">
+                        <div class="inner">
+                            <div class="row">
                                 <div class="col">
                                     <h3>{{ $dosis1 }}</h3>
                                 </div>
                                 <div class="col">
-                                    <h3 class="text-end font-weight-bold">
+                                    <h3 class="text-white ">
                                         {{ number_format((float) ($dosis1 / $target) * 100, 2, '.', '') }}%
                                     </h3>
                                 </div>
                             </div>
-                            <h4 class="text-white">Total Vaksinasi Dosis 1</h4>
+                            <p class="text-white">Total Vaksinasi Dosis 1</p>
 
                         </div>
                     </div>
                 </div>
                 <!-- ./col -->
-                <div class="col-lg-3 col-6">
+                <div class="col-lg-3 mb-2">
                     <!-- small box -->
-                    <div class="card p-2 text-white text-white" style="background-color:rgb(29, 92, 99)">
+                    <div class="small-box text-white" style="background-color:rgb(29, 92, 99)">
                         <div class="inner">
                             <div class="row">
                                 <div class="col">
                                     <h3>{{ $dosis2 }}</h3>
                                 </div>
                                 <div class="col">
-                                    <h3 class="text-end font-weight-bold">
+                                    <h3 class="text-end">
                                         {{ number_format((float) ($dosis2 / $target) * 100, 2, '.', '') }}%
                                     </h3>
                                 </div>
                             </div>
-                            <h4 class="text-white">Total Vaksinasi Dosis 2</h4>
+                            <p class="text-white">Total Vaksinasi Dosis 2</p>
 
                         </div>
                     </div>
                 </div>
                 <!-- ./col -->
-                <div class="col-lg-3 col-6">
+                <div class="col-lg-3 mb-2">
                     <!-- small box -->
-                    <div class="card p-2 text-white text-white" style="background-color:rgb(26, 60, 64)">
+                    <div class="small-box text-white" style="background-color:rgb(26, 60, 64)">
                         <div class="inner">
                             <div class="row">
                                 <div class="col">
@@ -167,94 +167,94 @@ http://www.tooplate.com/view/2091-ziggy
                                     </h3>
                                 </div>
                             </div>
-                            <h4 class="text-white">Total Vaksinasi Dosis 3</h4>
+                            <p class="text-white">Total Vaksinasi Dosis 3</p>
 
                         </div>
                     </div>
                 </div>
                 <!-- ./col -->
             </div>
-             <div class="mb-2">
+            <div class="mb-2">
 
-                    <div class="row">
+                <div class="row">
 
-                        <section class="col-lg-7 connectedSortable">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                        <i class="fas fa-chart-pie mr-1"></i>
-                                        Grafik
-                                    </h3>
+                    <section class="col-lg-6 connectedSortable">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-chart-pie mr-1"></i>
+                                    Grafik
+                                </h3>
 
-                                    <div class="card-tools mx-2">
+                                <div class="card-tools mx-2">
 
-                                        <select class="form-control" id="kecamatan" name="kecamatan">
-                                            <option disabled selected value="">--Pilih Kecamatan--</option>
-                                            @foreach ($tematik as $item)
-                                                <option value="{{ $item->id }}"
-                                                    {{ $state == $item->id ? 'selected' : '' }}>
-                                                    {{ $item->kecamatan }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                    <select class="form-control" id="kecamatan" name="kecamatan">
+                                        <option disabled selected value="">--Pilih Kecamatan--</option>
+                                        @foreach ($tematik as $item)
+                                            <option value="{{ $item->id }}"
+                                                {{ $state == $item->id ? 'selected' : '' }}>
+                                                {{ $item->kecamatan }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div><!-- /.card-header -->
+                            <div class="card-body" style="background-color: #D4ECDD">
+                                <div class="card-tools">
+                                    <ul class="nav nav-pills ml-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" onclick="return state = 'grafik1'"
+                                                href="#grafik1-button" data-bs-toggle="tab">Dosis
+                                                1</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" onclick="return state = 'grafik2'"
+                                                href="#grafik2-button" data-bs-toggle="tab">Dosis
+                                                2</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" onclick="return state = 'grafik3'"
+                                                href="#grafik3-button" data-bs-toggle="tab">Dosis
+                                                3</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content p-0">
+                                    <!-- Morris chart - Sales -->
+                                    <div class="chart tab-pane active" id="grafik1-button"
+                                        style="position: relative; height: 300px;">
+                                        <canvas id="grafik1" height="300" style="height: 300px;"></canvas>
                                     </div>
-                                </div><!-- /.card-header -->
-                                <div class="card-body">
-                                        <div class="card-tools">
-                                            <ul class="nav nav-pills ml-auto">
-                                                <li class="nav-item">
-                                                    <a class="nav-link active" onclick="return state = 'grafik1'"
-                                                        href="#grafik1-button" data-bs-toggle="tab">Dosis
-                                                        1</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" onclick="return state = 'grafik2'"
-                                                        href="#grafik2-button" data-bs-toggle="tab">Dosis
-                                                        2</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" onclick="return state = 'grafik3'"
-                                                        href="#grafik3-button" data-bs-toggle="tab">Dosis
-                                                        3</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="tab-content p-0">
-                                            <!-- Morris chart - Sales -->
-                                            <div class="chart tab-pane active" id="grafik1-button"
-                                                style="position: relative; height: 300px;">
-                                                <canvas id="grafik1" height="300" style="height: 300px;"></canvas>
-                                            </div>
-                                            <div class="chart tab-pane" id="grafik2-button"
-                                                style="position: relative; height: 300px;">
-                                                <canvas id="grafik2" height="300" style="height: 300px;"></canvas>
-                                            </div>
-                                            <div class="chart tab-pane" id="grafik3-button"
-                                                style="position: relative; height: 300px;">
-                                                <canvas id="grafik3" height="300" style="height: 300px;"></canvas>
-                                            </div>
-                                        </div>
-                                </div><!-- /.card-body -->
-                            </div>
-                        </section>
-                        <section class="col-lg-5 ">
-                            <div class="card bg-gradient-primary">
-                                <div class="card-header border-0">
-                                    <h3 class="card-title">
-                                        <i class="fas fa-map-marker-alt mr-1"></i>
-                                        Maps
-                                    </h3>
-
+                                    <div class="chart tab-pane" id="grafik2-button"
+                                        style="position: relative; height: 300px;">
+                                        <canvas id="grafik2" height="300" style="height: 300px;"></canvas>
+                                    </div>
+                                    <div class="chart tab-pane" id="grafik3-button"
+                                        style="position: relative; height: 300px;">
+                                        <canvas id="grafik3" height="300" style="height: 300px;"></canvas>
+                                    </div>
                                 </div>
-                                <div class="card-body">
-                                    <div id="map" style="height: 300px; width: 100%;"></div>
-                                </div>
+                            </div><!-- /.card-body -->
+                        </div>
+                    </section>
+                    <section class="col-lg-6 ">
+                        <div class="card" style="background-color: #D4ECDD">
+                            <div class="card-header border-0">
+                                <h3 class="card-title">
+                                    <i class="fas fa-map-marker-alt mr-1"></i>
+                                    Maps
+                                </h3>
 
                             </div>
-                        </section>
+                            <div class="card-body">
+                                <div id="map" style="height: 355px; width: 100%;"></div>
+                            </div>
 
-                    </div>
+                        </div>
+                    </section>
+
                 </div>
+            </div>
             <div class="row">
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
@@ -622,7 +622,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     const data = {
         labels: labels,
         datasets: [{
-            label: 'Dosis 1 ' +{!! json_encode($tem) !!},
+            label: 'Dosis 1 ' + {!! json_encode($tem) !!},
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
             data: {!! json_encode($jumlah) !!},
@@ -665,7 +665,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     const data2 = {
         labels: labels2,
         datasets: [{
-            label: 'Dosis 2 ' +{!! json_encode($tem) !!},
+            label: 'Dosis 2 ' + {!! json_encode($tem) !!},
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
             data: {!! json_encode($jumlah2) !!},
@@ -710,7 +710,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     const data3 = {
         labels: labels3,
         datasets: [{
-            label: 'Dosis 3 ' +{!! json_encode($tem) !!},
+            label: 'Dosis 3 ' + {!! json_encode($tem) !!},
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
             data: {!! json_encode($jumlah3) !!},
@@ -753,13 +753,12 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- Make sure you put this AFTER Leaflet's CSS -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
 integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin="">
-</script>
+crossorigin=""></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
 integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
-    <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
+<script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
 <script type="text/javascript">
     var s = [5.554630942893766, 95.31709742351293];
     var color = {!! json_encode($color) !!};
@@ -783,9 +782,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     };
     //menampilkan pop up info tematik
     info.update = function(props) {
-        this._div.innerHTML = '<h2>Kecamatan</h2>' + (props ?
-            '<b>' + props.NAMOBJ :
-            'Klik wilayah');
+
     };
 
     info.addTo(map);
@@ -818,7 +815,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
         info.update(layer.feature.properties);
     }
-   
+
     var geojson;
 
     function resetHighlight(e) {
@@ -848,23 +845,23 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     });
 
     var markersLayer = new L.LayerGroup(); //layer contain searched elements
-        map.addLayer(markersLayer);
-        var controlSearch = new L.Control.Search({
-            position: 'topleft',
-            layer: markersLayer,
-            initial: false,
-            zoom: 12,
-            marker: false,
-            autoType: false
-        });
-        map.addControl( controlSearch );
-        for (var i = 0; i < datamap.length; i++) {
-            var title = datamap[i][0], //value searched
-                loc = [datamap[i][1], datamap[i][2]], //position found
-                marker = new L.Marker(new L.latLng(loc), {
-                    title: title
-                }); //se property searched
-            marker.bindPopup(title);
-            markersLayer.addLayer(marker);
-        }
+    map.addLayer(markersLayer);
+    var controlSearch = new L.Control.Search({
+        position: 'topleft',
+        layer: markersLayer,
+        initial: false,
+        zoom: 12,
+        marker: false,
+        autoType: false
+    });
+    map.addControl(controlSearch);
+    for (var i = 0; i < datamap.length; i++) {
+        var title = datamap[i][0], //value searched
+            loc = [datamap[i][1], datamap[i][2]], //position found
+            marker = new L.Marker(new L.latLng(loc), {
+                title: title
+            }); //se property searched
+        marker.bindPopup(title);
+        markersLayer.addLayer(marker);
+    }
 </script>

@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    <link rel="stylesheet" href="{{ asset('storage/css/halaman-data.css') }}">
     <div class="container-xl">
         <div class="table-responsive" style="background-color: white">
             <div class="table-wrapper">
@@ -9,9 +8,9 @@
                         <div class="col">
                             <span class="h2">Data <b>Vaksinasi</b></span>
                         </div>
-                      
+
                         <div class="col text-end ms-4">
-                             <a href="{{ route('tambah data') }}" class="btn"
+                            <a href="{{ route('tambah data') }}" class="btn"
                                 style="background-color: #417D7A"><i class="material-icons">&#xE147;</i>
                                 <span>Masukkan Data Baru</span></a>
                             <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
@@ -101,7 +100,7 @@
             padding-left: 10px;
             padding-right: 10px;
             margin-left: 12px;
-            margin-right:20px;
+            margin-right: 20px;
             color: white;
             float: left;
         }

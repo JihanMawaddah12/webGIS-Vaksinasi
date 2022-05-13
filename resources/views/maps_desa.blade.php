@@ -51,7 +51,7 @@
         }
 
         .leaflet-right .leaflet-control {
-            max-height: 25rem;
+            max-height: 20rem;
             overflow-y: auto;
             padding: 5px;
         }
@@ -195,11 +195,10 @@
             marker: {
                 icon: false
             }
-            
+
         });
 
 
         map.addControl(controlSearch);
-      
     </script>
 @endpush

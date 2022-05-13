@@ -39,7 +39,31 @@
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.4/fh-3.2.1/sc-2.0.5/datatables.min.js">
     </script>
+    <link rel="stylesheet" href="{{ asset('storage/css/halaman-data.css') }}">
+    <style>
+        .item {
+            background-color: transparent;
+            display: block;
+            width: 100%;
+            padding: 0.25rem 1rem;
+            clear: both;
+            font-weight: 400;
+            color: #212529;
+            text-align: inherit;
+            white-space: nowrap;
+            border: 0;
+            text-decoration: none;
+        }
 
+        .item.active {
+            background-color: #1A3C40;
+        }
+
+        .nav-link.active {
+            background-color: #1A3C40 !important;
+        }
+
+    </style>
     @yield('styles')
 </head>
 
@@ -76,7 +100,7 @@
                         </a>
 
                         <div id="drop" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item btn" href="{{ route('logout') }}"
+                            <a class="item btn" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
@@ -109,7 +133,7 @@
                 <div class="sidebar">
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                        <div class="info text-white">
+                        <div class="text-white">
                             {{ Auth::user()->name }}
                         </div>
                     </div>
@@ -123,7 +147,7 @@
                             @if (auth()->user()->level == 'admin')
                                 <li class="nav-item">
                                     <a href="{{ route('home') }}"
-                                        class="nav-link dropdown-item btn {{ request()->route()->getName() == 'home'? 'text-white bg-info': '' }} text-white text-start">
+                                        class="nav-link item btn {{ request()->route()->getName() == 'home'? 'text-white active': '' }} text-white text-start">
                                         <i class="nav-icon fas fa-th"></i>
                                         <p>
                                             Dashboard
@@ -144,20 +168,20 @@
                                         id="maps" style="">
                                         <ul class="nav ms-4 ps-3">
                                             <li class="nav-item w-100">
-                                                <a class="dropdown-item {{ request()->route()->getName() == 'maps lokasi'? 'text-white bg-info': '' }}"
+                                                <a class="item {{ request()->route()->getName() == 'maps lokasi'? 'text-white active': '' }}"
                                                     href="{{ route('maps lokasi') }}">Lokasi
                                                     Vaksinasi</a>
                                             </li>
                                             <li class="nav-item  w-100">
-                                                <a class="dropdown-item {{ request()->route()->getName() == 'maps desa'? 'text-white bg-info': '' }}"
+                                                <a class="item {{ request()->route()->getName() == 'maps desa'? 'text-white active': '' }}"
                                                     href="{{ route('maps desa') }}">Desa</a>
                                             </li>
                                             <li class="nav-item w-100">
-                                                <a class="dropdown-item {{ request()->route()->getName() == 'maps'? 'text-white bg-info': '' }}"
+                                                <a class="item {{ request()->route()->getName() == 'maps'? 'text-white active': '' }}"
                                                     href="{{ route('maps') }}">Kecamatan</a>
                                             </li>
                                             <li class="nav-item w-100 ">
-                                                <a class="dropdown-item {{ request()->route()->getName() == 'Rute'? 'text-white bg-info': '' }}"
+                                                <a class="item {{ request()->route()->getName() == 'Rute'? 'text-white active': '' }}"
                                                     href="{{ route('Rute') }}">Rute</a>
                                             </li>
                                         </ul>
@@ -176,29 +200,29 @@
                                         id="data" style="">
                                         <ul class="nav ms-4 ps-3">
                                             <li class="nav-item w-100">
-                                                <a class="dropdown-item {{ request()->route()->getName() == 'halaman data'? 'text-white bg-info': '' }}"
+                                                <a class="item {{ request()->route()->getName() == 'halaman data'? 'text-white active': '' }}"
                                                     href="{{ route('halaman data') }}">
                                                     Data
                                                     Vaksinasi</a>
                                             </li>
                                             <li class="nav-item  w-100">
-                                                <a class="dropdown-item {{ request()->route()->getName() == 'halaman data2'? 'text-white bg-info': '' }}"
+                                                <a class="item {{ request()->route()->getName() == 'halaman data2'? 'text-white active': '' }}"
                                                     href="{{ route('halaman data2') }}">Data
                                                     Lokasi
                                                     Vaksinasi</a>
                                             </li>
                                             <li class="nav-item w-100">
-                                                <a class="dropdown-item {{ request()->route()->getName() == 'halaman desa'? 'text-white bg-info': '' }}"
+                                                <a class="item {{ request()->route()->getName() == 'halaman desa'? 'text-white active': '' }}"
                                                     href="{{ route('halaman desa') }}">Data
                                                     Desa</a>
                                             </li>
                                             <li class="nav-item w-100">
-                                                <a class="dropdown-item {{ request()->route()->getName() == 'halaman tematik'? 'text-white bg-info': '' }}"
+                                                <a class="item {{ request()->route()->getName() == 'halaman tematik'? 'text-white active': '' }}"
                                                     href="{{ route('halaman tematik') }}">Data
                                                     Kecamatan</a>
                                             </li>
                                             <li class="nav-item w-100 ">
-                                                <a class="dropdown-item {{ request()->route()->getName() == 'rumah sakit'? 'text-white bg-info': '' }}"
+                                                <a class="item {{ request()->route()->getName() == 'rumah sakit'? 'text-white active': '' }}"
                                                     href="{{ route('rumah sakit') }}">Data
                                                     User</a>
                                             </li>
@@ -208,7 +232,7 @@
                             @else
                                 <li class="nav-item">
                                     <a href="{{ route('rs dashboard') }}"
-                                        class="nav-link btn {{ request()->route()->getName() == 'rs dashboard'? 'text-white bg-info': '' }}  text-white text-start">
+                                        class="nav-link btn {{ request()->route()->getName() == 'rs dashboard'? 'text-white active': '' }}  text-white text-start">
                                         <i class="nav-icon fas fa-th"></i>
                                         <p>
                                             Data Pendaftaran
@@ -217,7 +241,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('verif') }}"
-                                        class="nav-link btn {{ request()->route()->getName() == 'verif'? 'text-white bg-info': '' }}  text-white text-start">
+                                        class="nav-link btn {{ request()->route()->getName() == 'verif'? 'text-white active': '' }}  text-white text-start">
                                         <i class="nav-icon fas fa-th"></i>
                                         <p>
                                             Verifikasi
@@ -227,7 +251,7 @@
                             @endif
                             <li class="nav-item">
                                 <a href="{{ route('panduan') }}"
-                                    class="nav-link btn bg-transparent text-white text-start w-100">
+                                    class="nav-link btn {{ request()->route()->getName() == 'panduan'? 'active': '' }} text-white text-start w-100">
                                     <i class="nav-icon fa-solid fa-book"></i>
                                     <p>
                                         Panduan

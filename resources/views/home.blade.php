@@ -551,7 +551,7 @@
             const data = {
                 labels: labels,
                 datasets: [{
-                    label: 'Dosis 1 '+{!! json_encode($tem) !!},
+                    label: 'Dosis 1 ' + {!! json_encode($tem) !!},
                     backgroundColor: 'rgb(255, 99, 132)',
                     borderColor: 'rgb(255, 99, 132)',
                     data: {!! json_encode($jumlah) !!},
@@ -595,7 +595,7 @@
             const data2 = {
                 labels: labels2,
                 datasets: [{
-                    label: 'Dosis 2 '+{!! json_encode($tem) !!},
+                    label: 'Dosis 2 ' + {!! json_encode($tem) !!},
                     backgroundColor: 'rgb(255, 99, 132)',
                     borderColor: 'rgb(255, 99, 132)',
                     data: {!! json_encode($jumlah2) !!},
@@ -640,7 +640,7 @@
             const data3 = {
                 labels: labels3,
                 datasets: [{
-                    label: 'Dosis 3 '+{!! json_encode($tem) !!},
+                    label: 'Dosis 3 ' + {!! json_encode($tem) !!},
                     backgroundColor: 'rgb(255, 99, 132)',
                     borderColor: 'rgb(255, 99, 132)',
                     data: {!! json_encode($jumlah3) !!},
@@ -712,9 +712,7 @@
             };
             //menampilkan pop up info tematik
             info.update = function(props) {
-                this._div.innerHTML = '<h4>Kecamatan</h4>' + (props ?
-                    '<b>' + props.NAMOBJ + '</b><br />' + props.MhsSIF + ' orang' :
-                    'Gerakkan mouse Anda');
+
             };
 
             info.addTo(map);
@@ -776,7 +774,7 @@
                 position: 'bottomright'
             });
 
-          
+
             var markersLayer = new L.LayerGroup(); //layer contain searched elements
             map.addLayer(markersLayer);
             var controlSearch = new L.Control.Search({
