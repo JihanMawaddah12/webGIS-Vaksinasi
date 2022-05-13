@@ -31,7 +31,7 @@ class LoginController extends Controller
     protected function redirectTo()
     {
         if (Auth::user()->level == "admin") {
-            return "/halaman_data";
+            return "/home";
         } else if (Auth::user()->level == "rs") {
          
             return "rs/dashboard";
