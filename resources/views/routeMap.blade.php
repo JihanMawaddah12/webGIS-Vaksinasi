@@ -174,13 +174,15 @@
             layer: markersLayer,
             initial: false,
             zoom: 12,
-            marker: {
-                icon: true
-            },
+            marker: false,
             autoType: false
         });
         map.addControl( controlSearch );
-        
+        controlSearch.on('search:locationfound', function(e) {
+
+           e.layer.openPopup();
+
+        }).on('search:collapsed', function(e) {});
         for (var i = 0; i < data.length; i++) {
             var title = data[i][3],
                 loc = [data[i][1], data[i][2]], 
