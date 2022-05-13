@@ -551,7 +551,7 @@
             const data = {
                 labels: labels,
                 datasets: [{
-                    label: 'Dosis 1',
+                    label: 'Dosis 1 '+{!! json_encode($tem) !!},
                     backgroundColor: 'rgb(255, 99, 132)',
                     borderColor: 'rgb(255, 99, 132)',
                     data: {!! json_encode($jumlah) !!},
@@ -595,7 +595,7 @@
             const data2 = {
                 labels: labels2,
                 datasets: [{
-                    label: 'Dosis 2',
+                    label: 'Dosis 2 '+{!! json_encode($tem) !!},
                     backgroundColor: 'rgb(255, 99, 132)',
                     borderColor: 'rgb(255, 99, 132)',
                     data: {!! json_encode($jumlah2) !!},
@@ -640,7 +640,7 @@
             const data3 = {
                 labels: labels3,
                 datasets: [{
-                    label: 'Dosis 3',
+                    label: 'Dosis 3 '+{!! json_encode($tem) !!},
                     backgroundColor: 'rgb(255, 99, 132)',
                     borderColor: 'rgb(255, 99, 132)',
                     data: {!! json_encode($jumlah3) !!},

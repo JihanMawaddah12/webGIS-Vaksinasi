@@ -34,7 +34,11 @@ class HomeController extends Controller
         $kec3 = [];
         $jumlah3 = [];
         if (!$id_param) {
-            $id_param = Tematik::first()->id;
+            $tem = Tematik::first();
+            
+            $id_param = $tem->id;
+        }else{
+            $tem = Tematik::find($id_param);
         }
         $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $id_param]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id', 'id')
             ->groupBy(['date', 'tematik_id'])
@@ -258,6 +262,7 @@ class HomeController extends Controller
             'dtpersen2' => $dtpersen2 ? ($dtpersen2->nakes + $dtpersen2->petugas_publik + $dtpersen2->lansia + $dtpersen2->masyarakat_umum + $dtpersen2->remaja) : 0,
             'dtinggi3' => $dtinggi3,
             'dtpersen3' => $dtpersen3 ? ($dtpersen3->nakes + $dtpersen3->petugas_publik + $dtpersen3->lansia + $dtpersen3->masyarakat_umum + $dtpersen3->remaja) : 0,
+            'tem' => $tem->kecamatan
         ]);
     }
 }
