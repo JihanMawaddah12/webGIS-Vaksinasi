@@ -140,14 +140,15 @@
             layer: markersLayer,
             initial: false,
             zoom: 12,
-            marker: false,
             autoType: false,
-            marker: {
-                icon: true
-            }
-           
-        });
+            marker: false
 
+        });
+        controlSearch.on('search:locationfound', function(e) {
+
+           e.layer.openPopup();
+
+        }).on('search:collapsed', function(e) {});
 
         map.addControl(controlSearch);
         for (var i = 0; i < data.length; i++) {
