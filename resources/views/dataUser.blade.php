@@ -116,13 +116,13 @@ http://www.tooplate.com/view/2091-ziggy
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
                     <div class="card p-2 text-white text-white" style="background-color:rgb(65, 125, 122)">
-                        <div class="inner">
-                            <div class="row">
+                        <div class="inner ">
+                            <div class="row ">
                                 <div class="col">
                                     <h3>{{ $dosis1 }}</h3>
                                 </div>
                                 <div class="col">
-                                    <h3 class="text-end">
+                                    <h3 class="text-end font-weight-bold">
                                         {{ number_format((float) ($dosis1 / $target) * 100, 2, '.', '') }}%
                                     </h3>
                                 </div>
@@ -142,7 +142,7 @@ http://www.tooplate.com/view/2091-ziggy
                                     <h3>{{ $dosis2 }}</h3>
                                 </div>
                                 <div class="col">
-                                    <h3 class="text-end">
+                                    <h3 class="text-end font-weight-bold">
                                         {{ number_format((float) ($dosis2 / $target) * 100, 2, '.', '') }}%
                                     </h3>
                                 </div>
@@ -162,7 +162,7 @@ http://www.tooplate.com/view/2091-ziggy
                                     <h3>{{ $dosis3 }}</h3>
                                 </div>
                                 <div class="col">
-                                    <h3 class="text-end">
+                                    <h3 class="text-end font-weight-bold">
                                         {{ number_format((float) ($dosis3 / $target) * 100, 2, '.', '') }}%
                                     </h3>
                                 </div>

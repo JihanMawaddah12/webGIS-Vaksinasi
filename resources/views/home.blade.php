@@ -23,7 +23,7 @@
                                 <h3>{{ $dosis1 }}</h3>
                             </div>
                             <div class="col">
-                                <h3 class="text-end">
+                                <h3 class="text-end ">
                                     {{ number_format((float) ($dosis1 / $target) * 100, 2, '.', '') }}%
                                 </h3>
                             </div>
