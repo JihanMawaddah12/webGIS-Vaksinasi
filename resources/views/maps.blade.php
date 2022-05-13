@@ -49,7 +49,9 @@
             margin-right: 8px;
             opacity: 0.7;
         }
-
+        .search-input {
+            color:black
+        }
     </style>
 @endsection
 
