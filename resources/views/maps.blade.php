@@ -58,14 +58,14 @@
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin="">
-    </script>
+        crossorigin=""></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
         integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="{{ asset('storage/Leaflet.BigImage/dist/Leaflet.BigImage.min.css') }}">
-    <script src="{{ asset('storage/Leaflet.BigImage/dist/Leaflet.BigImage.min.js') }}">
-    </script>
+    <script src="{{ asset('storage/Leaflet.BigImage/dist/Leaflet.BigImage.min.js') }}"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
+    <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
     <script type="text/javascript">
         var s = [5.554630942893766, 95.31709742351293];
         var color = {!! json_encode($color) !!};
@@ -156,7 +156,7 @@
             style: style,
             onEachFeature: onEachFeature
         });
-        geojsonLayer.addTo(map);
+        map.addLayer(geojsonLayer);
 
         var legend = L.control({
             position: 'bottomright'
@@ -180,5 +180,21 @@
 
         legend.addTo(map);
         L.control.BigImage().addTo(map);
+        var controlSearch = new L.Control.Search({
+            position: 'topleft',
+            layer: geojsonLayer,
+            initial: false,
+            zoom: 12,
+            marker: false,
+            propertyName: 'NAMOBJ',
+            autoType: false,
+            marker: {
+                icon: true
+            }
+
+        });
+
+
+        map.addControl(controlSearch);
     </script>
 @endpush

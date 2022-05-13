@@ -158,7 +158,7 @@ class MapController extends Controller
             $color[$item->desa] = $item->warna;
         }
         foreach ($data as $item) {
-            $coor[$index2] = [$item->alamat, $item->lat, $item->long];
+            $coor[$index2] = [$item->lokasi, $item->lat, $item->long];
             $index2++;
         }
         $desa = $desa->pluck('desa');

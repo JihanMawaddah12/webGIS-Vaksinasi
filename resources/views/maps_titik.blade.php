@@ -133,16 +133,22 @@
         });
         var markersLayer = new L.LayerGroup();
         map.addLayer(markersLayer);
+
+
         var controlSearch = new L.Control.Search({
             position: 'topleft',
             layer: markersLayer,
             initial: false,
             zoom: 12,
+            marker: false,
+            autoType: false,
             marker: {
                 icon: true
-            },
-            autoType: false
+            }
+           
         });
+
+
         map.addControl(controlSearch);
         for (var i = 0; i < data.length; i++) {
             var title = data[i][0],
