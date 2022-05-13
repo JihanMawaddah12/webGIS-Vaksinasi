@@ -262,7 +262,9 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             layer: markersLayer,
             initial: false,
             zoom: 12,
-            marker: false,
+            marker: {
+                icon: true
+            },
             autoType: false
         });
         map.addControl( controlSearch );

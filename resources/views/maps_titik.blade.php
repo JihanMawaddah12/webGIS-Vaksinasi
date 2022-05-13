@@ -114,7 +114,7 @@
 
             info.update(layer.feature.properties);
         }
-       
+
 
         function zoomToFeature(e) {
             map.fitBounds(e.target.getBounds());
@@ -138,16 +138,18 @@
             layer: markersLayer,
             initial: false,
             zoom: 12,
-            marker: false,
+            marker: {
+                icon: true
+            },
             autoType: false
         });
-        map.addControl( controlSearch );
+        map.addControl(controlSearch);
         for (var i = 0; i < data.length; i++) {
-            var title = data[i][0], 
+            var title = data[i][0],
                 loc = [data[i][1], data[i][2]],
                 marker = new L.Marker(new L.latLng(loc), {
                     title: title
-                }); 
+                });
             marker.bindPopup(title);
             markersLayer.addLayer(marker);
         }
