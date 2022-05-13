@@ -5,14 +5,12 @@
         <div class="table-responsive" style="background-color: white">
             <div class="table-wrapper">
                 <div class="table-title">
-                    <div class="row w-100">
-                        <div class="col-sm-5">
-                            <h2>Data <b>Vaksinasi</b></h2>
+                    <div class="row w-100 me-0" style="--bs-gutter-x:0 !important">
+                        <div class="col">
+                            <span class="h2">Data <b>Vaksinasi</b></span>
                         </div>
-                        <div class="col-sm-1 text-end">
-                           
-                        </div>
-                        <div class="col-sm-5 ms-4">
+                      
+                        <div class="col text-end ms-4">
                              <a href="{{ route('tambah data') }}" class="btn"
                                 style="background-color: #417D7A"><i class="material-icons">&#xE147;</i>
                                 <span>Masukkan Data Baru</span></a>
