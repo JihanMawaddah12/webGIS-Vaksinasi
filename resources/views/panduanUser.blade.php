@@ -117,11 +117,11 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="card p-4">
                 <div class="row">
                     <div class="col">
-                        <div class="row">
+                        <div class="row mb-2">
                             <div class="col-md-1">
-                                <h4 class="bg-info text-white rounded-circle px-1" style="width: fit-content">
+                                <span class="bg-info text-white rounded-circle px-1" style="width: fit-content">
                                     1
-                                </h4>
+                                </span>
                             </div>
                             <div class="col-md-6">
                                 Text
@@ -138,13 +138,13 @@ http://www.tooplate.com/view/2091-ziggy
 
         <div class="container">
             <div class="card p-4">
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col">
                         <div class="row">
                             <div class="col-md-1">
-                                <h4 class="bg-info text-white rounded-circle px-1" style="width: fit-content">
+                                <span class="bg-info text-white rounded-circle px-1" style="width: fit-content">
                                     1
-                                </h4>
+                                </span>
                             </div>
                             <div class="col-md-6">
                                 Text
