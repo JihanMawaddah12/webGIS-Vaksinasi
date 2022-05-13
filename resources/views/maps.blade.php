@@ -191,7 +191,7 @@
             propertyName: 'NAMOBJ',
             autoType: false,
             marker: {
-                icon: true
+                icon: false
             }
 
         });
