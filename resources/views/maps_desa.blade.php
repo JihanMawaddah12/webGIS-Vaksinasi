@@ -51,7 +51,7 @@
         }
 
         .leaflet-right .leaflet-control {
-            max-height: 8rem;
+            max-height: 25rem;
             overflow-y: auto;
             padding: 5px;
         }
