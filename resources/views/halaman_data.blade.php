@@ -101,7 +101,9 @@
             padding-left: 10px;
             padding-right: 10px;
             margin-left: 12px;
+            margin-right:20px;
             color: white;
+            float: left;
         }
 
     </style>
@@ -128,7 +130,7 @@
         $(document).ready(function() {
             $('#table').DataTable({
                 pageLength: 100,
-                dom: 'Bfrtip',
+                dom: 'B<"clear">lfrtip',
                 fixedHeader: true,
                 buttons: [{
                     extend: 'pdfHtml5',
