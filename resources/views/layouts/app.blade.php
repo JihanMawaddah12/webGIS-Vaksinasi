@@ -208,7 +208,7 @@
                             @else
                                 <li class="nav-item">
                                     <a href="{{ route('rs dashboard') }}"
-                                        class="nav-link btn bg-transparent text-white text-start">
+                                        class="nav-link btn {{ request()->route()->getName() == 'rs dashboard'? 'text-white bg-info': '' }}  text-white text-start">
                                         <i class="nav-icon fas fa-th"></i>
                                         <p>
                                             Data Pendaftaran
@@ -217,7 +217,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('verif') }}"
-                                        class="nav-link btn bg-transparent text-white text-start">
+                                        class="nav-link btn {{ request()->route()->getName() == 'verif'? 'text-white bg-info': '' }}  text-white text-start">
                                         <i class="nav-icon fas fa-th"></i>
                                         <p>
                                             Verifikasi
