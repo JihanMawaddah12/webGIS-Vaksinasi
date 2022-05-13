@@ -5,16 +5,17 @@
         <div class="table-responsive" style="background-color: white">
             <div class="table-wrapper">
                 <div class="table-title">
-                    <div class="row">
-                        <div class="col-sm-6">
+                    <div class="row w-100">
+                        <div class="col-sm-5">
                             <h2>Data <b>Vaksinasi</b></h2>
                         </div>
-                        <div class="col-sm-6 text-end">
-                            <a href="{{ route('tambah data') }}" class="btn"
+                        <div class="col-sm-1 text-end">
+                           
+                        </div>
+                        <div class="col-sm-5 ms-4">
+                             <a href="{{ route('tambah data') }}" class="btn"
                                 style="background-color: #417D7A"><i class="material-icons">&#xE147;</i>
                                 <span>Masukkan Data Baru</span></a>
-                        </div>
-                        <div class="col mb-2">
                             <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="button" class="btn text-white" style="background-color: #417D7A"
