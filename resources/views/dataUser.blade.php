@@ -100,7 +100,7 @@ http://www.tooplate.com/view/2091-ziggy
 
     <section class="second-section text-center" style=" background-color: #EDE6DB">
         <h1>Vaksinasi COVID-19 Kota Banda Aceh</h1><br>
-        <div class="container">
+        <div class="me-5 ms-5">
             <div class="row">
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
@@ -162,7 +162,7 @@ http://www.tooplate.com/view/2091-ziggy
                                     <h3>{{ $dosis3 }}</h3>
                                 </div>
                                 <div class="col">
-                                    <h3 class="text-end font-weight-bold">
+                                    <h3 class="text-end">
                                         {{ number_format((float) ($dosis3 / $target) * 100, 2, '.', '') }}%
                                     </h3>
                                 </div>
