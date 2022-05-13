@@ -761,6 +761,8 @@ crossorigin="">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
 integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
+    <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
 <script type="text/javascript">
     var s = [5.554630942893766, 95.31709742351293];
     var color = {!! json_encode($color) !!};
@@ -819,11 +821,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
         info.update(layer.feature.properties);
     }
-    for (var i = 0; i < datamap.length; i++) {
-        marker = new L.marker([datamap[i][1], datamap[i][2]])
-            .bindPopup(datamap[i][0])
-            .addTo(map);
-    }
+   
     var geojson;
 
     function resetHighlight(e) {
@@ -853,25 +851,25 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     });
 
     //pemanggilan legend
-    legend.onAdd = function(map) {
-
-        var div = L.DomUtil.create('div', 'info legend'),
-            grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
-            labels = [],
-            from, to;
-
-        for (var i = 0; i < grades.length; i++) {
-            from = grades[i];
-            to = grades[i + 1];
-
-            labels.push(
-                '<i style="background:' + getColor(from + 1) + '"></i> ' +
-                from + (to ? '&ndash;' + to : '+'));
+   
+    var markersLayer = new L.LayerGroup(); //layer contain searched elements
+        map.addLayer(markersLayer);
+        var controlSearch = new L.Control.Search({
+            position: 'topleft',
+            layer: markersLayer,
+            initial: false,
+            zoom: 12,
+            marker: false,
+            autoType: false
+        });
+        map.addControl( controlSearch );
+        for (var i = 0; i < datamap.length; i++) {
+            var title = datamap[i][0], //value searched
+                loc = [datamap[i][1], datamap[i][2]], //position found
+                marker = new L.Marker(new L.latLng(loc), {
+                    title: title
+                }); //se property searched
+            marker.bindPopup(title);
+            markersLayer.addLayer(marker);
         }
-
-        div.innerHTML = '<h2>Legenda:</h2><br>' + labels.join('<br>');
-        return div;
-    };
-
-    legend.addTo(map);
 </script>

@@ -163,7 +163,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
 
 <script src="{{ asset('storage/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}"></script>
-
+ <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
+    <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
 <script type="text/javascript">
     var s = [5.554630942893766, 95.31709742351293];
     var data = {!! json_encode($data) !!}
@@ -208,17 +209,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     });
     var userMarker = new L.marker();
-    for (var i = 0; i < data.length; i++) {
-        marker = new L.marker([data[i][1], data[i][2]], {
-                icon: icon
-            })
-            .bindPopup("<strong>" + data[i][3] +
-                "</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i][
-                    1
-                ] + "," + data[i][2] + ")'>Ke Sini</button>")
-            .addTo(map);
-    }
-
+   
     function zoomToFeature(e) {
         map.fitBounds(e.target.getBounds());
     }
@@ -264,4 +255,26 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         updateMarker(latitude, longitude);
 
     });
+    var markersLayer = new L.LayerGroup(); //layer contain searched elements
+        map.addLayer(markersLayer);
+        var controlSearch = new L.Control.Search({
+            position: 'topleft',
+            layer: markersLayer,
+            initial: false,
+            zoom: 12,
+            marker: false,
+            autoType: false
+        });
+        map.addControl( controlSearch );
+        
+        for (var i = 0; i < data.length; i++) {
+            var title = data[i][3], //value searched
+                loc = [data[i][1], data[i][2]], //position found
+                marker = new L.Marker(new L.latLng(loc), {
+                    title: title,
+                    icon: icon
+                }); //se property searched
+            marker.bindPopup("<strong>"+data[i][3]+"</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i][1] + "," + data[i][2] + ")'>Ke Sini</button>");
+            markersLayer.addLayer(marker);
+        }
 </script>
