@@ -174,6 +174,87 @@ http://www.tooplate.com/view/2091-ziggy
                 </div>
                 <!-- ./col -->
             </div>
+             <div class="mb-2">
+
+                    <div class="row">
+
+                        <section class="col-lg-7 connectedSortable">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-chart-pie mr-1"></i>
+                                        Grafik
+                                    </h3>
+
+                                    <div class="card-tools mx-2">
+
+                                        <select class="form-control" id="kecamatan" name="kecamatan">
+                                            <option disabled selected value="">--Pilih Kecamatan--</option>
+                                            @foreach ($tematik as $item)
+                                                <option value="{{ $item->id }}"
+                                                    {{ $state == $item->id ? 'selected' : '' }}>
+                                                    {{ $item->kecamatan }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div><!-- /.card-header -->
+                                <div class="card-body">
+                                        <div class="card-tools">
+                                            <ul class="nav nav-pills ml-auto">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" onclick="return state = 'grafik1'"
+                                                        href="#grafik1-button" data-bs-toggle="tab">Dosis
+                                                        1</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" onclick="return state = 'grafik2'"
+                                                        href="#grafik2-button" data-bs-toggle="tab">Dosis
+                                                        2</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" onclick="return state = 'grafik3'"
+                                                        href="#grafik3-button" data-bs-toggle="tab">Dosis
+                                                        3</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-content p-0">
+                                            <!-- Morris chart - Sales -->
+                                            <div class="chart tab-pane active" id="grafik1-button"
+                                                style="position: relative; height: 300px;">
+                                                <canvas id="grafik1" height="300" style="height: 300px;"></canvas>
+                                            </div>
+                                            <div class="chart tab-pane" id="grafik2-button"
+                                                style="position: relative; height: 300px;">
+                                                <canvas id="grafik2" height="300" style="height: 300px;"></canvas>
+                                            </div>
+                                            <div class="chart tab-pane" id="grafik3-button"
+                                                style="position: relative; height: 300px;">
+                                                <canvas id="grafik3" height="300" style="height: 300px;"></canvas>
+                                            </div>
+                                        </div>
+                                </div><!-- /.card-body -->
+                            </div>
+                        </section>
+                        <section class="col-lg-5 ">
+                            <div class="card bg-gradient-primary">
+                                <div class="card-header border-0">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-map-marker-alt mr-1"></i>
+                                        Maps
+                                    </h3>
+
+                                </div>
+                                <div class="card-body">
+                                    <div id="map" style="height: 300px; width: 100%;"></div>
+                                </div>
+
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
             <div class="row">
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
@@ -298,92 +379,6 @@ http://www.tooplate.com/view/2091-ziggy
                         </div>
                     </div>
                 </div>
-
-                <div class="mb-2">
-
-                    <div class="row">
-
-                        <section class="col-lg-7 connectedSortable">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                        <i class="fas fa-chart-pie mr-1"></i>
-                                        Grafik
-                                    </h3>
-
-                                    <div class="card-tools mx-2">
-
-                                        <select class="form-control" id="kecamatan" name="kecamatan">
-                                            <option disabled selected value="">--Pilih Kecamatan--</option>
-                                            @foreach ($tematik as $item)
-                                                <option value="{{ $item->id }}"
-                                                    {{ $state == $item->id ? 'selected' : '' }}>
-                                                    {{ $item->kecamatan }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div><!-- /.card-header -->
-                                <div class="card-body">
-                                    @if ($state)
-                                        <div class="card-tools">
-                                            <ul class="nav nav-pills ml-auto">
-                                                <li class="nav-item">
-                                                    <a class="nav-link active" onclick="return state = 'grafik1'"
-                                                        href="#grafik1-button" data-bs-toggle="tab">Dosis
-                                                        1</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" onclick="return state = 'grafik2'"
-                                                        href="#grafik2-button" data-bs-toggle="tab">Dosis
-                                                        2</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" onclick="return state = 'grafik3'"
-                                                        href="#grafik3-button" data-bs-toggle="tab">Dosis
-                                                        3</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="tab-content p-0">
-                                            <!-- Morris chart - Sales -->
-                                            <div class="chart tab-pane active" id="grafik1-button"
-                                                style="position: relative; height: 300px;">
-                                                <canvas id="grafik1" height="300" style="height: 300px;"></canvas>
-                                            </div>
-                                            <div class="chart tab-pane" id="grafik2-button"
-                                                style="position: relative; height: 300px;">
-                                                <canvas id="grafik2" height="300" style="height: 300px;"></canvas>
-                                            </div>
-                                            <div class="chart tab-pane" id="grafik3-button"
-                                                style="position: relative; height: 300px;">
-                                                <canvas id="grafik3" height="300" style="height: 300px;"></canvas>
-                                            </div>
-                                        </div>
-                                    @endif
-                                </div><!-- /.card-body -->
-                            </div>
-                        </section>
-                        <section class="col-lg-5 ">
-                            <div class="card bg-gradient-primary">
-                                <div class="card-header border-0">
-                                    <h3 class="card-title">
-                                        <i class="fas fa-map-marker-alt mr-1"></i>
-                                        Maps
-                                    </h3>
-
-                                </div>
-                                <div class="card-body">
-                                    <div id="map" style="height: 300px; width: 100%;"></div>
-                                </div>
-
-                            </div>
-                        </section>
-
-                    </div>
-                </div>
-
-
                 <!-- ./col -->
             </div>
             <div class="row">
@@ -627,7 +622,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     const data = {
         labels: labels,
         datasets: [{
-            label: 'Dosis 1',
+            label: 'Dosis 1 ' +{!! json_encode($tem) !!},
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
             data: {!! json_encode($jumlah) !!},
@@ -670,7 +665,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     const data2 = {
         labels: labels2,
         datasets: [{
-            label: 'Dosis 2',
+            label: 'Dosis 2 ' +{!! json_encode($tem) !!},
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
             data: {!! json_encode($jumlah2) !!},
@@ -715,7 +710,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     const data3 = {
         labels: labels3,
         datasets: [{
-            label: 'Dosis 3',
+            label: 'Dosis 3 ' +{!! json_encode($tem) !!},
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
             data: {!! json_encode($jumlah3) !!},

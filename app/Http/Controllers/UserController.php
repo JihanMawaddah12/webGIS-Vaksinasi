@@ -45,7 +45,13 @@ class UserController extends Controller
         $jumlah2 = [];
         $kec3 = [];
         $jumlah3 = [];
-        if ($tematik_id) {
+        if (!$tematik_id) {
+            $tem = Tematik::first();
+        
+            $tematik_id = $tem->id;
+        } else {
+            $tem = Tematik::find($tematik_id);
+        }
             $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $tematik_id]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id', 'id')
                 ->groupBy(['date', 'tematik_id'])
                 ->get();
@@ -78,7 +84,6 @@ class UserController extends Controller
                 $jumlah3[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
                 $id += 1;
             }
-        }
         $target = HalamanData::where('kelompok', 'target')->sum(DB::raw('nakes + petugas_publik + lansia + masyarakat_umum + remaja'));
         $jmlh_dosis1 = HalamanData::where('kelompok', 'dosis 1')->sum(DB::raw('nakes + petugas_publik + lansia + masyarakat_umum + remaja'));
         $jmlh_dosis2 = HalamanData::where('kelompok', 'dosis 2')->sum(DB::raw('nakes + petugas_publik + lansia + masyarakat_umum + remaja'));
@@ -270,6 +275,7 @@ class UserController extends Controller
             'dtpersen2' => $dtpersen2 ? ($dtpersen2->nakes + $dtpersen2->petugas_publik + $dtpersen2->lansia + $dtpersen2->masyarakat_umum + $dtpersen2->remaja) : 0,
             'dtinggi3' => $dtinggi3,
             'dtpersen3' => $dtpersen3 ? ($dtpersen3->nakes + $dtpersen3->petugas_publik + $dtpersen3->lansia + $dtpersen3->masyarakat_umum + $dtpersen3->remaja) : 0,
+            'tem' => $tem->kecamatan
         ]);
     }
 }
