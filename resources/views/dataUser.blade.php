@@ -853,6 +853,14 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         marker: false,
         autoType: false
     });
+
+    controlSearch.on('search:locationfound', function(e) {
+
+        e.layer.openPopup();
+
+    }).on('search:collapsed', function(e) {});
+
+
     map.addControl(controlSearch);
     for (var i = 0; i < datamap.length; i++) {
         var title = datamap[i][0], //value searched

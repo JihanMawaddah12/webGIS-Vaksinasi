@@ -46,6 +46,10 @@ http://www.tooplate.com/view/2091-ziggy
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
+
+    <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
+
     <style>
         #map {
             min-height: 665px;
@@ -359,6 +363,27 @@ http://www.tooplate.com/view/2091-ziggy
             updateMarker(latitude, longitude);
 
         });
+
+        var markersLayer = new L.LayerGroup(); //layer contain searched elements
+        map.addLayer(markersLayer);
+        var controlSearch = new L.Control.Search({
+            position: 'topleft',
+            layer: markersLayer,
+            initial: false,
+            zoom: 12,
+            marker: false,
+            autoType: false
+        });
+        map.addControl(controlSearch);
+        for (var i = 0; i < datamap.length; i++) {
+            var title = datamap[i][0], //value searched
+                loc = [datamap[i][1], datamap[i][2]], //position found
+                marker = new L.Marker(new L.latLng(loc), {
+                    title: title
+                }); //se property searched
+            marker.bindPopup(title);
+            markersLayer.addLayer(marker);
+        }
     </script>
 </body>
 
