@@ -92,22 +92,21 @@ http://www.tooplate.com/view/2091-ziggy
 <body>
 
 
-    <section class="w-100 " style="background-color: #4F8A8B">
-        <a href="{{ route('login') }}" class="text-decoration-none text-white m-4 py-1 btn btn-outline-light me-2"
-            style="border-bottom:1px solid white;">
-            <h4>Log in</h4>
+    <section class="w-100" style="background-color: #4F8A8B ">
+        <a href="{{ route('login') }}" class="text-decoration-none text-white m-4 py-1 btn btn-outline-light me-2">
+            <h6>Log in</h6>
         </a>
         <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Home</h4>
+            <h6>Home</h6>
         </a>
         <a href="{{ route('RuteUser') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Rute</h4>
+            <h6>Rute</h6>
         </a>
         <a href="{{ route('panduan-user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Panduan</h4>
+            <h6>Panduan</h6>
         </a>
         <a href="{{ route('pendaftaran') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Daftar Vaksinasi</h4>
+            <h6>Daftar Vaksinasi</h6>
         </a>
     </section>
 

@@ -92,22 +92,22 @@ http://www.tooplate.com/view/2091-ziggy
 <body>
 
 
-    <section class="w-100" style="background-color: #4F8A8B">
+    <section class="w-100 text-sm" style="background-color: #4F8A8B">
         <a href="{{ route('login') }}" class="text-decoration-none text-white m-4 py-1 btn btn-outline-light me-2">
-            <h4>Log in</h4>
+            <h6>Log in</h6>
         </a>
         <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Home</h4>
+            <h6>Home</h6>
         </a>
         <a href="{{ route('RuteUser') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
             style="border-bottom:1px solid white;">
-            <h4>Rute</h4>
+            <h6>Rute</h6>
         </a>
         <a href="{{ route('panduan-user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Panduan</h4>
+            <h6>Panduan</h6>
         </a>
         <a href="{{ route('pendaftaran') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Daftar Vaksinasi</h4>
+            <h6>Daftar Vaksinasi</h6>
         </a>
     </section>
 
@@ -163,8 +163,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
 
 <script src="{{ asset('storage/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}"></script>
- <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
-    <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
+<script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
 <script type="text/javascript">
     var s = [5.554630942893766, 95.31709742351293];
     var data = {!! json_encode($data) !!}
@@ -209,7 +209,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     });
     var userMarker = new L.marker();
-   
+
     function zoomToFeature(e) {
         map.fitBounds(e.target.getBounds());
     }
@@ -256,27 +256,29 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     });
     var markersLayer = new L.LayerGroup(); //layer contain searched elements
-        map.addLayer(markersLayer);
-        var controlSearch = new L.Control.Search({
-            position: 'topleft',
-            layer: markersLayer,
-            initial: false,
-            zoom: 12,
-            marker: {
-                icon: true
-            },
-            autoType: false
-        });
-        map.addControl( controlSearch );
-        
-        for (var i = 0; i < data.length; i++) {
-            var title = data[i][3], //value searched
-                loc = [data[i][1], data[i][2]], //position found
-                marker = new L.Marker(new L.latLng(loc), {
-                    title: title,
-                    icon: icon
-                }); //se property searched
-            marker.bindPopup("<strong>"+data[i][3]+"</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i][1] + "," + data[i][2] + ")'>Ke Sini</button>");
-            markersLayer.addLayer(marker);
-        }
+    map.addLayer(markersLayer);
+    var controlSearch = new L.Control.Search({
+        position: 'topleft',
+        layer: markersLayer,
+        initial: false,
+        zoom: 12,
+        marker: {
+            icon: true
+        },
+        autoType: false
+    });
+    map.addControl(controlSearch);
+
+    for (var i = 0; i < data.length; i++) {
+        var title = data[i][3], //value searched
+            loc = [data[i][1], data[i][2]], //position found
+            marker = new L.Marker(new L.latLng(loc), {
+                title: title,
+                icon: icon
+            }); //se property searched
+        marker.bindPopup("<strong>" + data[i][3] +
+            "</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i][
+            1] + "," + data[i][2] + ")'>Ke Sini</button>");
+        markersLayer.addLayer(marker);
+    }
 </script>
