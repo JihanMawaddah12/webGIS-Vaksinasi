@@ -177,7 +177,7 @@ http://www.tooplate.com/view/2091-ziggy
 
                 <div class="row">
 
-                    <section class="col-lg-6 connectedSortable">
+                    <section class="col-lg-6 col-6 connectedSortable">
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
@@ -236,7 +236,8 @@ http://www.tooplate.com/view/2091-ziggy
                             </div><!-- /.card-body -->
                         </div>
                     </section>
-                    <section class="col-lg-6 ">
+
+                    <section class="col-lg-6 col-6">
                         <div class="card" style="background-color: #D4ECDD">
                             <div class="card-header border-0">
                                 <h3 class="card-title">
@@ -258,7 +259,7 @@ http://www.tooplate.com/view/2091-ziggy
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
                     <br>
-                    <div class="card p-2 text-white" style="background-color:#112031">
+                    <div class="card p-2 text-black" style="background-color:#D0CAB2">
                         <h3>Dosis Terendah (Kecamatan)</h3>
                         <hr class="text-white bg-white" />
                         <div class="inner">
@@ -289,7 +290,7 @@ http://www.tooplate.com/view/2091-ziggy
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
                     <br>
-                    <div class="card p-2 text-white text-white" style="background-color:rgb(52, 91, 99)">
+                    <div class="card p-2 text-black" style="background-color:#96C7C1">
                         <h3>Dosis tertinggi (Kecamatan)</h3>
                         <hr class="text-white bg-white" />
                         <div class="inner">
@@ -320,7 +321,7 @@ http://www.tooplate.com/view/2091-ziggy
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
                     <br>
-                    <div class="card p-2 text-white" style="background-color:#112031">
+                    <div class="card p-2 text-black" style="background-color:#DED9C4">
                         <h3>Dosis Terendah<br>(Desa)</h3>
                         <hr class="text-white bg-white" />
                         <div class="inner">
@@ -351,7 +352,7 @@ http://www.tooplate.com/view/2091-ziggy
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
                     <br>
-                    <div class="card p-2 text-white" style="background-color:rgb(52, 91, 99)">
+                    <div class="card p-2 text-black" style="background-color:#89B5AF">
                         <h3>Dosis Tertinggi <br>(Desa)</h3>
                         <hr class="text-white bg-white" />
                         <div class="inner">
@@ -380,10 +381,11 @@ http://www.tooplate.com/view/2091-ziggy
                 </div>
                 <!-- ./col -->
             </div>
+
             <div class="row">
-                <div class="col-lg-6 col-6">
+                <div class="col-lg-4 col-4">
                     <br>
-                    <div class="p-4 w-100 rounded shadow text-white" style="background-color:#417D7A">
+                    <div class="p-4 w-100 rounded shadow text-white" style="background-color:#68B0AB">
                         <h3>Tenaga Kesehatan</h3>
                         <hr class="text-white bg-white" />
                         <div class="inner">
@@ -415,9 +417,9 @@ http://www.tooplate.com/view/2091-ziggy
 
                     </div>
                 </div>
-                <div class="col-lg-6 col-6">
+                <div class="col-lg-4 col-4">
                     <br>
-                    <div class="p-4 w-100 rounded shadow text-white" style="background-color:#1D5C63">
+                    <div class="p-4 w-100 rounded shadow text-black" style="background-color:#A3D2CA">
                         <h2>Petugas Publik</h2>
                         <hr class="text-white bg-white" />
                         <div class="inner">
@@ -448,9 +450,9 @@ http://www.tooplate.com/view/2091-ziggy
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-6">
+                <div class="col-lg-4 col-4">
                     <br>
-                    <div class="p-4 w-100 rounded shadow text-white" style="background-color:#1A3C40">
+                    <div class="p-4 w-100 rounded shadow text-white" style="background-color:#5EAAA8">
                         <h2>Lansia</h2>
                         <hr class="text-white bg-white" />
                         <div class="inner">
@@ -481,10 +483,10 @@ http://www.tooplate.com/view/2091-ziggy
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-6">
+                <div class="col-lg-4 col-4">
                     <br>
-                    <div class="p-4 w-100 rounded shadow text-white" style="background-color:#417D7A">
-                        <h2>Masyarakat</h2>
+                    <div class="p-4 w-100 rounded shadow text-black" style="background-color:#A7C4BC">
+                        <h2>Masyarakat Umum</h2>
                         <hr class="text-white bg-white" />
                         <div class="inner">
                             <div class="row">
@@ -514,9 +516,9 @@ http://www.tooplate.com/view/2091-ziggy
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-6">
+                <div class="col-lg-4 col-4">
                     <br>
-                    <div class="p-4 w-100 rounded shadow text-white" style="background-color:#1D5C63">
+                    <div class="p-4 w-100 rounded shadow text-white" style="background-color:#5E8B7E">
                         <h2>Remaja</h2>
                         <hr class="text-white bg-white" />
                         <div class="inner">
@@ -547,9 +549,9 @@ http://www.tooplate.com/view/2091-ziggy
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-6">
+                <div class="col-lg-4 col-4">
                     <br>
-                    <div class="p-4 w-100 rounded shadow text-white" style="background-color:#1A3C40">
+                    <div class="p-4 w-100 rounded shadow text-white" style="background-color:#2F5D62">
                         <h2>Usia 6-11 tahun</h2>
                         <hr class="text-white bg-white" />
                         <div class="inner">
