@@ -12,12 +12,12 @@
                     <div class="col">
                         <div class="row mb-2">
                             <div class="col-md-1">
-                                <span class="bg-success text-white rounded-circle px-2" style="width: fit-content">
+                                <span class="bg-success text-white rounded-circle px-1" style="width: fit-content">
                                     1
                                 </span>
                             </div>
                             <div class="col-md-6">
-                                Tekan tombol "Daftar Vaksinasi"
+                                <h5> Tekan tombol "Daftar Vaksinasi"
                             </div>
                         </div>
                         <img width="700" src="{{ asset('storage/img/daftar.png') }}" alt="">

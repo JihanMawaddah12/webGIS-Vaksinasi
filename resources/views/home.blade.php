@@ -333,7 +333,7 @@
             </div>
             <div class="col-lg-4 mb-4">
                 <div class="p-4 w-100 rounded shadow text-black" style="background-color:#A3D2CA">
-                    <h2>Petugas Publik</h2>
+                    <h3>Petugas Publik</h3>
                     <hr class="text-white bg-white" />
                     <div class="inner">
                         <div class="row">
@@ -399,7 +399,7 @@
             <div class="col-lg-4 mb-4">
 
                 <div class="p-4 w-100 rounded shadow text-black" style="background-color:#A7C4BC">
-                    <h2>Masyarakat Umum</h2>
+                    <h3>Masyarakat Umum</h3>
                     <hr class="text-white bg-white" />
                     <div class="inner">
                         <div class="row">

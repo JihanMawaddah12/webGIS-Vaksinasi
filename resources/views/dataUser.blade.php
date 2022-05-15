@@ -97,7 +97,7 @@ http://www.tooplate.com/view/2091-ziggy
         </a>
     </section>
 
-    <section class="second-section text-center" style=" background-color: #EDE6DB">
+    <section class="second-section text-center" style=" background-color: #ffffff">
         <h1><b> Vaksinasi COVID-19 Kota Banda Aceh</h1><br>
         <div class="me-5 ms-5">
             <div class="row">
@@ -178,7 +178,7 @@ http://www.tooplate.com/view/2091-ziggy
                 <div class="row">
 
                     <section class="col-lg-6 col-6 connectedSortable">
-                        <div class="card">
+                        <div class="card" style="background-color: #c0d3d2">
                             <div class="card-header">
                                 <h3 class="card-title">
                                     <i class="fas fa-chart-pie mr-1"></i>
