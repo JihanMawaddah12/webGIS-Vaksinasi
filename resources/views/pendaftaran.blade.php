@@ -306,18 +306,7 @@ http://www.tooplate.com/view/2091-ziggy
 
         });
         var userMarker = new L.marker();
-        for (var i = 0; i < data.length; i++) {
-            marker = new L.marker([data[i][1], data[i][2]], {
-                    icon: icon
-                })
-                .bindPopup("<strong> <div class='text-center'><strong>" + data[i][3] +
-                    "</strong><br/> <div class='text-center'><strong>Kapasitas " + data[i][5] +
-                    "</strong><br/> <div class='text-center'><strong>Jenis Vaksin " + data[i][6] +
-                    "</strong></div><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(&quot;" +
-                    data[i][4] + "&quot;,&quot;" + data[i][3] + "&quot;)'>Ke Sini</button>")
-                .addTo(map);
-        }
-
+      
         function zoomToFeature(e) {
             map.fitBounds(e.target.getBounds());
         }
@@ -366,7 +355,7 @@ http://www.tooplate.com/view/2091-ziggy
 
         var markersLayer = new L.LayerGroup(); //layer contain searched elements
         map.addLayer(markersLayer);
-        var controlSearch = new L.Control.Search({
+         var controlSearch = new L.Control.Search({
             position: 'topleft',
             layer: markersLayer,
             initial: false,
@@ -374,14 +363,24 @@ http://www.tooplate.com/view/2091-ziggy
             marker: false,
             autoType: false
         });
-        map.addControl(controlSearch);
-        for (var i = 0; i < datamap.length; i++) {
-            var title = datamap[i][0], //value searched
-                loc = [datamap[i][1], datamap[i][2]], //position found
+        map.addControl( controlSearch );
+        controlSearch.on('search:locationfound', function(e) {
+
+           e.layer.openPopup();
+
+        }).on('search:collapsed', function(e) {});
+        for (var i = 0; i < data.length; i++) {
+            var title = data[i][3],
+                loc = [data[i][1], data[i][2]], 
                 marker = new L.Marker(new L.latLng(loc), {
-                    title: title
-                }); //se property searched
-            marker.bindPopup(title);
+                    title: title,
+                    icon: icon
+                }); 
+            marker.bindPopup("<strong> <div class='text-center'><strong>" + data[i][3] +
+                    "</strong><br/> <div class='text-center'><strong>Kapasitas " + data[i][5] +
+                    "</strong><br/> <div class='text-center'><strong>Jenis Vaksin " + data[i][6] +
+                    "</strong></div><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(&quot;" +
+                    data[i][4] + "&quot;,&quot;" + data[i][3] + "&quot;)'>Ke Sini</button>");
             markersLayer.addLayer(marker);
         }
     </script>
