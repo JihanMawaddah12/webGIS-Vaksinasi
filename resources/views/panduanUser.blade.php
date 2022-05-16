@@ -118,22 +118,12 @@ http://www.tooplate.com/view/2091-ziggy
                 <div class="col-md-8">
                     <h3><b>Cara Melakukan Pendaftaran Vaksinasi
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="row mb-2">
-                            <div class="col-md-1">
-                                <span class="bg-success text-white rounded-circle px-2" style="width: fit-content">
-                                    1
-                                </span>
-                            </div>
-                            <div class="col-md-6">
-                                Tekan tombol "Daftar Vaksinasi"
-                            </div>
-                        </div>
-                        <img width="700" src="{{ asset('storage/img/daftar.png') }}" alt="">
-                    </div>
-                    <div class="col">
-                    </div>
+                <div>
+                    <span class="bg-success me-2 text-white rounded-circle px-2" style="width: fit-content">
+                        1
+                    </span> Tekan tombol "Daftar Vaksinasi"
+                </div>
+                <div class="text-center"><img width="700" src="{{ asset('storage/img/daftar.png') }}" alt="">
                 </div>
 
                 <div class="row">
@@ -148,10 +138,10 @@ http://www.tooplate.com/view/2091-ziggy
                                 Isi data diri Anda, lalu tekan tombol daftar
                             </div>
                         </div>
-                        <img width="700" src="{{ asset('storage/img/IsiData.png') }}" alt="">
                     </div>
-                    <div class="col">
+                    <div class="text-center"><img width="700" src="{{ asset('storage/img/IsiData.png') }}" alt="">
                     </div>
+
                 </div>
 
             </div>
@@ -174,10 +164,10 @@ http://www.tooplate.com/view/2091-ziggy
                                 Login menggunakan Akun yang sudah diberikan
                             </div>
                         </div>
-                        <img width="700" src="{{ asset('storage/img/LoginRS.png') }}" alt="">
                     </div>
-                    <div class="col">
+                    <div class="text-center"><img width="700" src="{{ asset('storage/img/LoginRS.png') }}" alt="">
                     </div>
+
                 </div>
 
                 <div class="row">
@@ -193,10 +183,10 @@ http://www.tooplate.com/view/2091-ziggy
                                 jika masyarakat batal melakukan vaksinasi
                             </div>
                         </div>
-                        <img width="700" src="{{ asset('storage/img/DataDaftar.png') }}" alt="">
                     </div>
-                    <div class="col">
-                    </div>
+                    <div class="text-center"><img width="700" src="{{ asset('storage/img/DataDaftar.png') }}"
+                            alt=""></div>
+
                 </div>
 
                 <div class="row">
@@ -212,10 +202,10 @@ http://www.tooplate.com/view/2091-ziggy
                                 tidak dibutuhkan tekan tombol hapus
                             </div>
                         </div>
-                        <img width="700" src="{{ asset('storage/img/verifikasi.png') }}" alt="">
                     </div>
-                    <div class="col">
-                    </div>
+                    <div class="text-center"><img width="700" src="{{ asset('storage/img/verifikasi.png') }}"
+                            alt=""></div>
+
                 </div>
 
             </div>
@@ -238,10 +228,10 @@ http://www.tooplate.com/view/2091-ziggy
                                 Login menggunakan Akun yang sudah diberikan
                             </div>
                         </div>
-                        <img width="700" src="{{ asset('storage/img/loginAdmin.png') }}" alt="">
+                        <div class="text-center"><img width="700" src="{{ asset('storage/img/loginAdmin.png') }}"
+                                alt=""></div>
                     </div>
-                    <div class="col">
-                    </div>
+
                 </div>
 
                 <div class="row">
@@ -256,10 +246,10 @@ http://www.tooplate.com/view/2091-ziggy
                                 Menu dashboard akan menampilkan informasi capaian vaksinasi
                             </div>
                         </div>
-                        <img width="700" src="{{ asset('storage/img/dashboard.png') }}" alt="">
+                        <div class="text-center"><img width="700" src="{{ asset('storage/img/dashboard.png') }}"
+                                alt=""></div>
                     </div>
-                    <div class="col">
-                    </div>
+
                 </div>
 
                 <div class="row">
@@ -275,10 +265,10 @@ http://www.tooplate.com/view/2091-ziggy
                                 kecamatan dan rute
                             </div>
                         </div>
-                        <img width="700" src="{{ asset('storage/img/lokasi.png') }}" alt="">
+                        <div class="text-center"><img width="700" src="{{ asset('storage/img/lokasi.png') }}"
+                                alt=""></div>
                     </div>
-                    <div class="col">
-                    </div>
+
                 </div>
 
                 <div class="row">
@@ -296,10 +286,10 @@ http://www.tooplate.com/view/2091-ziggy
                                 input data atau edit data
                             </div>
                         </div>
-                        <img width="700" src="{{ asset('storage/img/data.png') }}" alt="">
+                        <div class="text-center"><img width="700" src="{{ asset('storage/img/data.png') }}"
+                                alt=""></div>
                     </div>
-                    <div class="col">
-                    </div>
+
                 </div>
             </div>
         </div>

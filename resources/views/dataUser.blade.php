@@ -25,8 +25,6 @@ http://www.tooplate.com/view/2091-ziggy
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('storage/css/adminlte.min.css') }}" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
@@ -34,13 +32,15 @@ http://www.tooplate.com/view/2091-ziggy
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="{{ asset('storage/css/tooplate-style.css') }}" rel="stylesheet">
-
-    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin="" />
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <style>
+        h3 {
+            font-weight: bold
+        }
+
         .leaflet-control-attribution {
             display: none !important
         }
@@ -103,7 +103,7 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 <div class="col-lg-3 mb-2">
                     <!-- small box -->
-                    <div class="small-box" style="background-color:#D4ECDD">
+                    <div class="card shadow" style="background-color:#D4ECDD">
                         <div class="inner">
                             <h3>{{ $target }}</h3>
 
@@ -114,7 +114,7 @@ http://www.tooplate.com/view/2091-ziggy
                 <!-- ./col -->
                 <div class="col-lg-3 mb-2">
                     <!-- small box -->
-                    <div class="small-box text-white" style="background-color:rgb(65, 125, 122)">
+                    <div class="card shadow text-white" style="background-color:rgb(65, 125, 122)">
                         <div class="inner">
                             <div class="row">
                                 <div class="col">
@@ -134,7 +134,7 @@ http://www.tooplate.com/view/2091-ziggy
                 <!-- ./col -->
                 <div class="col-lg-3 mb-2">
                     <!-- small box -->
-                    <div class="small-box text-white" style="background-color:rgb(29, 92, 99)">
+                    <div class="card shadow text-white" style="background-color:rgb(29, 92, 99)">
                         <div class="inner">
                             <div class="row">
                                 <div class="col">
@@ -154,7 +154,7 @@ http://www.tooplate.com/view/2091-ziggy
                 <!-- ./col -->
                 <div class="col-lg-3 mb-2">
                     <!-- small box -->
-                    <div class="small-box text-white" style="background-color:rgb(26, 60, 64)">
+                    <div class="card shadow text-white" style="background-color:rgb(26, 60, 64)">
                         <div class="inner">
                             <div class="row">
                                 <div class="col">

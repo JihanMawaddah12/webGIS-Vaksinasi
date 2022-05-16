@@ -111,8 +111,8 @@ http://www.tooplate.com/view/2091-ziggy
         </a>
     </section>
 
-    <section class="second-section" style=" background-color: #EDE6DB">
-        <div class="card m-4" style="background-color: #99C4C8">
+    <section class="pt-4" style=" background-color: #EDE6DB">
+        <div class="card mx-4" style="background-color: #99C4C8">
 
             <div class="card-header border-0">
                 <h3 class="card-title text-white">
@@ -278,7 +278,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             }); //se property searched
         marker.bindPopup("<strong>" + data[i][3] +
             "</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i][
-            1] + "," + data[i][2] + ")'>Ke Sini</button>");
+                1
+            ] + "," + data[i][2] + ")'>Ke Sini</button>");
         markersLayer.addLayer(marker);
     }
 </script>
