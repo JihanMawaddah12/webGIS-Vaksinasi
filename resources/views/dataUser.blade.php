@@ -247,7 +247,7 @@ http://www.tooplate.com/view/2091-ziggy
 
                             </div>
                             <div class="card-body">
-                                <div id="map" style="height: 355px; width: 100%;"></div>
+                                <div id="map" style="height: 380px; width: 100%;"></div>
                             </div>
 
                         </div>
@@ -386,34 +386,34 @@ http://www.tooplate.com/view/2091-ziggy
                 <div class="col-lg-4 col-4">
                     <br>
                     <div class="p-4 w-100 rounded shadow text-white" style="background-color:#68B0AB">
-                        <h3>Tenaga Kesehatan</h3>
-                        <hr class="text-white bg-white" />
-                        <div class="inner">
-                            <div class="row">
-                                <div class="col">
-                                    <h2>Dosis 1</h2>
-                                    <h6>Jumlah {{ $dosis1_nakes }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis1_nakes / $target_nakes) * 100, 2, '.', '') }}%
-                                        </h6>
-                                </div>
-                                <div class="col">
-                                    <h2>Dosis 2</h2>
+                        <h2>Tenaga Kesehatan</h3>
+                            <hr class="text-white bg-white" />
+                            <div class="inner">
+                                <div class="row">
+                                    <div class="col">
+                                        <h2>Dosis 1</h2>
+                                        <h6>Jumlah {{ $dosis1_nakes }}</h6>
+                                        <h3>
+                                            {{ number_format((float) ($dosis1_nakes / $target_nakes) * 100, 2, '.', '') }}%
+                                            </h6>
+                                    </div>
+                                    <div class="col">
+                                        <h2>Dosis 2</h2>
 
-                                    <h6>Jumlah {{ $dosis2_nakes }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis2_nakes / $target_nakes) * 100, 2, '.', '') }}%
-                                        </h6>
-                                </div>
-                                <div class="col">
-                                    <h2>Dosis 3</h2>
-                                    <h6>Jumlah {{ $dosis3_nakes }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis3_nakes / $target_nakes) * 100, 2, '.', '') }}%
-                                        </h6>
+                                        <h6>Jumlah {{ $dosis2_nakes }}</h6>
+                                        <h3>
+                                            {{ number_format((float) ($dosis2_nakes / $target_nakes) * 100, 2, '.', '') }}%
+                                            </h6>
+                                    </div>
+                                    <div class="col">
+                                        <h2>Dosis 3</h2>
+                                        <h6>Jumlah {{ $dosis3_nakes }}</h6>
+                                        <h3>
+                                            {{ number_format((float) ($dosis3_nakes / $target_nakes) * 100, 2, '.', '') }}%
+                                            </h6>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
                     </div>
                 </div>

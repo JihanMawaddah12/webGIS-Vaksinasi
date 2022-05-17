@@ -112,7 +112,7 @@ http://www.tooplate.com/view/2091-ziggy
         </a>
     </section>
 
-    <section class="second-section" style=" background-color: #EDE6DB">
+    <section class="pt-4" style=" background-color: #EDE6DB">
         <div class="container">
             <div class="card p-4">
                 <h3><b>Cara Melakukan Pendaftaran Vaksinasi</b></h3>
@@ -237,7 +237,7 @@ http://www.tooplate.com/view/2091-ziggy
                         data desa, data kecamatan dan data user. Pada halaman ini Admin juga dapat melakukan
                         input data atau edit data
                     </div>
-                   
+
                     <div class="text-center"><img width="700" src="{{ asset('storage/img/data.png') }}" alt="">
                     </div>
 
