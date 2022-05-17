@@ -26,16 +26,15 @@
                     <div class="text-center"><img class="mx-auto" width="700"
                             src="{{ asset('storage/img/IsiData.png') }}" alt="">
                     </div>
-
                 </div>
 
             </div>
         </div>
 
-        <div class="mt-3 container">
+        <div class="container">
             <div class="card p-4">
                 <div class="col">
-                    <h3><b>Jika Anda Pihak Gerai Vaksin/PUSKESMAS/Rumah Sakit</b></h3>
+                    <h3><b>Jika Anda Pihak Gerai Vaksin/PUSKESMAS/Rumah Sakit
                 </div>
                 <div class="mt-2">
                     <div class="mb-2">
@@ -77,10 +76,10 @@
             </div>
         </div>
 
-        <div class="mt-3 container">
+        <div class="container">
             <div class="card p-4">
                 <div class="col">
-                    <h3><b>Jika Anda Pihak Dinas Kesehatan</b></h3>
+                    <h3><b>Jika Anda Pihak Dinas Kesehatan
                 </div>
                 <div class="mt-2">
                     <div class="mb-2">
@@ -135,7 +134,6 @@
                     <div class="text-center"><img class="mx-auto" width="700"
                             src="{{ asset('storage/img/data.png') }}" alt="">
                     </div>
-
                 </div>
             </div>
         </div>
