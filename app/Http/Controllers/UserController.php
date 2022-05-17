@@ -260,7 +260,7 @@ class UserController extends Controller
             'ktinggi2' => $ktinggi2,
             'ktpersen2' => $ktpersen2 ? ($ktpersen2->nakes + $ktpersen2->petugas_publik + $ktpersen2->lansia + $ktpersen2->masyarakat_umum + $ktpersen2->remaja) : 0,
             'ktinggi3' => $ktinggi3,
-            'ktpersen3' => $ktpersen3 ? ($ktpersen3->nakes + $ktpersen3->petugas_publik + $ktpersen3->lansia + $ktpersen3->masyarakat_umum + $ktpersen3->remaja) : 0,
+            'ktpersen3' => $ktpersen2 ? ($ktpersen3->nakes + $ktpersen3->petugas_publik + $ktpersen3->lansia + $ktpersen3->masyarakat_umum + $ktpersen3->remaja) : 0,
 
             'drendah1' => $drendah1,
             'drpersen1' => $dpersen1 ? ($dpersen1->nakes + $dpersen1->petugas_publik + $dpersen1->lansia + $dpersen1->masyarakat_umum + $dpersen1->remaja) : 0,

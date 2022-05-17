@@ -24,7 +24,10 @@
                             </div>
                             <div class="col">
                                 <h3 class="text-end ">
-                                    {{ number_format((float) ($dosis1 / $target) * 100, 2, '.', '') }}%
+                                    @if ($dosis1)
+                                        {{ number_format((float) ($dosis1 / $target) * 100, 2, '.', '') }}%
+                                    @endif
+                                    
                                 </h3>
                             </div>
                         </div>
@@ -44,7 +47,10 @@
                             </div>
                             <div class="col">
                                 <h3 class="text-end">
-                                    {{ number_format((float) ($dosis2 / $target) * 100, 2, '.', '') }}%
+                                    @if ($dosis2)
+                                         {{ number_format((float) ($dosis2 / $target) * 100, 2, '.', '') }}%
+                                    @endif
+                                   
                                 </h3>
                             </div>
                         </div>
@@ -64,7 +70,10 @@
                             </div>
                             <div class="col">
                                 <h3 class="text-end">
-                                    {{ number_format((float) ($dosis3 / $target) * 100, 2, '.', '') }}%
+                                    @if ($dosis3)
+                                        {{ number_format((float) ($dosis3 / $target) * 100, 2, '.', '') }}%
+                                    @endif
+                                    
                                 </h3>
                             </div>
                         </div>
