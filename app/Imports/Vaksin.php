@@ -31,7 +31,12 @@ class Vaksin implements ToCollection, WithHeadingRow
     {
         $dataToAdd = [];
         foreach ($collection as $row) {
-            $tematik = Tematik::where('kecamatan', $row['kecamatan'])->first()->id;
+            try {
+            $tematik = Tematik::where('kecamatan', $row[
+                'kecamatan'])->first()->id;
+            } catch (\Throwable $th) {
+                dd($row['kecamatan']);
+            }
             try {
                 $desa = Desa::where('desa', $row['desa'])->first()->id;
             } catch (\Throwable $th) {
