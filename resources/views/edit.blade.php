@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="container">
         <div class="card p-4">
             <form action="{{ route('update data', ['id' => $id]) }}" method="post" enctype="multipart/form-data">
@@ -43,23 +42,26 @@
                         </div>
                         <div class="form-group">
                             <label>Tanggal</label>
-                            <input name="tanggal" type="date" class="form-control" value="{{ $data->tanggal }}" required>
+                            <input name="tanggal" type="date" class="form-control" value="{{ $data->tanggal }}"
+                                required>
                         </div>
                     </div>
                     <div class="col-md-6">
-                         <div class="form-group">
-                             
+                        <div class="form-group">
+
                             <label>Desa</label>
                             <select class="form-select" name="desa_id" required>
-                         
+
                                 @foreach ($desa as $item)
-                                    <option {{ $data->desa ? $item->id == $data->desa->id ? 'selected' : '':'' }} value="{{ $item->id }}">{{ $item->desa }}</option>
+                                    <option {{ $data->desa ? ($item->id == $data->desa->id ? 'selected' : '') : '' }}
+                                        value="{{ $item->id }}">{{ $item->desa }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Lansia</label>
-                            <input value="{{ $data->lansia }}" name="lansia" type="number" class="form-control" required>
+                            <input value="{{ $data->lansia }}" name="lansia" type="number" class="form-control"
+                                required>
                         </div>
                         <div class="form-group">
                             <label>Masyarakat Umum</label>
@@ -68,7 +70,12 @@
                         </div>
                         <div class="form-group">
                             <label>Remaja</label>
-                            <input value="{{ $data->remaja }}" name="remaja" type="number" class="form-control" required>
+                            <input value="{{ $data->remaja }}" name="remaja" type="number" class="form-control"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label>Usia 6 - 11 Tahun</label>
+                            <input value="{{ $data->usia }}" name="usia" type="number" class="form-control" required>
                         </div>
                     </div>
                 </div>
@@ -76,5 +83,4 @@
             </form>
         </div>
     </div>
-
 @endsection
