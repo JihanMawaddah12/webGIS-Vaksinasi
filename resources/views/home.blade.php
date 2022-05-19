@@ -169,716 +169,712 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-3 mb-2">
+            <div class="col-lg-3 col-6">
                 <!-- small box -->
-
-                <div class="small-box text-black" style="background-color:#D0CAB2">
-                    <div class="text-center">
-                        <h4>Dosis Terendah (Kecamatan)</h4>
-                        <hr class="text-white bg-white" />
-                        <div class="inner">
-                            @if ($krendah1)
-                                <h4>Dosis 1</h4>
-                                <h6>Kecamatan {{ $krendah1->tematik->kecamatan }}</h6>
-                                <h6>Jumlah {{ $krendah1->total }}</h6>
+                <br>
+                <div class="card p-2 text-black" style="background-color:#D0CAB2">
+                    <h3 style="font-size:20px !important">Dosis Terendah <br>(Kecamatan)</h3>
+                    <hr class="text-white bg-white" />
+                    <div class="inner">
+                        @if ($krendah1)
+                            <h3 style="font-size:20px !important">Dosis 1</h3>
+                            <h6>Kecamatan {{ $krendah1->tematik->kecamatan }}</h6>
+                            <h6>Jumlah {{ $krendah1->total }}</h6>
+                            <h3 style="font-size:20px !important">
                                 {{ $krpersen1 ? number_format((float) ($krendah1->total / $krpersen1) * 100, 2, '.', '') : 0 }}%
-                                </h6>
+                            </h3>
+                        @endif
+
+                        <hr class="text-white bg-white" />
+                        <h3 style="font-size:20px !important">Dosis 2</h3>
+                        @if ($krendah2)
+                            <h6>Kecamatan {{ $krendah2->tematik->kecamatan }}</h6>
+                            <h6>Jumlah {{ $krendah2->total }}</h6>
+                            <h3 style="font-size:20px !important">
+                                {{ $krpersen2 ? number_format((float) ($krendah2->total / $krpersen2) * 100, 2, '.', '') : 0 }}%
+                            </h3>
+                        @endif
+
+                        <hr class="text-white bg-white" />
+                        <h3 style="font-size:20px !important">Dosis 3</h3>
+                        @if ($krendah3)
+                            <h6>Kecamatan {{ $krendah3->tematik->kecamatan }}</h6>
+                            <h6>Jumlah {{ $krendah3->total }}</h6>
+                            <h3 style="font-size:20px !important">
+                                {{ $krpersen3 ? number_format((float) ($krendah3->total / $krpersen3) * 100, 2, '.', '') : 0 }}%
+                            </h3>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <br>
+                <div class="card p-2 text-black" style="background-color:#96C7C1">
+                    <h3 style="font-size:20px !important">Dosis Tertinggi<br>(Kecamatan)</h3>
+                    <hr class="text-white bg-white" />
+                    <div class="inner">
+                        <h3 style="font-size:20px !important">Dosis 1</h3>
+                        @if ($ktinggi1)
+                            <h6>Kecamatan {{ $ktinggi1->tematik->kecamatan }}</h6>
+                            <h6>Jumlah {{ $ktinggi1->total }}</h6>
+                            <h3 style="font-size:20px !important">
+                                {{ $ktpersen1 ? number_format((float) ($ktinggi1->total / $ktpersen1) * 100, 2, '.', '') : 0 }}%
+                            </h3>
+                        @endif
+
+                        <hr class="text-white bg-green" />
+                        <h3 style="font-size:20px !important">Dosis 2</h3>
+                        @if ($ktinggi2)
+                            <h6>Kecamatan {{ $ktinggi2->tematik->kecamatan }}</h6>
+                            <h6>Jumlah {{ $ktinggi2->total }}</h6>
+                            <h3 style="font-size:20px !important">
+                                {{ $ktpersen2 ? number_format((float) ($ktinggi2->total / $ktpersen2) * 100, 2, '.', '') : 0 }}%
+                            </h3>
+                        @endif
+
+                        <hr class="text-white bg-green" />
+                        <h3 style="font-size:20px !important">Dosis 3</h4>
+                            @if ($ktinggi3)
+                                <h6>Kecamatan {{ $ktinggi3->tematik->kecamatan }}</h6>
+                                <h6>Jumlah {{ $ktinggi3->total }}</h6>
+                                <h3 style="font-size:20px !important">
+                                    {{ $ktpersen3 ? number_format((float) ($ktinggi3->total / $ktpersen3) * 100, 2, '.', '') : 0 }}%
+                                </h3>
                             @endif
 
-                            <hr class="text-white bg-white" />
-                            <h4>Dosis 2</h4>
-                            @if ($krendah2)
-                                <h6>Kecamatan {{ $krendah2->tematik->kecamatan }}</h6>
-                                <h6>Jumlah {{ $krendah2->total }}</h6>
-                                <h3>
-                                    {{ $krpersen2 ? number_format((float) ($krendah2->total / $krpersen2) * 100, 2, '.', '') : 0 }}%
-                                    </h6>
-                                    <hr class="text-white bg-white" />
-                                    <h4>Dosis 3</h4>
-                                    <h6>Kecamatan {{ $krendah3->tematik->kecamatan }}</h6>
-                                    <h6>Jumlah {{ $krendah3->total }}</h6>
-                                    <h3>
-                                        {{ $krpersen3 ? number_format((float) ($krendah3->total / $krpersen3) * 100, 2, '.', '') : 0 }}%
-                                        </h6>
-                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <br>
+                <div class="card p-2 text-black" style="background-color:#DED9C4">
+                    <h3 style="font-size:20px !important"> Dosis Terendah<br>(Desa)</h3>
+                    <hr class="text-white bg-white" />
+                    <div class="inner">
+                        <h3 style="font-size:20px !important">Dosis 1</h3>
+                        @if ($drendah1)
+                            <h6>Desa {{ $drendah1->desa->desa }}</h6>
+                            <h6>Jumlah {{ $drendah1->total }}</h6>
+                            <h3 style="font-size:20px !important">
+                                {{ $drpersen1 ? number_format((float) ($drendah1->total / $drpersen1) * 100, 2, '.', '') : 0 }}%
+                            </h3>
+                        @endif
+
+                        <hr class="text-white bg-white" />
+                        <h3 style="font-size:20px !important">Dosis 2</h3>
+                        @if ($drendah2)
+                            <h6>Desa {{ $drendah2->desa->desa }}</h6>
+                            <h6>Jumlah {{ $drendah2->total }}</h6>
+                            <h3 style="font-size:20px !important">
+                                {{ $drpersen2 ? number_format((float) ($drendah2->total / $drpersen2) * 100, 2, '.', '') : 0 }}%
+                            </h3>
+                        @endif
+
+                        <hr class="text-white bg-white" />
+                        <h3 style="font-size:20px !important">Dosis 3</h3>
+                        @if ($drendah3)
+                            <h6>Desa {{ $drendah3->desa->desa }}</h6>
+                            <h6>Jumlah {{ $drendah3->total }}</h6>
+                            <h3 style="font-size:20px !important">
+                                {{ $drpersen3 ? number_format((float) ($drendah3->total / $drpersen3) * 100, 2, '.', '') : 0 }}%
+                            </h3>
                         @endif
 
                     </div>
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 mb-2">
+            <div class="col-lg-3 col-6">
                 <!-- small box -->
+                <br>
+                <div class="card p-2 text-black" style="background-color:#89B5AF" style="font-size:30px !important">
+                    <h3 style="font-size:20px !important">Dosis Tertinggi<br>(Desa) </h3>
+                    <hr class="text-white bg-white" />
+                    <div class="inner">
 
-                <div class="small-box text-black" style="background-color:#96C7C1">
-                    <div class="text-center">
-                        <h4>Dosis Tertinggi<br> (Kecamatan)</h4>
-                        <hr class="text-white bg-green" />
-                        <div class="inner">
-                            <h4>Dosis 1</h4>
-                            @if ($ktinggi1)
-                                <h6>Kecamatan {{ $ktinggi1->tematik->kecamatan }}</h6>
-                                <h6>Jumlah {{ $ktinggi1->total }}</h6>
-                                <h3>
-                                    {{ $ktpersen1 ? number_format((float) ($ktinggi1->total / $ktpersen1) * 100, 2, '.', '') : 0 }}%
-                                </h3>
-                            @endif
+                        <h3 style="font-size:20px !important"> Dosis 1 </h3>
+                        @if ($dtinggi1)
+                            <h6>Desa {{ $dtinggi1->desa->desa }}</h6>
+                            <h6>Jumlah {{ $dtinggi1->total }}</h6>
+                            <h3 style="font-size:20px !important">
+                                {{ $dtpersen1 ? number_format((float) ($dtinggi1->total / $dtpersen1) * 100, 2, '.', '') : 0 }}%
+                            </h3>
+                        @endif
 
-                            <hr class="text-white bg-green" />
-                            <h4>Dosis 2</h4>
-                            @if ($ktinggi2)
-                                <h6>Kecamatan {{ $ktinggi2->tematik->kecamatan }}</h6>
-                                <h6>Jumlah {{ $ktinggi2->total }}</h6>
-                                <h3>
-                                    {{ $ktpersen2 ? number_format((float) ($ktinggi2->total / $ktpersen2) * 100, 2, '.', '') : 0 }}%
-                                </h3>
-                            @endif
+                        <hr class="text-white bg-green">
+                        <h3 style="font-size:20px !important"> Dosis 2 </h3>
+                        @if ($dtinggi2)
+                            <h6>Desa {{ $dtinggi2->desa->desa }}</h6>
+                            <h6>Jumlah {{ $dtinggi2->total }}</h6>
+                            <h3 style="font-size:20px !important">
+                                {{ $dtpersen2 ? number_format((float) ($dtinggi2->total / $dtpersen2) * 100, 2, '.', '') : 0 }}%
+                            </h3>
+                        @endif
 
-                            <hr class="text-white bg-green" />
-                            <h4>Dosis 3</h4>
-                            @if ($ktinggi3)
-                                <h6>Kecamatan {{ $ktinggi3->tematik->kecamatan }}</h6>
-                                <h6>Jumlah {{ $ktinggi3->total }}</h6>
-                                <h3>
-                                    {{ $ktpersen3 ? number_format((float) ($ktinggi3->total / $ktpersen3) * 100, 2, '.', '') : 0 }}%
-                                </h3>
-                            @endif
+                        <hr class="text-white bg-green">
+                        <h3 style="font-size:20px !important">
+                            Dosis 3 </h3>
+                        @if ($dtinggi3)
+                            <h6>Desa {{ $dtinggi3->desa->desa }}</h6>
+                            <h6>Jumlah {{ $dtinggi3->total }}</h6>
+                            <h3 style="font-size:20px !important">>
+                                {{ $dtpersen3 ? number_format((float) ($dtinggi3->total / $dtpersen3) * 100, 2, '.', '') : 0 }}%
+                            </h3>
+                        @endif
 
-                        </div>
                     </div>
                 </div>
+                <!-- ./col -->
             </div>
+            <div class="row">
 
-
-            <!-- ./col -->
-            <div class="col-lg-3 mb-2">
-                <!-- small box -->
-
-                <div class="small-box text-black" style="background-color:#DED9C4">
-                    <div class="text-center">
-                        <h4>Dosis Terendah <br> (Desa)</h4>
+                <div class="col-lg-4 mb-4">
+                    <div class="p-4 w-100 rounded shadow text-white" style="background-color:#68B0AB">
+                        <h3 style="font-size:25px !important"><strong> Tenaga Kesehatan</strong></h3>
                         <hr class="text-white bg-white" />
                         <div class="inner">
-                            <h4>Dosis 1</h4>
-                            @if ($drendah1)
-                                <h6>Desa {{ $drendah1->desa->desa }}</h6>
-                                <h6>Jumlah {{ $drendah1->total }}</h6>
-                                <h6>
-                                    {{ $drpersen1 ? number_format((float) ($drendah1->total / $drpersen1) * 100, 2, '.', '') : 0 }}%
-                                </h6>
-                            @endif
+                            <div class="row">
+                                <div class="col">
+                                    <h3 style="font-size:20px !important"><strong>Dosis 1</strong></h3>
+                                    @if ($dosis1_nakes)
+                                        <h6>Jumlah {{ $dosis1_nakes }}</h6>
+                                        <h3 style="font-size:20px !important"><strong>
+                                                {{ number_format((float) ($dosis1_nakes / $target_nakes) * 100, 2, '.', '') }}%
+                                            </strong></h3>
+                                    @endif
 
-                            <hr class="text-white bg-white" />
-                            <h4>Dosis 2</h4>
-                            @if ($drendah2)
-                                <h6>Desa {{ $drendah2->desa->desa }}</h6>
-                                <h6>Jumlah {{ $drendah2->total }}</h6>
-                                {{ $drpersen2 ? number_format((float) ($drendah2->total / $drpersen2) * 100, 2, '.', '') : 0 }}%
-                                </h6>
-                                <hr class="text-white bg-white" />
-                                <h4>Dosis 3</h4>
-                                <h6>Desa {{ $drendah3->desa->desa }}</h6>
-                                <h6>Jumlah {{ $drendah3->total }}</h6>
-                                <h6>
-                                    {{ $drpersen3 ? number_format((float) ($drendah3->total / $drpersen3) * 100, 2, '.', '') : 0 }}%
-                                </h6>
-                            @endif
+                                </div>
+                                <div class="col">
+                                    <h3 style="font-size:20px !important"><strong>Dosis 2</strong></h3>
+                                    @if ($dosis2_nakes)
+                                        <h6>Jumlah {{ $dosis2_nakes }}</h6>
+                                        <h3 style="font-size:20px !important"><strong>
+                                                {{ number_format((float) ($dosis2_nakes / $target_nakes) * 100, 2, '.', '') }}%
+                                            </strong></h3>
+                                    @endif
 
+                                </div>
+                                <div class="col">
+                                    <h3 style="font-size:20px !important"><strong>Dosis 3</strong></h3>
+                                    @if ($dosis3_nakes)
+                                        <h6>Jumlah {{ $dosis3_nakes }}</h6>
+                                        <h3 style="font-size:20px !important"><strong>
+                                                {{ number_format((float) ($dosis3_nakes / $target_nakes) * 100, 2, '.', '') }}%
+                                            </strong></h3>
+                                    @endif
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 mb-2">
-                <!-- small box -->
-
-                <div class="small-box text-black" style="background-color:#89B5AF">
-                    <div class="text-center">
-                        <h4>Dosis Tertinggi <br> (Desa)</h4>
-                        <hr class="text-white bg-green" />
+                <div class="col-lg-4 mb-4">
+                    <div class="p-4 w-100 rounded shadow text-black" style="background-color:#A3D2CA">
+                        <h3 style="font-size:25px !important"><strong>Petugas Publik</strong></h3>
+                        <hr class="text-white bg-white" />
                         <div class="inner">
-                            <h4>Dosis 1</h4>
-                            @if ($dtinggi1)
-                                <h6>Desa {{ $dtinggi1->desa->desa }}</h6>
-                                <h6>Jumlah {{ $dtinggi1->total }}</h6>
-                                <h6>
-                                    {{ $dtpersen1 ? number_format((float) ($dtinggi1->total / $dtpersen1) * 100, 2, '.', '') : 0 }}%
-                                </h6>
-                            @endif
+                            <div class="row">
+                                <div class="col">
+                                    <h3 style="font-size:20px !important"><strong>Dosis 1</strong></h3>
+                                    @if ($dosis1_petugas)
+                                        <h6>Jumlah {{ $dosis1_petugas }}</h6>
+                                        <h3 style="font-size:20px !important"><strong>
+                                                {{ number_format((float) ($dosis1_petugas / $target_petugas) * 100, 2, '.', '') }}%
+                                            </strong></h3>
+                                    @endif
 
-                            <hr class="text-white bg-green" />
-                            <h4>Dosis 2</h4>
-                            @if ($dtinggi2)
-                                <h6>Desa {{ $dtinggi2->desa->desa }}</h6>
-                                <h6>Jumlah {{ $dtinggi2->total }}</h6>
-                                <h6>
-                                    {{ $dtpersen2 ? number_format((float) ($dtinggi2->total / $dtpersen2) * 100, 2, '.', '') : 0 }}%
-                                </h6>
-                            @endif
+                                </div>
+                                <div class="col">
+                                    <h3 style="font-size:20px !important"><strong>Dosis 2</strong></h3>
+                                    @if ($dosis2_petugas)
+                                        <h6>Jumlah {{ $dosis2_petugas }}</h6>
+                                        <h3 style="font-size:20px !important"><strong>
+                                                {{ number_format((float) ($dosis2_petugas / $target_petugas) * 100, 2, '.', '') }}%
+                                            </strong></h3>
+                                    @endif
 
-                            <hr class="text-white bg-green" />
-                            <h4>Dosis 3</h4>
-                            @if ($dtinggi3)
-                                <h6>Desa {{ $dtinggi3->desa->desa }}</h6>
-                                <h6>Jumlah {{ $dtinggi3->total }}</h6>
-                                <h6>
-                                    {{ $dtpersen3 ? number_format((float) ($dtinggi3->total / $dtpersen3) * 100, 2, '.', '') : 0 }}%
-                                </h6>
-                            @endif
+                                </div>
+                                <div class="col">
+                                    <h3 style="font-size:20px !important"><strong>Dosis 3</strong></h3>
+                                    @if ($dosis3_petugas)
+                                        <h6>Jumlah {{ $dosis3_petugas }}</h6>
+                                        <h3 style="font-size:20px !important"><strong>
+                                                {{ number_format((float) ($dosis3_petugas / $target_petugas) * 100, 2, '.', '') }}%
+                                            </strong></h3>
+                                    @endif
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- ./col -->
-        </div>
-        <div class="row">
-
-            <div class="col-lg-4 mb-4">
-                <div class="p-4 w-100 rounded shadow text-white" style="background-color:#68B0AB">
-                    <h3>Tenaga Kesehatan</h3>
-                    <hr class="text-white bg-white" />
-                    <div class="inner">
-                        <div class="row">
-                            <div class="col">
-                                <h4>Dosis 1</h4>
-                                @if ($dosis1_nakes)
-                                    <h6>Jumlah {{ $dosis1_nakes }}</h6>
-                                    <h6>
-                                        {{ number_format((float) ($dosis1_nakes / $target_nakes) * 100, 2, '.', '') }}%
-                                    </h6>
-                                @endif
-
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 2</h4>
-                                @if ($dosis2_nakes)
-                                    <h6>Jumlah {{ $dosis2_nakes }}</h6>
-                                    <h6>
-                                        {{ number_format((float) ($dosis2_nakes / $target_nakes) * 100, 2, '.', '') }}%
-                                    </h6>
-                                @endif
-
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 3</h4>
-                                @if ($dosis3_nakes)
-                                    <h6>Jumlah {{ $dosis3_nakes }}</h6>
-                                    <h6>
-                                        {{ number_format((float) ($dosis3_nakes / $target_nakes) * 100, 2, '.', '') }}%
-                                    </h6>
-                                @endif
-
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="p-4 w-100 rounded shadow text-black" style="background-color:#A3D2CA">
-                    <h3>Petugas Publik</h3>
-                    <hr class="text-white bg-white" />
-                    <div class="inner">
-                        <div class="row">
-                            <div class="col">
-                                <h4>Dosis 1</h4>
-                                @if ($dosis1_petugas)
-                                    <h6>Jumlah {{ $dosis1_petugas }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis1_petugas / $target_petugas) * 100, 2, '.', '') }}%
-                                    </h3>
-                                @endif
+                <div class="col-lg-4 mb-4">
 
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 2</h4>
-                                @if ($dosis2_petugas)
-                                    <h6>Jumlah {{ $dosis2_petugas }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis2_petugas / $target_petugas) * 100, 2, '.', '') }}%
-                                    </h3>
-                                @endif
+                    <div class="p-4 w-100 rounded shadow text-white" style="background-color:#5EAAA8">
+                        <h3 style="font-size:25px !important"><strong>Lansia</strong></h3>
+                        <hr class="text-white bg-white" />
+                        <div class="inner">
+                            <div class="row">
+                                <div class="col">
+                                    <h3 style="font-size:20px !important"><strong>Dosis 1</strong></h3>
+                                    @if ($dosis1_lansia)
+                                        <h6>Jumlah {{ $dosis1_lansia }}</h6>
+                                        <h3 style="font-size:20px !important"><strong>
+                                                {{ number_format((float) ($dosis1_lansia / $target_lansia) * 100, 2, '.', '') }}%
+                                            </strong></h3>
+                                    @endif
 
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 3</h4>
-                                @if ($dosis3_petugas)
-                                    <h6>Jumlah {{ $dosis3_petugas }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis3_petugas / $target_petugas) * 100, 2, '.', '') }}%
-                                    </h3>
-                                @endif
+                                </div>
+                                <div class="col">
+                                    <h3 style="font-size:20px !important"><strong>Dosis 2</strong></h3>
+                                    @if ($dosis2_lansia)
+                                        <h6>Jumlah {{ $dosis2_lansia }}</h6>
+                                        <h3 style="font-size:20px !important"><strong>
+                                                {{ number_format((float) ($dosis2_lansia / $target_lansia) * 100, 2, '.', '') }}%
+                                            </strong></h3>
+                                    @endif
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
+                                </div>
+                                <div class="col">
+                                    <h3 style="font-size:20px !important"><strong>Dosis 3</strong></h3>
+                                    @if ($dosis3_lansia)
+                                        <h6>Jumlah {{ $dosis3_lansia }}</h6>
+                                        <h3 style="font-size:20px !important"><strong>
+                                                {{ number_format((float) ($dosis3_lansia / $target_lansia) * 100, 2, '.', '') }}%
+                                            </strong></h3>
+                                    @endif
 
-                <div class="p-4 w-100 rounded shadow text-white" style="background-color:#5EAAA8">
-                    <h2>Lansia</h2>
-                    <hr class="text-white bg-white" />
-                    <div class="inner">
-                        <div class="row">
-                            <div class="col">
-                                <h4>Dosis 1</h4>
-                                @if ($dosis1_lansia)
-                                    <h6>Jumlah {{ $dosis1_lansia }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis1_lansia / $target_lansia) * 100, 2, '.', '') }}%
-                                    </h3>
-                                @endif
-
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 2</h4>
-                                @if ($dosis2_lansia)
-                                    <h6>Jumlah {{ $dosis2_lansia }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis2_lansia / $target_lansia) * 100, 2, '.', '') }}%
-                                    </h3>
-                                @endif
-
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 3</h4>
-                                @if ($dosis3_lansia)
-                                    <h6>Jumlah {{ $dosis3_lansia }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis3_lansia / $target_lansia) * 100, 2, '.', '') }}%
-                                    </h3>
-                                @endif
-
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 mb-4">
+                <div class="col-lg-4 mb-4">
 
-                <div class="p-4 w-100 rounded shadow text-black" style="background-color:#A7C4BC">
-                    <h3>Masyarakat Umum</h3>
-                    <hr class="text-white bg-white" />
-                    <div class="inner">
-                        <div class="row">
-                            <div class="col">
-                                <h4>Dosis 1</h4>
-                                @if ($dosis1_masyarakat)
-                                    <h6>Jumlah {{ $dosis1_masyarakat }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis1_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
-                                    </h3>
-                                @endif
+                    <div class="p-4 w-100 rounded shadow text-black" style="background-color:#A7C4BC">
+                        <h3 style="font-size:25px !important"><strong>Masyarakat Umum</strong></h3>
+                        <hr class="text-white bg-white" />
+                        <div class="inner">
+                            <div class="row">
+                                <div class="col">
+                                    <h3 style="font-size:20px !important"><strong>Dosis 1</strong></h3>
+                                    @if ($dosis1_masyarakat)
+                                        <h6>Jumlah {{ $dosis1_masyarakat }}</h6>
+                                        <h3 style="font-size:20px !important"><strong>
+                                                {{ number_format((float) ($dosis1_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
+                                            </strong></h3>
+                                    @endif
 
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 2</h4>
-                                @if ($dosis2_masyarakat)
-                                    <h6>Jumlah {{ $dosis2_masyarakat }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis2_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
-                                    </h3>
-                                @endif
+                                </div>
+                                <div class="col">
+                                    <h3 style="font-size:20px !important"><strong>Dosis 2</strong></h3>
+                                    @if ($dosis2_masyarakat)
+                                        <h6>Jumlah {{ $dosis2_masyarakat }}</h6>
+                                        <h3 style="font-size:20px !important"><strong>
+                                                {{ number_format((float) ($dosis2_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
+                                            </strong></h3>
+                                    @endif
 
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 3</h4>
-                                @if ($dosis3_masyarakat)
-                                    <h6>Jumlah {{ $dosis3_masyarakat }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis3_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
-                                    </h3>
-                                @endif
+                                </div>
+                                <div class="col">
+                                    <h3 style="font-size:20px !important"><strong>Dosis 3</strong></h3>
+                                    @if ($dosis3_masyarakat)
+                                        <h6>Jumlah {{ $dosis3_masyarakat }}</h6>
+                                        <h3 style="font-size:20px !important"><strong>
+                                                {{ number_format((float) ($dosis3_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
+                                            </strong></h3>
+                                    @endif
 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 mb-4">
+                <div class="col-lg-4 mb-4">
 
-                <div class="p-4 w-100 rounded shadow text-white" style="background-color:#5E8B7E">
-                    <h2>Remaja</h2>
-                    <hr class="text-white bg-white" />
-                    <div class="inner">
-                        <div class="row">
-                            <div class="col">
-                                <h4>Dosis 1</h4>
-                                @if ($dosis1_remaja)
-                                    <h6>Jumlah {{ $dosis1_remaja }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis1_remaja / $target_remaja) * 100, 2, '.', '') }}%
-                                    </h3>
-                                @endif
+                    <div class="p-4 w-100 rounded shadow text-white" style="background-color:#5E8B7E">
+                        <h3 style="font-size:25px !important"><strong>Remaja</strong></h3>
+                        <hr class="text-white bg-white" />
+                        <div class="inner">
+                            <div class="row">
+                                <div class="col">
+                                    <h3 style="font-size:20px !important"><strong>Dosis 1</strong></h3>
+                                    @if ($dosis1_remaja)
+                                        <h6>Jumlah {{ $dosis1_remaja }}</h6>
+                                        <h3 style="font-size:20px !important"><strong>
+                                                {{ number_format((float) ($dosis1_remaja / $target_remaja) * 100, 2, '.', '') }}%
+                                            </strong></h3>
+                                    @endif
 
+                                </div>
+                                <div class="col">
+                                    <h3 style="font-size:20px !important"><strong>Dosis 2</strong></h3>
+                                    @if ($dosis2_remaja)
+                                        <h6>Jumlah {{ $dosis2_remaja }}</h6>
+                                        <h3 style="font-size:20px !important"><strong>
+                                                {{ number_format((float) ($dosis2_remaja / $target_remaja) * 100, 2, '.', '') }}%
+                                            </strong></h3>
+                                    @endif
+
+                                </div>
+                                <div class="col">
+                                    <h3 style="font-size:20px !important"><strong>Dosis 3</strong></h3>
+                                    @if ($dosis3_remaja)
+                                        <h6>Jumlah {{ $dosis3_remaja }}</h6>
+                                        <h3 style="font-size:20px !important"><strong>
+                                                {{ number_format((float) ($dosis3_remaja / $target_remaja) * 100, 2, '.', '') }}%
+                                            </strong></h3>
+                                    @endif
+
+                                </div>
                             </div>
-                            <div class="col">
-                                <h4>Dosis 2</h4>
-                                @if ($dosis2_remaja)
-                                    <h6>Jumlah {{ $dosis2_remaja }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis2_remaja / $target_remaja) * 100, 2, '.', '') }}%
-                                    </h3>
-                                @endif
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
 
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 3</h4>
-                                @if ($dosis3_remaja)
-                                    <h6>Jumlah {{ $dosis3_remaja }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis3_remaja / $target_remaja) * 100, 2, '.', '') }}%
-                                    </h3>
-                                @endif
+                    <div class="p-4 w-100 rounded shadow text-white" style="background-color:#2F5D62">
+                        <h3 style="font-size:25px !important"><strong>Usia 6-11 tahun</strong></h3>
+                        <hr class="text-white bg-white" />
+                        <div class="inner">
+                            <div class="row">
+                                <div class="col">
+                                    <h3 style="font-size:20px !important"><strong>Dosis 1</strong></h3>
+                                    @if ($dosis1_usia)
+                                        <h6>Jumlah {{ $dosis1_usia }}</h6>
+                                        <h3 style="font-size:20px !important"><strong>
+                                                {{ number_format((float) ($dosis1_usia / $target_usia) * 100, 2, '.', '') }}%
+                                            </strong></h3>
+                                    @endif
 
+                                </div>
+                                <div class="col">
+                                    <h3 style="font-size:20px !important"><strong>Dosis 2</strong></h3>
+                                    @if ($dosis2_usia)
+                                        <h6>Jumlah {{ $dosis2_usia }}</h6>
+                                        <h3 style="font-size:20px !important"><strong>
+                                                {{ number_format((float) ($dosis2_usia / $target_usia) * 100, 2, '.', '') }}%
+                                            </strong></h3>
+                                    @endif
+
+                                </div>
+                                <div class="col">
+                                    <h3 style="font-size:20px !important"><strong>Dosis 3</strong></h3>
+                                    @if ($dosis3_usia)
+                                        <h6>Jumlah {{ $dosis3_usia }}</h6>
+                                        <h3 style="font-size:20px !important"><strong>
+                                                {{ number_format((float) ($dosis3_usia / $target_usia) * 100, 2, '.', '') }}%
+                                            </strong></h3>
+                                    @endif
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 mb-4">
-
-                <div class="p-4 w-100 rounded shadow text-white" style="background-color:#2F5D62">
-                    <h2>Usia 6-11 tahun</h2>
-                    <hr class="text-white bg-white" />
-                    <div class="inner">
-                        <div class="row">
-                            <div class="col">
-                                <h4>Dosis 1</h4>
-                                @if ($dosis1_usia)
-                                    <h6>Jumlah {{ $dosis1_usia }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis1_usia / $target_usia) * 100, 2, '.', '') }}%
-                                    </h3>
-                                @endif
-
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 2</h4>
-                                @if ($dosis2_usia)
-                                    <h6>Jumlah {{ $dosis2_usia }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis2_usia / $target_usia) * 100, 2, '.', '') }}%
-                                    </h3>
-                                @endif
-
-                            </div>
-                            <div class="col">
-                                <h4>Dosis 3</h4>
-                                @if ($dosis3_usia)
-                                    <h6>Jumlah {{ $dosis3_usia }}</h6>
-                                    <h3>
-                                        {{ number_format((float) ($dosis3_usia / $target_usia) * 100, 2, '.', '') }}%
-                                    </h3>
-                                @endif
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endsection
-    @section('styles')
-        <!-- Leaflet CSS -->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-            crossorigin="" />
-        <style>
-            .leaflet-control-attribution {
-                display: none !important
-            }
-
-            .info {
-                padding: 6px 8px;
-                font: 14px/16px Arial, Helvetica, sans-serif;
-                background: #EDE6DB;
-                background: #EDE6DB;
-                box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-                border-radius: 5px;
-            }
-
-            .info h4 {
-                margin: 0 0 5px;
-                color: #777;
-            }
-
-            .legend {
-                text-align: left;
-                line-height: 18px;
-                color: #555;
-            }
-
-            .legend i {
-                width: 18px;
-                height: 18px;
-                float: left;
-                margin-right: 8px;
-                opacity: 0.7;
-            }
-
-        </style>
-    @endsection
-    @push('scripts')
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
-                integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
-                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script>
-            $('#kecamatan').change(function() {
-                window.location.href = '/home/' + this.value;
-            });
-        </script>
-        <script>
-            var labels = {!! json_encode($kec) !!};
-            const data = {
-                labels: labels,
-                datasets: [{
-                    label: 'Dosis 1 ' + {!! json_encode($tem) !!},
-                    backgroundColor: 'rgb(255, 99, 132)',
-                    borderColor: 'rgb(255, 99, 132)',
-                    data: {!! json_encode($jumlah) !!},
-
-                }],
-            };
-            const plugin = {
-                id: 'custom_canvas_background_color1',
-                beforeDraw: (chart) => {
-                    const ctx = chart.canvas.getContext('2d');
-                    ctx.save();
-                    ctx.globalCompositeOperation = 'destination-over';
-                    ctx.fillStyle = 'white';
-                    ctx.fillRect(0, 0, chart.width, chart.height);
-                    ctx.restore();
+        @endsection
+        @section('styles')
+            <!-- Leaflet CSS -->
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+                integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+                crossorigin="" />
+            <style>
+                .leaflet-control-attribution {
+                    display: none !important
                 }
-            };
-            const config = {
-                type: 'line',
-                data: data,
-                plugins: [plugin],
-                options: {
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            min: 0,
-                            ticks: {
-                                stepSize: 5
+
+                .info {
+                    padding: 6px 8px;
+                    font: 14px/16px Arial, Helvetica, sans-serif;
+                    background: #EDE6DB;
+                    background: #EDE6DB;
+                    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+                    border-radius: 5px;
+                }
+
+                .info h5 {
+                    margin: 0 0 5px;
+                    color: #777;
+                }
+
+                .legend {
+                    text-align: left;
+                    line-height: 18px;
+                    color: #555;
+                }
+
+                .legend i {
+                    width: 18px;
+                    height: 18px;
+                    float: left;
+                    margin-right: 8px;
+                    opacity: 0.7;
+                }
+
+            </style>
+        @endsection
+        @push('scripts')
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
+                        integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
+                        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script>
+                $('#kecamatan').change(function() {
+                    window.location.href = '/home/' + this.value;
+                });
+            </script>
+            <script>
+                var labels = {!! json_encode($kec) !!};
+                const data = {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Dosis 1 ' + {!! json_encode($tem) !!},
+                        backgroundColor: 'rgb(255, 99, 132)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: {!! json_encode($jumlah) !!},
+
+                    }],
+                };
+                const plugin = {
+                    id: 'custom_canvas_background_color1',
+                    beforeDraw: (chart) => {
+                        const ctx = chart.canvas.getContext('2d');
+                        ctx.save();
+                        ctx.globalCompositeOperation = 'destination-over';
+                        ctx.fillStyle = 'white';
+                        ctx.fillRect(0, 0, chart.width, chart.height);
+                        ctx.restore();
+                    }
+                };
+                const config = {
+                    type: 'line',
+                    data: data,
+                    plugins: [plugin],
+                    options: {
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                min: 0,
+                                ticks: {
+                                    stepSize: 5
+                                }
                             }
                         }
                     }
-                }
-            };
-            const myChart = new Chart(
-                document.getElementById('grafik1'),
-                config
-            );
-        </script>
-        <script>
-            var labels2 = {!! json_encode($kec2) !!};
-            const data2 = {
-                labels: labels2,
-                datasets: [{
-                    label: 'Dosis 2 ' + {!! json_encode($tem) !!},
-                    backgroundColor: 'rgb(255, 99, 132)',
-                    borderColor: 'rgb(255, 99, 132)',
-                    data: {!! json_encode($jumlah2) !!},
+                };
+                const myChart = new Chart(
+                    document.getElementById('grafik1'),
+                    config
+                );
+            </script>
+            <script>
+                var labels2 = {!! json_encode($kec2) !!};
+                const data2 = {
+                    labels: labels2,
+                    datasets: [{
+                        label: 'Dosis 2 ' + {!! json_encode($tem) !!},
+                        backgroundColor: 'rgb(255, 99, 132)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: {!! json_encode($jumlah2) !!},
 
-                }],
-            };
-            const plugin2 = {
-                id: 'custom_canvas_background_color2',
-                beforeDraw: (chart) => {
-                    const ctx = chart.canvas.getContext('2d');
-                    ctx.save();
-                    ctx.globalCompositeOperation = 'destination-over';
-                    ctx.fillStyle = 'white';
-                    ctx.fillRect(0, 0, chart.width, chart.height);
-                    ctx.restore();
-                }
-            };
-            const config2 = {
-                type: 'line',
-                data: data2,
-                plugins: [plugin2],
-                options: {
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            min: 0,
-                            ticks: {
-                                stepSize: 5
+                    }],
+                };
+                const plugin2 = {
+                    id: 'custom_canvas_background_color2',
+                    beforeDraw: (chart) => {
+                        const ctx = chart.canvas.getContext('2d');
+                        ctx.save();
+                        ctx.globalCompositeOperation = 'destination-over';
+                        ctx.fillStyle = 'white';
+                        ctx.fillRect(0, 0, chart.width, chart.height);
+                        ctx.restore();
+                    }
+                };
+                const config2 = {
+                    type: 'line',
+                    data: data2,
+                    plugins: [plugin2],
+                    options: {
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                min: 0,
+                                ticks: {
+                                    stepSize: 5
+                                }
                             }
                         }
                     }
-                }
-            };
-
-            const myChart2 = new Chart(
-                document.getElementById('grafik2'),
-                config2
-            );
-        </script>
-        <script>
-            var labels3 = {!! json_encode($kec3) !!};
-            const data3 = {
-                labels: labels3,
-                datasets: [{
-                    label: 'Dosis 3 ' + {!! json_encode($tem) !!},
-                    backgroundColor: 'rgb(255, 99, 132)',
-                    borderColor: 'rgb(255, 99, 132)',
-                    data: {!! json_encode($jumlah3) !!},
-
-                }],
-            };
-            const plugin3 = {
-                id: 'custom_canvas_background_color3',
-                beforeDraw: (chart) => {
-                    const ctx = chart.canvas.getContext('2d');
-                    ctx.save();
-                    ctx.globalCompositeOperation = 'destination-over';
-                    ctx.fillStyle = 'white';
-                    ctx.fillRect(0, 0, chart.width, chart.height);
-                    ctx.restore();
-                }
-            };
-            const config3 = {
-                type: 'line',
-                data: data3,
-                plugins: [plugin3],
-                options: {
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            min: 0,
-                            ticks: {
-                                stepSize: 5
-                            }
-                        }
-                    }
-                }
-            };
-            const myChart3 = new Chart(
-                document.getElementById('grafik3'),
-                config3
-            );
-        </script>
-        <!-- Leaflet JavaScript -->
-        <!-- Make sure you put this AFTER Leaflet's CSS -->
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-                integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-                crossorigin=""></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
-                integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
-                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
-        <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
-        <script type="text/javascript">
-            var s = [5.554630942893766, 95.31709742351293];
-            var color = {!! json_encode($color) !!};
-            var datamap = {!! json_encode($data) !!}
-            var map = L.map('map').setView(
-                s, 11
-            );
-
-
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
-
-
-            var info = L.control();
-
-            info.onAdd = function(map) {
-                this._div = L.DomUtil.create('div', 'info');
-                this.update();
-                return this._div;
-            };
-            //menampilkan pop up info tematik
-            info.update = function(props) {
-
-            };
-
-            info.addTo(map);
-
-            function style(feature) {
-                return {
-                    weight: 2,
-                    opacity: 1,
-                    color: 'black',
-                    dashArray: '3',
-                    fillOpacity: 0.9,
-                    fillColor: color[feature.properties.NAMOBJ]
                 };
 
-            }
-            //memunculkan highlight pada peta
-            function highlightFeature(e) {
-                var layer = e.target;
+                const myChart2 = new Chart(
+                    document.getElementById('grafik2'),
+                    config2
+                );
+            </script>
+            <script>
+                var labels3 = {!! json_encode($kec3) !!};
+                const data3 = {
+                    labels: labels3,
+                    datasets: [{
+                        label: 'Dosis 3 ' + {!! json_encode($tem) !!},
+                        backgroundColor: 'rgb(255, 99, 132)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: {!! json_encode($jumlah3) !!},
 
-                layer.setStyle({
-                    weight: 5,
-                    color: '#666',
-                    dashArray: '',
-                    fillOpacity: 0.7
-                });
+                    }],
+                };
+                const plugin3 = {
+                    id: 'custom_canvas_background_color3',
+                    beforeDraw: (chart) => {
+                        const ctx = chart.canvas.getContext('2d');
+                        ctx.save();
+                        ctx.globalCompositeOperation = 'destination-over';
+                        ctx.fillStyle = 'white';
+                        ctx.fillRect(0, 0, chart.width, chart.height);
+                        ctx.restore();
+                    }
+                };
+                const config3 = {
+                    type: 'line',
+                    data: data3,
+                    plugins: [plugin3],
+                    options: {
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                min: 0,
+                                ticks: {
+                                    stepSize: 5
+                                }
+                            }
+                        }
+                    }
+                };
+                const myChart3 = new Chart(
+                    document.getElementById('grafik3'),
+                    config3
+                );
+            </script>
+            <!-- Leaflet JavaScript -->
+            <!-- Make sure you put this AFTER Leaflet's CSS -->
+            <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+                        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+                        crossorigin=""></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
+                        integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
+                        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
+            <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
+            <script type="text/javascript">
+                var s = [5.554630942893766, 95.31709742351293];
+                var color = {!! json_encode($color) !!};
+                var datamap = {!! json_encode($data) !!}
+                var map = L.map('map').setView(
+                    s, 11
+                );
 
-                if (!L.Browser.ie && !L.Browser.opera) {
-                    layer.bringToFront();
+
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+
+
+                var info = L.control();
+
+                info.onAdd = function(map) {
+                    this._div = L.DomUtil.create('div', 'info');
+                    this.update();
+                    return this._div;
+                };
+                //menampilkan pop up info tematik
+                info.update = function(props) {
+
+                };
+
+                info.addTo(map);
+
+                function style(feature) {
+                    return {
+                        weight: 2,
+                        opacity: 1,
+                        color: 'black',
+                        dashArray: '3',
+                        fillOpacity: 0.9,
+                        fillColor: color[feature.properties.NAMOBJ]
+                    };
+
+                }
+                //memunculkan highlight pada peta
+                function highlightFeature(e) {
+                    var layer = e.target;
+
+                    layer.setStyle({
+                        weight: 5,
+                        color: '#666',
+                        dashArray: '',
+                        fillOpacity: 0.7
+                    });
+
+                    if (!L.Browser.ie && !L.Browser.opera) {
+                        layer.bringToFront();
+                    }
+
+                    info.update(layer.feature.properties);
                 }
 
-                info.update(layer.feature.properties);
-            }
+                var geojson;
 
-            var geojson;
+                function resetHighlight(e) {
+                    geojsonLayer.resetStyle(e.target);
+                    info.update();
+                }
 
-            function resetHighlight(e) {
-                geojsonLayer.resetStyle(e.target);
-                info.update();
-            }
+                function zoomToFeature(e) {
+                    map.fitBounds(e.target.getBounds());
+                }
 
-            function zoomToFeature(e) {
-                map.fitBounds(e.target.getBounds());
-            }
-
-            function onEachFeature(feature, layer) {
-                layer.on({
-                    mouseover: highlightFeature,
-                    mouseout: resetHighlight,
-                    click: zoomToFeature
+                function onEachFeature(feature, layer) {
+                    layer.on({
+                        mouseover: highlightFeature,
+                        mouseout: resetHighlight,
+                        click: zoomToFeature
+                    });
+                }
+                var geojsonLayer = new L.GeoJSON.AJAX({!! json_encode($geofile) !!}, {
+                    style: style,
+                    onEachFeature: onEachFeature
                 });
-            }
-            var geojsonLayer = new L.GeoJSON.AJAX({!! json_encode($geofile) !!}, {
-                style: style,
-                onEachFeature: onEachFeature
-            });
-            geojsonLayer.addTo(map);
+                geojsonLayer.addTo(map);
 
-            var legend = L.control({
-                position: 'bottomright'
-            });
+                var legend = L.control({
+                    position: 'bottomright'
+                });
 
 
-            var markersLayer = new L.LayerGroup(); //layer contain searched elements
-            map.addLayer(markersLayer);
-            var controlSearch = new L.Control.Search({
-                position: 'topleft',
-                layer: markersLayer,
-                initial: false,
-                zoom: 12,
-                marker: false,
-                autoType: false
-            });
-            map.addControl(controlSearch);
-            for (var i = 0; i < datamap.length; i++) {
-                var title = datamap[i][0], //value searched
-                    loc = [datamap[i][1], datamap[i][2]], //position found
-                    marker = new L.Marker(new L.latLng(loc), {
-                        title: title
-                    }); //se property searched
-                marker.bindPopup(title);
-                markersLayer.addLayer(marker);
-            }
-        </script>
-    @endpush
+                var markersLayer = new L.LayerGroup(); //layer contain searched elements
+                map.addLayer(markersLayer);
+                var controlSearch = new L.Control.Search({
+                    position: 'topleft',
+                    layer: markersLayer,
+                    initial: false,
+                    zoom: 12,
+                    marker: false,
+                    autoType: false
+                });
+                map.addControl(controlSearch);
+                for (var i = 0; i < datamap.length; i++) {
+                    var title = datamap[i][0], //value searched
+                        loc = [datamap[i][1], datamap[i][2]], //position found
+                        marker = new L.Marker(new L.latLng(loc), {
+                            title: title
+                        }); //se property searched
+                    marker.bindPopup(title);
+                    markersLayer.addLayer(marker);
+                }
+            </script>
+        @endpush

@@ -266,31 +266,34 @@ http://www.tooplate.com/view/2091-ziggy
                     <!-- small box -->
                     <br>
                     <div class="card p-2 text-black" style="background-color:#D0CAB2">
-                        <h3>Dosis Terendah (Kecamatan)</h3>
+                        <h3 style="font-size:20px !important">Dosis Terendah <br>(Kecamatan)</h3>
                         <hr class="text-white bg-white" />
                         <div class="inner">
                             @if ($krendah1)
-                                <h3>Dosis 1</h3>
+                                <h3 style="font-size:20px !important">Dosis 1</h3>
                                 <h6>Kecamatan {{ $krendah1->tematik->kecamatan }}</h6>
                                 <h6>Jumlah {{ $krendah1->total }}</h6>
-                                <h3>
+                                <h3 style="font-size:20px !important">
                                     {{ $krpersen1 ? number_format((float) ($krendah1->total / $krpersen1) * 100, 2, '.', '') : 0 }}%
                                 </h3>
                             @endif
 
                             <hr class="text-white bg-white" />
-                            <h3>Dosis 2</h3>
+                            <h3 style="font-size:20px !important">Dosis 2</h3>
                             @if ($krendah2)
                                 <h6>Kecamatan {{ $krendah2->tematik->kecamatan }}</h6>
                                 <h6>Jumlah {{ $krendah2->total }}</h6>
-                                <h3>
+                                <h3 style="font-size:20px !important">
                                     {{ $krpersen2 ? number_format((float) ($krendah2->total / $krpersen2) * 100, 2, '.', '') : 0 }}%
                                 </h3>
-                                <hr class="text-white bg-white" />
-                                <h3>Dosis 3</h3>
+                            @endif
+
+                            <hr class="text-white bg-white" />
+                            <h3 style="font-size:20px !important">Dosis 3</h3>
+                            @if ($krendah3)
                                 <h6>Kecamatan {{ $krendah3->tematik->kecamatan }}</h6>
                                 <h6>Jumlah {{ $krendah3->total }}</h6>
-                                <h3>
+                                <h3 style="font-size:20px !important">
                                     {{ $krpersen3 ? number_format((float) ($krendah3->total / $krpersen3) * 100, 2, '.', '') : 0 }}%
                                 </h3>
                             @endif
@@ -302,34 +305,34 @@ http://www.tooplate.com/view/2091-ziggy
                     <!-- small box -->
                     <br>
                     <div class="card p-2 text-black" style="background-color:#96C7C1">
-                        <h3>Dosis tertinggi (Kecamatan)</h3>
+                        <h3 style="font-size:20px !important">Dosis Tertinggi<br>(Kecamatan)</h3>
                         <hr class="text-white bg-white" />
                         <div class="inner">
-                            <h3>Dosis 1</h3>
+                            <h3 style="font-size:20px !important">Dosis 1</h3>
                             @if ($ktinggi1)
                                 <h6>Kecamatan {{ $ktinggi1->tematik->kecamatan }}</h6>
                                 <h6>Jumlah {{ $ktinggi1->total }}</h6>
-                                <h3>
+                                <h3 style="font-size:20px !important">
                                     {{ $ktpersen1 ? number_format((float) ($ktinggi1->total / $ktpersen1) * 100, 2, '.', '') : 0 }}%
                                 </h3>
                             @endif
 
                             <hr class="text-white bg-green" />
-                            <h3>Dosis 2</h3>
+                            <h3 style="font-size:20px !important">Dosis 2</h3>
                             @if ($ktinggi2)
                                 <h6>Kecamatan {{ $ktinggi2->tematik->kecamatan }}</h6>
                                 <h6>Jumlah {{ $ktinggi2->total }}</h6>
-                                <h3>
+                                <h3 style="font-size:20px !important">
                                     {{ $ktpersen2 ? number_format((float) ($ktinggi2->total / $ktpersen2) * 100, 2, '.', '') : 0 }}%
                                 </h3>
                             @endif
 
                             <hr class="text-white bg-green" />
-                            <h3>Dosis 3</h4>
+                            <h3 style="font-size:20px !important">Dosis 3</h4>
                                 @if ($ktinggi3)
                                     <h6>Kecamatan {{ $ktinggi3->tematik->kecamatan }}</h6>
                                     <h6>Jumlah {{ $ktinggi3->total }}</h6>
-                                    <h3>
+                                    <h3 style="font-size:20px !important">
                                         {{ $ktpersen3 ? number_format((float) ($ktinggi3->total / $ktpersen3) * 100, 2, '.', '') : 0 }}%
                                     </h3>
                                 @endif
@@ -342,33 +345,36 @@ http://www.tooplate.com/view/2091-ziggy
                     <!-- small box -->
                     <br>
                     <div class="card p-2 text-black" style="background-color:#DED9C4">
-                        <h3>Dosis Terendah<br>(Desa)</h3>
+                        <h3 style="font-size:20px !important"> Dosis Terendah<br>(Desa)</h3>
                         <hr class="text-white bg-white" />
                         <div class="inner">
-                            <h3>Dosis 1</h3>
+                            <h3 style="font-size:20px !important">Dosis 1</h3>
                             @if ($drendah1)
                                 <h6>Desa {{ $drendah1->desa->desa }}</h6>
                                 <h6>Jumlah {{ $drendah1->total }}</h6>
-                                <h3>
+                                <h3 style="font-size:20px !important">
                                     {{ $drpersen1 ? number_format((float) ($drendah1->total / $drpersen1) * 100, 2, '.', '') : 0 }}%
                                 </h3>
                             @endif
 
                             <hr class="text-white bg-white" />
-                            <h3>Dosis 2</h3>
+                            <h3 style="font-size:20px !important">Dosis 2</h3>
                             @if ($drendah2)
                                 <h6>Desa {{ $drendah2->desa->desa }}</h6>
                                 <h6>Jumlah {{ $drendah2->total }}</h6>
-                                <h3>
+                                <h3 style="font-size:20px !important">
                                     {{ $drpersen2 ? number_format((float) ($drendah2->total / $drpersen2) * 100, 2, '.', '') : 0 }}%
                                 </h3>
-                                <hr class="text-white bg-white" />
-                                <h3>Dosis 3</h4>
-                                    <h6>Desa {{ $drendah3->desa->desa }}</h6>
-                                    <h6>Jumlah {{ $drendah3->total }}</h6>
-                                    <h3>
-                                        {{ $drpersen3 ? number_format((float) ($drendah3->total / $drpersen3) * 100, 2, '.', '') : 0 }}%
-                                    </h3>
+                            @endif
+
+                            <hr class="text-white bg-white" />
+                            <h3 style="font-size:20px !important">Dosis 3</h3>
+                            @if ($drendah3)
+                                <h6>Desa {{ $drendah3->desa->desa }}</h6>
+                                <h6>Jumlah {{ $drendah3->total }}</h6>
+                                <h3 style="font-size:20px !important">
+                                    {{ $drpersen3 ? number_format((float) ($drendah3->total / $drpersen3) * 100, 2, '.', '') : 0 }}%
+                                </h3>
                             @endif
 
                         </div>
@@ -378,78 +384,79 @@ http://www.tooplate.com/view/2091-ziggy
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
                     <br>
-                    <div class="card p-2 text-black" style="background-color:#89B5AF">
-                        <h3>Dosis Tertinggi <br>(Desa)</h3>
+                    <div class="card p-2 text-black" style="background-color:#89B5AF" style="font-size:30px !important">
+                        <h3 style="font-size:20px !important">Dosis Tertinggi<br>(Desa) </h3>
                         <hr class="text-white bg-white" />
                         <div class="inner">
-                            <h3>Dosis 1</h3>
+
+                            <h3 style="font-size:20px !important"> Dosis 1 </h3>
                             @if ($dtinggi1)
                                 <h6>Desa {{ $dtinggi1->desa->desa }}</h6>
                                 <h6>Jumlah {{ $dtinggi1->total }}</h6>
-                                <h3>
+                                <h3 style="font-size:20px !important">
                                     {{ $dtpersen1 ? number_format((float) ($dtinggi1->total / $dtpersen1) * 100, 2, '.', '') : 0 }}%
                                 </h3>
                             @endif
 
-                            <hr class="text-white bg-green" />
-                            <h3>Dosis 2</h3>
+                            <hr class="text-white bg-green">
+                            <h3 style="font-size:20px !important"> Dosis 2 </h3>
                             @if ($dtinggi2)
                                 <h6>Desa {{ $dtinggi2->desa->desa }}</h6>
                                 <h6>Jumlah {{ $dtinggi2->total }}</h6>
-                                <h3>
+                                <h3 style="font-size:20px !important">
                                     {{ $dtpersen2 ? number_format((float) ($dtinggi2->total / $dtpersen2) * 100, 2, '.', '') : 0 }}%
                                 </h3>
                             @endif
 
-                            <hr class="text-white bg-green" />
-                            <h3>Dosis 3</h3>
+                            <hr class="text-white bg-green">
+                            <h3 style="font-size:20px !important">
+                                Dosis 3 </h3>
                             @if ($dtinggi3)
                                 <h6>Desa {{ $dtinggi3->desa->desa }}</h6>
                                 <h6>Jumlah {{ $dtinggi3->total }}</h6>
-                                <h3>
+                                <h3 style="font-size:20px !important">>
                                     {{ $dtpersen3 ? number_format((float) ($dtinggi3->total / $dtpersen3) * 100, 2, '.', '') : 0 }}%
                                 </h3>
                             @endif
 
                         </div>
                     </div>
+                    <!-- ./col -->
                 </div>
-                <!-- ./col -->
-            </div>
 
-            <div class="row">
-                <div class="col-lg-4 col-4">
-                    <br>
-                    <div class="p-4 w-100 rounded shadow text-white" style="background-color:#68B0AB">
-                        <h2>Tenaga Kesehatan</h3>
+                <div class="row">
+                    <div class="col-lg-4 col-4">
+                        <br>
+                        <div class="p-4 w-100 rounded shadow text-white" style="background-color:#68B0AB">
+                            <h3 style="font-size:20px !important">Tenaga Kesehatan</h3>
                             <hr class="text-white bg-white" />
                             <div class="inner">
                                 <div class="row">
                                     <div class="col">
-                                        <h3>Dosis 1</h3>
+                                        <h3 style="font-size:20px !important">Dosis 1</h3>
                                         @if ($dosis1_nakes)
                                             <h6>Jumlah {{ $dosis1_nakes }}</h6>
-                                            <h3>
+                                            <h3 style="font-size:20px !important">
                                                 {{ number_format((float) ($dosis1_nakes / $target_nakes) * 100, 2, '.', '') }}%
                                             </h3>
                                         @endif
 
                                     </div>
                                     <div class="col">
-                                        <h3>Dosis 2</h3>
+                                        <h3 style="font-size:20px !important">Dosis 2</h3>
                                         @if ($dosis2_nakes)
                                             <h6>Jumlah {{ $dosis2_nakes }}</h6>
-                                            <h3>
+                                            <h3 style="font-size:20px !important">
                                                 {{ number_format((float) ($dosis2_nakes / $target_nakes) * 100, 2, '.', '') }}%
                                             </h3>
                                         @endif
 
                                     </div>
                                     <div class="col">
-                                        <h3>Dosis 3</h3>
+                                        <h3 style="font-size:20px !important">Dosis 3</h3>
                                         @if ($dosis3_nakes)
                                             <h6>Jumlah {{ $dosis3_nakes }}</h6>
-                                            <h3>
+                                            <h3 style="font-size:20px !important">
                                                 {{ number_format((float) ($dosis3_nakes / $target_nakes) * 100, 2, '.', '') }}%
                                             </h3>
                                         @endif
@@ -458,213 +465,213 @@ http://www.tooplate.com/view/2091-ziggy
                                 </div>
                             </div>
 
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-4">
-                    <br>
-                    <div class="p-4 w-100 rounded shadow text-black" style="background-color:#A3D2CA">
-                        <h2>Petugas Publik</h2>
-                        <hr class="text-white bg-white" />
-                        <div class="inner">
-                            <div class="row">
-                                <div class="col">
-                                    <h3>Dosis 1</h3>
-                                    @if ($dosis1_petugas)
-                                        <h6>Jumlah {{ $dosis1_petugas }}</h6>
-                                        <h3>
-                                            {{ number_format((float) ($dosis1_petugas / $target_petugas) * 100, 2, '.', '') }}%
-                                        </h3>
-                                    @endif
+                    <div class="col-lg-4 col-4">
+                        <br>
+                        <div class="p-4 w-100 rounded shadow text-black" style="background-color:#A3D2CA">
+                            <h3 style="font-size:20px !important">Petugas Publik</h3>
+                            <hr class="text-white bg-white" />
+                            <div class="inner">
+                                <div class="row">
+                                    <div class="col">
+                                        <h3 style="font-size:20px !important">Dosis 1</h3>
+                                        @if ($dosis1_petugas)
+                                            <h6>Jumlah {{ $dosis1_petugas }}</h6>
+                                            <h3 style="font-size:20px !important">
+                                                {{ number_format((float) ($dosis1_petugas / $target_petugas) * 100, 2, '.', '') }}%
+                                            </h3>
+                                        @endif
 
-                                </div>
-                                <div class="col">
-                                    <h3>Dosis 2</h3>
-                                    @if ($dosis2_petugas)
-                                        <h6>Jumlah {{ $dosis2_petugas }}</h6>
-                                        <h3>
-                                            {{ number_format((float) ($dosis2_petugas / $target_petugas) * 100, 2, '.', '') }}%
-                                        </h3>
-                                    @endif
+                                    </div>
+                                    <div class="col">
+                                        <h3 style="font-size:20px !important">Dosis 2</h3>
+                                        @if ($dosis2_petugas)
+                                            <h6>Jumlah {{ $dosis2_petugas }}</h6>
+                                            <h3 style="font-size:20px !important">
+                                                {{ number_format((float) ($dosis2_petugas / $target_petugas) * 100, 2, '.', '') }}%
+                                            </h3>
+                                        @endif
 
-                                </div>
-                                <div class="col">
-                                    <h3>Dosis 3</h3>
-                                    @if ($dosis3_petugas)
-                                        <h6>Jumlah {{ $dosis3_petugas }}</h6>
-                                        <h3>
-                                            {{ number_format((float) ($dosis3_petugas / $target_petugas) * 100, 2, '.', '') }}%
-                                        </h3>
-                                    @endif
+                                    </div>
+                                    <div class="col">
+                                        <h3 style="font-size:20px !important">Dosis 3</h3>
+                                        @if ($dosis3_petugas)
+                                            <h6>Jumlah {{ $dosis3_petugas }}</h6>
+                                            <h3 style="font-size:20px !important">
+                                                {{ number_format((float) ($dosis3_petugas / $target_petugas) * 100, 2, '.', '') }}%
+                                            </h3>
+                                        @endif
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-4">
-                    <br>
-                    <div class="p-4 w-100 rounded shadow text-white" style="background-color:#5EAAA8">
-                        <h2>Lansia</h2>
-                        <hr class="text-white bg-white" />
-                        <div class="inner">
-                            <div class="row">
-                                <div class="col">
-                                    <h3>Dosis 1</h3>
-                                    @if ($dosis1_lansia)
-                                        <h6>Jumlah {{ $dosis1_lansia }}</h6>
-                                        <h3>
-                                            {{ number_format((float) ($dosis1_lansia / $target_lansia) * 100, 2, '.', '') }}%
-                                        </h3>
-                                    @endif
+                    <div class="col-lg-4 col-4">
+                        <br>
+                        <div class="p-4 w-100 rounded shadow text-white" style="background-color:#5EAAA8">
+                            <h3 style="font-size:20px !important">Lansia</h3>
+                            <hr class="text-white bg-white" />
+                            <div class="inner">
+                                <div class="row">
+                                    <div class="col">
+                                        <h3 style="font-size:20px !important">Dosis 1</h3>
+                                        @if ($dosis1_lansia)
+                                            <h6>Jumlah {{ $dosis1_lansia }}</h6>
+                                            <h3 style="font-size:20px !important">
+                                                {{ number_format((float) ($dosis1_lansia / $target_lansia) * 100, 2, '.', '') }}%
+                                            </h3>
+                                        @endif
 
-                                </div>
-                                <div class="col">
-                                    <h3>Dosis 2</h3>
-                                    @if ($dosis2_lansia)
-                                        <h6>Jumlah {{ $dosis2_lansia }}</h6>
-                                        <h3>
-                                            {{ number_format((float) ($dosis2_lansia / $target_lansia) * 100, 2, '.', '') }}%
-                                        </h3>
-                                    @endif
+                                    </div>
+                                    <div class="col">
+                                        <h3 style="font-size:20px !important">Dosis 2</h3>
+                                        @if ($dosis2_lansia)
+                                            <h6>Jumlah {{ $dosis2_lansia }}</h6>
+                                            <h3 style="font-size:20px !important">
+                                                {{ number_format((float) ($dosis2_lansia / $target_lansia) * 100, 2, '.', '') }}%
+                                            </h3>
+                                        @endif
 
-                                </div>
-                                <div class="col">
-                                    <h3>Dosis 3</h3>
-                                    @if ($dosis3_lansia)
-                                        <h6>Jumlah {{ $dosis3_lansia }}</h6>
-                                        <h3>
-                                            {{ number_format((float) ($dosis3_lansia / $target_lansia) * 100, 2, '.', '') }}%
-                                        </h3>
-                                    @endif
+                                    </div>
+                                    <div class="col">
+                                        <h3 style="font-size:20px !important">Dosis 3</h3>
+                                        @if ($dosis3_lansia)
+                                            <h6>Jumlah {{ $dosis3_lansia }}</h6>
+                                            <h3 style="font-size:20px !important">
+                                                {{ number_format((float) ($dosis3_lansia / $target_lansia) * 100, 2, '.', '') }}%
+                                            </h3>
+                                        @endif
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-4">
-                    <br>
-                    <div class="p-4 w-100 rounded shadow text-black" style="background-color:#A7C4BC">
-                        <h2>Masyarakat Umum</h2>
-                        <hr class="text-white bg-white" />
-                        <div class="inner">
-                            <div class="row">
-                                <div class="col">
-                                    <h3>Dosis 1</h3>
-                                    @if ($dosis1_masyarakat)
-                                        <h6>Jumlah {{ $dosis1_masyarakat }}</h6>
-                                        <h3>
-                                            {{ number_format((float) ($dosis1_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
-                                        </h3>
-                                    @endif
-
-                                </div>
-                                <div class="col">
-                                    <h3>Dosis 2</h3>
-                                    @if ($dosis2_masyarakat)
-                                        <h6>Jumlah {{ $dosis2_masyarakat }}</h6>
-                                        <h3>
-                                            {{ number_format((float) ($dosis2_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
-                                        </h3>
-                                    @endif
-
-                                </div>
-                                <div class="col">
-                                    <h3>Dosis 3</h3>
-                                    @if ($dosis3_masyarakat)
-                                        <h6>Jumlah {{ $dosis3_masyarakat }}</h6>
-                                        <h3>
-                                            {{ number_format((float) ($dosis3_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
-                                        </h3>
-                                    @endif
-
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-4">
-                    <br>
-                    <div class="p-4 w-100 rounded shadow text-white" style="background-color:#5E8B7E">
-                        <h2>Remaja</h2>
-                        <hr class="text-white bg-white" />
-                        <div class="inner">
-                            <div class="row">
-                                <div class="col">
-                                    <h3>Dosis 1</h3>
-                                    @if ($dosis1_remaja)
-                                        <h6>Jumlah {{ $dosis1_remaja }}</h6>
-                                        <h3>
-                                            {{ number_format((float) ($dosis1_remaja / $target_remaja) * 100, 2, '.', '') }}%
-                                        </h3>
-                                    @endif
+                    <div class="col-lg-4 col-4">
+                        <br>
+                        <div class="p-4 w-100 rounded shadow text-black" style="background-color:#A7C4BC">
+                            <h3 style="font-size:20px !important">Masyarakat Umum</h3>
+                            <hr class="text-white bg-white" />
+                            <div class="inner">
+                                <div class="row">
+                                    <div class="col">
+                                        <h3 style="font-size:20px !important">Dosis 1</h3>
+                                        @if ($dosis1_masyarakat)
+                                            <h6>Jumlah {{ $dosis1_masyarakat }}</h6>
+                                            <h3 style="font-size:20px !important">
+                                                {{ number_format((float) ($dosis1_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
+                                            </h3>
+                                        @endif
 
-                                </div>
-                                <div class="col">
-                                    <h3>Dosis 2</h3>
-                                    @if ($dosis2_remaja)
-                                        <h6>Jumlah {{ $dosis2_remaja }}</h6>
-                                        <h3>
-                                            {{ number_format((float) ($dosis2_remaja / $target_remaja) * 100, 2, '.', '') }}%
-                                        </h3>
-                                    @endif
+                                    </div>
+                                    <div class="col">
+                                        <h3 style="font-size:20px !important">Dosis 2</h3>
+                                        @if ($dosis2_masyarakat)
+                                            <h6>Jumlah {{ $dosis2_masyarakat }}</h6>
+                                            <h3 style="font-size:20px !important">
+                                                {{ number_format((float) ($dosis2_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
+                                            </h3>
+                                        @endif
 
-                                </div>
-                                <div class="col">
-                                    <h3>Dosis 3</h3>
-                                    @if ($dosis3_remaja)
-                                        <h6>Jumlah {{ $dosis3_remaja }}</h6>
-                                        <h3>
-                                            {{ number_format((float) ($dosis3_remaja / $target_remaja) * 100, 2, '.', '') }}%
-                                        </h3>
-                                    @endif
+                                    </div>
+                                    <div class="col">
+                                        <h3 style="font-size:20px !important">Dosis 3</h3>
+                                        @if ($dosis3_masyarakat)
+                                            <h6>Jumlah {{ $dosis3_masyarakat }}</h6>
+                                            <h3 style="font-size:20px !important">
+                                                {{ number_format((float) ($dosis3_masyarakat / $target_masyarakat) * 100, 2, '.', '') }}%
+                                            </h3>
+                                        @endif
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-4">
-                    <br>
-                    <div class="p-4 w-100 rounded shadow text-white" style="background-color:#2F5D62">
-                        <h2>Usia 6-11 tahun</h2>
-                        <hr class="text-white bg-white" />
-                        <div class="inner">
-                            <div class="row">
-                                <div class="col">
-                                    <h3>Dosis 1</h3>
-                                    @if ($dosis1_usia)
-                                        <h6>Jumlah {{ $dosis1_usia }}</h6>
-                                        <h3>
-                                            {{ number_format((float) ($dosis1_usia / $target_usia) * 100, 2, '.', '') }}%
-                                        </h3>
-                                    @endif
-
-                                </div>
-                                <div class="col">
-                                    <h3>Dosis 2</h3>
-                                    @if ($dosis2_usia)
-                                        <h6>Jumlah {{ $dosis2_usia }}</h6>
-                                        <h3>
-                                            {{ number_format((float) ($dosis2_usia / $target_usia) * 100, 2, '.', '') }}%
-                                        </h3>
-                                    @endif
-
-                                </div>
-                                <div class="col">
-                                    <h3>Dosis 3</h3>
-                                    @if ($dosis3_usia)
-                                        <h6>Jumlah {{ $dosis3_usia }}</h6>
-                                        <h3>
-                                            {{ number_format((float) ($dosis3_usia / $target_usia) * 100, 2, '.', '') }}%
-                                        </h3>
-                                    @endif
-
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-lg-4 col-4">
+                        <br>
+                        <div class="p-4 w-100 rounded shadow text-white" style="background-color:#5E8B7E">
+                            <h3 style="font-size:20px !important">Remaja</h3>
+                            <hr class="text-white bg-white" />
+                            <div class="inner">
+                                <div class="row">
+                                    <div class="col">
+                                        <h3 style="font-size:20px !important">Dosis 1</h3>
+                                        @if ($dosis1_remaja)
+                                            <h6>Jumlah {{ $dosis1_remaja }}</h6>
+                                            <h3 style="font-size:20px !important">
+                                                {{ number_format((float) ($dosis1_remaja / $target_remaja) * 100, 2, '.', '') }}%
+                                            </h3>
+                                        @endif
+
+                                    </div>
+                                    <div class="col">
+                                        <h3 style="font-size:20px !important">Dosis 2</h3>
+                                        @if ($dosis2_remaja)
+                                            <h6>Jumlah {{ $dosis2_remaja }}</h6>
+                                            <h3 style="font-size:20px !important">
+                                                {{ number_format((float) ($dosis2_remaja / $target_remaja) * 100, 2, '.', '') }}%
+                                            </h3>
+                                        @endif
+
+                                    </div>
+                                    <div class="col">
+                                        <h3 style="font-size:20px !important">Dosis 3</h3>
+                                        @if ($dosis3_remaja)
+                                            <h6>Jumlah {{ $dosis3_remaja }}</h6>
+                                            <h3>
+                                                {{ number_format((float) ($dosis3_remaja / $target_remaja) * 100, 2, '.', '') }}%
+                                            </h3>
+                                        @endif
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-4">
+                        <br>
+                        <div class="p-4 w-100 rounded shadow text-white" style="background-color:#2F5D62">
+                            <h3 style="font-size:20px !important">Usia 6-11 tahun</h3>
+                            <hr class="text-white bg-white" />
+                            <div class="inner">
+                                <div class="row">
+                                    <div class="col">
+                                        <h3 style="font-size:20px !important">Dosis 1</h3>
+                                        @if ($dosis1_usia)
+                                            <h6>Jumlah {{ $dosis1_usia }}</h6>
+                                            <h3 style="font-size:20px !important">
+                                                {{ number_format((float) ($dosis1_usia / $target_usia) * 100, 2, '.', '') }}%
+                                            </h3>
+                                        @endif
+
+                                    </div>
+                                    <div class="col">
+                                        <h3 style="font-size:20px !important">Dosis 2</h3>
+                                        @if ($dosis2_usia)
+                                            <h6>Jumlah {{ $dosis2_usia }}</h6>
+                                            <h3 style="font-size:20px !important">
+                                                {{ number_format((float) ($dosis2_usia / $target_usia) * 100, 2, '.', '') }}%
+                                            </h3>
+                                        @endif
+
+                                    </div>
+                                    <div class="col">
+                                        <h3 style="font-size:20px !important">Dosis 3</h3>
+                                        @if ($dosis3_usia)
+                                            <h6>Jumlah {{ $dosis3_usia }}</h6>
+                                            <h3 style="font-size:20px !important">
+                                                {{ number_format((float) ($dosis3_usia / $target_usia) * 100, 2, '.', '') }}%
+                                            </h3>
+                                        @endif
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
     </section>
@@ -684,9 +691,10 @@ http://www.tooplate.com/view/2091-ziggy
         </div>
     </footer>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+        < /scrip> <
+        script >
+            window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
     </script>
     <script>
         $('#kecamatan').change(function() {
