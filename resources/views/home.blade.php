@@ -655,7 +655,7 @@
                     data: data,
                     plugins: [plugin],
                     options: {
-                        maintainAspectRatio: false,
+                        maintainAspectRatio: true,
                         scales: {
                             y: {
                                 min: 0,
@@ -699,7 +699,7 @@
                     data: data2,
                     plugins: [plugin2],
                     options: {
-                        maintainAspectRatio: false,
+                        maintainAspectRatio: true,
                         scales: {
                             y: {
                                 min: 0,
@@ -744,7 +744,7 @@
                     data: data3,
                     plugins: [plugin3],
                     options: {
-                        maintainAspectRatio: false,
+                        maintainAspectRatio: true,
                         scales: {
                             y: {
                                 min: 0,
