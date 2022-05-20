@@ -7,7 +7,7 @@
                 <!-- small box -->
                 <div class="small-box text-black" style="background-color:#D4ECDD">
                     <div class="inner">
-                        <h3>{{ $target }}</h3>
+                        <h3 style="font-size:30px !important">{{ $target }}</h3>
 
                         <p>Sasaran Vaksinasi</p>
                     </div>
@@ -20,15 +20,15 @@
                     <div class="inner">
                         <div class="row">
                             <div class="col">
-                                <h2>{{ $dosis1 }}</h2>
+                                <h3 style="font-size:30px !important">{{ $dosis1 }}</h3>
                             </div>
                             <div class="col">
-                                <h2 class="text-end ">
+                                <h3 class="text-end " style="font-size:30px !important">
                                     @if ($dosis1)
                                         {{ number_format((float) ($dosis1 / $target) * 100, 2, '.', '') }}%
                                     @endif
 
-                                </h2>
+                                </h3>
                             </div>
                         </div>
                         <p>Total Vaksinasi Dosis 1</p>
@@ -43,10 +43,10 @@
                     <div class="inner">
                         <div class="row">
                             <div class="col">
-                                <h3>{{ $dosis2 }}</h3>
+                                <h3 style="font-size:30px !important">{{ $dosis2 }}</h3>
                             </div>
                             <div class="col">
-                                <h3 class="text-end">
+                                <h3 class="text-end" style="font-size:30px !important">
                                     @if ($dosis2)
                                         {{ number_format((float) ($dosis2 / $target) * 100, 2, '.', '') }}%
                                     @endif
@@ -66,10 +66,10 @@
                     <div class="inner">
                         <div class="row">
                             <div class="col">
-                                <h3>{{ $dosis3 }}</h3>
+                                <h3 style="font-size:30px !important">{{ $dosis3 }}</h3>
                             </div>
                             <div class="col">
-                                <h3 class="text-end">
+                                <h3 class="text-end" style="font-size:30px !important">
                                     @if ($dosis3)
                                         {{ number_format((float) ($dosis3 / $target) * 100, 2, '.', '') }}%
                                     @endif
@@ -176,8 +176,8 @@
                     <h3 style="font-size:20px !important">Dosis Terendah <br>(Kecamatan)</h3>
                     <hr class="text-white bg-white" />
                     <div class="inner">
+                        <h3 style="font-size:20px !important">Dosis 1</h3>
                         @if ($krendah1)
-                            <h3 style="font-size:20px !important">Dosis 1</h3>
                             <h6>Kecamatan {{ $krendah1->tematik->kecamatan }}</h6>
                             <h6>Jumlah {{ $krendah1->total }}</h6>
                             <h3 style="font-size:20px !important">
@@ -321,7 +321,7 @@
                         @if ($dtinggi3)
                             <h6>Desa {{ $dtinggi3->desa->desa }}</h6>
                             <h6>Jumlah {{ $dtinggi3->total }}</h6>
-                            <h3 style="font-size:20px !important">>
+                            <h3 style="font-size:20px !important">
                                 {{ $dtpersen3 ? number_format((float) ($dtinggi3->total / $dtpersen3) * 100, 2, '.', '') : 0 }}%
                             </h3>
                         @endif
