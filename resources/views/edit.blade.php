@@ -8,6 +8,10 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
+                            <label>Tanggal</label>
+                            <input name="tanggal" type="date" class="form-control" value="{{ $data->tanggal }}" required>
+                        </div>
+                        <div class="form-group">
                             <label>Kecamatan</label>
                             <select class="form-select" name="tematik_id" required>
                                 <option value="">Pilih Kecamatan</option>
@@ -17,6 +21,23 @@
                                 @endforeach
                             </select>
                         </div>
+
+                        <div class="form-group">
+                            <label>Nakes</label>
+                            <input value="{{ $data->nakes }}" name="nakes" type="number" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Petugas Publik</label>
+                            <input value="{{ $data->petugas_publik }}" name="petugas_publik" type="number"
+                                class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Lansia</label>
+                            <input value="{{ $data->lansia }}" name="lansia" type="number" class="form-control"
+                                required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label>Kelompok</label>
                             <select class="form-select" name="kelompok" required>
@@ -32,22 +53,6 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Nakes</label>
-                            <input value="{{ $data->nakes }}" name="nakes" type="number" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Petugas Publik</label>
-                            <input value="{{ $data->petugas_publik }}" name="petugas_publik" type="number"
-                                class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Tanggal</label>
-                            <input name="tanggal" type="date" class="form-control" value="{{ $data->tanggal }}"
-                                required>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
 
                             <label>Desa</label>
                             <select class="form-select" name="desa_id" required>
@@ -58,11 +63,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label>Lansia</label>
-                            <input value="{{ $data->lansia }}" name="lansia" type="number" class="form-control"
-                                required>
-                        </div>
+
                         <div class="form-group">
                             <label>Masyarakat Umum</label>
                             <input value="{{ $data->masyarakat_umum }}" name="masyarakat_umum" type="number"
