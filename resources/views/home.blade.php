@@ -3,82 +3,87 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 mb-2">
+            <div class="col-md-3 col-sm-6 col-12">
                 <!-- small box -->
-                <div class="small-box text-black" style="background-color:#D4ECDD">
-                    <div class="inner">
-                        <h3 style="font-size:30px !important">{{ $target }}</h3>
-
-                        <p>Sasaran Vaksinasi</p>
+                <div class="info-box text-white" style="background-color: #5EAAA8">
+                    <span class="info-box-icon">
+                        <i class="fa fa-book-medical" style="color:#EDE6DB">
+                        </i>
+                    </span>
+                    <div class="info-box-content">
+                        <span class="info-box-text" style="font-size:16px !important">Sasaran Vaksinasi</span>
+                        <span class="info-box-number" style="font-size:15px !important">{{ $target }}</span>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 100%"></div>
+                        </div>
+                        <span class="Progress-description" style="font-size:15px !important">
+                            100%
+                        </span>
                     </div>
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 mb-2">
+            <div class="col-md-3 col-sm-6 col-12">
                 <!-- small box -->
-                <div class="small-box text-white" style="background-color:rgb(65, 125, 122)">
-                    <div class="inner">
-                        <div class="row">
-                            <div class="col">
-                                <h3 style="font-size:30px !important">{{ $dosis1 }}</h3>
-                            </div>
-                            <div class="col">
-                                <h3 class="text-end " style="font-size:30px !important">
-                                    @if ($dosis1)
-                                        {{ number_format((float) ($dosis1 / $target) * 100, 2, '.', '') }}%
-                                    @endif
-
-                                </h3>
-                            </div>
+                <div class="info-box text-white" style="background-color: #417D7A">
+                    <span class="info-box-icon">
+                        <i class="fa fa-syringe" style="color:#EDE6DB"></i>
+                    </span>
+                    <div class="info-box-content">
+                        <span class="info-box-text" style="font-size:16px !important">Total Vaksinasi Dosis 1</span>
+                        <span class="info-box-number" style="font-size:15px !important">{{ $dosis1 }}</span>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%"></div>
                         </div>
-                        <p>Total Vaksinasi Dosis 1</p>
-
+                        <span class="Progress-description" style="font-size:15px !important">
+                            @if ($dosis1)
+                                {{ number_format((float) ($dosis1 / $target) * 100, 2, '.', '') }}%
+                            @endif
+                        </span>
                     </div>
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 mb-2">
+            <div class="col-md-3 col-sm-6 col-12">
                 <!-- small box -->
-                <div class="small-box text-white" style="background-color:rgb(29, 92, 99)">
-                    <div class="inner">
-                        <div class="row">
-                            <div class="col">
-                                <h3 style="font-size:30px !important">{{ $dosis2 }}</h3>
-                            </div>
-                            <div class="col">
-                                <h3 class="text-end" style="font-size:30px !important">
-                                    @if ($dosis2)
-                                        {{ number_format((float) ($dosis2 / $target) * 100, 2, '.', '') }}%
-                                    @endif
-
-                                </h3>
-                            </div>
+                <div class="info-box text-white" style="background-color: #1D5C63">
+                    <span class="info-box-icon">
+                        <i class="fa fa-syringe" style="color:#EDE6DB"></i>
+                    </span>
+                    <div class="info-box-content">
+                        <span class="info-box-text" style="font-size:16px !important">Total Vaksinasi Dosis 2</span>
+                        <span class="info-box-number" style="font-size:15px !important">{{ $dosis2 }}</span>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%"></div>
                         </div>
-                        <p>Total Vaksinasi Dosis 2</p>
-
+                        <span class="Progress-description" style="font-size:15px !important">
+                            @if ($dosis2)
+                                {{ number_format((float) ($dosis2 / $target) * 100, 2, '.', '') }}%
+                            @endif
+                        </span>
                     </div>
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 mb-2">
+            <div class="col-md-3 col-sm-6 col-12">
                 <!-- small box -->
-                <div class="small-box text-white" style="background-color:rgb(26, 60, 64)">
-                    <div class="inner">
-                        <div class="row">
-                            <div class="col">
-                                <h3 style="font-size:30px !important">{{ $dosis3 }}</h3>
-                            </div>
-                            <div class="col">
-                                <h3 class="text-end" style="font-size:30px !important">
-                                    @if ($dosis3)
-                                        {{ number_format((float) ($dosis3 / $target) * 100, 2, '.', '') }}%
-                                    @endif
-
-                                </h3>
-                            </div>
+                <div class="info-box" style="background-color: #1A3C40">
+                    <span class="info-box-icon">
+                        <i class="fa fa-syringe" style="color:#EDE6DB"></i>
+                    </span>
+                    <div class="info-box-content">
+                        <span class="info-box-text text-white" style="font-size:16px !important">Total Vaksinasi Dosis
+                            3</span>
+                        <span class="info-box-number text-white"
+                            style="font-size:15px !important">{{ $dosis3 }}</span>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 30%"></div>
                         </div>
-                        <p>Total Vaksinasi Dosis 3</p>
-
+                        <span class="Progress-description text-white" style="font-size:15px !important">
+                            @if ($dosis2)
+                                {{ number_format((float) ($dosis3 / $target) * 100, 2, '.', '') }}%
+                            @endif
+                        </span>
                     </div>
                 </div>
             </div>
@@ -88,7 +93,7 @@
         <div class="mb-2">
             <div class="row">
 
-                <section class="col-lg-7 connectedSortable">
+                <section class="col connectedSortable">
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">
@@ -149,33 +154,21 @@
                         </div><!-- /.card-body -->
                     </div>
                 </section>
-                <section class="col-lg-5 ">
-                    <div class="card" style="background-color: #D4ECDD">
-                        <div class="card-header border-0">
-                            <h3 class="card-title">
-                                <i class="fas fa-map-marker-alt mr-1"></i>
-                                Maps
-                            </h3>
-
-                        </div>
-                        <div class="card-body">
-                            <div id="map" style="height: 350px; width: 100%;"></div>
-                        </div>
-
-                    </div>
-                </section>
-
             </div>
         </div>
 
         <div class="row">
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <br>
-                <div class="card p-2 text-black" style="background-color:#D0CAB2">
-                    <h3 style="font-size:20px !important">Dosis Terendah <br>(Kecamatan)</h3>
-                    <hr class="text-white bg-white" />
-                    <div class="inner">
+            <div class="col-md-3">
+                <div class="card card-primary collapsed-card">
+                    <div class="card-header" style="background-color:#D0CAB2">
+                        <h3 class="card-title">Dosis Terendah<br>(Kecamatan)</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn" data-bs-toggle="collapse">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body" style="display: block">
                         <h3 style="font-size:20px !important">Dosis 1</h3>
                         @if ($krendah1)
                             <h6>Kecamatan {{ $krendah1->tematik->kecamatan }}</h6>
@@ -185,7 +178,7 @@
                             </h3>
                         @endif
 
-                        <hr class="text-white bg-white" />
+                        <hr class="text-white bg-black" />
                         <h3 style="font-size:20px !important">Dosis 2</h3>
                         @if ($krendah2)
                             <h6>Kecamatan {{ $krendah2->tematik->kecamatan }}</h6>
@@ -195,7 +188,7 @@
                             </h3>
                         @endif
 
-                        <hr class="text-white bg-white" />
+                        <hr class="text-white bg-black" />
                         <h3 style="font-size:20px !important">Dosis 3</h3>
                         @if ($krendah3)
                             <h6>Kecamatan {{ $krendah3->tematik->kecamatan }}</h6>
@@ -207,14 +200,20 @@
                     </div>
                 </div>
             </div>
+
             <!-- ./col -->
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <br>
-                <div class="card p-2 text-black" style="background-color:#96C7C1">
-                    <h3 style="font-size:20px !important">Dosis Tertinggi<br>(Kecamatan)</h3>
-                    <hr class="text-white bg-white" />
-                    <div class="inner">
+
+            <div class="col-md-3">
+                <div class="card collapsed-card">
+                    <div class="card-header" style="background-color:#96C7C1">
+                        <h3 class="card-title text-white">Dosis Tertinggi<br>(Kecamatan)</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn" data-bs-toggle="collapse">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body" style="display: block">
                         <h3 style="font-size:20px !important">Dosis 1</h3>
                         @if ($ktinggi1)
                             <h6>Kecamatan {{ $ktinggi1->tematik->kecamatan }}</h6>
@@ -243,18 +242,21 @@
                                     {{ $ktpersen3 ? number_format((float) ($ktinggi3->total / $ktpersen3) * 100, 2, '.', '') : 0 }}%
                                 </h3>
                             @endif
-
                     </div>
                 </div>
             </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <br>
-                <div class="card p-2 text-black" style="background-color:#DED9C4">
-                    <h3 style="font-size:20px !important"> Dosis Terendah<br>(Desa)</h3>
-                    <hr class="text-white bg-white" />
-                    <div class="inner">
+
+            <div class="col-md-3">
+                <div class="card collapsed-card">
+                    <div class="card-header" style="background-color:#DED9C4">
+                        <h3 class="card-title text-white">Dosis Terendah<br>(Desa)</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn" data-bs-toggle="collapse">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body" style="display: block">
                         <h3 style="font-size:20px !important">Dosis 1</h3>
                         @if ($drendah1)
                             <h6>Desa {{ $drendah1->desa->desa }}</h6>
@@ -264,7 +266,7 @@
                             </h3>
                         @endif
 
-                        <hr class="text-white bg-white" />
+                        <hr class="text-white bg-black" />
                         <h3 style="font-size:20px !important">Dosis 2</h3>
                         @if ($drendah2)
                             <h6>Desa {{ $drendah2->desa->desa }}</h6>
@@ -274,7 +276,7 @@
                             </h3>
                         @endif
 
-                        <hr class="text-white bg-white" />
+                        <hr class="text-white bg-black" />
                         <h3 style="font-size:20px !important">Dosis 3</h3>
                         @if ($drendah3)
                             <h6>Desa {{ $drendah3->desa->desa }}</h6>
@@ -287,15 +289,19 @@
                     </div>
                 </div>
             </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <br>
-                <div class="card p-2 text-black" style="background-color:#89B5AF" style="font-size:30px !important">
-                    <h3 style="font-size:20px !important">Dosis Tertinggi<br>(Desa) </h3>
-                    <hr class="text-white bg-white" />
-                    <div class="inner">
 
+            <!-- ./col -->
+            <div class="col-md-3">
+                <div class="card collapsed-card">
+                    <div class="card-header" style="background-color:#89b5af">
+                        <h3 class="card-title text-white">Dosis Tertinggi<br>(Desa)</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn" data-bs-toggle="collapse">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body" style="display: block">
                         <h3 style="font-size:20px !important"> Dosis 1 </h3>
                         @if ($dtinggi1)
                             <h6>Desa {{ $dtinggi1->desa->desa }}</h6>
@@ -305,7 +311,7 @@
                             </h3>
                         @endif
 
-                        <hr class="text-white bg-green">
+                        <hr class="text-white bg-black">
                         <h3 style="font-size:20px !important"> Dosis 2 </h3>
                         @if ($dtinggi2)
                             <h6>Desa {{ $dtinggi2->desa->desa }}</h6>
@@ -315,7 +321,7 @@
                             </h3>
                         @endif
 
-                        <hr class="text-white bg-green">
+                        <hr class="text-white bg-black">
                         <h3 style="font-size:20px !important">
                             Dosis 3 </h3>
                         @if ($dtinggi3)
@@ -328,8 +334,66 @@
 
                     </div>
                 </div>
-                <!-- ./col -->
             </div>
+
+            <section class="col">
+                <div class="card" style="background-color: #D4ECDD">
+                    <div class="card-header border-0">
+                        <h3 class="card-title">
+                            <i class="fas fa-map-marker-alt mr-1"></i>
+                            Maps
+                        </h3>
+
+                    </div>
+                    <div class="card-body">
+                        <div id="map" style="height: 350px; width: 100%;"></div>
+                    </div>
+
+                </div>
+            </section>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Tenaga Kesehatan</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card="collapse">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body" style="display: block;">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="chart-responsive">
+                                <div class="chartjs-size-monitor">
+                                    <div class="chartjs-size-monitor-expand">
+                                        <div class=""></div>
+                                    </div>
+                                </div>
+                                <canvas id="pieChart" height="393" width="789"
+                                    style="display: block; height 262px; width: 524px;" class="chartjs-render-monitor">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="chart-legend clearfix">
+                                <li>
+                                    <i class="far fa-circle text-danger">...</i>
+                                    "Dosis 1"
+                                </li>
+                                <li>
+                                    <i class="far fa-circle text-success">...</i>
+                                    "Dosis 2"
+                                </li>
+                                <li>
+                                    <i class="far fa-circle text-warning">...</i>
+                                    "Dosis 3"
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
 
                 <div class="col-lg-4 mb-4">
