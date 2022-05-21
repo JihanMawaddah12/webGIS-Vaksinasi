@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="container">
         <div class="card p-4">
             <form action="{{ route('update desa', ['id' => $id]) }}" method="post" enctype="multipart/form-data">
@@ -10,8 +9,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Desa</label>
-                            <input name="desa" type="text" class="form-control" required
-                                value="{{ $data->desa }}">
+                            <input name="desa" type="text" class="form-control" required value="{{ $data->desa }}">
                         </div>
                         <div class="form-group">
                             <label>Warna</label>
@@ -24,11 +22,11 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary float-end mt-4" type="submit">Simpan</button>
+                <button class="btn float-end mt-4 text-white" style="background-color: #1D5C63"
+                    type="submit">Simpan</button>
             </form>
         </div>
     </div>
-
 @endsection
 
 @section('styles')
@@ -45,13 +43,11 @@
 @endsection
 
 @push('scripts')
-
     <!-- Leaflet JavaScript -->
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin="">
-    </script>
+        crossorigin=""></script>
 
     <script>
         var mapCenter = [

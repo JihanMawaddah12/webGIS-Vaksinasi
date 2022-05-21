@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">Detail Place</div>
+                    <div class="card-header">Data Lokasi</div>
                     <div class="card-body">
                         <table class="table">
                             <tbody>
@@ -13,19 +13,15 @@
                                     <td>{{ $data->tematik->kecamatan }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Lokasi</td>
+                                    <td>Nama Lokasi</td>
                                     <td>{{ $data->lokasi }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Lokasi</td>
-                                    <td>{{ $data->tanggal }}</td>
                                 </tr>
                                 <tr>
                                     <td>Alamat</td>
                                     <td>{{ $data->alamat }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Deskripsi</td>
+                                    <td>Jenis Vaksin</td>
                                     <td>{{ $data->deskripsi }}</td>
                                 </tr>
                                 <tr>
@@ -38,20 +34,19 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <img src="{{ asset('storage/' . $data->gambar) }}" alt="">
-                        <a href="{{ route('halaman data2') }}" class="btn btn-secondary mt-4">Kembali</a>
+                        <a href="{{ route('halaman data2') }}" class="btn mt-4 text-white"
+                            style="background-color: #1D5C63">Kembali</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">Detail Place</div>
+                    <div class="card-header">Detail Lokasi</div>
                     <div class="card-body" id="mapid"></div>
                 </div>
             </div>
         </div>
     </div>
-
 @endsection
 @section('styles')
     <!-- Leaflet CSS -->
@@ -67,13 +62,11 @@
 @endsection
 
 @push('scripts')
-
     <!-- Leaflet JavaScript -->
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin="">
-    </script>
+        crossorigin=""></script>
 
     <script>
         var map = L.map('mapid').setView([{{ $data->lat }}, {{ $data->long }}],

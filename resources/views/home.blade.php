@@ -168,7 +168,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="card-body" style="display: block">
+                    <div class="card-body" style="display: none">
                         <h3 style="font-size:20px !important">Dosis 1</h3>
                         @if ($krendah1)
                             <h6>Kecamatan {{ $krendah1->tematik->kecamatan }}</h6>
@@ -370,23 +370,24 @@
                                         <div class=""></div>
                                     </div>
                                 </div>
-                                <canvas id="pieChart" height="393" width="789"
+                                <canvas id="dosis1_nakes" height="393" width="789"
                                     style="display: block; height 262px; width: 524px;" class="chartjs-render-monitor">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <ul class="chart-legend clearfix">
                                 <li>
-                                    <i class="far fa-circle text-danger">...</i>
-                                    "Dosis 1"
+                                    <i class="far fa-circle text-danger">
+                                    </i>
+                                    Dosis 1
                                 </li>
                                 <li>
-                                    <i class="far fa-circle text-success">...</i>
-                                    "Dosis 2"
+                                    <i class="far fa-circle text-success"></i>
+                                    Dosis 2
                                 </li>
                                 <li>
-                                    <i class="far fa-circle text-warning">...</i>
-                                    "Dosis 3"
+                                    <i class="far fa-circle text-warning"></i>
+                                    Dosis 3
                                 </li>
                             </ul>
                         </div>

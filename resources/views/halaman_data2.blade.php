@@ -22,10 +22,10 @@
                         <tr>
                             <th>no</th>
                             <th>Kecamatan</th>
-                            <th>Lokasi</th>
+                            <th>Nama Lokasi</th>
                             <th>Alamat</th>
                             <th>Kapasitas</th>
-                            <th>Deskripsi</th>
+                            <th>Jenis Vaksin</th>
                             <th>Actions</th>
                         </tr>
                     </thead>

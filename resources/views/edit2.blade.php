@@ -19,30 +19,24 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Lokasi</label>
+                            <label>Nama Lokasi</label>
                             <input value="{{ $data->lokasi }}" name="lokasi" type="text" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>alamat</label>
+                            <label>Alamat</label>
                             <input value="{{ $data->alamat }}" name="alamat" type="text" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>deskripsi</label>
+                            <label>Jenis Vaksin</label>
                             <input value="{{ $data->deskripsi }}" name="deskripsi" type="text" class="form-control"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label>Kapasitas</label>
-                            <input name="kapasitas" value="{{ $data->kapasitas }}" type="text" class="form-control"
                                 required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Masukkan Gambar</label>
-                            <input name="gambar" type="file" class="form-control mb-4">
-                            <input type="hidden" value="{{ $data->gambar }}" name="gambar_lama">
-                            <img src="{{ asset('storage/' . $data->gambar) }}" alt="">
+                            <label>Kapasitas</label>
+                            <input name="kapasitas" value="{{ $data->kapasitas }}" type="text" class="form-control"
+                                required>
                         </div>
                         <div class="form-group">
                             <label>Longitude</label>
@@ -54,11 +48,11 @@
                             <input id='latitude' name="lat" type="text" class="form-control" required
                                 value="{{ $data->lat }}">
                         </div>
-
                     </div>
                 </div>
                 <div class="container mt-4" id="mapid"></div>
-                <button class="btn btn-primary float-end mt-4" type="submit">Simpan</button>
+                <button class="btn float-end mt-4 text-white" type="submit"
+                    style="background-color: #1D5C63">Simpan</button>
             </form>
         </div>
     </div>
@@ -82,8 +76,7 @@
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin="">
-    </script>
+        crossorigin=""></script>
 
     <script>
         let latitude = document.getElementById('latitude').value;
