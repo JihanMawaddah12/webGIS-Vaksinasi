@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    public function map(){
+    public function map()
+    {
 
         $geofile = [];
         $color = [];
@@ -47,43 +48,55 @@ class UserController extends Controller
         $jumlah3 = [];
         if (!$tematik_id) {
             $tem = Tematik::first();
-        
+
             $tematik_id = $tem->id;
         } else {
             $tem = Tematik::find($tematik_id);
         }
-            $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $tematik_id]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id', 'id')
-                ->groupBy(['date', 'tematik_id'])
-                ->get();
+        $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $tematik_id]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id', 'id')
+            ->groupBy(['date', 'tematik_id'])
+            ->get();
 
 
-            $id = 0;
-            foreach ($dosis1 as $value) {
-                $kec[$id] = $value->date;
+        $id = 0;
+        foreach ($dosis1 as $value) {
+            $kec[$id] = $value->date;
+            if (isset($jumlah[$id - 1])) {
+                $jumlah[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jumlah[$id - 1];
+            } else {
                 $jumlah[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
-                $id += 1;
             }
-            $dosis2 = HalamanData::with('tematik')->where([['kelompok', 'dosis 2'], ['tematik_id', $tematik_id]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
+            $id += 1;
+        }
+        $dosis2 = HalamanData::with('tematik')->where([['kelompok', 'dosis 2'], ['tematik_id', $tematik_id]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
             ->groupBy(['date', 'tematik_id'])
             ->get();
 
-            $id = 0;
-            foreach ($dosis2 as $value) {
-                $kec2[$id] = $value->date;
+        $id = 0;
+        foreach ($dosis2 as $value) {
+            $kec2[$id] = $value->date;
+            if (isset($jumlah2[$id - 1])) {
+                $jumlah2[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jumlah[$id - 1];
+            } else {
                 $jumlah2[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
-                $id += 1;
             }
-            $dosis3 = HalamanData::with('tematik')->where([['kelompok', 'dosis 3'], ['tematik_id', $tematik_id]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
+            $id += 1;
+        }
+        $dosis3 = HalamanData::with('tematik')->where([['kelompok', 'dosis 3'], ['tematik_id', $tematik_id]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
             ->groupBy(['date', 'tematik_id'])
             ->get();
 
 
-            $id = 0;
-            foreach ($dosis3 as $value) {
-                $kec3[$id] = $value->date;
+        $id = 0;
+        foreach ($dosis3 as $value) {
+            $kec3[$id] = $value->date;
+            if (isset($jumlah3[$id - 1])) {
+                $jumlah3[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jumlah[$id - 1];
+            } else {
                 $jumlah3[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
-                $id += 1;
             }
+            $id += 1;
+        }
         $target = HalamanData::where('kelompok', 'target')->sum(DB::raw('nakes + petugas_publik + lansia + masyarakat_umum + remaja + usia'));
         $jmlh_dosis1 = HalamanData::where('kelompok', 'dosis 1')->sum(DB::raw('nakes + petugas_publik + lansia + masyarakat_umum + remaja + usia'));
         $jmlh_dosis2 = HalamanData::where('kelompok', 'dosis 2')->sum(DB::raw('nakes + petugas_publik + lansia + masyarakat_umum + remaja + usia'));

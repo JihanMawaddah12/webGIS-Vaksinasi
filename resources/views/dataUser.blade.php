@@ -736,7 +736,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         data: data,
         plugins: [plugin],
         options: {
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
             scales: {
                 y: {
                     min: 0,
@@ -780,7 +780,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         data: data2,
         plugins: [plugin2],
         options: {
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
             scales: {
                 y: {
                     min: 0,
@@ -825,7 +825,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         data: data3,
         plugins: [plugin3],
         options: {
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
             scales: {
                 y: {
                     min: 0,
