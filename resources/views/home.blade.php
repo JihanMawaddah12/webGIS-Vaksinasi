@@ -366,11 +366,17 @@
                     <div class="row">
                         <div class="col-md-8">
                             <div class="chart-responsive">
-                                <div  id="dosis1-pie" class="collapse show" data-bs-parent="pie">
-                                    <canvas id="pie-dosis1" height="393" width="789" style="height 262px; width: 524px;" class="chartjs-render-monitor">
+                                <div id="dosis1-pie" class="collapse show" data-bs-parent="pie">
+                                    <canvas id="pie-dosis1" height="393" width="789" style="height 262px; width: 524px;"
+                                        class="chartjs-render-monitor">
                                 </div>
-                                <div  id="dosis2-pie" class="collapse"  data-bs-parent="pie">
-                                    <canvas id="pie-dosis2" height="393" width="789" style="height 262px; width: 524px;" class="chartjs-render-monitor">
+                                <div id="dosis2-pie" class="collapse" data-bs-parent="pie">
+                                    <canvas id="pie-dosis2" height="393" width="789" style="height 262px; width: 524px;"
+                                        class="chartjs-render-monitor">
+                                </div>
+                                <div id="dosis3-pie" class="collapse" data-bs-parent="pie">
+                                    <canvas id="pie-dosis3" height="393" width="789" style="height 262px; width: 524px;"
+                                        class="chartjs-render-monitor">
                                 </div>
                             </div>
                         </div>
@@ -392,8 +398,11 @@
                                     </button>
                                 </li>
                                 <li>
-                                    <i class="far fa-circle text-warning"></i>
-                                    Dosis 3
+                                    <button class="btn bg-transparent" data-bs-toggle="collapse"
+                                        data-bs-target="#dosis3-pie">
+                                        <i class="far fa-circle text-warning"></i>
+                                        Dosis 3
+                                    </button>
                                 </li>
                             </ul>
                         </div>
@@ -802,6 +811,59 @@
                 const myChartPie2 = new Chart(
                     document.getElementById('pie-dosis2'),
                     configPie2
+                );
+            </script>
+            <script>
+                var labelPie3 = ['Nakes', 'Petugas', 'Lansia', 'Masyarakat', 'Remaja', 'Usia'];
+                const dataPie3 = {
+                    labels: labelPie3,
+                    datasets: [{
+                        label: 'Dosis 2 ',
+                        backgroundColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(54, 162, 235)',
+                            'purple',
+                            'blue',
+                            'red',
+                            'green'
+                        ],
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: [{!! json_encode($dosis3_nakes) !!}, {!! json_encode($dosis3_petugas) !!}, {!! json_encode($dosis3_lansia) !!},
+                            {!! json_encode($dosis3_masyarakat) !!}, {!! json_encode($dosis3_remaja) !!}, {!! json_encode($dosis3_usia) !!}
+                        ],
+
+                    }],
+                };
+                const pluginPie3 = {
+                    id: 'custom_canvas_background_color1',
+                    beforeDraw: (chart) => {
+                        const ctx = chart.canvas.getContext('2d');
+                        ctx.save();
+                        ctx.globalCompositeOperation = 'destination-over';
+                        ctx.fillStyle = 'white';
+                        ctx.fillRect(0, 0, chart.width, chart.height);
+                        ctx.restore();
+                    }
+                };
+                const configPie3 = {
+                    type: 'pie',
+                    data: dataPie3,
+                    plugins: [pluginPie3],
+                    options: {
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                min: 0,
+                                ticks: {
+                                    stepSize: 5
+                                }
+                            }
+                        }
+                    }
+                };
+                const myChartPie3 = new Chart(
+                    document.getElementById('pie-dosis3'),
+                    configPie3
                 );
             </script>
             <script>
