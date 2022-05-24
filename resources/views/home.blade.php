@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    .pie {
+
+            height: 262px !important;
+            width: 524px;
+
+        }
+</style>
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-6 col-12">
@@ -363,51 +371,46 @@
                     </div>
                 </div>
                 <div class="card-body" style="display: block;">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="chart-responsive">
-                                <div id="dosis1-pie" class="collapse show" data-bs-parent="pie">
-                                    <canvas id="pie-dosis1" height="393" width="789" style="height 262px; width: 524px;"
-                                        class="chartjs-render-monitor">
-                                </div>
-                                <div id="dosis2-pie" class="collapse" data-bs-parent="pie">
-                                    <canvas id="pie-dosis2" height="393" width="789" style="height 262px; width: 524px;"
-                                        class="chartjs-render-monitor">
-                                </div>
-                                <div id="dosis3-pie" class="collapse" data-bs-parent="pie">
-                                    <canvas id="pie-dosis3" height="393" width="789" style="height 262px; width: 524px;"
-                                        class="chartjs-render-monitor">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="chart-responsive" id="pie">
+                                    <div id="dosis1-pie" class="collapse show">
+                                        <canvas id="pie-dosis1" height="393" width="789" class="pie">
+                                    </div>
+                                    <div id="dosis2-pie" class="collapse">
+                                        <canvas id="pie-dosis2" height="393" width="789" class="pie">
+                                    </div>
+                                    <div id="dosis3-pie" class="collapse">
+                                        <canvas id="pie-dosis3" height="393" width="789" class="pie">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <ul class="chart-legend clearfix">
-                                <li>
-                                    <button class="btn bg-transparent" data-bs-toggle="collapse"
-                                        data-bs-target="#dosis1-pie">
-                                        <i class="far fa-circle text-danger">
-                                        </i>
-                                        Dosis 1
-                                    </button>
-                                </li>
-                                <li>
-                                    <button class="btn bg-transparent" data-bs-toggle="collapse"
-                                        data-bs-target="#dosis2-pie">
-                                        <i class="far fa-circle text-success"></i>
-                                        Dosis 2
-                                    </button>
-                                </li>
-                                <li>
-                                    <button class="btn bg-transparent" data-bs-toggle="collapse"
-                                        data-bs-target="#dosis3-pie">
-                                        <i class="far fa-circle text-warning"></i>
-                                        Dosis 3
-                                    </button>
-                                </li>
-                            </ul>
+
+                            <div class="col-md-4">
+                                <ul class="chart-legend clearfix">
+                                    <li>
+                                        <button class="btn bg-transparent" id="bdosis1">
+                                            <i class="far fa-circle text-danger">
+                                            </i>
+                                            Dosis 1
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="btn bg-transparent" id="bdosis2">
+                                            <i class="far fa-circle text-success"></i>
+                                            Dosis 2
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="btn bg-transparent" id="bdosis3">
+                                            <i class="far fa-circle text-warning"></i>
+                                            Dosis 3
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
             </div>
 
             <div class="row">
@@ -705,6 +708,25 @@
             <script>
                 $('#kecamatan').change(function() {
                     window.location.href = '/home/' + this.value;
+                });
+            </script>
+            <script>
+                $(document).ready(function() {
+                    $("#bdosis1").click(function() {
+                        $("#dosis1-pie").collapse("show");
+                        $("#dosis2-pie").collapse("hide");
+                        $("#dosis3-pie").collapse("hide");
+                    });
+                    $("#bdosis2").click(function() {
+                        $("#dosis2-pie").collapse("show");
+                        $("#dosis1-pie").collapse("hide");
+                        $("#dosis3-pie").collapse("hide");
+                    });
+                    $("#bdosis3").click(function() {
+                        $("#dosis3-pie").collapse("show");
+                        $("#dosis1-pie").collapse("hide");
+                        $("#dosis2-pie").collapse("hide");
+                    });
                 });
             </script>
             <script>
