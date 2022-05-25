@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class ChangeColumnToHalamanData extends Migration
@@ -14,12 +13,8 @@ class ChangeColumnToHalamanData extends Migration
      */
     public function up()
     {
-        // Schema::table('halaman_data', function (Blueprint $table) {
-        //     $table->integer('usia')->change();
-            
-        // });
-        DB::statement('ALTER TABLE halaman_data ALTER COLUMN 
-                  usia TYPE integer USING (usia)::integer');
+        Schema::table('halaman_data', function (Blueprint $table) {
+        });
     }
 
     /**

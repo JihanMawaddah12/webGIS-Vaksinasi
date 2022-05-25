@@ -22,9 +22,9 @@ class CreateHalamanDataTable extends Migration
             $table->integer('lansia');
             $table->integer('masyarakat_umum');
             $table->integer('remaja');
-            $table->string('long');
-            $table->string('lat');
             $table->string('gambar');
+            $table->integer('usia')->change();
+            $table->date('tanggal')->nullable();
             $table->timestamps();
         });
     }
