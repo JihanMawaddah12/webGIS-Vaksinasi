@@ -22,7 +22,7 @@ class CreateHalamanDataTable extends Migration
             $table->integer('lansia');
             $table->integer('masyarakat_umum');
             $table->integer('remaja');
-            $table->integer('usia')->change();
+            $table->integer('usia');
             $table->date('tanggal')->nullable();
             $table->foreignId('desa_id')->nullable()->constrained();
             $table->timestamps();
