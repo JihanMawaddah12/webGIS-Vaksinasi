@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\URL;
 |
 */
 
-URL::forceScheme('https');
+Route::get('/artisan/storage', function () {
+    $command = 'storage:link';
+    $result = Artisan::call($command);
+    return Artisan::output();
+});
 Auth::routes();
 Route::post('/import', [ App\Http\Controllers\HalamanData::class, 'import'])->name('import');
 Route::get('/', [App\Http\Controllers\UserController::class, 'data'])->name('Data user');
