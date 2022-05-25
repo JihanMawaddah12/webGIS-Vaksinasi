@@ -1,3 +1,4 @@
+@include('sweetalert::alert')
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -120,7 +121,7 @@ http://www.tooplate.com/view/2091-ziggy
         </a>
     </section>
 
-    <section class="second-section">
+    <section class="second-section pt-1">
 
         <div class="container">
             <div class="row">
@@ -224,6 +225,10 @@ http://www.tooplate.com/view/2091-ziggy
                             @if (session('error'))
                                 <div class="alert alert-danger">
                                     Data telah terdaftar
+                                </div>
+                            @elseif(session('success'))
+                                <div class="alert alert-success">
+                                    Berhasil Mendaftar
                                 </div>
                             @endif
                             <button class="float-end btn" type="submit"

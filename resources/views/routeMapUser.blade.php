@@ -115,6 +115,7 @@ http://www.tooplate.com/view/2091-ziggy
         <div class="card mx-4" style="background-color: #99C4C8">
 
             <div class="card-header border-0">
+                <div class="text-center"><h4>Silahkan klik pada map untuk menentukan lokasi anda saat ini </h4></div>
                 <h3 class="card-title text-white">
                     <i class="fas fa-map-marker-alt mr-1 "></i>
                     Maps

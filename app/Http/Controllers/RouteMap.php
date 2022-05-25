@@ -9,7 +9,7 @@ use App\Models\Pendaftaran;
 use App\Models\Tematik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-
+use Alert;
 class RouteMap extends Controller
 {
     public function index()
@@ -77,7 +77,7 @@ class RouteMap extends Controller
             return Redirect::back()->with('error', 'w');
         }
         Pendaftaran::create($request->all());
-        return redirect('/');
+        return Redirect::back()->with("success", "Berhasil Mendaftar");
     }
     
 }

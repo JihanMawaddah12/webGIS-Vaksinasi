@@ -8,8 +8,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Rumah Sakit</label>
-                            <select name="halaman_data2_id" id="" required>
+                            <label>Rumah Sakit</label> 
+                            <select name="halaman_data2_id" id="" required class="form-control">
                                 <option value="">--Pilih Rumah Sakit--</option>
                                 @foreach ($data as $item)
                                     <option value="{{ $item->id }}">{{ $item->lokasi }}</option>
