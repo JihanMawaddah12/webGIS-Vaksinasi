@@ -21,22 +21,6 @@ class HalamanDataTableSeeder extends Seeder
         \DB::table('halaman_data')->insert(array (
             0 => 
             array (
-                'id' => 1883,
-                'tematik_id' => 7,
-                'Kelompok' => 'Target',
-                'nakes' => 25,
-                'petugas_publik' => 170,
-                'lansia' => 50,
-                'masyarakat_umum' => 578,
-                'remaja' => 150,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'tanggal' => '2022-01-01',
-                'desa_id' => 7,
-                'usia' => 150,
-            ),
-            1 => 
-            array (
                 'id' => 1884,
                 'tematik_id' => 7,
                 'Kelompok' => 'Target',
@@ -51,7 +35,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 6,
                 'usia' => 100,
             ),
-            2 => 
+            1 => 
             array (
                 'id' => 1885,
                 'tematik_id' => 7,
@@ -67,7 +51,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 9,
                 'usia' => 400,
             ),
-            3 => 
+            2 => 
             array (
                 'id' => 1886,
                 'tematik_id' => 7,
@@ -83,7 +67,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 8,
                 'usia' => 200,
             ),
-            4 => 
+            3 => 
             array (
                 'id' => 1887,
                 'tematik_id' => 7,
@@ -99,7 +83,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 11,
                 'usia' => 310,
             ),
-            5 => 
+            4 => 
             array (
                 'id' => 1888,
                 'tematik_id' => 7,
@@ -115,7 +99,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 14,
                 'usia' => 290,
             ),
-            6 => 
+            5 => 
             array (
                 'id' => 1889,
                 'tematik_id' => 7,
@@ -131,7 +115,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 15,
                 'usia' => 450,
             ),
-            7 => 
+            6 => 
             array (
                 'id' => 1890,
                 'tematik_id' => 7,
@@ -147,7 +131,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 12,
                 'usia' => 250,
             ),
-            8 => 
+            7 => 
             array (
                 'id' => 1891,
                 'tematik_id' => 7,
@@ -163,7 +147,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 13,
                 'usia' => 500,
             ),
-            9 => 
+            8 => 
             array (
                 'id' => 1892,
                 'tematik_id' => 7,
@@ -179,7 +163,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 10,
                 'usia' => 350,
             ),
-            10 => 
+            9 => 
             array (
                 'id' => 1893,
                 'tematik_id' => 8,
@@ -195,7 +179,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 22,
                 'usia' => 186,
             ),
-            11 => 
+            10 => 
             array (
                 'id' => 1894,
                 'tematik_id' => 8,
@@ -211,7 +195,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 24,
                 'usia' => 56,
             ),
-            12 => 
+            11 => 
             array (
                 'id' => 1895,
                 'tematik_id' => 8,
@@ -227,7 +211,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 27,
                 'usia' => 106,
             ),
-            13 => 
+            12 => 
             array (
                 'id' => 1896,
                 'tematik_id' => 8,
@@ -243,7 +227,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 25,
                 'usia' => 141,
             ),
-            14 => 
+            13 => 
             array (
                 'id' => 1897,
                 'tematik_id' => 8,
@@ -259,7 +243,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 26,
                 'usia' => 246,
             ),
-            15 => 
+            14 => 
             array (
                 'id' => 1898,
                 'tematik_id' => 8,
@@ -275,7 +259,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 28,
                 'usia' => 206,
             ),
-            16 => 
+            15 => 
             array (
                 'id' => 1899,
                 'tematik_id' => 8,
@@ -291,7 +275,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 23,
                 'usia' => 426,
             ),
-            17 => 
+            16 => 
             array (
                 'id' => 1900,
                 'tematik_id' => 8,
@@ -307,7 +291,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 19,
                 'usia' => 296,
             ),
-            18 => 
+            17 => 
             array (
                 'id' => 1901,
                 'tematik_id' => 8,
@@ -323,7 +307,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 16,
                 'usia' => 166,
             ),
-            19 => 
+            18 => 
             array (
                 'id' => 1902,
                 'tematik_id' => 8,
@@ -339,7 +323,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 18,
                 'usia' => 171,
             ),
-            20 => 
+            19 => 
             array (
                 'id' => 1903,
                 'tematik_id' => 9,
@@ -355,7 +339,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 34,
                 'usia' => 35,
             ),
-            21 => 
+            20 => 
             array (
                 'id' => 1904,
                 'tematik_id' => 9,
@@ -371,7 +355,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 29,
                 'usia' => 200,
             ),
-            22 => 
+            21 => 
             array (
                 'id' => 1905,
                 'tematik_id' => 9,
@@ -387,7 +371,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 30,
                 'usia' => 225,
             ),
-            23 => 
+            22 => 
             array (
                 'id' => 1906,
                 'tematik_id' => 9,
@@ -403,7 +387,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 20,
                 'usia' => 245,
             ),
-            24 => 
+            23 => 
             array (
                 'id' => 1907,
                 'tematik_id' => 9,
@@ -419,7 +403,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 21,
                 'usia' => 370,
             ),
-            25 => 
+            24 => 
             array (
                 'id' => 1908,
                 'tematik_id' => 9,
@@ -435,7 +419,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 31,
                 'usia' => 350,
             ),
-            26 => 
+            25 => 
             array (
                 'id' => 1909,
                 'tematik_id' => 9,
@@ -451,7 +435,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 17,
                 'usia' => 180,
             ),
-            27 => 
+            26 => 
             array (
                 'id' => 1910,
                 'tematik_id' => 9,
@@ -467,7 +451,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 32,
                 'usia' => 530,
             ),
-            28 => 
+            27 => 
             array (
                 'id' => 1911,
                 'tematik_id' => 9,
@@ -483,7 +467,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 33,
                 'usia' => 865,
             ),
-            29 => 
+            28 => 
             array (
                 'id' => 1912,
                 'tematik_id' => 10,
@@ -499,7 +483,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 51,
                 'usia' => 305,
             ),
-            30 => 
+            29 => 
             array (
                 'id' => 1913,
                 'tematik_id' => 10,
@@ -515,7 +499,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 46,
                 'usia' => 810,
             ),
-            31 => 
+            30 => 
             array (
                 'id' => 1914,
                 'tematik_id' => 10,
@@ -531,7 +515,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 43,
                 'usia' => 590,
             ),
-            32 => 
+            31 => 
             array (
                 'id' => 1915,
                 'tematik_id' => 10,
@@ -547,7 +531,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 45,
                 'usia' => 570,
             ),
-            33 => 
+            32 => 
             array (
                 'id' => 1916,
                 'tematik_id' => 10,
@@ -563,7 +547,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 42,
                 'usia' => 772,
             ),
-            34 => 
+            33 => 
             array (
                 'id' => 1917,
                 'tematik_id' => 10,
@@ -579,7 +563,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 44,
                 'usia' => 250,
             ),
-            35 => 
+            34 => 
             array (
                 'id' => 1918,
                 'tematik_id' => 10,
@@ -595,7 +579,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 41,
                 'usia' => 838,
             ),
-            36 => 
+            35 => 
             array (
                 'id' => 1919,
                 'tematik_id' => 10,
@@ -611,7 +595,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 50,
                 'usia' => 600,
             ),
-            37 => 
+            36 => 
             array (
                 'id' => 1920,
                 'tematik_id' => 10,
@@ -627,7 +611,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 49,
                 'usia' => 628,
             ),
-            38 => 
+            37 => 
             array (
                 'id' => 1921,
                 'tematik_id' => 10,
@@ -643,7 +627,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 48,
                 'usia' => 300,
             ),
-            39 => 
+            38 => 
             array (
                 'id' => 1922,
                 'tematik_id' => 10,
@@ -659,7 +643,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 47,
                 'usia' => 380,
             ),
-            40 => 
+            39 => 
             array (
                 'id' => 1923,
                 'tematik_id' => 11,
@@ -675,7 +659,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 38,
                 'usia' => 167,
             ),
-            41 => 
+            40 => 
             array (
                 'id' => 1924,
                 'tematik_id' => 11,
@@ -691,7 +675,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 39,
                 'usia' => 167,
             ),
-            42 => 
+            41 => 
             array (
                 'id' => 1925,
                 'tematik_id' => 11,
@@ -707,7 +691,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 37,
                 'usia' => 166,
             ),
-            43 => 
+            42 => 
             array (
                 'id' => 1926,
                 'tematik_id' => 11,
@@ -723,7 +707,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 40,
                 'usia' => 167,
             ),
-            44 => 
+            43 => 
             array (
                 'id' => 1927,
                 'tematik_id' => 11,
@@ -739,7 +723,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 35,
                 'usia' => 167,
             ),
-            45 => 
+            44 => 
             array (
                 'id' => 1928,
                 'tematik_id' => 11,
@@ -755,7 +739,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 36,
                 'usia' => 166,
             ),
-            46 => 
+            45 => 
             array (
                 'id' => 1929,
                 'tematik_id' => 12,
@@ -771,7 +755,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 54,
                 'usia' => 55,
             ),
-            47 => 
+            46 => 
             array (
                 'id' => 1930,
                 'tematik_id' => 12,
@@ -787,7 +771,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 52,
                 'usia' => 275,
             ),
-            48 => 
+            47 => 
             array (
                 'id' => 1931,
                 'tematik_id' => 12,
@@ -803,7 +787,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 57,
                 'usia' => 189,
             ),
-            49 => 
+            48 => 
             array (
                 'id' => 1932,
                 'tematik_id' => 12,
@@ -819,7 +803,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 53,
                 'usia' => 65,
             ),
-            50 => 
+            49 => 
             array (
                 'id' => 1933,
                 'tematik_id' => 12,
@@ -835,7 +819,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 55,
                 'usia' => 45,
             ),
-            51 => 
+            50 => 
             array (
                 'id' => 1934,
                 'tematik_id' => 12,
@@ -851,7 +835,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 59,
                 'usia' => 90,
             ),
-            52 => 
+            51 => 
             array (
                 'id' => 1935,
                 'tematik_id' => 12,
@@ -867,7 +851,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 58,
                 'usia' => 111,
             ),
-            53 => 
+            52 => 
             array (
                 'id' => 1936,
                 'tematik_id' => 12,
@@ -883,7 +867,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 56,
                 'usia' => 70,
             ),
-            54 => 
+            53 => 
             array (
                 'id' => 1937,
                 'tematik_id' => 13,
@@ -899,7 +883,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 74,
                 'usia' => 183,
             ),
-            55 => 
+            54 => 
             array (
                 'id' => 1938,
                 'tematik_id' => 13,
@@ -915,7 +899,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 61,
                 'usia' => 180,
             ),
-            56 => 
+            55 => 
             array (
                 'id' => 1939,
                 'tematik_id' => 13,
@@ -931,7 +915,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 67,
                 'usia' => 119,
             ),
-            57 => 
+            56 => 
             array (
                 'id' => 1940,
                 'tematik_id' => 13,
@@ -947,7 +931,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 70,
                 'usia' => 174,
             ),
-            58 => 
+            57 => 
             array (
                 'id' => 1941,
                 'tematik_id' => 13,
@@ -963,7 +947,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 66,
                 'usia' => 220,
             ),
-            59 => 
+            58 => 
             array (
                 'id' => 1942,
                 'tematik_id' => 13,
@@ -979,7 +963,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 72,
                 'usia' => 525,
             ),
-            60 => 
+            59 => 
             array (
                 'id' => 1943,
                 'tematik_id' => 13,
@@ -995,7 +979,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 71,
                 'usia' => 220,
             ),
-            61 => 
+            60 => 
             array (
                 'id' => 1944,
                 'tematik_id' => 13,
@@ -1011,7 +995,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 73,
                 'usia' => 255,
             ),
-            62 => 
+            61 => 
             array (
                 'id' => 1945,
                 'tematik_id' => 13,
@@ -1027,7 +1011,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 63,
                 'usia' => 314,
             ),
-            63 => 
+            62 => 
             array (
                 'id' => 1946,
                 'tematik_id' => 13,
@@ -1043,7 +1027,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 68,
                 'usia' => 145,
             ),
-            64 => 
+            63 => 
             array (
                 'id' => 1947,
                 'tematik_id' => 13,
@@ -1059,7 +1043,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 75,
                 'usia' => 425,
             ),
-            65 => 
+            64 => 
             array (
                 'id' => 1948,
                 'tematik_id' => 13,
@@ -1075,7 +1059,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 65,
                 'usia' => 169,
             ),
-            66 => 
+            65 => 
             array (
                 'id' => 1949,
                 'tematik_id' => 13,
@@ -1091,7 +1075,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 69,
                 'usia' => 200,
             ),
-            67 => 
+            66 => 
             array (
                 'id' => 1950,
                 'tematik_id' => 13,
@@ -1107,7 +1091,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 62,
                 'usia' => 469,
             ),
-            68 => 
+            67 => 
             array (
                 'id' => 1951,
                 'tematik_id' => 13,
@@ -1123,7 +1107,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 60,
                 'usia' => 236,
             ),
-            69 => 
+            68 => 
             array (
                 'id' => 1952,
                 'tematik_id' => 13,
@@ -1139,7 +1123,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 64,
                 'usia' => 166,
             ),
-            70 => 
+            69 => 
             array (
                 'id' => 1953,
                 'tematik_id' => 14,
@@ -1155,7 +1139,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 78,
                 'usia' => 333,
             ),
-            71 => 
+            70 => 
             array (
                 'id' => 1954,
                 'tematik_id' => 14,
@@ -1171,7 +1155,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 83,
                 'usia' => 333,
             ),
-            72 => 
+            71 => 
             array (
                 'id' => 1955,
                 'tematik_id' => 14,
@@ -1187,7 +1171,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 81,
                 'usia' => 333,
             ),
-            73 => 
+            72 => 
             array (
                 'id' => 1956,
                 'tematik_id' => 14,
@@ -1203,7 +1187,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 80,
                 'usia' => 333,
             ),
-            74 => 
+            73 => 
             array (
                 'id' => 1957,
                 'tematik_id' => 14,
@@ -1219,7 +1203,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 84,
                 'usia' => 334,
             ),
-            75 => 
+            74 => 
             array (
                 'id' => 1958,
                 'tematik_id' => 14,
@@ -1235,7 +1219,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 79,
                 'usia' => 333,
             ),
-            76 => 
+            75 => 
             array (
                 'id' => 1959,
                 'tematik_id' => 14,
@@ -1251,7 +1235,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 85,
                 'usia' => 334,
             ),
-            77 => 
+            76 => 
             array (
                 'id' => 1960,
                 'tematik_id' => 14,
@@ -1267,7 +1251,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 77,
                 'usia' => 334,
             ),
-            78 => 
+            77 => 
             array (
                 'id' => 1961,
                 'tematik_id' => 14,
@@ -1283,7 +1267,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 76,
                 'usia' => 333,
             ),
-            79 => 
+            78 => 
             array (
                 'id' => 1962,
                 'tematik_id' => 15,
@@ -1299,7 +1283,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 95,
                 'usia' => 137,
             ),
-            80 => 
+            79 => 
             array (
                 'id' => 1963,
                 'tematik_id' => 15,
@@ -1315,7 +1299,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 93,
                 'usia' => 48,
             ),
-            81 => 
+            80 => 
             array (
                 'id' => 1964,
                 'tematik_id' => 15,
@@ -1331,7 +1315,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 89,
                 'usia' => 193,
             ),
-            82 => 
+            81 => 
             array (
                 'id' => 1965,
                 'tematik_id' => 15,
@@ -1347,7 +1331,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 92,
                 'usia' => 210,
             ),
-            83 => 
+            82 => 
             array (
                 'id' => 1966,
                 'tematik_id' => 15,
@@ -1363,7 +1347,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 91,
                 'usia' => 250,
             ),
-            84 => 
+            83 => 
             array (
                 'id' => 1967,
                 'tematik_id' => 15,
@@ -1379,7 +1363,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 86,
                 'usia' => 190,
             ),
-            85 => 
+            84 => 
             array (
                 'id' => 1968,
                 'tematik_id' => 15,
@@ -1395,7 +1379,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 88,
                 'usia' => 212,
             ),
-            86 => 
+            85 => 
             array (
                 'id' => 1969,
                 'tematik_id' => 15,
@@ -1411,7 +1395,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 87,
                 'usia' => 220,
             ),
-            87 => 
+            86 => 
             array (
                 'id' => 1970,
                 'tematik_id' => 15,
@@ -1427,7 +1411,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 90,
                 'usia' => 540,
             ),
-            88 => 
+            87 => 
             array (
                 'id' => 1972,
                 'tematik_id' => 7,
@@ -1443,7 +1427,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 7,
                 'usia' => 37,
             ),
-            89 => 
+            88 => 
             array (
                 'id' => 1973,
                 'tematik_id' => 7,
@@ -1459,7 +1443,7 @@ class HalamanDataTableSeeder extends Seeder
                 'desa_id' => 7,
                 'usia' => 37,
             ),
-            90 => 
+            89 => 
             array (
                 'id' => 1974,
                 'tematik_id' => 7,
