@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\URL;
 |
 */
 
-URL::forceScheme('https');
 Auth::routes();
 Route::post('/import', [ App\Http\Controllers\HalamanData::class, 'import'])->name('import');
 Route::get('/', [App\Http\Controllers\UserController::class, 'data'])->name('Data user');
