@@ -16,7 +16,7 @@ class CreateHalamanDataTable extends Migration
         Schema::create('halaman_data', function (Blueprint $table) {
             $table->id();
             $table->foreignId('tematik_id')->constrained();
-            $table->string('Kelompok');
+            $table->string('kelompok');
             $table->integer('nakes');
             $table->integer('petugas_publik');
             $table->integer('lansia');
