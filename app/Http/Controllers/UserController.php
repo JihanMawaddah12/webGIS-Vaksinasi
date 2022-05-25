@@ -53,7 +53,7 @@ class UserController extends Controller
         } else {
             $tem = Tematik::find($tematik_id);
         }
-        $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $tematik_id]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
+        $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $tematik_id]])->select( DB::raw('DATE(tanggal) as date'), 'tematik_id')
             ->groupBy(['date', 'tematik_id'])
             ->get();
 
