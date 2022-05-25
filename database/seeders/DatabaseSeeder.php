@@ -20,11 +20,11 @@ class DatabaseSeeder extends Seeder
         $this->call(PersonalAccessTokensTableSeeder::class);
         $this->call(MigrationsTableSeeder::class);
         $this->call(TematiksTableSeeder::class);
+        $this->call(DesasTableSeeder::class);
         $this->call(HalamanDataTableSeeder::class);
         $this->call(HalamanData2sTableSeeder::class);
         $this->call(PendaftaransTableSeeder::class);
         $this->call(RumahSakitsTableSeeder::class);
-        $this->call(DesasTableSeeder::class);
         $this->call(DaftarsTableSeeder::class);
     }
 }
