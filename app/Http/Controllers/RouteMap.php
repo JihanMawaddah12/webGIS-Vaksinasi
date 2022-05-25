@@ -10,6 +10,8 @@ use App\Models\Tematik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Alert;
+use App\Models\Daftar;
+
 class RouteMap extends Controller
 {
     public function index()
@@ -69,6 +71,7 @@ class RouteMap extends Controller
     }
     public function daftar(Request $request)
     {
+        
         $check = Pendaftaran::where([
             'nik' => $request->nik,
             'dosis' => $request->dosis,
@@ -76,7 +79,17 @@ class RouteMap extends Controller
         if ($check->count() > 0) {
             return Redirect::back()->with('error', 'w');
         }
+        
         Pendaftaran::create($request->all());
+        $daftar = Daftar::first();
+        if ($daftar) {
+            $daftar->jumlah = $daftar->jumlah + 1;
+            $daftar->save();
+        }else{
+            Daftar::create([
+                'jumlah' => 1
+            ]);
+        }
         return Redirect::back()->with("success", "Berhasil Mendaftar");
     }
     
