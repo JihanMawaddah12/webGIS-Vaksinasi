@@ -23,7 +23,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1884,
                 'tematik_id' => 7,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 20,
                 'petugas_publik' => 130,
                 'lansia' => 30,
@@ -39,7 +39,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1885,
                 'tematik_id' => 7,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 80,
                 'petugas_publik' => 350,
                 'lansia' => 140,
@@ -55,7 +55,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1886,
                 'tematik_id' => 7,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 35,
                 'petugas_publik' => 220,
                 'lansia' => 60,
@@ -71,7 +71,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1887,
                 'tematik_id' => 7,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 52,
                 'petugas_publik' => 270,
                 'lansia' => 110,
@@ -87,7 +87,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1888,
                 'tematik_id' => 7,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 50,
                 'petugas_publik' => 250,
                 'lansia' => 100,
@@ -103,7 +103,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1889,
                 'tematik_id' => 7,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 90,
                 'petugas_publik' => 370,
                 'lansia' => 130,
@@ -119,7 +119,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1890,
                 'tematik_id' => 7,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 45,
                 'petugas_publik' => 245,
                 'lansia' => 90,
@@ -135,7 +135,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1891,
                 'tematik_id' => 7,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 120,
                 'petugas_publik' => 420,
                 'lansia' => 160,
@@ -151,7 +151,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1892,
                 'tematik_id' => 7,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 62,
                 'petugas_publik' => 275,
                 'lansia' => 130,
@@ -167,7 +167,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1893,
                 'tematik_id' => 8,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 19,
                 'petugas_publik' => 150,
                 'lansia' => 70,
@@ -183,7 +183,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1894,
                 'tematik_id' => 8,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 5,
                 'petugas_publik' => 15,
                 'lansia' => 45,
@@ -199,7 +199,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1895,
                 'tematik_id' => 8,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 12,
                 'petugas_publik' => 120,
                 'lansia' => 50,
@@ -215,7 +215,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1896,
                 'tematik_id' => 8,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 16,
                 'petugas_publik' => 135,
                 'lansia' => 52,
@@ -231,7 +231,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1897,
                 'tematik_id' => 8,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 29,
                 'petugas_publik' => 155,
                 'lansia' => 82,
@@ -247,7 +247,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1898,
                 'tematik_id' => 8,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 26,
                 'petugas_publik' => 154,
                 'lansia' => 80,
@@ -263,7 +263,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1899,
                 'tematik_id' => 8,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 34,
                 'petugas_publik' => 321,
                 'lansia' => 105,
@@ -279,7 +279,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1900,
                 'tematik_id' => 8,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 31,
                 'petugas_publik' => 165,
                 'lansia' => 93,
@@ -295,7 +295,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1901,
                 'tematik_id' => 8,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 22,
                 'petugas_publik' => 140,
                 'lansia' => 59,
@@ -311,7 +311,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1902,
                 'tematik_id' => 8,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 23,
                 'petugas_publik' => 145,
                 'lansia' => 64,
@@ -327,7 +327,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1903,
                 'tematik_id' => 9,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 5,
                 'petugas_publik' => 60,
                 'lansia' => 30,
@@ -343,7 +343,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1904,
                 'tematik_id' => 9,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 9,
                 'petugas_publik' => 350,
                 'lansia' => 70,
@@ -359,7 +359,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1905,
                 'tematik_id' => 9,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 15,
                 'petugas_publik' => 300,
                 'lansia' => 80,
@@ -375,7 +375,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1906,
                 'tematik_id' => 9,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 20,
                 'petugas_publik' => 200,
                 'lansia' => 100,
@@ -391,7 +391,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1907,
                 'tematik_id' => 9,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 25,
                 'petugas_publik' => 200,
                 'lansia' => 150,
@@ -407,7 +407,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1908,
                 'tematik_id' => 9,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 25,
                 'petugas_publik' => 250,
                 'lansia' => 150,
@@ -423,7 +423,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1909,
                 'tematik_id' => 9,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 20,
                 'petugas_publik' => 250,
                 'lansia' => 75,
@@ -439,7 +439,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1910,
                 'tematik_id' => 9,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 27,
                 'petugas_publik' => 1490,
                 'lansia' => 180,
@@ -455,7 +455,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1911,
                 'tematik_id' => 9,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 35,
                 'petugas_publik' => 1400,
                 'lansia' => 265,
@@ -471,7 +471,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1912,
                 'tematik_id' => 10,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 253,
                 'petugas_publik' => 743,
                 'lansia' => 454,
@@ -487,7 +487,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1913,
                 'tematik_id' => 10,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 154,
                 'petugas_publik' => 1118,
                 'lansia' => 623,
@@ -503,7 +503,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1914,
                 'tematik_id' => 10,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 374,
                 'petugas_publik' => 974,
                 'lansia' => 455,
@@ -519,7 +519,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1915,
                 'tematik_id' => 10,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 354,
                 'petugas_publik' => 924,
                 'lansia' => 454,
@@ -535,7 +535,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1916,
                 'tematik_id' => 10,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 434,
                 'petugas_publik' => 1043,
                 'lansia' => 623,
@@ -551,7 +551,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1917,
                 'tematik_id' => 10,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 152,
                 'petugas_publik' => 643,
                 'lansia' => 118,
@@ -567,7 +567,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1918,
                 'tematik_id' => 10,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 454,
                 'petugas_publik' => 1243,
                 'lansia' => 455,
@@ -583,7 +583,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1919,
                 'tematik_id' => 10,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 154,
                 'petugas_publik' => 1088,
                 'lansia' => 455,
@@ -599,7 +599,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1920,
                 'tematik_id' => 10,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 384,
                 'petugas_publik' => 1113,
                 'lansia' => 455,
@@ -615,7 +615,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1921,
                 'tematik_id' => 10,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 202,
                 'petugas_publik' => 688,
                 'lansia' => 454,
@@ -631,7 +631,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1922,
                 'tematik_id' => 10,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 302,
                 'petugas_publik' => 823,
                 'lansia' => 454,
@@ -647,7 +647,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1923,
                 'tematik_id' => 11,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 10,
                 'petugas_publik' => 700,
                 'lansia' => 70,
@@ -663,7 +663,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1924,
                 'tematik_id' => 11,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 14,
                 'petugas_publik' => 950,
                 'lansia' => 95,
@@ -679,7 +679,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1925,
                 'tematik_id' => 11,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 6,
                 'petugas_publik' => 580,
                 'lansia' => 58,
@@ -695,7 +695,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1926,
                 'tematik_id' => 11,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 8,
                 'petugas_publik' => 600,
                 'lansia' => 60,
@@ -711,7 +711,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1927,
                 'tematik_id' => 11,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 9,
                 'petugas_publik' => 650,
                 'lansia' => 65,
@@ -727,7 +727,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1928,
                 'tematik_id' => 11,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 4,
                 'petugas_publik' => 520,
                 'lansia' => 52,
@@ -743,7 +743,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1929,
                 'tematik_id' => 12,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 4,
                 'petugas_publik' => 39,
                 'lansia' => 25,
@@ -759,7 +759,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1930,
                 'tematik_id' => 12,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 12,
                 'petugas_publik' => 51,
                 'lansia' => 75,
@@ -775,7 +775,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1931,
                 'tematik_id' => 12,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 11,
                 'petugas_publik' => 71,
                 'lansia' => 65,
@@ -791,7 +791,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1932,
                 'tematik_id' => 12,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 10,
                 'petugas_publik' => 45,
                 'lansia' => 37,
@@ -807,7 +807,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1933,
                 'tematik_id' => 12,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 2,
                 'petugas_publik' => 15,
                 'lansia' => 23,
@@ -823,7 +823,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1934,
                 'tematik_id' => 12,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 9,
                 'petugas_publik' => 50,
                 'lansia' => 50,
@@ -839,7 +839,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1935,
                 'tematik_id' => 12,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 3,
                 'petugas_publik' => 30,
                 'lansia' => 20,
@@ -855,7 +855,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1936,
                 'tematik_id' => 12,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 5,
                 'petugas_publik' => 44,
                 'lansia' => 45,
@@ -871,7 +871,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1937,
                 'tematik_id' => 13,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 119,
                 'petugas_publik' => 183,
                 'lansia' => 209,
@@ -887,7 +887,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1938,
                 'tematik_id' => 13,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 110,
                 'petugas_publik' => 180,
                 'lansia' => 208,
@@ -903,7 +903,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1939,
                 'tematik_id' => 13,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 45,
                 'petugas_publik' => 119,
                 'lansia' => 100,
@@ -919,7 +919,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1940,
                 'tematik_id' => 13,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 108,
                 'petugas_publik' => 174,
                 'lansia' => 208,
@@ -935,7 +935,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1941,
                 'tematik_id' => 13,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 120,
                 'petugas_publik' => 220,
                 'lansia' => 208,
@@ -951,7 +951,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1942,
                 'tematik_id' => 13,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 127,
                 'petugas_publik' => 525,
                 'lansia' => 263,
@@ -967,7 +967,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1943,
                 'tematik_id' => 13,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 122,
                 'petugas_publik' => 220,
                 'lansia' => 209,
@@ -983,7 +983,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1944,
                 'tematik_id' => 13,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 120,
                 'petugas_publik' => 255,
                 'lansia' => 209,
@@ -999,7 +999,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1945,
                 'tematik_id' => 13,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 80,
                 'petugas_publik' => 314,
                 'lansia' => 208,
@@ -1015,7 +1015,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1946,
                 'tematik_id' => 13,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 109,
                 'petugas_publik' => 145,
                 'lansia' => 155,
@@ -1031,7 +1031,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1947,
                 'tematik_id' => 13,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 124,
                 'petugas_publik' => 425,
                 'lansia' => 263,
@@ -1047,7 +1047,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1948,
                 'tematik_id' => 13,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 100,
                 'petugas_publik' => 169,
                 'lansia' => 208,
@@ -1063,7 +1063,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1949,
                 'tematik_id' => 13,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 112,
                 'petugas_publik' => 200,
                 'lansia' => 208,
@@ -1079,7 +1079,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1950,
                 'tematik_id' => 13,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 129,
                 'petugas_publik' => 469,
                 'lansia' => 262,
@@ -1095,7 +1095,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1951,
                 'tematik_id' => 13,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 115,
                 'petugas_publik' => 236,
                 'lansia' => 208,
@@ -1111,7 +1111,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1952,
                 'tematik_id' => 13,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 98,
                 'petugas_publik' => 166,
                 'lansia' => 208,
@@ -1127,7 +1127,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1953,
                 'tematik_id' => 14,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 27,
                 'petugas_publik' => 214,
                 'lansia' => 122,
@@ -1143,7 +1143,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1954,
                 'tematik_id' => 14,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 9,
                 'petugas_publik' => 138,
                 'lansia' => 122,
@@ -1159,7 +1159,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1955,
                 'tematik_id' => 14,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 14,
                 'petugas_publik' => 186,
                 'lansia' => 122,
@@ -1175,7 +1175,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1956,
                 'tematik_id' => 14,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 17,
                 'petugas_publik' => 201,
                 'lansia' => 122,
@@ -1191,7 +1191,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1957,
                 'tematik_id' => 14,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 30,
                 'petugas_publik' => 236,
                 'lansia' => 123,
@@ -1207,7 +1207,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1958,
                 'tematik_id' => 14,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 24,
                 'petugas_publik' => 238,
                 'lansia' => 122,
@@ -1223,7 +1223,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1959,
                 'tematik_id' => 14,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 40,
                 'petugas_publik' => 227,
                 'lansia' => 123,
@@ -1239,7 +1239,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1960,
                 'tematik_id' => 14,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 34,
                 'petugas_publik' => 270,
                 'lansia' => 122,
@@ -1255,7 +1255,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1961,
                 'tematik_id' => 14,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 23,
                 'petugas_publik' => 190,
                 'lansia' => 122,
@@ -1271,7 +1271,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1962,
                 'tematik_id' => 15,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 10,
                 'petugas_publik' => 65,
                 'lansia' => 29,
@@ -1287,7 +1287,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1963,
                 'tematik_id' => 15,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 5,
                 'petugas_publik' => 27,
                 'lansia' => 32,
@@ -1303,7 +1303,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1964,
                 'tematik_id' => 15,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 7,
                 'petugas_publik' => 87,
                 'lansia' => 57,
@@ -1319,7 +1319,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1965,
                 'tematik_id' => 15,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 8,
                 'petugas_publik' => 81,
                 'lansia' => 58,
@@ -1335,7 +1335,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1966,
                 'tematik_id' => 15,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 3,
                 'petugas_publik' => 54,
                 'lansia' => 60,
@@ -1351,7 +1351,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1967,
                 'tematik_id' => 15,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 9,
                 'petugas_publik' => 65,
                 'lansia' => 63,
@@ -1367,7 +1367,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1968,
                 'tematik_id' => 15,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 6,
                 'petugas_publik' => 50,
                 'lansia' => 44,
@@ -1383,7 +1383,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1969,
                 'tematik_id' => 15,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 5,
                 'petugas_publik' => 68,
                 'lansia' => 47,
@@ -1399,7 +1399,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1970,
                 'tematik_id' => 15,
-                'Kelompok' => 'Target',
+                'kelompok' => 'Target',
                 'nakes' => 17,
                 'petugas_publik' => 93,
                 'lansia' => 69,
@@ -1415,7 +1415,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1972,
                 'tematik_id' => 7,
-                'Kelompok' => 'Dosis 1',
+                'kelompok' => 'Dosis 1',
                 'nakes' => 60,
                 'petugas_publik' => 115,
                 'lansia' => 20,
@@ -1431,7 +1431,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1973,
                 'tematik_id' => 7,
-                'Kelompok' => 'Dosis 1',
+                'kelompok' => 'Dosis 1',
                 'nakes' => 61,
                 'petugas_publik' => 115,
                 'lansia' => 20,
@@ -1447,7 +1447,7 @@ class HalamanDataTableSeeder extends Seeder
             array (
                 'id' => 1974,
                 'tematik_id' => 7,
-                'Kelompok' => 'Dosis 1',
+                'kelompok' => 'Dosis 1',
                 'nakes' => 64,
                 'petugas_publik' => 115,
                 'lansia' => 20,
