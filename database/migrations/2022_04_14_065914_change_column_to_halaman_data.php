@@ -19,7 +19,7 @@ class ChangeColumnToHalamanData extends Migration
             
         // });
         DB::statement('ALTER TABLE halaman_data ALTER COLUMN 
-                  company_id TYPE integer USING (usia)::integer');
+                  usia TYPE integer USING (usia)::integer');
     }
 
     /**
