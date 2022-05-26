@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Daftar;
 use App\Models\Pendaftaran;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -17,12 +18,16 @@ class RumahSakit extends Controller
     {
 
         $data = Pendaftaran::where(['halaman_data2_id' => auth()->user()->rm->halaman_data2_id, 'status' => 0])->get();
-        return view('rs.dashboard', ['data' => $data]);
+        $daftar = Daftar::first();
+        if ($daftar) {
+            $daftar->delete();
+        }
+        return view('rs.dashboard', ['data' => $data, 'daftar' => $daftar]);
     }
 
     public function verifikasi($id)
     {
-        Pendaftaran::find($id)->update(['status'=> 1]);
+        Pendaftaran::find($id)->update(['status' => 1]);
         return back();
     }
     public function verif()

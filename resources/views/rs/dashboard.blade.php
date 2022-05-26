@@ -6,9 +6,15 @@
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-10">
                             <h2>Pendaftaran <b>Vaksinasi</b></h2>
                         </div>
+                        @if ($daftar)
+                            <div class="col-sm-2 text-end text-white">
+                            {{$daftar->jumlah}} Telah Mendaftar
+                        </div>
+                        @endif
+                        
                     </div>
                 </div>
                 <table class="table table-striped table-hover" id="table">
