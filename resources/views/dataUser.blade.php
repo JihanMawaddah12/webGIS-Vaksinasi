@@ -38,7 +38,7 @@ http://www.tooplate.com/view/2091-ziggy
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <style>
         h3 {
-            font-weight: bold
+            font-size: 1rem;
         }
 
         .leaflet-control-attribution {
@@ -80,6 +80,20 @@ http://www.tooplate.com/view/2091-ziggy
 
         }
 
+        .progress {
+            background-color: rgba(0, 0, 0, 0.125) !important;
+            height: 2px !important;
+            margin: 5px 0 !important;
+        }
+
+        .progress .progress-bar {
+            background-color: #fff !important;
+        }
+
+        .info-box-icon {
+            font-size: 1.875rem;
+        }
+
     </style>
 </head>
 
@@ -110,77 +124,108 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 <div class="col-lg-3 mb-2">
                     <!-- small box -->
-                    <div class="card shadow" style="background-color:#D4ECDD">
-                        <div class="inner">
-                            <h3>{{ $target }}</h3>
-
-                            <p>Sasaran Vaksinasi</p>
+                    <div class="card shadow py-2" style="background-color: #5EAAA8">
+                        <div class="row">
+                            <div class="col-md-3 align-self-center">
+                                <span class="info-box-icon">
+                                    <i class="fa fa-book-medical" style="color:#EDE6DB"> </i>
+                                </span>
+                            </div>
+                            <div class="col-md-7 d-flex flex-column text-white text-start">
+                                <p>Sasaran Vaksinasi</p>
+                                <span class="info-box-number"
+                                    style="font-size:15px !important">{{ $target }}</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 100%"></div>
+                                </div>
+                                <span class="Progress-description" style="font-size:15px !important">
+                                    100%
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- ./col -->
                 <div class="col-lg-3 mb-2">
                     <!-- small box -->
-                    <div class="card shadow text-white" style="background-color:rgb(65, 125, 122)">
-                        <div class="inner">
-                            <div class="row">
-                                <div class="col">
-                                    <h3>{{ $dosis1 }}</h3>
-                                </div>
-                                <div class="col">
-                                    <h3 class="text-white ">
-                                        @if ($dosis1)
-                                            {{ number_format((float) ($dosis1 / $target) * 100, 2, '.', '') }}%
-                                        @endif
-                                    </h3>
-                                </div>
+                    <div class="card shadow py-2" style="background-color: #5EAAA8">
+                        <div class="row">
+                            <div class="col-md-3 align-self-center">
+                                <span class="info-box-icon">
+                                    <i class="fa fa-syringe" style="color:#EDE6DB"></i>
+                                </span>
                             </div>
-                            <p class="text-white">Total Vaksinasi Dosis 1</p>
-
+                            <div class="col-md-7 d-flex flex-column text-white text-start">
+                                <p>Total Vaksinasi Dosis 1</p>
+                                <span class="info-box-number"
+                                    style="font-size:15px !important">{{ $dosis1 }}</span>
+                                <div class="progress">
+                                    <div class="progress-bar"
+                                        style="width: {{ $dosis1 ? number_format((float) ($dosis1 / $target) * 100, 2, '.', '') : 0 }}% ">
+                                    </div>
+                                </div>
+                                <span class="Progress-description" style="font-size:15px !important">
+                                    @if ($dosis1)
+                                        {{ number_format((float) ($dosis1 / $target) * 100, 2, '.', '') }}%
+                                    @endif
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- ./col -->
                 <div class="col-lg-3 mb-2">
                     <!-- small box -->
-                    <div class="card shadow text-white" style="background-color:rgb(29, 92, 99)">
-                        <div class="inner">
-                            <div class="row">
-                                <div class="col">
-                                    <h3>{{ $dosis2 }}</h3>
-                                </div>
-                                <div class="col">
-                                    <h3 class="text-end">
-                                        @if ($dosis2)
-                                            {{ number_format((float) ($dosis2 / $target) * 100, 2, '.', '') }}%
-                                        @endif
-                                    </h3>
-                                </div>
+                    <div class="card shadow py-2" style="background-color: #5EAAA8">
+                        <div class="row">
+                            <div class="col-md-3 align-self-center">
+                                <span class="info-box-icon">
+                                    <i class="fa fa-syringe" style="color:#EDE6DB"></i>
+                                </span>
                             </div>
-                            <p class="text-white">Total Vaksinasi Dosis 2</p>
-
+                            <div class="col-md-7 d-flex flex-column text-white text-start">
+                                <p>Total Vaksinasi Dosis 2</p>
+                                <span class="info-box-number"
+                                    style="font-size:15px !important">{{ $dosis2 }}</span>
+                                <div class="progress">
+                                    <div class="progress-bar"
+                                        style="width: {{ $dosis2 ? number_format((float) ($dosis2 / $target) * 100, 2, '.', '') : 0 }}% ">
+                                    </div>
+                                </div>
+                                <span class="Progress-description" style="font-size:15px !important">
+                                    @if ($dosis2)
+                                        {{ number_format((float) ($dosis2 / $target) * 100, 2, '.', '') }}%
+                                    @endif
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- ./col -->
                 <div class="col-lg-3 mb-2">
                     <!-- small box -->
-                    <div class="card shadow text-white" style="background-color:rgb(26, 60, 64)">
-                        <div class="inner">
-                            <div class="row">
-                                <div class="col">
-                                    <h3>{{ $dosis3 }}</h3>
-                                </div>
-                                <div class="col">
-                                    <h3 class="text-end">
-                                        @if ($dosis3)
-                                            {{ number_format((float) ($dosis3 / $target) * 100, 2, '.', '') }}%
-                                        @endif
-                                    </h3>
-                                </div>
+                    <div class="card shadow py-2" style="background-color: #5EAAA8">
+                        <div class="row">
+                            <div class="col-md-3 align-self-center">
+                                <span class="info-box-icon">
+                                    <i class="fa fa-syringe" style="color:#EDE6DB"></i>
+                                </span>
                             </div>
-                            <p class="text-white">Total Vaksinasi Dosis 3</p>
-
+                            <div class="col-md-7 d-flex flex-column text-white text-start">
+                                <p>Total Vaksinasi Dosis 3</p>
+                                <span class="info-box-number"
+                                    style="font-size:15px !important">{{ $dosis3 }}</span>
+                                <div class="progress">
+                                    <div class="progress-bar"
+                                        style="width: {{ $dosis3 ? number_format((float) ($dosis3 / $target) * 100, 2, '.', '') : 0 }}% ">
+                                    </div>
+                                </div>
+                                <span class="Progress-description" style="font-size:15px !important">
+                                    @if ($dosis3)
+                                        {{ number_format((float) ($dosis3 / $target) * 100, 2, '.', '') }}%
+                                    @endif
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -268,16 +313,21 @@ http://www.tooplate.com/view/2091-ziggy
 
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <br>
-                    <div class="card p-2 text-black" style="background-color:#D0CAB2">
-                        <h3 style="font-size:20px !important">Dosis Terendah <br>(Kecamatan)</h3>
-                        <hr class="text-white bg-white" />
-                        <div class="inner">
+            <div class="row gy-2">
+                <div class="col-md-3">
+                    <div class="card card-primary">
+                        <div class="card-header" style="background-color:#D0CAB2">
+                            <h3 class="float-start text-white">Dosis Terendah<br>(Kecamatan)</h3>
+                            <div class="card-tools float-end">
+                                <button type="button" class="btn" data-bs-toggle="collapse"
+                                    data-bs-target="#dosis1">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body collapse" id="dosis1">
+                            <h3 style="font-size:20px !important">Dosis 1</h3>
                             @if ($krendah1)
-                                <h3 style="font-size:20px !important">Dosis 1</h3>
                                 <h6>Kecamatan {{ $krendah1->tematik->kecamatan }}</h6>
                                 <h6>Jumlah {{ $krendah1->total }}</h6>
                                 <h3 style="font-size:20px !important">
@@ -285,7 +335,7 @@ http://www.tooplate.com/view/2091-ziggy
                                 </h3>
                             @endif
 
-                            <hr class="text-white bg-white" />
+                            <hr class="text-white bg-black" />
                             <h3 style="font-size:20px !important">Dosis 2</h3>
                             @if ($krendah2)
                                 <h6>Kecamatan {{ $krendah2->tematik->kecamatan }}</h6>
@@ -295,7 +345,7 @@ http://www.tooplate.com/view/2091-ziggy
                                 </h3>
                             @endif
 
-                            <hr class="text-white bg-white" />
+                            <hr class="text-white bg-black" />
                             <h3 style="font-size:20px !important">Dosis 3</h3>
                             @if ($krendah3)
                                 <h6>Kecamatan {{ $krendah3->tematik->kecamatan }}</h6>
@@ -307,14 +357,21 @@ http://www.tooplate.com/view/2091-ziggy
                         </div>
                     </div>
                 </div>
+
                 <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <br>
-                    <div class="card p-2 text-black" style="background-color:#96C7C1">
-                        <h3 style="font-size:20px !important">Dosis Tertinggi<br>(Kecamatan)</h3>
-                        <hr class="text-white bg-white" />
-                        <div class="inner">
+
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header text-start " style="background-color:#96C7C1">
+                            <h3 class="float-start text-white">Dosis Tertinggi<br>(Kecamatan)</h3>
+                            <div class="card-tools float-end">
+                                <button type="button" class="btn" data-bs-toggle="collapse"
+                                    data-bs-target="#dosis2">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body collapse" id="dosis2">
                             <h3 style="font-size:20px !important">Dosis 1</h3>
                             @if ($ktinggi1)
                                 <h6>Kecamatan {{ $ktinggi1->tematik->kecamatan }}</h6>
@@ -343,18 +400,22 @@ http://www.tooplate.com/view/2091-ziggy
                                         {{ $ktpersen3 ? number_format((float) ($ktinggi3->total / $ktpersen3) * 100, 2, '.', '') : 0 }}%
                                     </h3>
                                 @endif
-
                         </div>
                     </div>
                 </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <br>
-                    <div class="card p-2 text-black" style="background-color:#DED9C4">
-                        <h3 style="font-size:20px !important"> Dosis Terendah<br>(Desa)</h3>
-                        <hr class="text-white bg-white" />
-                        <div class="inner">
+
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header" style="background-color:#DED9C4">
+                            <h3 class="float-start text-white">Dosis Terendah<br>(Desa)</h3>
+                            <div class="card-tools float-end">
+                                <button type="button" class="btn" data-bs-toggle="collapse"
+                                    data-bs-target="#dosis3">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body collapse" id="dosis3">
                             <h3 style="font-size:20px !important">Dosis 1</h3>
                             @if ($drendah1)
                                 <h6>Desa {{ $drendah1->desa->desa }}</h6>
@@ -364,7 +425,7 @@ http://www.tooplate.com/view/2091-ziggy
                                 </h3>
                             @endif
 
-                            <hr class="text-white bg-white" />
+                            <hr class="text-white bg-black" />
                             <h3 style="font-size:20px !important">Dosis 2</h3>
                             @if ($drendah2)
                                 <h6>Desa {{ $drendah2->desa->desa }}</h6>
@@ -374,7 +435,7 @@ http://www.tooplate.com/view/2091-ziggy
                                 </h3>
                             @endif
 
-                            <hr class="text-white bg-white" />
+                            <hr class="text-white bg-black" />
                             <h3 style="font-size:20px !important">Dosis 3</h3>
                             @if ($drendah3)
                                 <h6>Desa {{ $drendah3->desa->desa }}</h6>
@@ -387,15 +448,20 @@ http://www.tooplate.com/view/2091-ziggy
                         </div>
                     </div>
                 </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <br>
-                    <div class="card p-2 text-black" style="background-color:#89B5AF" style="font-size:30px !important">
-                        <h3 style="font-size:20px !important">Dosis Tertinggi<br>(Desa) </h3>
-                        <hr class="text-white bg-white" />
-                        <div class="inner">
 
+                <!-- ./col -->
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header" style="background-color:#89b5af">
+                            <h3 class="float-start text-white">Dosis Tertinggi<br>(Desa)</h3>
+                            <div class="card-tools float-end">
+                                <button type="button" class="btn" data-bs-toggle="collapse"
+                                    data-bs-target="#dosis4">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body collapse" id="dosis4">
                             <h3 style="font-size:20px !important"> Dosis 1 </h3>
                             @if ($dtinggi1)
                                 <h6>Desa {{ $dtinggi1->desa->desa }}</h6>
@@ -405,7 +471,7 @@ http://www.tooplate.com/view/2091-ziggy
                                 </h3>
                             @endif
 
-                            <hr class="text-white bg-green">
+                            <hr class="text-white bg-black">
                             <h3 style="font-size:20px !important"> Dosis 2 </h3>
                             @if ($dtinggi2)
                                 <h6>Desa {{ $dtinggi2->desa->desa }}</h6>
@@ -415,29 +481,24 @@ http://www.tooplate.com/view/2091-ziggy
                                 </h3>
                             @endif
 
-                            <hr class="text-white bg-green">
+                            <hr class="text-white bg-black">
                             <h3 style="font-size:20px !important">
                                 Dosis 3 </h3>
                             @if ($dtinggi3)
                                 <h6>Desa {{ $dtinggi3->desa->desa }}</h6>
                                 <h6>Jumlah {{ $dtinggi3->total }}</h6>
-                                <h3 style="font-size:20px !important">>
+                                <h3 style="font-size:20px !important">
                                     {{ $dtpersen3 ? number_format((float) ($dtinggi3->total / $dtpersen3) * 100, 2, '.', '') : 0 }}%
                                 </h3>
                             @endif
 
                         </div>
                     </div>
-                    <!-- ./col -->
                 </div>
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header text-start">
                         <h3 class="card-title">Tenaga Kesehatan</h3>
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card="collapse">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
+
                     </div>
                     <div class="card-body" style="display: block;">
                         <div class="row">
@@ -484,7 +545,7 @@ http://www.tooplate.com/view/2091-ziggy
                 <div class="row">
                     <div class="col-lg-4 col-4">
                         <br>
-                        <div class="p-4 w-100 rounded shadow text-white" style="background-color:#68B0AB">
+                        <div class="p-4 w-100 rounded shadow text-white text-start" style="background-color:#68B0AB">
                             <h3 style="font-size:20px !important">Tenaga Kesehatan</h3>
                             <hr class="text-white bg-white" />
                             <div class="inner">
@@ -526,7 +587,7 @@ http://www.tooplate.com/view/2091-ziggy
                     </div>
                     <div class="col-lg-4 col-4">
                         <br>
-                        <div class="p-4 w-100 rounded shadow text-black" style="background-color:#A3D2CA">
+                        <div class="p-4 w-100 rounded shadow text-black text-start" style="background-color:#A3D2CA">
                             <h3 style="font-size:20px !important">Petugas Publik</h3>
                             <hr class="text-white bg-white" />
                             <div class="inner">
@@ -567,7 +628,7 @@ http://www.tooplate.com/view/2091-ziggy
                     </div>
                     <div class="col-lg-4 col-4">
                         <br>
-                        <div class="p-4 w-100 rounded shadow text-white" style="background-color:#5EAAA8">
+                        <div class="p-4 w-100 rounded shadow text-white text-start" style="background-color:#5EAAA8">
                             <h3 style="font-size:20px !important">Lansia</h3>
                             <hr class="text-white bg-white" />
                             <div class="inner">
@@ -608,7 +669,7 @@ http://www.tooplate.com/view/2091-ziggy
                     </div>
                     <div class="col-lg-4 col-4">
                         <br>
-                        <div class="p-4 w-100 rounded shadow text-black" style="background-color:#A7C4BC">
+                        <div class="p-4 w-100 rounded shadow text-black text-start" style="background-color:#A7C4BC">
                             <h3 style="font-size:20px !important">Masyarakat Umum</h3>
                             <hr class="text-white bg-white" />
                             <div class="inner">
@@ -649,7 +710,7 @@ http://www.tooplate.com/view/2091-ziggy
                     </div>
                     <div class="col-lg-4 col-4">
                         <br>
-                        <div class="p-4 w-100 rounded shadow text-white" style="background-color:#5E8B7E">
+                        <div class="p-4 w-100 rounded shadow text-white text-start" style="background-color:#5E8B7E">
                             <h3 style="font-size:20px !important">Remaja</h3>
                             <hr class="text-white bg-white" />
                             <div class="inner">
@@ -690,7 +751,7 @@ http://www.tooplate.com/view/2091-ziggy
                     </div>
                     <div class="col-lg-4 col-4">
                         <br>
-                        <div class="p-4 w-100 rounded shadow text-white" style="background-color:#2F5D62">
+                        <div class="p-4 w-100 rounded shadow text-white text-start" style="background-color:#2F5D62">
                             <h3 style="font-size:20px !important">Usia 6-11 tahun</h3>
                             <hr class="text-white bg-white" />
                             <div class="inner">
