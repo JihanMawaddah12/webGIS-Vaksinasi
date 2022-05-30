@@ -17,9 +17,6 @@ use Illuminate\Support\Facades\URL;
 */
 
 Route::get('/artisan/storage', function () {
-    Artisan::call('db:seed', [
-        '--force' => true
-    ]);
     Artisan::call('storage:link');
 });
 Auth::routes();
