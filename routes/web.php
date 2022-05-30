@@ -17,9 +17,8 @@ use Illuminate\Support\Facades\URL;
 */
 
 Route::get('/artisan/storage', function () {
-    $command = 'storage:link';
-    $result = Artisan::call($command);
-    return Artisan::output();
+    Artisan::call('db:seed');
+    Artisan::call('storage:link');
 });
 Auth::routes();
 Route::post('/import', [ App\Http\Controllers\HalamanData::class, 'import'])->name('import');
