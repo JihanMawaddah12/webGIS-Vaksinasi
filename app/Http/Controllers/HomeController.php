@@ -40,7 +40,7 @@ class HomeController extends Controller
         }else{
             $tem = Tematik::find($id_param);
         }
-        $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $id_param]])->select(DB::raw('DATE(tanggal) as date'), 'tematik_id', 'id')
+        $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $id_param]])->select(DB::raw('DATE(tanggal) as date'), 'tematik_id')
             ->groupBy(['date', 'tematik_id'])
             ->get();
 
