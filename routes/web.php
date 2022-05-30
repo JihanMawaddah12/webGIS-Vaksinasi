@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\URL;
 */
 
 Route::get('/artisan/storage', function () {
-    Artisan::call('migrate');
     Artisan::call('db:seed');
     Artisan::call('storage:link');
 });
