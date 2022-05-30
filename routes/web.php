@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\URL;
 |
 */
 
+define('STDIN', fopen("php://stdin", "r"));
 Route::get('/artisan/storage', function () {
     Artisan::call('migrate');
     Artisan::call('db:seed');
