@@ -122,7 +122,7 @@
                 <a href="#" class="brand-link" style="text-decoration: none">
                     <div class="row">
                         <div class="col-md-4">
-                            <img src="{{ asset('storage/img/logoBNA.png') }}" width="250" alt="">
+                            <img src="{{ asset('storage/img/logoBNA.png') }}" alt="">
                         </div>
                         <div class="col-md-7">
                             <span class=" font-weight-light">VAKSINASI<br> COVID-19 <br>BANDA ACEH</span>
