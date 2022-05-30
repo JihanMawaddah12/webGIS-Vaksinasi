@@ -14,7 +14,6 @@ class AddTanggalToHalamandata extends Migration
     public function up()
     {
         Schema::table('halaman_data', function (Blueprint $table) {
-            $table->date('tanggal')->nullable();
         });
     }
 

@@ -14,7 +14,6 @@ class ChangeColumnToHalamanData extends Migration
     public function up()
     {
         Schema::table('halaman_data', function (Blueprint $table) {
-            $table->integer('usia')->change();
         });
     }
 

@@ -1,7 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/artisan/storage', function () {
+    Artisan::call('storage:link');
+});
 Auth::routes();
 Route::post('/import', [ App\Http\Controllers\HalamanData::class, 'import'])->name('import');
 Route::get('/', [App\Http\Controllers\UserController::class, 'data'])->name('Data user');

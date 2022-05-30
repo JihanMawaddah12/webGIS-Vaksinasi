@@ -14,8 +14,7 @@ class DeleteColumnToHalamanData extends Migration
     public function up()
     {
         Schema::table('halaman_data', function (Blueprint $table) {
-            $table->foreignId('desa_id')->nullable()->constrained();
-            $table->string('usia');
+            
         });
     }
 

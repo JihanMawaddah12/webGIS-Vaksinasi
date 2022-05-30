@@ -16,15 +16,15 @@ class CreateHalamanDataTable extends Migration
         Schema::create('halaman_data', function (Blueprint $table) {
             $table->id();
             $table->foreignId('tematik_id')->constrained();
-            $table->string('Kelompok');
+            $table->string('kelompok');
             $table->integer('nakes');
             $table->integer('petugas_publik');
             $table->integer('lansia');
             $table->integer('masyarakat_umum');
             $table->integer('remaja');
-            $table->string('long');
-            $table->string('lat');
-            $table->string('gambar');
+            $table->integer('usia');
+            $table->date('tanggal')->nullable();
+            $table->foreignId('desa_id')->nullable()->constrained();
             $table->timestamps();
         });
     }
