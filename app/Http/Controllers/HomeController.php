@@ -35,26 +35,26 @@ class HomeController extends Controller
         $jumlah3 = [];
         if (!$id_param) {
             $tem = Tematik::first();
-
+            
             $id_param = $tem->id;
-        } else {
+        }else{
             $tem = Tematik::find($id_param);
         }
-        $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $id_param]])->select(DB::raw('DATE(tanggal) as date'), 'tematik_id')
+        $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $id_param]])->select('*',DB::raw('DATE(tanggal) as date'), 'tematik_id')
             ->groupBy(['date', 'tematik_id'])
             ->get();
 
         $id = 0;
         foreach ($dosis1 as $value) {
             $kec[$id] = $value->date;
-            if (isset($jumlah[$id - 1])) {
-                $jumlah[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jumlah[$id - 1];
+            if (isset($jumlah[$id-1])) {
+                $jumlah[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jumlah[$id-1];
             } else {
                 $jumlah[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
             }
             $id += 1;
         }
-        $dosis2 = HalamanData::with('tematik')->where([['kelompok', 'dosis 2'], ['tematik_id', $id_param]])->select(DB::raw('DATE(tanggal) as date'), 'tematik_id')
+        $dosis2 = HalamanData::with('tematik')->where([['kelompok', 'dosis 2'], ['tematik_id', $id_param]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
             ->groupBy(['date', 'tematik_id'])
             ->get();
 
@@ -68,7 +68,7 @@ class HomeController extends Controller
             }
             $id += 1;
         }
-        $dosis3 = HalamanData::with('tematik')->where([['kelompok', 'dosis 3'], ['tematik_id', $id_param]])->select( DB::raw('DATE(tanggal) as date'), 'tematik_id')
+        $dosis3 = HalamanData::with('tematik')->where([['kelompok', 'dosis 3'], ['tematik_id', $id_param]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
             ->groupBy(['date', 'tematik_id'])
             ->get();
 
@@ -118,12 +118,12 @@ class HomeController extends Controller
         $dtpersen1 = "";
         $dtpersen2 = "";
         $dtpersen3 = "";
-
+        
         $krendah1 = HalamanData::with('tematik')->where('kelompok', 'Dosis 1')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw(' kelompok'), DB::raw(' tematik_id'))->orderBy('total', 'asc')->first();
         if ($krendah1) {
             $kpersen1 = $krendah1->tematik->data1->where('Kelompok', 'Target')->first();
         }
-
+        
         $krendah2 = HalamanData::with('tematik')->where('kelompok', 'Dosis 2')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw(' kelompok'), DB::raw(' tematik_id'))->orderBy('total', 'asc')->first();
         if ($krendah2) {
             $kpersen2 = $krendah2->tematik->data1->where('Kelompok', 'Target')->first();
@@ -163,7 +163,7 @@ class HomeController extends Controller
         if ($drendah3) {
             $dpersen3 = $drendah3->desa->data1->where('Kelompok', 'Target')->first();
         }
-
+        
         $dtinggi1 = HalamanData::with('desa')->where('kelompok', 'Dosis 1')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw(' kelompok'), DB::raw('desa_id'))->orderBy('total', 'desc')->first();
         if ($dtinggi1) {
             $dtpersen1 = $dtinggi1->desa->data1->where('Kelompok', 'Target')->first();
@@ -198,14 +198,14 @@ class HomeController extends Controller
         $dosis2_lansia = HalamanData::where('kelompok', 'Dosis 2')->sum('lansia');
         $dosis2_masyarakat = HalamanData::where('kelompok', 'Dosis 2')->sum('masyarakat_umum');
         $dosis2_remaja = HalamanData::where('kelompok', 'Dosis 2')->sum('remaja');
-        $dosis2_usia = HalamanData::where('kelompok', 'Dosis 2')->sum('usia');
+        $dosis2_usia = HalamanData::where('kelompok', 'Dosis 1')->sum('usia');
 
         $dosis3_nakes = HalamanData::where('kelompok', 'Dosis 3')->sum('nakes');
         $dosis3_petugas = HalamanData::where('kelompok', 'Dosis 3')->sum('petugas_publik');
         $dosis3_lansia = HalamanData::where('kelompok', 'Dosis 3')->sum('lansia');
         $dosis3_masyarakat = HalamanData::where('kelompok', 'Dosis 3')->sum('masyarakat_umum');
         $dosis3_remaja = HalamanData::where('kelompok', 'Dosis 3')->sum('remaja');
-        $dosis3_usia = HalamanData::where('kelompok', 'Dosis 3')->sum('usia');
+        $dosis3_usia = HalamanData::where('kelompok', 'Dosis 1')->sum('usia');
 
         return view('home', [
             'target_nakes' => $target_nakes,
