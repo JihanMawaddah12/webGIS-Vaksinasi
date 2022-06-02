@@ -3,6 +3,9 @@
 @section('content')
     <div class="container">
         <div class="card p-4">
+            <div class="text-end">
+                <button id="printBtn" class="btn btn-danger mb-2">Print map</button>
+            </div>
             <div id="map"></div>
         </div>
     </div>
@@ -60,6 +63,10 @@
 @endsection
 
 @push('scripts')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script src="https://www.jqueryscript.net/demo/jQuery-Plugin-To-Print-Any-Part-Of-Your-Page-Print/jQuery.print.js">
+    </script>
     <!-- Leaflet JavaScript -->
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
@@ -68,7 +75,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
         integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="{{ asset('storage/Leaflet.BigImage/dist/Leaflet.BigImage.min.css') }}">
     <script src="{{ asset('storage/Leaflet.BigImage/dist/Leaflet.BigImage.min.js') }}"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
     <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
@@ -99,50 +105,36 @@
                 fillColor: color[feature.properties.NAMOBJ]
             };
         }
-        // munculkan highlight pada peta
-        function highlightFeature(e) {
-            var layer = e.target;
-
-            layer.setStyle({
-                weight: 5,
-                color: '#666',
-                dashArray: '',
-                fillOpacity: 0.7
-            });
-
-            if (!L.Browser.ie && !L.Browser.opera) {
-                layer.bringToFront();
-            }
-
-        }
-
         var geojson;
-
-        function resetHighlight(e) {
-            geojsonLayer.resetStyle(e.target);
-        }
 
         function zoomToFeature(e) {
             map.fitBounds(e.target.getBounds());
         }
 
-         function updatePopup(evt) {
+        function updatePopup(evt) {
+            geojsonLayer.setStyle({
+                fillColor: 'transparent'
+            });
+
             var propertyValue;
             var feature = evt.target.feature;
             var props = feature.properties;
+            evt.target.setStyle({
+                fillColor: color[props.NAMOBJ]
+            });
             evt.popup.setContent('<h4>Desa</h4>' + (props ?
                 '<b>' + props.NAMOBJ + '</b><br /> Jumlah Vaksin <br/> Dosis 1: ' + jumlah['1'][props.NAMOBJ] +
                 ' orang (' +
-                ((jumlah['1']+[props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
-                'Dosis 2: ' + jumlah['2']+[props.NAMOBJ] + ' orang (' +
-                ((jumlah['2']+[props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
-                'Dosis 3: ' + jumlah['3']+[props.NAMOBJ] + ' orang (' +
-                ((jumlah['3']+[props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> '  : ""));
+                ((jumlah['1'] + [props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
+                'Dosis 2: ' + jumlah['2'] + [props.NAMOBJ] + ' orang (' +
+                ((jumlah['2'] + [props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
+                'Dosis 3: ' + jumlah['3'] + [props.NAMOBJ] + ' orang (' +
+                ((jumlah['3'] + [props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' : ""));
         }
 
         function zoomToFeature(e) {
             console.log(e)
-           map.fitBounds(e.target.getBounds());
+            map.fitBounds(e.target.getBounds());
         }
 
         function onEachFeature(feature, layer) {
@@ -154,9 +146,8 @@
             }
 
             layer.on({
-                "mouseover": highlightFeature,
-                "mouseout": resetHighlight,
-                "click":zoomToFeature
+
+                "click": zoomToFeature
             });
         }
         var geojsonLayer = new L.GeoJSON.AJAX({!! json_encode($geofile) !!}, {
@@ -186,7 +177,6 @@
         };
 
         legend.addTo(map);
-        L.control.BigImage().addTo(map);
         var controlSearch = new L.Control.Search({
             position: 'topleft',
             layer: geojsonLayer,
@@ -203,5 +193,8 @@
 
 
         map.addControl(controlSearch);
+        $("#printBtn").click(function() {
+            $('#map').print();
+        });
     </script>
 @endpush

@@ -3,6 +3,9 @@
 @section('content')
     <div class="container">
         <div class="card p-4">
+            <div class="text-end">
+                <button id="printBtn" class="btn btn-danger mb-2">Print map</button>
+            </div>
             <div id="map"></div>
         </div>
     </div>
@@ -58,6 +61,10 @@
 @endsection
 
 @push('scripts')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script src="https://www.jqueryscript.net/demo/jQuery-Plugin-To-Print-Any-Part-Of-Your-Page-Print/jQuery.print.js">
+    </script>
     <!-- Leaflet JavaScript -->
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
@@ -95,33 +102,19 @@
                 fillColor: color[feature.properties.NAMOBJ]
             };
         }
-        // munculkan highlight pada peta
-        function highlightFeature(e) {
-            var layer = e.target;
-
-            layer.setStyle({
-                weight: 5,
-                color: '#666',
-                dashArray: '',
-                fillOpacity: 0.7
-            });
-
-            if (!L.Browser.ie && !L.Browser.opera) {
-                layer.bringToFront();
-            }
-
-        }
 
         var geojson;
 
-        function resetHighlight(e) {
-            geojsonLayer.resetStyle(e.target);
-        }
-
         function updatePopup(evt) {
+            geojsonLayer.setStyle({
+                fillColor: 'transparent'
+            });
             var propertyValue;
             var feature = evt.target.feature;
             var props = feature.properties;
+            evt.target.setStyle({
+                fillColor: color[props.NAMOBJ]
+            });
             evt.popup.setContent('<h4>Kecamatan</h4> ' + (props ?
                 '<b>' + props.NAMOBJ + '</b><br /> Jumlah Vaksin <br/> Dosis 1: ' + jumlah['1'][props.NAMOBJ] +
                 ' orang (' +
@@ -129,12 +122,12 @@
                 'Dosis 2: ' + jumlah['2'] + [props.NAMOBJ] + ' orang (' +
                 ((jumlah['2'] + [props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
                 'Dosis 3: ' + jumlah['3'] + [props.NAMOBJ] + ' orang (' +
-                ((jumlah['3'] + [props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> '  : ""));
+                ((jumlah['3'] + [props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' : ""));
         }
 
         function zoomToFeature(e) {
             console.log(e)
-           map.fitBounds(e.target.getBounds());
+            map.fitBounds(e.target.getBounds());
         }
 
         function onEachFeature(feature, layer) {
@@ -146,9 +139,7 @@
             }
 
             layer.on({
-                "mouseover": highlightFeature,
-                "mouseout": resetHighlight,
-                "click":zoomToFeature
+                "click": zoomToFeature
             });
         }
         var geojsonLayer = new L.GeoJSON.AJAX({!! json_encode($geofile) !!}, {
@@ -163,7 +154,6 @@
 
 
         legend.onAdd = function(map) {
-
             var div = L.DomUtil.create('div', 'info legend'),
                 grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
                 from, to;
@@ -172,7 +162,6 @@
                 labels.push(
                     '<i style="background:' + color[tematik[i]] + '"></i> - ' + tematik[i]);
             }
-
             div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
             return div;
         };
@@ -194,5 +183,8 @@
 
 
         map.addControl(controlSearch);
+        $("#printBtn").click(function() {
+            $('#map').print();
+        });
     </script>
 @endpush
