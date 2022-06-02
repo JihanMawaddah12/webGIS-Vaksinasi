@@ -31,27 +31,19 @@ class MapController extends Controller
         $vaksins2 = HalamanData::where('kelompok', 'Dosis 3')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('tematik_id'))->get();
         $vaksins3 = HalamanData::where('kelompok', 'Dosis 3')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('tematik_id'))->get();
         $targets = HalamanData::where('kelompok', 'Target')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('tematik_id'))->get();
-
+        foreach ($tematik as $value) {
+             $jmlh['1'][$value->kecamatan] = 0;
+             $jmlh['2'][$value->kecamatan] = 0;
+             $jmlh['3'][$value->kecamatan] = 0;
+        }
         foreach ($vaksins1 as $vaksin) {
-            if (isset($jmlh[$vaksin->tematik->kecamatan])) {
-                $jmlh['1'][$vaksin->tematik->kecamatan] = +$vaksin->total;
-            } else {
-                $jmlh['1'][$vaksin->tematik->kecamatan] = $vaksin->total;
-            }
+            $jmlh['1'][$vaksin->tematik->kecamatan] = $vaksin->total;
         }
         foreach ($vaksins2 as $vaksin) {
-            if (isset($jmlh[$vaksin->tematik->kecamatan])) {
-                $jmlh['2'][$vaksin->tematik->kecamatan] = +$vaksin->total;
-            } else {
-                $jmlh['2'][$vaksin->tematik->kecamatan] = $vaksin->total;
-            }
+            $jmlh['2'][$vaksin->tematik->kecamatan] = $vaksin->total;
         }
         foreach ($vaksins3 as $vaksin) {
-            if (isset($jmlh[$vaksin->tematik->kecamatan])) {
-                $jmlh['3'][$vaksin->tematik->kecamatan] = +$vaksin->total;
-            } else {
-                $jmlh['3'][$vaksin->tematik->kecamatan] = $vaksin->total;
-            }
+            $jmlh['3'][$vaksin->tematik->kecamatan] = $vaksin->total;
         }
         foreach ($targets as $target) {
             if (isset($jmlh_target[$target->tematik->kecamatan])) {
@@ -115,30 +107,21 @@ class MapController extends Controller
         $vaksins2 = HalamanData::where('kelompok', 'Dosis 3')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('desa_id'))->get();
         $vaksins3 = HalamanData::where('kelompok', 'Dosis 3')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('desa_id'))->get();
         $targets = HalamanData::where('kelompok', 'Target')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('desa_id'))->get();
-
-        
+        foreach ($desa as $value) {
+            $jmlh['1'][$value->desa] = 0;
+            $jmlh['2'][$value->desa] = 0;
+            $jmlh['3'][$value->desa] = 0;
+        }
         foreach ($vaksins1 as $vaksin) {
-            if (isset($jmlh[$vaksin->desa->desa])) {
-                $jmlh['1'][$vaksin->desa->desa] = +$vaksin->total;
-            } else {
-                $jmlh['1'][$vaksin->desa->desa] = $vaksin->total;
-            }
+            $jmlh['1'][$vaksin->desa->desa] = $vaksin->total;
         }
         foreach ($vaksins2 as $vaksin) {
-            if (isset($jmlh[$vaksin->desa->desa])) {
-                $jmlh['2'][$vaksin->desa->desa] = +$vaksin->total;
-            } else {
-                $jmlh['2'][$vaksin->desa->desa] = $vaksin->total;
-            }
+            $jmlh['2'][$vaksin->desa->desa] = $vaksin->total;
         }
         foreach ($vaksins3 as $vaksin) {
-            if (isset($jmlh[$vaksin->desa->desa])) {
-                $jmlh['3'][$vaksin->desa->desa] = +$vaksin->total;
-            } else {
-                $jmlh['3'][$vaksin->desa->desa] = $vaksin->total;
-            }
+            $jmlh['3'][$vaksin->desa->desa] = $vaksin->total;
         }
-      
+
         foreach ($targets as $target) {
             if ($target->desa) {
                 if (isset($jmlh_target[$target->desa->desa])) {
@@ -147,7 +130,6 @@ class MapController extends Controller
                     $jmlh_target[$target->desa->desa] = $target->total;
                 }
             }
-          
         }
 
         foreach ($desa as $item) {

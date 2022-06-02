@@ -118,11 +118,11 @@
             evt.popup.setContent('<h4>Kecamatan</h4> ' + (props ?
                 '<b>' + props.NAMOBJ + '</b><br /> Jumlah Vaksin <br/> Dosis 1: ' + jumlah['1'][props.NAMOBJ] +
                 ' orang (' +
-                ((jumlah['1'] + [props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
-                'Dosis 2: ' + jumlah['2'] + [props.NAMOBJ] + ' orang (' +
-                ((jumlah['2'] + [props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
-                'Dosis 3: ' + jumlah['3'] + [props.NAMOBJ] + ' orang (' +
-                ((jumlah['3'] + [props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' : ""));
+                ((jumlah['1'][props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
+                'Dosis 2: ' + jumlah['2'][props.NAMOBJ] + ' orang (' +
+                ((jumlah['2'][props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
+                'Dosis 3: ' + jumlah['3'][props.NAMOBJ] + ' orang (' +
+                ((jumlah['3'][props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' : ""));
         }
 
         function zoomToFeature(e) {
