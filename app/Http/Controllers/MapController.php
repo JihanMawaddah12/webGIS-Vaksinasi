@@ -28,7 +28,7 @@ class MapController extends Controller
         $tematik = Tematik::all();
         $data = HalamanData2::all();
         $vaksins1 = HalamanData::where('kelompok', 'Dosis 1')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('tematik_id'))->get();
-        $vaksins2 = HalamanData::where('kelompok', 'Dosis 3')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('tematik_id'))->get();
+        $vaksins2 = HalamanData::where('kelompok', 'Dosis 2')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('tematik_id'))->get();
         $vaksins3 = HalamanData::where('kelompok', 'Dosis 3')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('tematik_id'))->get();
         $targets = HalamanData::where('kelompok', 'Target')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('tematik_id'))->get();
         foreach ($tematik as $value) {
@@ -104,7 +104,7 @@ class MapController extends Controller
         $jmlh = [];
         $jmlh_target = [];
         $vaksins1 = HalamanData::where('kelompok', 'Dosis 1')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('desa_id'))->get();
-        $vaksins2 = HalamanData::where('kelompok', 'Dosis 3')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('desa_id'))->get();
+        $vaksins2 = HalamanData::where('kelompok', 'Dosis 2')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('desa_id'))->get();
         $vaksins3 = HalamanData::where('kelompok', 'Dosis 3')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('desa_id'))->get();
         $targets = HalamanData::where('kelompok', 'Target')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('desa_id'))->get();
         foreach ($desa as $value) {
