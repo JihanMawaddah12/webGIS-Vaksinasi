@@ -89,27 +89,6 @@
         }).addTo(map);
 
 
-        var info = L.control();
-
-        info.onAdd = function(map) {
-            this._div = L.DomUtil.create('div', 'info');
-            this.update();
-            return this._div;
-        };
-        info.update = function(props) {
-            this._div.innerHTML = '<h4>Desa</h4>' + (props ?
-                '<b>' + props.NAMOBJ + '</b><br /> Jumlah Vaksin <br/> Dosis 1: ' + jumlah['1'][props.NAMOBJ] +
-                ' orang (' +
-                ((jumlah['1'][props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
-                'Dosis 2: ' + jumlah['2'][props.NAMOBJ] + ' orang (' +
-                ((jumlah['2'][props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
-                'Dosis 3: ' + jumlah['3'][props.NAMOBJ] + ' orang (' +
-                ((jumlah['3'][props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
-                'Gerakkan mouse Anda' : "");
-        };
-
-        info.addTo(map);
-
         function style(feature) {
             return {
                 weight: 2,
@@ -135,25 +114,49 @@
                 layer.bringToFront();
             }
 
-            info.update(layer.feature.properties);
         }
 
         var geojson;
 
         function resetHighlight(e) {
             geojsonLayer.resetStyle(e.target);
-            info.update();
         }
 
         function zoomToFeature(e) {
             map.fitBounds(e.target.getBounds());
         }
 
+         function updatePopup(evt) {
+            var propertyValue;
+            var feature = evt.target.feature;
+            var props = feature.properties;
+            evt.popup.setContent('<h4>Desa</h4>' + (props ?
+                '<b>' + props.NAMOBJ + '</b><br /> Jumlah Vaksin <br/> Dosis 1: ' + jumlah['1'][props.NAMOBJ] +
+                ' orang (' +
+                ((jumlah['1']+[props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
+                'Dosis 2: ' + jumlah['2']+[props.NAMOBJ] + ' orang (' +
+                ((jumlah['2']+[props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
+                'Dosis 3: ' + jumlah['3']+[props.NAMOBJ] + ' orang (' +
+                ((jumlah['3']+[props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> '  : ""));
+        }
+
+        function zoomToFeature(e) {
+            console.log(e)
+           map.fitBounds(e.target.getBounds());
+        }
+
         function onEachFeature(feature, layer) {
+            if (feature.properties) {
+                layer.bindPopup('', {
+                    maxHeight: 200
+                });
+                layer.on('popupopen', updatePopup);
+            }
+
             layer.on({
-                mouseover: highlightFeature,
-                mouseout: resetHighlight,
-                click: zoomToFeature
+                "mouseover": highlightFeature,
+                "mouseout": resetHighlight,
+                "click":zoomToFeature
             });
         }
         var geojsonLayer = new L.GeoJSON.AJAX({!! json_encode($geofile) !!}, {
