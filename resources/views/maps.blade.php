@@ -82,7 +82,6 @@
         var tematik = {!! json_encode($tematik) !!}
         var jumlah = {!! json_encode($jumlah) !!}
         var target = {!! json_encode($jmlh_target) !!}
-        console.log(jumlah)
         var map = L.map('map').setView(
             s, 11
         );

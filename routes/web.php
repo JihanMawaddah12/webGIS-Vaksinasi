@@ -27,7 +27,6 @@ Route::get('/panduan-user', [App\Http\Controllers\PanduanController::class, 'use
 Route::get('/portal/{tematik_id?}', [App\Http\Controllers\UserController::class, 'data'])->name('portal');
 Route::get('/pendaftaran', [App\Http\Controllers\RouteMap::class, 'pendaftaran'])->name('pendaftaran');
 Route::post('/daftar', [App\Http\Controllers\RouteMap::class, 'daftar'])->name('daftar');
-
 Route::get('/home/{tematik_id?}', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/rute', [App\Http\Controllers\RouteMap::class, 'index'])->name('Rute');
 Route::get('/rute-user', [App\Http\Controllers\RouteMap::class, 'user'])->name('RuteUser');
