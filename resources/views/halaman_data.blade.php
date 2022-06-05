@@ -35,7 +35,7 @@
                             <th rowspan="2" class="align-middle py-0">Dosis</th>
                             <th colspan="6" class="align-middle py-0 text-center">Kelompok</th>
                             <th rowspan="2" class="align-middle py-0">Total</th>
-                            <th rowspan="2" class="align-middle py-0">Actions</th>
+                            <th rowspan="2" class="align-middle py-0">Aksi</th>
                         </tr>
                         <tr>
                             <th class="py-0 align-top">Nakes</th>
@@ -82,7 +82,7 @@
                                                 class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                         <button type="submit" class="delete show_confirm border-0 p-0 bg-transparent"><i
                                                 class="material-icons" data-toggle="tooltip"
-                                                title="Delete">&#xE872;</i></button>
+                                                title="Hapus">&#xE872;</i></button>
                                     </form>
                                 </td>
                             </tr>

@@ -132,7 +132,7 @@ http://www.tooplate.com/view/2091-ziggy
                                 </span>
                             </div>
                             <div class="col-md-7 d-flex flex-column text-white text-start">
-                                <p>Sasaran Vaksinasi</p>
+                                <p style="font-size:14px">Sasaran Vaksinasi</p>
                                 <span class="info-box-number"
                                     style="font-size:15px !important">{{ $target }}</span>
                                 <div class="progress">
@@ -155,8 +155,8 @@ http://www.tooplate.com/view/2091-ziggy
                                     <i class="fa fa-syringe" style="color:#EDE6DB"></i>
                                 </span>
                             </div>
-                            <div class="col-md-7 d-flex flex-column text-white text-start">
-                                <p>Total Vaksinasi Dosis 1</p>
+                            <div class="col-md-7 d-flex flex-column text-white text-start ">
+                                <p style="font-size:14px">Total Vaksinasi Dosis 1</p>
                                 <span class="info-box-number"
                                     style="font-size:15px !important">{{ $dosis1 }}</span>
                                 <div class="progress">
@@ -184,7 +184,7 @@ http://www.tooplate.com/view/2091-ziggy
                                 </span>
                             </div>
                             <div class="col-md-7 d-flex flex-column text-white text-start">
-                                <p>Total Vaksinasi Dosis 2</p>
+                                <p style="font-size:14px">Total Vaksinasi Dosis 2</p>
                                 <span class="info-box-number"
                                     style="font-size:15px !important">{{ $dosis2 }}</span>
                                 <div class="progress">
@@ -212,7 +212,7 @@ http://www.tooplate.com/view/2091-ziggy
                                 </span>
                             </div>
                             <div class="col-md-7 d-flex flex-column text-white text-start">
-                                <p>Total Vaksinasi Dosis 3</p>
+                                <p style="font-size:14px">Total Vaksinasi Dosis 3</p>
                                 <span class="info-box-number"
                                     style="font-size:15px !important">{{ $dosis3 }}</span>
                                 <div class="progress">
@@ -298,14 +298,14 @@ http://www.tooplate.com/view/2091-ziggy
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3">
+                {{-- <div class="col-md-3">
                     <div class="card card-primary">
                         <div class="card-header" style="background-color:#D0CAB2">
-                            <h3 class="card-title">Dosis Terendah<br>(Kecamatan)</h3>
+                            <h3 class="card-title">Dosis Terendah (Kecamatan)</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn" data-bs-toggle="collapse"
                                     data-bs-target="#dosis1">
-                                    <i class="fas fa-plus"></i>
+                                    <i class="fa fa-caret-down"></i>
                                 </button>
                             </div>
                         </div>
@@ -346,11 +346,11 @@ http://www.tooplate.com/view/2091-ziggy
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-header" style="background-color:#96C7C1">
-                            <h3 class="card-title text-white">Dosis Tertinggi<br>(Kecamatan)</h3>
+                            <h3 class="card-title text-white">Dosis Tertinggi (Kecamatan)</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn" data-bs-toggle="collapse"
                                     data-bs-target="#dosis2">
-                                    <i class="fas fa-plus"></i>
+                                    <i class="fa fa-caret-down"></i>
                                 </button>
                             </div>
                         </div>
@@ -385,22 +385,23 @@ http://www.tooplate.com/view/2091-ziggy
                                 @endif
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <div class="card">
                         <div class="card-header" style="background-color:#DED9C4">
-                            <h3 class="card-title text-white">Dosis Terendah<br>(Desa)</h3>
+                            <h3 class="card-title text-white">Dosis Terendah</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn" data-bs-toggle="collapse"
                                     data-bs-target="#dosis3">
-                                    <i class="fas fa-plus"></i>
+                                    <i class="fa fa-caret-down"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="card-body collapse" id="dosis3">
                             <h3 style="font-size:20px !important">Dosis 1</h3>
                             @if ($drendah1)
+                                <h6>Kecamatan {{ $krendah1->tematik->kecamatan }}</h6>
                                 <h6>Desa {{ $drendah1->desa->desa }}</h6>
                                 <h6>Jumlah {{ $drendah1->total }}</h6>
                                 <h3 style="font-size:20px !important">
@@ -411,6 +412,7 @@ http://www.tooplate.com/view/2091-ziggy
                             <hr class="text-white bg-black" />
                             <h3 style="font-size:20px !important">Dosis 2</h3>
                             @if ($drendah2)
+                                <h6>Kecamatan {{ $krendah2->tematik->kecamatan }}</h6>
                                 <h6>Desa {{ $drendah2->desa->desa }}</h6>
                                 <h6>Jumlah {{ $drendah2->total }}</h6>
                                 <h3 style="font-size:20px !important">
@@ -421,6 +423,7 @@ http://www.tooplate.com/view/2091-ziggy
                             <hr class="text-white bg-black" />
                             <h3 style="font-size:20px !important">Dosis 3</h3>
                             @if ($drendah3)
+                                <h6>Kecamatan {{ $krendah3->tematik->kecamatan }}</h6>
                                 <h6>Desa {{ $drendah3->desa->desa }}</h6>
                                 <h6>Jumlah {{ $drendah3->total }}</h6>
                                 <h3 style="font-size:20px !important">
@@ -433,20 +436,21 @@ http://www.tooplate.com/view/2091-ziggy
                 </div>
 
                 <!-- ./col -->
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <div class="card">
                         <div class="card-header" style="background-color:#89b5af">
-                            <h3 class="card-title text-white">Dosis Tertinggi<br>(Desa)</h3>
+                            <h3 class="card-title text-white">Dosis Tertinggi</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn" data-bs-toggle="collapse"
                                     data-bs-target="#dosis4">
-                                    <i class="fas fa-plus"></i>
+                                    <i class="fa fa-caret-down"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="card-body collapse" id="dosis4">
                             <h3 style="font-size:20px !important"> Dosis 1 </h3>
                             @if ($dtinggi1)
+                                <h6>Kecamatan {{ $ktinggi1->tematik->kecamatan }}</h6>
                                 <h6>Desa {{ $dtinggi1->desa->desa }}</h6>
                                 <h6>Jumlah {{ $dtinggi1->total }}</h6>
                                 <h3 style="font-size:20px !important">
@@ -457,6 +461,7 @@ http://www.tooplate.com/view/2091-ziggy
                             <hr class="text-white bg-black">
                             <h3 style="font-size:20px !important"> Dosis 2 </h3>
                             @if ($dtinggi2)
+                                <h6>Kecamatan {{ $ktinggi2->tematik->kecamatan }}</h6>
                                 <h6>Desa {{ $dtinggi2->desa->desa }}</h6>
                                 <h6>Jumlah {{ $dtinggi2->total }}</h6>
                                 <h3 style="font-size:20px !important">
@@ -468,6 +473,7 @@ http://www.tooplate.com/view/2091-ziggy
                             <h3 style="font-size:20px !important">
                                 Dosis 3 </h3>
                             @if ($dtinggi3)
+                                <h6>Kecamatan {{ $ktinggi3->tematik->kecamatan }}</h6>
                                 <h6>Desa {{ $dtinggi3->desa->desa }}</h6>
                                 <h6>Jumlah {{ $dtinggi3->total }}</h6>
                                 <h3 style="font-size:20px !important">
@@ -483,7 +489,7 @@ http://www.tooplate.com/view/2091-ziggy
                         <div class="card-header border-0">
                             <h3 class="card-title">
                                 <i class="fas fa-map-marker-alt mr-1"></i>
-                                Maps
+                                Peta
                             </h3>
 
                         </div>
@@ -496,17 +502,12 @@ http://www.tooplate.com/view/2091-ziggy
 
                 <div class="col-md-6">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header" style="background-color: #D4ECDD">
                             <h3 class="card-title">Capaian Kelompok</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card="collapse">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
                         </div>
                         <div class="card-body" style="display: block;">
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-md-9">
                                     <div class="chart-responsive" id="pie">
                                         <div id="dosis1-pie" class="collapse show">
                                             <canvas id="pie-dosis1" height="393" width="789" class="pie">
@@ -546,6 +547,7 @@ http://www.tooplate.com/view/2091-ziggy
                             </div>
                         </div>
                     </div>
+                </div>
 
     </section>
     <footer>
@@ -601,20 +603,20 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     });
 </script>
 <script>
-    var labelPie = ['Nakes', 'Petugas', 'Lansia', 'Masyarakat', 'Remaja', 'Usia'];
+    var labelPie = ['Tenaga Kesehatan', 'Petugas Publik', 'Lansia', 'Masyarakat Umum', 'Remaja', 'Usia 6-11 Tahun'];
     const dataPie = {
         labels: labelPie,
         datasets: [{
             label: 'Dosis 1 ',
             backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'purple',
-                'blue',
-                'red',
-                'green'
+                'rgb(244, 191, 191)',
+                'rgb(255, 217, 192)',
+                'rgb(255, 229, 157)',
+                'rgb(140, 192, 222)',
+                'rgb(162, 179, 139)',
+                'rgb(230, 186, 149)'
             ],
-            borderColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(250, 253, 214)',
             data: [{!! json_encode($dosis1_nakes) !!}, {!! json_encode($dosis1_petugas) !!}, {!! json_encode($dosis1_lansia) !!},
                 {!! json_encode($dosis1_masyarakat) !!}, {!! json_encode($dosis1_remaja) !!}, {!! json_encode($dosis1_usia) !!}
             ],

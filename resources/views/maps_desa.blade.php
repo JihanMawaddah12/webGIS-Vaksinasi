@@ -4,7 +4,7 @@
     <div class="container">
         <div class="card p-4">
             <div class="text-end">
-                <button id="printBtn" class="btn btn-danger mb-2">Print map</button>
+                <button id="printBtn" class="btn btn-success mb-2">Cetak Peta</button>
             </div>
             <div id="map"></div>
         </div>

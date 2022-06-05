@@ -26,15 +26,15 @@
                             <input name="alamat" type="text" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>Deskripsi</label>
+                            <label>Jenis Vaksin</label>
                             <input name="deskripsi" type="text" class="form-control" required>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label>Masukkan Gambar</label>
                             <input name="gambar" type="file" class="form-control">
-                        </div>
+                        </div> --}}
                         <div class="form-group">
                             <label>Longitude</label>
                             <input id='longitude' name="long" type="text" class="form-control" required>
@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div class="container mt-4" id="mapid"></div>
-                <button class="btn btn-primary float-end mt-4" type="submit">Tambah</button>
+                <button class="btn float-end text-white" style="background-color: #417D7A" type="submit">Tambah</button>
             </form>
         </div>
     </div>
@@ -75,8 +75,7 @@
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin="">
-    </script>
+        crossorigin=""></script>
 
     <script>
         var mapCenter = [

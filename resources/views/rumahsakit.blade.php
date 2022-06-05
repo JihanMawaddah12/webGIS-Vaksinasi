@@ -24,7 +24,7 @@
                             </th>
                             <th>Rumah sakit</th>
                             <th>Email</th>
-                            <th>Actions</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,7 +44,7 @@
                                                 title="Edit">&#xE254;</i></a>
                                         <button type="submit" class="delete show_confirm border-0 p-0 bg-transparent"><i
                                                 class="material-icons" data-toggle="tooltip"
-                                                title="Delete">&#xE872;</i></button>
+                                                title="Hapus">&#xE872;</i></button>
                                     </form>
                                 </td>
                             </tr>

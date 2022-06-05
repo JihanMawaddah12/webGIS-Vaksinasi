@@ -3,12 +3,12 @@
 @section('content')
     <div class="container">
         <div class="card p-4" style="background-color: #99C4C8">
-            <div class="text-center">
-                <h4>Silahkan klik pada map untuk menentukan lokasi anda saat ini </h4>
-            </div>
+            {{-- <div class="text-center">
+                <h4 class="text-white">Silahkan klik pada map untuk menentukan lokasi anda saat ini </h4>
+            </div> --}}
             <h3 class="card-title text-white">
                 <i class="fas fa-map-marker-alt mr-1 "></i>
-                Maps
+                Silahkan klik pada peta untuk menentukan lokasi anda saat ini
             </h3>
             <div id="map"></div>
         </div>

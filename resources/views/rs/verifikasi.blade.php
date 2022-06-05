@@ -23,7 +23,7 @@
                             <th>Jenis Kelamin</th>
                             <th>No Hp</th>
                             <th>Tanggal Pendaftaran</th>
-                            <th>Actions</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,7 +42,7 @@
                                     <form action="{{ route('pendaftaran hapus', ['id' => $item->id]) }}" method="get">
                                         <button type="submit" class="delete show_confirm border-0 p-0 bg-transparent"><i
                                                 class="material-icons" data-toggle="tooltip"
-                                                title="Delete">&#xE872;</i></button>
+                                                title="Hapus">&#xE872;</i></button>
                                     </form>
                                 </td>
                             </tr>

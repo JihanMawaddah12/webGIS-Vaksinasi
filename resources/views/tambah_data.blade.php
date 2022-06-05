@@ -71,8 +71,7 @@
 
                     </div>
                 </div>
-                <button class="btn btn-primary float-end text-white" style="background-color: #1D5C63"
-                    type="submit">Tambah</button>
+                <button class="btn float-end text-white" style="background-color: #417D7A" type="submit">Tambah</button>
             </form>
         </div>
     </div>

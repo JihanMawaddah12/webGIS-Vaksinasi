@@ -30,7 +30,8 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary float-end mt-4" type="submit">Update</button>
+                <button class="btn float-end mt-4 text-white" type="submit"
+                    style="background-color: #1D5C63">Update</button>
             </form>
         </div>
     </div>

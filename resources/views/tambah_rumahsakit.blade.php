@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Rumah Sakit</label> 
+                            <label>Rumah Sakit</label>
                             <select name="halaman_data2_id" id="" required class="form-control">
                                 <option value="">--Pilih Rumah Sakit--</option>
                                 @foreach ($data as $item)
@@ -26,9 +26,8 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary float-end mt-4" type="submit">Tambah</button>
+                <button class="btn float-end text-white" style="background-color: #417D7A" type="submit">Tambah</button>
             </form>
         </div>
     </div>
-   
 @endsection
