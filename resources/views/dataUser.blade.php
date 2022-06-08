@@ -295,6 +295,55 @@ http://www.tooplate.com/view/2091-ziggy
                         </div>
                     </section>
 
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header" style="background-color: #D4ECDD">
+                                <h3 class="card-title">Capaian Kelompok</h3>
+                            </div>
+                            <div class="card-body" style="display: block;">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <div class="chart-responsive" id="pie">
+                                            <div id="dosis1-pie" class="collapse show">
+                                                <canvas id="pie-dosis1" height="393" width="789" class="pie">
+                                            </div>
+                                            <div id="dosis2-pie" class="collapse">
+                                                <canvas id="pie-dosis2" height="393" width="789" class="pie">
+                                            </div>
+                                            <div id="dosis3-pie" class="collapse">
+                                                <canvas id="pie-dosis3" height="393" width="789" class="pie">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <ul class="chart-legend clearfix">
+                                            <li>
+                                                <button class="btn bg-transparent" id="bdosis1">
+                                                    <i class="far fa-circle text-danger">
+                                                    </i>
+                                                    Dosis 1
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button class="btn bg-transparent" id="bdosis2">
+                                                    <i class="far fa-circle text-success"></i>
+                                                    Dosis 2
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button class="btn bg-transparent" id="bdosis3">
+                                                    <i class="far fa-circle text-warning"></i>
+                                                    Dosis 3
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div class="row">
@@ -390,7 +439,7 @@ http://www.tooplate.com/view/2091-ziggy
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-header" style="background-color:#DED9C4">
-                            <h3 class="card-title text-white">Dosis Terendah</h3>
+                            <h3 class="card-title text-white">Capaian Terendah</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn" data-bs-toggle="collapse"
                                     data-bs-target="#dosis3">
@@ -439,7 +488,7 @@ http://www.tooplate.com/view/2091-ziggy
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-header" style="background-color:#89b5af">
-                            <h3 class="card-title text-white">Dosis Tertinggi</h3>
+                            <h3 class="card-title text-white">Capaian Tertinggi</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn" data-bs-toggle="collapse"
                                     data-bs-target="#dosis4">
@@ -489,7 +538,7 @@ http://www.tooplate.com/view/2091-ziggy
                         <div class="card-header border-0">
                             <h3 class="card-title">
                                 <i class="fas fa-map-marker-alt mr-1"></i>
-                                Peta
+                                Capaian Kecamatan
                             </h3>
 
                         </div>
@@ -499,55 +548,6 @@ http://www.tooplate.com/view/2091-ziggy
 
                     </div>
                 </section>
-
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header" style="background-color: #D4ECDD">
-                            <h3 class="card-title">Capaian Kelompok</h3>
-                        </div>
-                        <div class="card-body" style="display: block;">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <div class="chart-responsive" id="pie">
-                                        <div id="dosis1-pie" class="collapse show">
-                                            <canvas id="pie-dosis1" height="393" width="789" class="pie">
-                                        </div>
-                                        <div id="dosis2-pie" class="collapse">
-                                            <canvas id="pie-dosis2" height="393" width="789" class="pie">
-                                        </div>
-                                        <div id="dosis3-pie" class="collapse">
-                                            <canvas id="pie-dosis3" height="393" width="789" class="pie">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <ul class="chart-legend clearfix">
-                                        <li>
-                                            <button class="btn bg-transparent" id="bdosis1">
-                                                <i class="far fa-circle text-danger">
-                                                </i>
-                                                Dosis 1
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button class="btn bg-transparent" id="bdosis2">
-                                                <i class="far fa-circle text-success"></i>
-                                                Dosis 2
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button class="btn bg-transparent" id="bdosis3">
-                                                <i class="far fa-circle text-warning"></i>
-                                                Dosis 3
-                                            </button>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
     </section>
     <footer>
@@ -609,14 +609,14 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         datasets: [{
             label: 'Dosis 1 ',
             backgroundColor: [
-                'rgb(244, 191, 191)',
-                'rgb(255, 217, 192)',
-                'rgb(255, 229, 157)',
-                'rgb(140, 192, 222)',
-                'rgb(162, 179, 139)',
-                'rgb(230, 186, 149)'
+                '#7D1E6A',
+                '#243A73',
+                '#CC7351',
+                '#056676',
+                '#555555',
+                '#EEBB4D'
             ],
-            borderColor: 'rgb(250, 253, 214)',
+            borderColor: '#000000',
             data: [{!! json_encode($dosis1_nakes) !!}, {!! json_encode($dosis1_petugas) !!}, {!! json_encode($dosis1_lansia) !!},
                 {!! json_encode($dosis1_masyarakat) !!}, {!! json_encode($dosis1_remaja) !!}, {!! json_encode($dosis1_usia) !!}
             ],
@@ -656,20 +656,20 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     );
 </script>
 <script>
-    var labelPie2 = ['Nakes', 'Petugas', 'Lansia', 'Masyarakat', 'Remaja', 'Usia'];
+    var labelPie2 = ['Tenaga Kesehatan', 'Petugas Publik', 'Lansia', 'Masyarakat Umum', 'Remaja', 'Usia 6-11 Tahun'];
     const dataPie2 = {
         labels: labelPie2,
         datasets: [{
             label: 'Dosis 2 ',
             backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'purple',
-                'blue',
-                'red',
-                'green'
+                '#7D1E6A',
+                '#243A73',
+                '#CC7351',
+                '#056676',
+                '#555555',
+                '#EEBB4D'
             ],
-            borderColor: 'rgb(255, 99, 132)',
+            borderColor: '#000000',
             data: [{!! json_encode($dosis2_nakes) !!}, {!! json_encode($dosis2_petugas) !!}, {!! json_encode($dosis2_lansia) !!},
                 {!! json_encode($dosis2_masyarakat) !!}, {!! json_encode($dosis2_remaja) !!}, {!! json_encode($dosis2_usia) !!}
             ],
@@ -709,20 +709,20 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     );
 </script>
 <script>
-    var labelPie3 = ['Nakes', 'Petugas', 'Lansia', 'Masyarakat', 'Remaja', 'Usia'];
+    var labelPie3 = ['Tenaga Kesehatan', 'Petugas Publik', 'Lansia', 'Masyarakat Umum', 'Remaja', 'Usia 6-11 Tahun'];
     const dataPie3 = {
         labels: labelPie3,
         datasets: [{
             label: 'Dosis 2 ',
             backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'purple',
-                'blue',
-                'red',
-                'green'
+                '#7D1E6A',
+                '#243A73',
+                '#CC7351',
+                '#056676',
+                '#555555',
+                '#EEBB4D'
             ],
-            borderColor: 'rgb(255, 99, 132)',
+            borderColor: '#000000',
             data: [{!! json_encode($dosis3_nakes) !!}, {!! json_encode($dosis3_petugas) !!}, {!! json_encode($dosis3_lansia) !!},
                 {!! json_encode($dosis3_masyarakat) !!}, {!! json_encode($dosis3_remaja) !!}, {!! json_encode($dosis3_usia) !!}
             ],
