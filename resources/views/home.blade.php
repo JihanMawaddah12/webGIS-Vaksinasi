@@ -42,7 +42,9 @@
                         <span class="info-box-text" style="font-size:16px !important">Total Vaksinasi Dosis 1</span>
                         <span class="info-box-number" style="font-size:15px !important">{{ $dosis1 }}</span>
                         <div class="progress">
-                            <div class="progress-bar" style="width: 80%"></div>
+                            <div class="progress-bar"
+                                style="width: {{ $dosis1 ? number_format((float) ($dosis1 / $target) * 100, 2, '.', '') : 0 }}%">
+                            </div>
                         </div>
                         <span class="Progress-description" style="font-size:15px !important">
                             @if ($dosis1)
@@ -63,7 +65,9 @@
                         <span class="info-box-text" style="font-size:16px !important">Total Vaksinasi Dosis 2</span>
                         <span class="info-box-number" style="font-size:15px !important">{{ $dosis2 }}</span>
                         <div class="progress">
-                            <div class="progress-bar" style="width: 80%"></div>
+                            <div class="progress-bar"
+                                style="width: {{ $dosis2 ? number_format((float) ($dosis2 / $target) * 100, 2, '.', '') : 0 }}% ">
+                            </div>
                         </div>
                         <span class="Progress-description" style="font-size:15px !important">
                             @if ($dosis2)
@@ -86,7 +90,9 @@
                         <span class="info-box-number text-white"
                             style="font-size:15px !important">{{ $dosis3 }}</span>
                         <div class="progress">
-                            <div class="progress-bar" style="width: 30%"></div>
+                            <div class="progress-bar"
+                                style="width: {{ $dosis3 ? number_format((float) ($dosis3 / $target) * 100, 2, '.', '') : 0 }}% ">
+                            </div>
                         </div>
                         <span class="Progress-description text-white" style="font-size:15px !important">
                             @if ($dosis2)
@@ -420,6 +426,22 @@
                 </div>
             </section>
 
+            <section class="col-md-6">
+                <div class="card" style="background-color: #D4ECDD">
+                    <div class="card-header border-0">
+                        <h3 class="card-title">
+                            <i class="fas fa-map-marker-alt mr-1"></i>
+                            Capaian Desa
+                        </h3>
+
+                    </div>
+                    <div class="card-body">
+                        <div id="map" style="height: 400px; width: 100%;"></div>
+                    </div>
+
+                </div>
+            </section>
+
 
             <div class="row">
 
@@ -606,7 +628,7 @@
                 const dataPie3 = {
                     labels: labelPie3,
                     datasets: [{
-                        label: 'Dosis 2 ',
+                        label: 'Dosis 3 ',
                         backgroundColor: [
                             '#7D1E6A',
                             '#243A73',
@@ -802,7 +824,7 @@
                 var color = {!! json_encode($color) !!};
                 var datamap = {!! json_encode($data) !!}
                 var map = L.map('map').setView(
-                    s, 11
+                    s, 12
                 );
 
 
@@ -820,7 +842,9 @@
                 };
                 //menampilkan pop up info tematik
                 info.update = function(props) {
-
+                    this._div.innerHTML = '<h4>Kecamatan</h4>' + (props ?
+                        '<b>' + props.NAMOBJ :
+                        'Gerakkan mouse Anda');
                 };
 
                 info.addTo(map);
@@ -900,8 +924,8 @@
                         marker = new L.Marker(new L.latLng(loc), {
                             title: title
                         }); //se property searched
-                    marker.bindPopup(title);
-                    markersLayer.addLayer(marker);
+                    // marker.bindPopup(title);
+                    // markersLayer.addLayer(marker);
                 }
             </script>
         @endpush

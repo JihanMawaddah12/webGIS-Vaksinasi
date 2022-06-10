@@ -87,7 +87,7 @@
         var target = {!! json_encode($jmlh_target) !!}
 
         var map = L.map('map').setView(
-            s, 11
+            s, 13
         );
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

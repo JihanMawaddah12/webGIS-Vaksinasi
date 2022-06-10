@@ -549,6 +549,22 @@ http://www.tooplate.com/view/2091-ziggy
                     </div>
                 </section>
 
+                <section class="col-lg-6 col-6">
+                    <div class="card" style="background-color: #D4ECDD">
+                        <div class="card-header border-0">
+                            <h3 class="card-title">
+                                <i class="fas fa-map-marker-alt mr-1"></i>
+                                Capaian Desa
+                            </h3>
+
+                        </div>
+                        <div class="card-body">
+                            <div id="map" style="height: 380px; width: 100%;"></div>
+                        </div>
+
+                    </div>
+                </section>
+
     </section>
     <footer>
         <div class="container">
@@ -908,7 +924,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     var color = {!! json_encode($color) !!};
     var datamap = {!! json_encode($data) !!}
     var map = L.map('map').setView(
-        s, 11
+        s, 12
     );
 
 
@@ -926,7 +942,9 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     };
     //menampilkan pop up info tematik
     info.update = function(props) {
-
+        this._div.innerHTML = '<h4>Kecamatan</h4>' + (props ?
+            '<b>' + props.NAMOBJ :
+            'Gerakkan mouse Anda');
     };
 
     info.addTo(map);
@@ -937,7 +955,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             opacity: 1,
             color: 'black',
             dashArray: '3',
-            fillOpacity: 0.7,
+            fillOpacity: 0.9,
             fillColor: color[feature.properties.NAMOBJ]
         };
 
@@ -1009,11 +1027,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     map.addControl(controlSearch);
     for (var i = 0; i < datamap.length; i++) {
         var title = datamap[i][0], //value searched
-            loc = [datamap[i][1], datamap[i][2]], //position found
+            tematik = [datamap[i][1], datamap[i][2]], //position found
             marker = new L.Marker(new L.latLng(loc), {
                 title: title
             }); //se property searched
-        marker.bindPopup(title);
-        markersLayer.addLayer(marker);
+        // marker.bindPopup(title);
+        // markersLayer.addLayer(marker);
     }
 </script>

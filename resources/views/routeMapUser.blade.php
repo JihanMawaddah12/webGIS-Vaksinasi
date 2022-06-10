@@ -172,7 +172,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     var s = [5.554630942893766, 95.31709742351293];
     var data = {!! json_encode($data) !!}
     var map = L.map('map').setView(
-        s, 11
+        s, 13
     );
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -264,7 +264,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         position: 'topleft',
         layer: markersLayer,
         initial: false,
-        zoom: 12,
+        zoom: 15,
         marker: {
             icon: true
         },

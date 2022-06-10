@@ -83,7 +83,7 @@
         var jumlah = {!! json_encode($jumlah) !!}
         var target = {!! json_encode($jmlh_target) !!}
         var map = L.map('map').setView(
-            s, 11
+            s, 13
         );
 
 
@@ -161,7 +161,7 @@
                 labels.push(
                     '<i style="background:' + color[tematik[i]] + '"></i> - ' + tematik[i]);
             }
-            div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
+            div.innerHTML = '<h4>Keterangan:</h4>' + labels.join('<br>');
             return div;
         };
 

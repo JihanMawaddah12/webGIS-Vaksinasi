@@ -88,7 +88,7 @@
         var s = [5.554630942893766, 95.31709742351293];
         var data = {!! json_encode($data) !!}
         var map = L.map('map').setView(
-            s, 11
+            s, 13
         );
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
