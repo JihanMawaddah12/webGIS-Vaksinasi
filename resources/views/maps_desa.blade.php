@@ -58,7 +58,6 @@
             overflow-y: auto;
             padding: 5px;
         }
-
     </style>
 @endsection
 
@@ -96,13 +95,21 @@
 
 
         function style(feature) {
+            warna = "";
+            if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah[dosis][  feature.properties.NAMOBJ ] / target[feature.properties.NAMOBJ]) * 100 <= 39) {
+                warna = 'red';
+            } else if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 40 && (  jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 69) {
+                warna = 'yellow';
+            } else if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 70) {
+                warna = 'green';
+            }
             return {
                 weight: 2,
                 opacity: 1,
                 color: 'white',
                 dashArray: '3',
                 fillOpacity: 1.0,
-                fillColor: color[feature.properties.NAMOBJ]
+                fillColor: warna
             };
         }
         var geojson;
@@ -141,6 +148,10 @@
             if (feature.properties) {
                 layer.bindPopup('', {
                     maxHeight: 200
+                }),layer.bindTooltip(feature.properties.NAMOBJ,{
+                    permanent:true,
+                    direction:'center',
+                    className:'bg-transparent border-0 text-white shadow-none font-weight-bold'
                 });
                 layer.on('popupopen', updatePopup);
             }
@@ -160,22 +171,61 @@
             position: 'bottomright'
         });
 
-
+        var dosis = '1';
         legend.onAdd = function(map) {
-
-            var div = L.DomUtil.create('div', 'info legend'),
-                grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
-                from, to;
-            labels = []
+            var div = L.DomUtil.create('div', 'info legend')
+            var labels = ''
             for (var i = 0; i < tematik.length; i++) {
-                labels.push(
-                    '<i style="background:' + color[tematik[i]] + '"></i> - ' + tematik[i]);
+                warna = "";
+                if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 0 && (jumlah[dosis][tematik[i]] / target[
+                        tematik[i]]) * 100 <= 39) {
+                    warna = 'red';
+                } else if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 40 && (jumlah[dosis][tematik[i]] /
+                        target[tematik[i]]) * 100 <= 69) {
+                    warna = 'yellow';
+                } else if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 70) {
+                    warna = 'green';
+                }
+                geojsonLayer.setStyle({
+                    fillColor: warna
+                })
+              
             }
-
-            div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
+            labels =
+                    '<i style="background:red"></i> - 0-39 </br></br>' +
+                    '<i style="background:yellow"></i> - 40-69 </br></br> ' +
+                    '<i style="background:green"></i> - 70-100 </br></br>' ;
+            div.innerHTML =
+                '<div class="row mb-2">' +
+                '<div class="col">' +
+                '<button class="btn btn-info text-white" id="dosis1" onclick="dosis = \'1\';legend.addTo(map);update()">Dosis 1<button>' +
+                '</div>' +
+                '<div class="col">' +
+                '<button class="btn btn-info text-white" id="dosis2" onclick="dosis = \'2\';legend.addTo(map);update()">Dosis 2</button>' +
+                '</div>' +
+                '<div class="col">' +
+                '<button class="btn btn-info text-white" id="dosis3" onclick="dosis = \'3\';legend.addTo(map);update()">Dosis 3</button>' +
+                '</div>' +
+                '</div> <br>' + labels;
             return div;
+
         };
 
+        function update() {
+            if (dosis == '1') {
+                document.getElementById('dosis1').style.backgroundColor = 'lightGreen'
+                document.getElementById('dosis2').style.backgroundColor = '#0dcaf0'
+                document.getElementById('dosis3').style.backgroundColor = '#0dcaf0'
+            } else if (dosis == '2') {
+                document.getElementById('dosis1').style.backgroundColor = '#0dcaf0'
+                document.getElementById('dosis2').style.backgroundColor = 'lightGreen'
+                document.getElementById('dosis3').style.backgroundColor = '#0dcaf0'
+            } else if (dosis == '3') {
+                document.getElementById('dosis1').style.backgroundColor = '#0dcaf0'
+                document.getElementById('dosis2').style.backgroundColor = '#0dcaf0'
+                document.getElementById('dosis3').style.backgroundColor = 'lightGreen'
+            }
+        }
         legend.addTo(map);
         var controlSearch = new L.Control.Search({
             position: 'topleft',
