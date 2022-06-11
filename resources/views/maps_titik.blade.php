@@ -71,7 +71,7 @@
         var data = {!! json_encode($data) !!}
 
         var map = L.map('map').setView(
-            s, 11
+            s, 13
         );
 
 
@@ -146,7 +146,7 @@
         });
         controlSearch.on('search:locationfound', function(e) {
 
-           e.layer.openPopup();
+            e.layer.openPopup();
 
         }).on('search:collapsed', function(e) {});
 

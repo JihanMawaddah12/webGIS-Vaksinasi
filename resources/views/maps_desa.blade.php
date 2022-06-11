@@ -4,7 +4,7 @@
     <div class="container">
         <div class="card p-4">
             <div class="text-end">
-                <button id="printBtn" class="btn btn-danger mb-2">Print map</button>
+                <button id="printBtn" class="btn btn-success mb-2">Cetak Peta</button>
             </div>
             <div id="map"></div>
         </div>
@@ -86,7 +86,7 @@
         var target = {!! json_encode($jmlh_target) !!}
 
         var map = L.map('map').setView(
-            s, 11
+            s, 13
         );
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="card p-4">
             <div class="text-end">
-                <button id="printBtn" class="btn btn-danger mb-2">Print map</button>
+                <button id="printBtn" class="btn btn-success mb-2">Cetak Peta</button>
             </div>
             <div id="map"></div>
         </div>
@@ -82,7 +82,7 @@
         var jumlah = {!! json_encode($jumlah) !!}
         var target = {!! json_encode($jmlh_target) !!}
         var map = L.map('map').setView(
-            s, 11
+            s, 13
         );
 
 
@@ -183,7 +183,7 @@
               labels =
                     '<i style="background:red"></i> - 0-39 </br></br>' +
                     '<i style="background:yellow"></i> - 40-69 </br></br> ' +
-                    '<i style="background:green"></i> - 70-100 </br></br>' ;
+                    '<i style="backgound:green"></i> - 70-100 </br></br>' ;
             div.innerHTML =
                 '<div class="row mb-2">' +
                 '<div class="col">' +

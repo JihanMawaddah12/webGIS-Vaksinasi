@@ -42,7 +42,9 @@
                         <span class="info-box-text" style="font-size:16px !important">Total Vaksinasi Dosis 1</span>
                         <span class="info-box-number" style="font-size:15px !important">{{ $dosis1 }}</span>
                         <div class="progress">
-                            <div class="progress-bar" style="width: 80%"></div>
+                            <div class="progress-bar"
+                                style="width: {{ $dosis1 ? number_format((float) ($dosis1 / $target) * 100, 2, '.', '') : 0 }}%">
+                            </div>
                         </div>
                         <span class="Progress-description" style="font-size:15px !important">
                             @if ($dosis1)
@@ -63,7 +65,9 @@
                         <span class="info-box-text" style="font-size:16px !important">Total Vaksinasi Dosis 2</span>
                         <span class="info-box-number" style="font-size:15px !important">{{ $dosis2 }}</span>
                         <div class="progress">
-                            <div class="progress-bar" style="width: 80%"></div>
+                            <div class="progress-bar"
+                                style="width: {{ $dosis2 ? number_format((float) ($dosis2 / $target) * 100, 2, '.', '') : 0 }}% ">
+                            </div>
                         </div>
                         <span class="Progress-description" style="font-size:15px !important">
                             @if ($dosis2)
@@ -86,7 +90,9 @@
                         <span class="info-box-number text-white"
                             style="font-size:15px !important">{{ $dosis3 }}</span>
                         <div class="progress">
-                            <div class="progress-bar" style="width: 30%"></div>
+                            <div class="progress-bar"
+                                style="width: {{ $dosis3 ? number_format((float) ($dosis3 / $target) * 100, 2, '.', '') : 0 }}% ">
+                            </div>
                         </div>
                         <span class="Progress-description text-white" style="font-size:15px !important">
                             @if ($dosis2)
@@ -102,7 +108,7 @@
         <div class="mb-2">
             <div class="row">
 
-                <section class="col connectedSortable">
+                <section class="col-md-6 connectedSortable">
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">
@@ -147,15 +153,15 @@
                                 <div class="tab-content p-0">
                                     <!-- Morris chart - Sales -->
                                     <div class="chart tab-pane active" id="grafik1-button"
-                                        style="position: relative; height: 300px;">
+                                        style="position: relative; height: 350px;">
                                         <canvas id="grafik1" height="300" style="height: 300px;"></canvas>
                                     </div>
                                     <div class="chart tab-pane" id="grafik2-button"
-                                        style="position: relative; height: 300px;">
+                                        style="position: relative; height: 350px;">
                                         <canvas id="grafik2" height="300" style="height: 300px;"></canvas>
                                     </div>
                                     <div class="chart tab-pane" id="grafik3-button"
-                                        style="position: relative; height: 300px;">
+                                        style="position: relative; height: 350px;">
                                         <canvas id="grafik3" height="300" style="height: 300px;"></canvas>
                                     </div>
                                 </div>
@@ -163,17 +169,69 @@
                         </div><!-- /.card-body -->
                     </div>
                 </section>
+
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header" style="background-color: #D4ECDD">
+                            <h3 class="card-title">Capaian Kelompok</h3>
+                        </div>
+                        <div class="card-body" style="display: block;">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="chart-responsive" id="pie">
+                                        <div id="dosis1-pie" class="collapse show">
+                                            <canvas id="pie-dosis1" height="393" width="789" class="pie">
+                                        </div>
+                                        <div id="dosis2-pie" class="collapse">
+                                            <canvas id="pie-dosis2" height="393" width="789" class="pie">
+                                        </div>
+                                        <div id="dosis3-pie" class="collapse">
+                                            <canvas id="pie-dosis3" height="393" width="789" class="pie">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <ul class="chart-legend clearfix">
+                                        <li>
+                                            <button class="btn bg-transparent" id="bdosis1">
+                                                <i class="far fa-circle text-danger">
+                                                </i>
+                                                Dosis 1
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="btn bg-transparent" id="bdosis2">
+                                                <i class="far fa-circle text-success"></i>
+                                                Dosis 2
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="btn bg-transparent" id="bdosis3">
+                                                <i class="far fa-circle text-warning"></i>
+                                                Dosis 3
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
 
+
         <div class="row">
-            <div class="col-md-3">
+            {{-- <div class="col-md-3">
                 <div class="card card-primary">
                     <div class="card-header" style="background-color:#D0CAB2">
                         <h3 class="card-title">Dosis Terendah<br>(Kecamatan)</h3>
                         <div class="card-tools">
                             <button type="button" class="btn" data-bs-toggle="collapse" data-bs-target="#dosis1">
-                                <i class="fas fa-plus"></i>
+                                <i class="fa fa-caret-down"></i>
                             </button>
                         </div>
                     </div>
@@ -218,7 +276,7 @@
                         <h3 class="card-title text-white">Dosis Tertinggi<br>(Kecamatan)</h3>
                         <div class="card-tools">
                             <button type="button" class="btn" data-bs-toggle="collapse" data-bs-target="#dosis2">
-                                <i class="fas fa-plus"></i>
+                                <i class="fa fa-caret-down"></i>
                             </button>
                         </div>
                     </div>
@@ -253,21 +311,22 @@
                             @endif
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-header" style="background-color:#DED9C4">
-                        <h3 class="card-title text-white">Dosis Terendah<br>(Desa)</h3>
+                        <h3 class="card-title text-white">Capaian Terendah</h3>
                         <div class="card-tools">
                             <button type="button" class="btn" data-bs-toggle="collapse" data-bs-target="#dosis3">
-                                <i class="fas fa-plus"></i>
+                                <i class="fa fa-caret-down"></i>
                             </button>
                         </div>
                     </div>
                     <div class="card-body collapse" id="dosis3">
                         <h3 style="font-size:20px !important">Dosis 1</h3>
                         @if ($drendah1)
+                            <h6>Kecamatan {{ $krendah1->tematik->kecamatan }}</h6>
                             <h6>Desa {{ $drendah1->desa->desa }}</h6>
                             <h6>Jumlah {{ $drendah1->total }}</h6>
                             <h3 style="font-size:20px !important">
@@ -278,6 +337,7 @@
                         <hr class="text-white bg-black" />
                         <h3 style="font-size:20px !important">Dosis 2</h3>
                         @if ($drendah2)
+                            <h6>Kecamatan {{ $krendah2->tematik->kecamatan }}</h6>
                             <h6>Desa {{ $drendah2->desa->desa }}</h6>
                             <h6>Jumlah {{ $drendah2->total }}</h6>
                             <h3 style="font-size:20px !important">
@@ -288,6 +348,7 @@
                         <hr class="text-white bg-black" />
                         <h3 style="font-size:20px !important">Dosis 3</h3>
                         @if ($drendah3)
+                            <h6>Kecamatan {{ $krendah3->tematik->kecamatan }}</h6>
                             <h6>Desa {{ $drendah3->desa->desa }}</h6>
                             <h6>Jumlah {{ $drendah3->total }}</h6>
                             <h3 style="font-size:20px !important">
@@ -300,20 +361,21 @@
             </div>
 
             <!-- ./col -->
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-header" style="background-color:#89b5af">
-                        <h3 class="card-title text-white">Dosis Tertinggi<br>(Desa)</h3>
+                        <h3 class="card-title text-white">Capaian Tertinggi</h3>
                         <div class="card-tools">
                             <button type="button" class="btn" data-bs-toggle="collapse"
                                 data-bs-target="#dosis4">
-                                <i class="fas fa-plus"></i>
+                                <i class="fa fa-caret-down"></i>
                             </button>
                         </div>
                     </div>
                     <div class="card-body collapse" id="dosis4">
                         <h3 style="font-size:20px !important"> Dosis 1 </h3>
                         @if ($dtinggi1)
+                            <h6>Kecamatan {{ $ktinggi1->tematik->kecamatan }}</h6>
                             <h6>Desa {{ $dtinggi1->desa->desa }}</h6>
                             <h6>Jumlah {{ $dtinggi1->total }}</h6>
                             <h3 style="font-size:20px !important">
@@ -324,6 +386,7 @@
                         <hr class="text-white bg-black">
                         <h3 style="font-size:20px !important"> Dosis 2 </h3>
                         @if ($dtinggi2)
+                            <h6>Kecamatan {{ $ktinggi2->tematik->kecamatan }}</h6>
                             <h6>Desa {{ $dtinggi2->desa->desa }}</h6>
                             <h6>Jumlah {{ $dtinggi2->total }}</h6>
                             <h3 style="font-size:20px !important">
@@ -335,6 +398,7 @@
                         <h3 style="font-size:20px !important">
                             Dosis 3 </h3>
                         @if ($dtinggi3)
+                            <h6>Kecamatan {{ $ktinggi3->tematik->kecamatan }}</h6>
                             <h6>Desa {{ $dtinggi3->desa->desa }}</h6>
                             <h6>Jumlah {{ $dtinggi3->total }}</h6>
                             <h3 style="font-size:20px !important">
@@ -351,70 +415,33 @@
                     <div class="card-header border-0">
                         <h3 class="card-title">
                             <i class="fas fa-map-marker-alt mr-1"></i>
-                            Maps
+                            Capaian Kecamatan
                         </h3>
 
                     </div>
                     <div class="card-body">
-                        <div id="map" style="height: 350px; width: 100%;"></div>
+                        <div id="map" style="height: 400px; width: 100%;"></div>
                     </div>
 
                 </div>
             </section>
 
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Tenaga Kesehatan</h3>
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card="collapse">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card-body" style="display: block;">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="chart-responsive" id="pie">
-                                    <div id="dosis1-pie" class="collapse show">
-                                        <canvas id="pie-dosis1" height="393" width="789" class="pie">
-                                    </div>
-                                    <div id="dosis2-pie" class="collapse">
-                                        <canvas id="pie-dosis2" height="393" width="789" class="pie">
-                                    </div>
-                                    <div id="dosis3-pie" class="collapse">
-                                        <canvas id="pie-dosis3" height="393" width="789" class="pie">
-                                    </div>
-                                </div>
-                            </div>
+            <section class="col-md-6">
+                <div class="card" style="background-color: #D4ECDD">
+                    <div class="card-header border-0">
+                        <h3 class="card-title">
+                            <i class="fas fa-map-marker-alt mr-1"></i>
+                            Capaian Desa
+                        </h3>
 
-                            <div class="col-md-4">
-                                <ul class="chart-legend clearfix">
-                                    <li>
-                                        <button class="btn bg-transparent" id="bdosis1">
-                                            <i class="far fa-circle text-danger">
-                                            </i>
-                                            Dosis 1
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="btn bg-transparent" id="bdosis2">
-                                            <i class="far fa-circle text-success"></i>
-                                            Dosis 2
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="btn bg-transparent" id="bdosis3">
-                                            <i class="far fa-circle text-warning"></i>
-                                            Dosis 3
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
+                    <div class="card-body">
+                        <div id="map" style="height: 400px; width: 100%;"></div>
+                    </div>
+
                 </div>
-            </div>
+            </section>
+
 
             <div class="row">
 
@@ -491,20 +518,20 @@
                 });
             </script>
             <script>
-                var labelPie = ['Nakes', 'Petugas', 'Lansia', 'Masyarakat', 'Remaja', 'Usia'];
+                var labelPie = ['Tenaga Kesehatan', 'Petugas Publik', 'Lansia', 'Masyarakat Umum', 'Remaja', 'Usia 6-11 Tahun'];
                 const dataPie = {
                     labels: labelPie,
                     datasets: [{
                         label: 'Dosis 1 ',
                         backgroundColor: [
-                            'rgb(255, 99, 132)',
-                            'rgb(54, 162, 235)',
-                            'purple',
-                            'blue',
-                            'red',
-                            'green'
+                            '#7D1E6A',
+                            '#243A73',
+                            '#CC7351',
+                            '#056676',
+                            '#555555',
+                            '#EEBB4D'
                         ],
-                        borderColor: 'rgb(255, 99, 132)',
+                        borderColor: '#000000',
                         data: [{!! json_encode($dosis1_nakes) !!}, {!! json_encode($dosis1_petugas) !!}, {!! json_encode($dosis1_lansia) !!},
                             {!! json_encode($dosis1_masyarakat) !!}, {!! json_encode($dosis1_remaja) !!}, {!! json_encode($dosis1_usia) !!}
                         ],
@@ -544,20 +571,20 @@
                 );
             </script>
             <script>
-                var labelPie2 = ['Nakes', 'Petugas', 'Lansia', 'Masyarakat', 'Remaja', 'Usia'];
+                var labelPie2 = ['Tenaga Kesehatan', 'Petugas Publik', 'Lansia', 'Masyarakat Umum', 'Remaja', 'Usia 6-11 Tahun'];
                 const dataPie2 = {
                     labels: labelPie2,
                     datasets: [{
                         label: 'Dosis 2 ',
                         backgroundColor: [
-                            'rgb(255, 99, 132)',
-                            'rgb(54, 162, 235)',
-                            'purple',
-                            'blue',
-                            'red',
-                            'green'
+                            '#7D1E6A',
+                            '#243A73',
+                            '#CC7351',
+                            '#056676',
+                            '#555555',
+                            '#EEBB4D'
                         ],
-                        borderColor: 'rgb(255, 99, 132)',
+                        borderColor: '#000000',
                         data: [{!! json_encode($dosis2_nakes) !!}, {!! json_encode($dosis2_petugas) !!}, {!! json_encode($dosis2_lansia) !!},
                             {!! json_encode($dosis2_masyarakat) !!}, {!! json_encode($dosis2_remaja) !!}, {!! json_encode($dosis2_usia) !!}
                         ],
@@ -597,20 +624,20 @@
                 );
             </script>
             <script>
-                var labelPie3 = ['Nakes', 'Petugas', 'Lansia', 'Masyarakat', 'Remaja', 'Usia'];
+                var labelPie3 = ['Tenaga Kesehatan', 'Petugas Publik', 'Lansia', 'Masyarakat Umum', 'Remaja', 'Usia 6-11 Tahun'];
                 const dataPie3 = {
                     labels: labelPie3,
                     datasets: [{
-                        label: 'Dosis 2 ',
+                        label: 'Dosis 3 ',
                         backgroundColor: [
-                            'rgb(255, 99, 132)',
-                            'rgb(54, 162, 235)',
-                            'purple',
-                            'blue',
-                            'red',
-                            'green'
+                            '#7D1E6A',
+                            '#243A73',
+                            '#CC7351',
+                            '#056676',
+                            '#555555',
+                            '#EEBB4D'
                         ],
-                        borderColor: 'rgb(255, 99, 132)',
+                        borderColor: '#000000',
                         data: [{!! json_encode($dosis3_nakes) !!}, {!! json_encode($dosis3_petugas) !!}, {!! json_encode($dosis3_lansia) !!},
                             {!! json_encode($dosis3_masyarakat) !!}, {!! json_encode($dosis3_remaja) !!}, {!! json_encode($dosis3_usia) !!}
                         ],
@@ -797,7 +824,7 @@
                 var color = {!! json_encode($color) !!};
                 var datamap = {!! json_encode($data) !!}
                 var map = L.map('map').setView(
-                    s, 11
+                    s, 12
                 );
 
 
@@ -815,7 +842,9 @@
                 };
                 //menampilkan pop up info tematik
                 info.update = function(props) {
-
+                    this._div.innerHTML = '<h4>Kecamatan</h4>' + (props ?
+                        '<b>' + props.NAMOBJ :
+                        'Gerakkan mouse Anda');
                 };
 
                 info.addTo(map);
@@ -895,8 +924,8 @@
                         marker = new L.Marker(new L.latLng(loc), {
                             title: title
                         }); //se property searched
-                    marker.bindPopup(title);
-                    markersLayer.addLayer(marker);
+                    // marker.bindPopup(title);
+                    // markersLayer.addLayer(marker);
                 }
             </script>
         @endpush
