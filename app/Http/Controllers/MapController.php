@@ -32,18 +32,31 @@ class MapController extends Controller
         $vaksins3 = HalamanData::where('kelompok', 'Dosis 3')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('tematik_id'))->get();
         $targets = HalamanData::where('kelompok', 'Target')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('tematik_id'))->get();
         foreach ($tematik as $value) {
-             $jmlh['1'][$value->kecamatan] = 0;
-             $jmlh['2'][$value->kecamatan] = 0;
-             $jmlh['3'][$value->kecamatan] = 0;
+            $jmlh['1'][$value->kecamatan] = 0;
+            $jmlh['2'][$value->kecamatan] = 0;
+            $jmlh['3'][$value->kecamatan] = 0;
         }
         foreach ($vaksins1 as $vaksin) {
-            $jmlh['1'][$vaksin->tematik->kecamatan] = $vaksin->total;
+            if (isset($jmlh['1'][$vaksin->tematik->kecamatan])) {
+                $jmlh['1'][$vaksin->tematik->kecamatan] += $vaksin->total;
+            } else {
+                $jmlh['1'][$vaksin->tematik->kecamatan] = $vaksin->total;
+            }
         }
+
         foreach ($vaksins2 as $vaksin) {
-            $jmlh['2'][$vaksin->tematik->kecamatan] = $vaksin->total;
+            if (isset($jmlh['2'][$vaksin->tematik->kecamatan])) {
+                $jmlh['2'][$vaksin->tematik->kecamatan] += $vaksin->total;
+            } else {
+                $jmlh['2'][$vaksin->tematik->kecamatan] = $vaksin->total;
+            }
         }
         foreach ($vaksins3 as $vaksin) {
-            $jmlh['3'][$vaksin->tematik->kecamatan] = $vaksin->total;
+            if (isset($jmlh['3'][$vaksin->tematik->kecamatan])) {
+                $jmlh['3'][$vaksin->tematik->kecamatan] += $vaksin->total;
+            } else {
+                $jmlh['3'][$vaksin->tematik->kecamatan] = $vaksin->total;
+            }
         }
         foreach ($targets as $target) {
             if (isset($jmlh_target[$target->tematik->kecamatan])) {
@@ -113,13 +126,25 @@ class MapController extends Controller
             $jmlh['3'][$value->desa] = 0;
         }
         foreach ($vaksins1 as $vaksin) {
-            $jmlh['1'][$vaksin->desa->desa] = $vaksin->total;
+            if (isset($jmlh['1'][$vaksin->desa->desa])) {
+                $jmlh['1'][$vaksin->desa->desa] += $vaksin->total;
+            } else {
+                $jmlh['1'][$vaksin->desa->desa] = $vaksin->total;
+            }
         }
         foreach ($vaksins2 as $vaksin) {
-            $jmlh['2'][$vaksin->desa->desa] = $vaksin->total;
+            if (isset($jmlh['2'][$vaksin->desa->desa])) {
+                $jmlh['2'][$vaksin->desa->desa] += $vaksin->total;
+            } else {
+                $jmlh['2'][$vaksin->desa->desa] = $vaksin->total;
+            }
         }
         foreach ($vaksins3 as $vaksin) {
-            $jmlh['3'][$vaksin->desa->desa] = $vaksin->total;
+            if (isset($jmlh['3'][$vaksin->desa->desa])) {
+                $jmlh['3'][$vaksin->desa->desa] += $vaksin->total;
+            } else {
+                $jmlh['3'][$vaksin->desa->desa] = $vaksin->total;
+            }
         }
 
         foreach ($targets as $target) {

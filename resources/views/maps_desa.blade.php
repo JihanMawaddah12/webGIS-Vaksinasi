@@ -84,7 +84,7 @@
         var tematik = {!! json_encode($tematik) !!}
         var jumlah = {!! json_encode($jumlah) !!}
         var target = {!! json_encode($jmlh_target) !!}
-
+        var dosis = '1'
         var map = L.map('map').setView(
             s, 14
         );
@@ -129,9 +129,17 @@
             var propertyValue;
             var feature = evt.target.feature;
             var props = feature.properties;
+            warna = "";
+            if (jumlah[dosis][props.NAMOBJ] >= 0 && jumlah[dosis][props.NAMOBJ] <= 39) {
+                warna = 'red';
+            } else if (jumlah[dosis][props.NAMOBJ] >= 40 && jumlah[dosis][props.NAMOBJ] <= 69) {
+                warna = 'yellow';
+            } else if (jumlah[dosis][props.NAMOBJ] >= 70) {
+                warna = 'green';
+            }
             evt.target.setStyle({
-                fillColor: color[props.NAMOBJ]
-            });
+                fillColor: warna
+            })
             evt.popup.setContent('<h4>Desa</h4>' + (props ?
                 '<b>' + props.NAMOBJ + '</b><br /> Jumlah Vaksin <br/> Dosis 1: ' + jumlah['1'][props.NAMOBJ] +
                 ' orang (' +
@@ -179,23 +187,21 @@
             var div = L.DomUtil.create('div', 'info legend')
             var labels = ''
             for (var i = 0; i < tematik.length; i++) {
-                warna = "";
-                if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 0 && (jumlah[dosis][tematik[i]] / target[
-                        tematik[i]]) * 100 <= 39) {
+              warna = "";
+                if (jumlah[dosis][tematik[i]] >= 0 && jumlah[dosis][tematik[i]] <= 39) {
                     warna = 'red';
-                } else if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 40 && (jumlah[dosis][tematik[i]] /
-                        target[tematik[i]]) * 100 <= 69) {
+                } else if (jumlah[dosis][tematik[i]] >= 40 && jumlah[dosis][tematik[i]] <= 69) {
                     warna = 'yellow';
-                } else if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 70) {
+                } else if (jumlah[dosis][tematik[i]] >= 70) {
                     warna = 'green';
                 }
-               geojsonLayer.eachLayer(function(featureInstanceLayer) {
-                    propertyValue = featureInstanceLayer.feature.properties[[tematik[i]]];
-                    featureInstanceLayer.setStyle({
-                        fillColor: warna,
-                    });
+                geojsonLayer.eachLayer(function(layer) {
+                    if (layer.feature.properties.NAMOBJ == tematik[i]) {
+                        layer.setStyle({
+                            fillColor: warna
+                        })
+                    }
                 });
-              
             }
             labels =
                 '<i style="background:red"></i> - 0-39 </br></br>' +
