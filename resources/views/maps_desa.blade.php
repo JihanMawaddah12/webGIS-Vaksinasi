@@ -130,11 +130,11 @@
             var feature = evt.target.feature;
             var props = feature.properties;
             warna = "";
-            if (jumlah[dosis][props.NAMOBJ] >= 0 && jumlah[dosis][props.NAMOBJ] <= 39) {
+            if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 0 && (jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 <= 39) {
                 warna = 'red';
-            } else if (jumlah[dosis][props.NAMOBJ] >= 40 && jumlah[dosis][props.NAMOBJ] <= 69) {
+            } else if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 40 && (jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 <= 69) {
                 warna = 'yellow';
-            } else if (jumlah[dosis][props.NAMOBJ] >= 70) {
+            } else if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 70) {
                 warna = 'green';
             }
             evt.target.setStyle({
@@ -188,11 +188,11 @@
             var labels = ''
             for (var i = 0; i < tematik.length; i++) {
               warna = "";
-                if (jumlah[dosis][tematik[i]] >= 0 && jumlah[dosis][tematik[i]] <= 39) {
+                if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 0 && (jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 <= 39) {
                     warna = 'red';
-                } else if (jumlah[dosis][tematik[i]] >= 40 && jumlah[dosis][tematik[i]] <= 69) {
+                } else if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 40 && (jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 <= 69) {
                     warna = 'yellow';
-                } else if (jumlah[dosis][tematik[i]] >= 70) {
+                } else if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 70) {
                     warna = 'green';
                 }
                 geojsonLayer.eachLayer(function(layer) {
