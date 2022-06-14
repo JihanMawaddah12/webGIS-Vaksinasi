@@ -86,7 +86,7 @@
         var target = {!! json_encode($jmlh_target) !!}
 
         var map = L.map('map').setView(
-            s, 13
+            s, 14
         );
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -96,9 +96,12 @@
 
         function style(feature) {
             warna = "";
-            if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah[dosis][  feature.properties.NAMOBJ ] / target[feature.properties.NAMOBJ]) * 100 <= 39) {
+            if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah[dosis][
+                    feature.properties.NAMOBJ
+                ] / target[feature.properties.NAMOBJ]) * 100 <= 39) {
                 warna = 'red';
-            } else if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 40 && (  jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 69) {
+            } else if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 40 && (
+                    jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 69) {
                 warna = 'yellow';
             } else if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 70) {
                 warna = 'green';
@@ -148,10 +151,10 @@
             if (feature.properties) {
                 layer.bindPopup('', {
                     maxHeight: 200
-                }),layer.bindTooltip(feature.properties.NAMOBJ,{
-                    permanent:true,
-                    direction:'center',
-                    className:'bg-transparent border-0 text-white shadow-none font-weight-bold'
+                }), layer.bindTooltip(feature.properties.NAMOBJ, {
+                    permanent: true,
+                    direction: 'center',
+                    className: 'bg-transparent border-0 text-white shadow-none font-weight-bold'
                 });
                 layer.on('popupopen', updatePopup);
             }
@@ -195,9 +198,9 @@
               
             }
             labels =
-                    '<i style="background:red"></i> - 0-39 </br></br>' +
-                    '<i style="background:yellow"></i> - 40-69 </br></br> ' +
-                    '<i style="background:green"></i> - 70-100 </br></br>' ;
+                '<i style="background:red"></i> - 0-39 </br></br>' +
+                '<i style="background:yellow"></i> - 40-69 </br></br> ' +
+                '<i style="background:green"></i> - 70-100 </br></br>';
             div.innerHTML =
                 '<div class="row mb-2">' +
                 '<div class="col">' +
@@ -216,17 +219,17 @@
 
         function update() {
             if (dosis == '1') {
-                document.getElementById('dosis1').style.backgroundColor = 'lightGreen'
-                document.getElementById('dosis2').style.backgroundColor = '#0dcaf0'
-                document.getElementById('dosis3').style.backgroundColor = '#0dcaf0'
+                document.getElementById('dosis1').style.backgroundColor = '#4FBDBA'
+                document.getElementById('dosis2').style.backgroundColor = '#35858B'
+                document.getElementById('dosis3').style.backgroundColor = '#35858B'
             } else if (dosis == '2') {
-                document.getElementById('dosis1').style.backgroundColor = '#0dcaf0'
-                document.getElementById('dosis2').style.backgroundColor = 'lightGreen'
-                document.getElementById('dosis3').style.backgroundColor = '#0dcaf0'
+                document.getElementById('dosis1').style.backgroundColor = '#35858B'
+                document.getElementById('dosis2').style.backgroundColor = '#4FBDBA'
+                document.getElementById('dosis3').style.backgroundColor = '#35858B'
             } else if (dosis == '3') {
-                document.getElementById('dosis1').style.backgroundColor = '#0dcaf0'
-                document.getElementById('dosis2').style.backgroundColor = '#0dcaf0'
-                document.getElementById('dosis3').style.backgroundColor = 'lightGreen'
+                document.getElementById('dosis1').style.backgroundColor = '#35858B'
+                document.getElementById('dosis2').style.backgroundColor = '#35858B'
+                document.getElementById('dosis3').style.backgroundColor = '#4FBDBA'
             }
         }
         legend.addTo(map);
