@@ -92,9 +92,12 @@
 
         function style(feature) {
             warna = "";
-            if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah[dosis][  feature.properties.NAMOBJ ] / target[feature.properties.NAMOBJ]) * 100 <= 39) {
+            if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah[dosis][
+                    feature.properties.NAMOBJ
+                ] / target[feature.properties.NAMOBJ]) * 100 <= 39) {
                 warna = 'red';
-            } else if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 40 && (  jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 69) {
+            } else if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 40 && (
+                    jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 69) {
                 warna = 'yellow';
             } else if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 70) {
                 warna = 'green';
@@ -138,12 +141,12 @@
             if (feature.properties) {
                 layer.bindPopup('', {
                     maxHeight: 200
-                }),layer.bindTooltip(feature.properties.NAMOBJ,{
-                    permanent:true,
-                    direction:'center',
-                    className:'bg-transparent border-0 text-white shadow-none font-weight-bold'
+                }), layer.bindTooltip(feature.properties.NAMOBJ, {
+                    permanent: true,
+                    direction: 'center',
+                    className: 'bg-transparent border-0 text-white shadow-none font-weight-bold'
                 });
-                
+
                 layer.on('popupopen', updatePopup);
             }
 
@@ -175,15 +178,21 @@
                 } else if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 70) {
                     warna = 'green';
                 }
-                geojsonLayer.setStyle({
-                    fillColor: warna
-                })
-               
+            
+                geojsonLayer.eachLayer(function(featureInstanceLayer) {
+                    propertyValue = featureInstanceLayer.feature.properties[[tematik[i]]];
+
+                    // Your function that determines a fill color for a particular
+                    // property name and value.
+                    featureInstanceLayer.setStyle({
+                        fillColor: warna,
+                    });
+                });
             }
-              labels =
-                    '<i style="background:red"></i> - 0-39 </br></br>' +
-                    '<i style="background:yellow"></i> - 40-69 </br></br> ' +
-                    '<i style="backgound:green"></i> - 70-100 </br></br>' ;
+            labels =
+                '<i style="background:red"></i> - 0-39 </br></br>' +
+                '<i style="background:yellow"></i> - 40-69 </br></br> ' +
+                '<i style="backgound:green"></i> - 70-100 </br></br>';
             div.innerHTML =
                 '<div class="row mb-2">' +
                 '<div class="col">' +

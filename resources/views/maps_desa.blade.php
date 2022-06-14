@@ -186,9 +186,12 @@
                 } else if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 70) {
                     warna = 'green';
                 }
-                geojsonLayer.setStyle({
-                    fillColor: warna
-                })
+               geojsonLayer.eachLayer(function(featureInstanceLayer) {
+                    propertyValue = featureInstanceLayer.feature.properties[[tematik[i]]];
+                    featureInstanceLayer.setStyle({
+                        fillColor: warna,
+                    });
+                });
               
             }
             labels =
