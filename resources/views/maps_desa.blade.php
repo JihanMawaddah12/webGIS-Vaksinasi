@@ -96,9 +96,7 @@
 
         function style(feature) {
             warna = "";
-            if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah[dosis][
-                    feature.properties.NAMOBJ
-                ] / target[feature.properties.NAMOBJ]) * 100 <= 39) {
+            if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 39) {
                 warna = 'red';
             } else if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 40 && (
                     jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 69) {

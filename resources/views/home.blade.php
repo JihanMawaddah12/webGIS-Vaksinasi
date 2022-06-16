@@ -436,7 +436,7 @@
 
                     </div>
                     <div class="card-body">
-                        <div id="map" style="height: 400px; width: 100%;"></div>
+                        <div id="map_desa" style="height: 400px; width: 100%;"></div>
                     </div>
 
                 </div>
@@ -906,7 +906,6 @@
                     position: 'bottomright'
                 });
 
-
                 var markersLayer = new L.LayerGroup(); //layer contain searched elements
                 map.addLayer(markersLayer);
                 var controlSearch = new L.Control.Search({
@@ -918,6 +917,112 @@
                     autoType: false
                 });
                 map.addControl(controlSearch);
+                for (var i = 0; i < datamap.length; i++) {
+                    var title = datamap[i][0], //value searched
+                        loc = [datamap[i][1], datamap[i][2]], //position found
+                        marker = new L.Marker(new L.latLng(loc), {
+                            title: title
+                        }); //se property searched
+                    // marker.bindPopup(title);
+                    // markersLayer.addLayer(marker);
+                }
+            </script>
+            <script type="text/javascript">
+                var s_desa = [5.554630942893766, 95.31709742351293];
+                var color_desa = {!! json_encode($color_desa) !!};
+                var datamap_desa = {!! json_encode($coor_desa) !!}
+                var map_desa = L.map('map_desa').setView(
+                    s, 12
+                );
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map_desa);
+
+
+                var info_desa = L.control();
+
+                info_desa.onAdd = function(map) {
+                    this._div = L.DomUtil.create('div', 'info');
+                    this.update();
+                    return this._div;
+                };
+                //menampilkan pop up info tematik
+                info_desa.update = function(props) {
+                    this._div.innerHTML = '<h4>Desa</h4>' + (props ?
+                        '<b>' + props.NAMOBJ :
+                        'Gerakkan mouse Anda');
+                };
+
+                info_desa.addTo(map_desa);
+
+                function style(feature) {
+                    return {
+                        weight: 2,
+                        opacity: 1,
+                        color: 'black',
+                        dashArray: '3',
+                        fillOpacity: 0.9,
+                        fillColor: color_desa[feature.properties.NAMOBJ]
+                    };
+
+                }
+                //memunculkan highlight pada peta
+                function highlightFeature(e) {
+                    var layer = e.target;
+
+                    layer.setStyle({
+                        weight: 5,
+                        color: '#666',
+                        dashArray: '',
+                        fillOpacity: 0.7
+                    });
+
+                    if (!L.Browser.ie && !L.Browser.opera) {
+                        layer.bringToFront();
+                    }
+
+                    info_desa.update(layer.feature.properties);
+                }
+
+                var geojson_desa;
+
+                function resetHighlight(e) {
+                    geojsonLayer_desa.resetStyle(e.target);
+                    info_desa.update();
+                }
+
+                function zoomToFeature(e) {
+                    map_desa.fitBounds(e.target.getBounds());
+                }
+
+                function onEachFeature(feature, layer) {
+                    layer.on({
+                        mouseover: highlightFeature,
+                        mouseout: resetHighlight,
+                        click: zoomToFeature
+                    });
+                }
+                var geojsonLayer_desa = new L.GeoJSON.AJAX({!! json_encode($geofile_desa) !!}, {
+                    style: style,
+                    onEachFeature: onEachFeature
+                });
+                geojsonLayer_desa.addTo(map_desa);
+
+                var legend_desa = L.control({
+                    position: 'bottomright'
+                });
+
+                var markersLayer_desa = new L.LayerGroup(); //layer contain searched elements
+                map_desa.addLayer(markersLayer_desa);
+                var controlSearch = new L.Control.Search({
+                    position: 'topleft',
+                    layer: markersLayer_desa,
+                    initial: false,
+                    zoom: 12,
+                    marker: false,
+                    autoType: false
+                });
+                map_desa.addControl(controlSearch);
                 for (var i = 0; i < datamap.length; i++) {
                     var title = datamap[i][0], //value searched
                         loc = [datamap[i][1], datamap[i][2]], //position found

@@ -84,7 +84,6 @@ http://www.tooplate.com/view/2091-ziggy
         .leaflet-right {
             max-width: 50%;
         }
-
     </style>
 
 </head>
@@ -169,6 +168,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
 <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
 <script type="text/javascript">
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
     var s = [5.554630942893766, 95.31709742351293];
     var data = {!! json_encode($data) !!}
     var map = L.map('map').setView(
@@ -224,8 +228,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             click: zoomToFeature
         });
     }
-    var latPoint = "";
-    var longPoint = "";
 
     function updateMarker(lat, lng) {
         latPoint = lat;
@@ -249,40 +251,67 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         control.spliceWaypoints(control.getWaypoints().length - 1, 1, latLng);
     }
 
-    map.on('click', function(e) {
-        let latitude = e.latlng.lat.toString().substring(0, 15);
-        let longitude = e.latlng.lng.toString().substring(0, 15);
-        control.setWaypoints(L.latLng(latitude, longitude))
-        $('#latitude').val(latitude);
-        $('#longitude').val(longitude);
-        updateMarker(latitude, longitude);
+    function showPosition(position) {
+        var latPoint = position.coords.latitude;
+        var longPoint = position.coords.longitude;
 
-    });
-    var markersLayer = new L.LayerGroup(); //layer contain searched elements
-    map.addLayer(markersLayer);
-    var controlSearch = new L.Control.Search({
-        position: 'topleft',
-        layer: markersLayer,
-        initial: false,
-        zoom: 15,
-        marker: {
-            icon: true
-        },
-        autoType: false
-    });
-    map.addControl(controlSearch);
 
-    for (var i = 0; i < data.length; i++) {
-        var title = data[i][3], //value searched
-            loc = [data[i][1], data[i][2]], //position found
-            marker = new L.Marker(new L.latLng(loc), {
-                title: title,
-                icon: icon
-            }); //se property searched
-        marker.bindPopup("<strong>" + data[i][3] +
-            "</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i][
-                1
-            ] + "," + data[i][2] + ")'>Ke Sini</button>");
-        markersLayer.addLayer(marker);
+
+        updateMarker(latPoint, longPoint)
+        control.setWaypoints(L.latLng(latPoint, longPoint))
+        map.on('click', function(e) {
+            let latitude = e.latlng.lat.toString().substring(0, 15);
+            let longitude = e.latlng.lng.toString().substring(0, 15);
+            control.setWaypoints(L.latLng(latitude, longitude))
+            $('#latitude').val(latitude);
+            $('#longitude').val(longitude);
+            updateMarker(latitude, longitude);
+
+        });
+        var markersLayer = new L.LayerGroup(); //layer contain searched elements
+        map.addLayer(markersLayer);
+        var controlSearch = new L.Control.Search({
+            position: 'topleft',
+            layer: markersLayer,
+            initial: false,
+            zoom: 15,
+            marker: {
+                icon: true
+            },
+            autoType: false
+        });
+        map.addControl(controlSearch);
+
+        for (var i = 0; i < data.length; i++) {
+            var title = data[i][3], //value searched
+                loc = [data[i][1], data[i][2]], //position found
+                marker = new L.Marker(new L.latLng(loc), {
+                    title: title,
+                    icon: icon
+                }); //se property searched
+            marker.bindPopup("<strong>" + data[i][3] +
+                "</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i]
+                [
+                    1
+                ] + "," + data[i][2] + ")'>Ke Sini</button>");
+            markersLayer.addLayer(marker);
+        }
+    }
+
+    function showError(error) {
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                x.innerHTML = "User denied the request for Geolocation."
+                break;
+            case error.POSITION_UNAVAILABLE:
+                x.innerHTML = "Location information is unavailable."
+                break;
+            case error.TIMEOUT:
+                x.innerHTML = "The request to get user location timed out."
+                break;
+            case error.UNKNOWN_ERROR:
+                x.innerHTML = "An unknown error occurred."
+                break;
+        }
     }
 </script>

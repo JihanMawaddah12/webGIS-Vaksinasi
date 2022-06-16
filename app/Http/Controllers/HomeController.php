@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Desa;
 use App\Models\HalamanData;
 use App\Models\HalamanData2;
 use App\Models\Tematik;
@@ -35,20 +36,20 @@ class HomeController extends Controller
         $jumlah3 = [];
         if (!$id_param) {
             $tem = Tematik::first();
-            
+
             $id_param = $tem->id;
-        }else{
+        } else {
             $tem = Tematik::find($id_param);
         }
-        $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $id_param]])->select('*',DB::raw('DATE(tanggal) as date'), 'tematik_id')
+        $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $id_param]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
             ->groupBy(['date', 'tematik_id'])
             ->get();
 
         $id = 0;
         foreach ($dosis1 as $value) {
             $kec[$id] = $value->date;
-            if (isset($jumlah[$id-1])) {
-                $jumlah[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jumlah[$id-1];
+            if (isset($jumlah[$id - 1])) {
+                $jumlah[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jumlah[$id - 1];
             } else {
                 $jumlah[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
             }
@@ -105,6 +106,23 @@ class HomeController extends Controller
             $coor[$index2] = [$item->lokasi, $item->lat, $item->long];
             $index2++;
         }
+        $geofile_desa = [];
+        $color_desa = [];
+        $coor_desa = [];
+        $index = 0;
+        $index2 = 0;
+        $desa = Desa::all();
+        foreach ($desa as $item) {
+            $geofile_desa[$index] = '/storage/' . $item->geojson;
+            $index++;
+        }
+        foreach ($desa as $item) {
+            $color_desa[$item->desa] = $item->warna;
+        }
+        foreach ($desa as $item) {
+            $coor_desa[$index2] = [$item->lokasi, $item->lat, $item->long];
+            $index2++;
+        }
         $kpersen1 = "";
         $kpersen2 = "";
         $kpersen3 = "";
@@ -118,12 +136,12 @@ class HomeController extends Controller
         $dtpersen1 = "";
         $dtpersen2 = "";
         $dtpersen3 = "";
-        
+
         $krendah1 = HalamanData::with('tematik')->where('kelompok', 'Dosis 1')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw(' kelompok'), DB::raw(' tematik_id'))->orderBy('total', 'asc')->first();
         if ($krendah1) {
             $kpersen1 = $krendah1->tematik->data1->where('Kelompok', 'Target')->first();
         }
-        
+
         $krendah2 = HalamanData::with('tematik')->where('kelompok', 'Dosis 2')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw(' kelompok'), DB::raw(' tematik_id'))->orderBy('total', 'asc')->first();
         if ($krendah2) {
             $kpersen2 = $krendah2->tematik->data1->where('Kelompok', 'Target')->first();
@@ -163,7 +181,7 @@ class HomeController extends Controller
         if ($drendah3) {
             $dpersen3 = $drendah3->desa->data1->where('Kelompok', 'Target')->first();
         }
-        
+
         $dtinggi1 = HalamanData::with('desa')->where('kelompok', 'Dosis 1')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw(' kelompok'), DB::raw('desa_id'))->orderBy('total', 'desc')->first();
         if ($dtinggi1) {
             $dtpersen1 = $dtinggi1->desa->data1->where('Kelompok', 'Target')->first();
@@ -273,7 +291,10 @@ class HomeController extends Controller
             'dtpersen2' => $dtpersen2 ? ($dtpersen2->nakes + $dtpersen2->petugas_publik + $dtpersen2->lansia + $dtpersen2->masyarakat_umum + $dtpersen2->remaja) : 0,
             'dtinggi3' => $dtinggi3,
             'dtpersen3' => $dtpersen3 ? ($dtpersen3->nakes + $dtpersen3->petugas_publik + $dtpersen3->lansia + $dtpersen3->masyarakat_umum + $dtpersen3->remaja) : 0,
-            'tem' => $tem->kecamatan
+            'tem' => $tem->kecamatan,
+            'geofile_desa' => $geofile_desa,
+            'color_desa' => $color_desa,
+            'coor_desa' => $coor_desa,
         ]);
     }
 }
