@@ -8,7 +8,6 @@
             width: 524px;
 
         }
-
     </style>
     <div class="container">
         <div class="row">
@@ -139,13 +138,13 @@
                                                 1</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" onclick="return state = 'grafik2'"
-                                                href="#grafik2-button" data-bs-toggle="tab">Dosis
+                                            <a class="nav-link" onclick="return state = 'grafik2'" href="#grafik2-button"
+                                                data-bs-toggle="tab">Dosis
                                                 2</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" onclick="return state = 'grafik3'"
-                                                href="#grafik3-button" data-bs-toggle="tab">Dosis
+                                            <a class="nav-link" onclick="return state = 'grafik3'" href="#grafik3-button"
+                                                data-bs-toggle="tab">Dosis
                                                 3</a>
                                         </li>
                                     </ul>
@@ -366,8 +365,7 @@
                     <div class="card-header" style="background-color:#89b5af">
                         <h3 class="card-title text-white">Capaian Tertinggi</h3>
                         <div class="card-tools">
-                            <button type="button" class="btn" data-bs-toggle="collapse"
-                                data-bs-target="#dosis4">
+                            <button type="button" class="btn" data-bs-toggle="collapse" data-bs-target="#dosis4">
                                 <i class="fa fa-caret-down"></i>
                             </button>
                         </div>
@@ -486,7 +484,6 @@
                     margin-right: 8px;
                     opacity: 0.7;
                 }
-
             </style>
         @endsection
         @push('scripts')
@@ -823,77 +820,93 @@
                 var s = [5.554630942893766, 95.31709742351293];
                 var color = {!! json_encode($color) !!};
                 var datamap = {!! json_encode($data) !!}
+                var tematik = {!! json_encode($tematik) !!}
+                var jumlah = {!! json_encode($jumlah) !!}
+                var target = {!! json_encode($jmlh_target) !!}
                 var map = L.map('map').setView(
-                    s, 12
+                    s, 13
                 );
+                var dosis = '1';
 
 
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 }).addTo(map);
 
-
-                var info = L.control();
-
-                info.onAdd = function(map) {
-                    this._div = L.DomUtil.create('div', 'info');
-                    this.update();
-                    return this._div;
-                };
-                //menampilkan pop up info tematik
-                info.update = function(props) {
-                    this._div.innerHTML = '<h4>Kecamatan</h4>' + (props ?
-                        '<b>' + props.NAMOBJ :
-                        'Gerakkan mouse Anda');
-                };
-
-                info.addTo(map);
-
                 function style(feature) {
+                    warna = "";
+                    if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah[dosis][
+                            feature.properties.NAMOBJ
+                        ] / target[feature.properties.NAMOBJ]) * 100 <= 39) {
+                        warna = 'red';
+                    } else if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 40 && (
+                            jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 69) {
+                        warna = 'yellow';
+                    } else if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 70) {
+                        warna = 'green';
+                    }
                     return {
                         weight: 2,
                         opacity: 1,
-                        color: 'black',
+                        color: 'white',
                         dashArray: '3',
-                        fillOpacity: 0.9,
-                        fillColor: color[feature.properties.NAMOBJ]
+                        fillOpacity: 1.0,
+                        fillColor: warna
                     };
-
-                }
-                //memunculkan highlight pada peta
-                function highlightFeature(e) {
-                    var layer = e.target;
-
-                    layer.setStyle({
-                        weight: 5,
-                        color: '#666',
-                        dashArray: '',
-                        fillOpacity: 0.7
-                    });
-
-                    if (!L.Browser.ie && !L.Browser.opera) {
-                        layer.bringToFront();
-                    }
-
-                    info.update(layer.feature.properties);
                 }
 
                 var geojson;
 
-                function resetHighlight(e) {
-                    geojsonLayer.resetStyle(e.target);
-                    info.update();
+                function updatePopup(evt) {
+                    geojsonLayer.setStyle({
+                        fillColor: 'transparent'
+                    });
+                    var propertyValue;
+                    var feature = evt.target.feature;
+                    var props = feature.properties;
+                    warna = "";
+                    if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 0 && (jumlah[dosis][props.NAMOBJ] / target[
+                            props.NAMOBJ]) * 100 <= 39) {
+                        warna = 'red';
+                    } else if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 40 && (jumlah[dosis][props.NAMOBJ] /
+                            target[props.NAMOBJ]) * 100 <= 69) {
+                        warna = 'yellow';
+                    } else if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 70) {
+                        warna = 'green';
+                    }
+                    evt.target.setStyle({
+                        fillColor: warna
+                    })
+                    evt.popup.setContent('<h4>Kecamatan</h4> ' + (props ?
+                        '<b>' + props.NAMOBJ + '</b><br /> Jumlah Vaksin <br/> Dosis 1: ' + jumlah['1'][props.NAMOBJ] +
+                        ' orang (' +
+                        ((jumlah['1'][props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
+                        'Dosis 2: ' + jumlah['2'][props.NAMOBJ] + ' orang (' +
+                        ((jumlah['2'][props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
+                        'Dosis 3: ' + jumlah['3'][props.NAMOBJ] + ' orang (' +
+                        ((jumlah['3'][props.NAMOBJ] / target[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' : ""));
                 }
 
                 function zoomToFeature(e) {
+                    console.log(e)
                     map.fitBounds(e.target.getBounds());
                 }
 
                 function onEachFeature(feature, layer) {
+                    if (feature.properties) {
+                        layer.bindPopup('', {
+                            maxHeight: 200
+                        }), layer.bindTooltip(feature.properties.NAMOBJ, {
+                            permanent: true,
+                            direction: 'center',
+                            className: 'bg-transparent border-0 text-white shadow-none font-weight-bold'
+                        });
+
+                        layer.on('popupopen', updatePopup);
+                    }
+
                     layer.on({
-                        mouseover: highlightFeature,
-                        mouseout: resetHighlight,
-                        click: zoomToFeature
+                        "click": zoomToFeature
                     });
                 }
                 var geojsonLayer = new L.GeoJSON.AJAX({!! json_encode($geofile) !!}, {
@@ -905,132 +918,260 @@
                 var legend = L.control({
                     position: 'bottomright'
                 });
+                legend.onAdd = function(map) {
+                    var div = L.DomUtil.create('div', 'info legend')
+                    var labels = ''
+                    for (var i = 0; i < tematik.length; i++) {
+                        warna = "";
+                        if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 0 && (jumlah[dosis][tematik[i]] / target[
+                                tematik[i]]) * 100 <= 39) {
+                            warna = 'red';
+                        } else if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 40 && (jumlah[dosis][tematik[i]] /
+                                target[tematik[i]]) * 100 <= 69) {
+                            warna = 'yellow';
+                        } else if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 70) {
+                            warna = 'green';
+                        }
+                        geojsonLayer.eachLayer(function(layer) {
+                            if (layer.feature.properties.NAMOBJ == tematik[i]) {
+                                layer.setStyle({
+                                    fillColor: warna
+                                })
+                            }
+                        });
+                    }
+                    labels =
+                        '<i style="background:red"></i> - 0-39 </br></br>' +
+                        '<i style="background:yellow"></i> - 40-69 </br></br> ' +
+                        '<i style="backgound:green"></i> - 70-100 </br></br>';
+                    div.innerHTML =
+                        '<div class="row mb-2">' +
+                        '<div class="col">' +
+                        '<button class="btn btn-info text-white" id="dosis1_label" onclick="dosis = \'1\';legend.addTo(map);update()">Dosis 1<button>' +
+                        '</div>' +
+                        '<div class="col">' +
+                        '<button class="btn btn-info text-white" id="dosis2_label" onclick="dosis = \'2\';legend.addTo(map);update()">Dosis 2</button>' +
+                        '</div>' +
+                        '<div class="col">' +
+                        '<button class="btn btn-info text-white" id="dosis3_label" onclick="dosis = \'3\';legend.addTo(map);update()">Dosis 3</button>' +
+                        '</div>' +
+                        '</div> <br>' + labels;
+                    return div;
 
-                var markersLayer = new L.LayerGroup(); //layer contain searched elements
-                map.addLayer(markersLayer);
+                };
+
+                function update() {
+                    if (dosis == '1') {
+                        document.getElementById('dosis1_label').style.backgroundColor = 'lightGreen'
+                        document.getElementById('dosis2_label').style.backgroundColor = '#0dcaf0'
+                        document.getElementById('dosis3_label').style.backgroundColor = '#0dcaf0'
+                    } else if (dosis == '2') {
+                        document.getElementById('dosis1_label').style.backgroundColor = '#0dcaf0'
+                        document.getElementById('dosis2_label').style.backgroundColor = 'lightGreen'
+                        document.getElementById('dosis3_label').style.backgroundColor = '#0dcaf0'
+                    } else if (dosis == '3') {
+                        document.getElementById('dosis1_label').style.backgroundColor = '#0dcaf0'
+                        document.getElementById('dosis2_label').style.backgroundColor = '#0dcaf0'
+                        document.getElementById('dosis3_label').style.backgroundColor = 'lightGreen'
+                    }
+                }
+                legend.addTo(map);
                 var controlSearch = new L.Control.Search({
                     position: 'topleft',
-                    layer: markersLayer,
+                    layer: geojsonLayer,
                     initial: false,
                     zoom: 12,
                     marker: false,
-                    autoType: false
+                    propertyName: 'NAMOBJ',
+                    autoType: false,
+                    marker: {
+                        icon: false
+                    }
+
                 });
                 map.addControl(controlSearch);
-                for (var i = 0; i < datamap.length; i++) {
-                    var title = datamap[i][0], //value searched
-                        loc = [datamap[i][1], datamap[i][2]], //position found
-                        marker = new L.Marker(new L.latLng(loc), {
-                            title: title
-                        }); //se property searched
-                    // marker.bindPopup(title);
-                    // markersLayer.addLayer(marker);
-                }
             </script>
-            <script type="text/javascript">
+            <script>
                 var s_desa = [5.554630942893766, 95.31709742351293];
                 var color_desa = {!! json_encode($color_desa) !!};
-                var datamap_desa = {!! json_encode($coor_desa) !!}
+                var data_desa = {!! json_encode($data_desa) !!}
+                var tematik_desa = {!! json_encode($tematik_desa) !!}
+                var jumlah_desa = {!! json_encode($jumlah_desa) !!}
+                var target_desa = {!! json_encode($jmlh_target_desa) !!}
+                var dosis_desa = '1'
                 var map_desa = L.map('map_desa').setView(
-                    s, 12
+                    s, 14
                 );
+
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 }).addTo(map_desa);
 
 
-                var info_desa = L.control();
-
-                info_desa.onAdd = function(map) {
-                    this._div = L.DomUtil.create('div', 'info');
-                    this.update();
-                    return this._div;
-                };
-                //menampilkan pop up info tematik
-                info_desa.update = function(props) {
-                    this._div.innerHTML = '<h4>Desa</h4>' + (props ?
-                        '<b>' + props.NAMOBJ :
-                        'Gerakkan mouse Anda');
-                };
-
-                info_desa.addTo(map_desa);
-
                 function style(feature) {
+                    warna = "";
+                    if ((jumlah_desa[dosis][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah_desa[dosis][
+                            feature.properties.NAMOBJ
+                        ] / target_desa[feature.properties.NAMOBJ]) * 100 <= 39) {
+                        warna = 'red';
+                    } else if ((jumlah_desa[dosis][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 >= 40 && (
+                            jumlah_desa[dosis][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 <= 69) {
+                        warna = 'yellow';
+                    } else if ((jumlah_desa[dosis][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 >= 70) {
+                        warna = 'green';
+                    }
                     return {
                         weight: 2,
                         opacity: 1,
-                        color: 'black',
+                        color: 'white',
                         dashArray: '3',
-                        fillOpacity: 0.9,
-                        fillColor: color_desa[feature.properties.NAMOBJ]
+                        fillOpacity: 1.0,
+                        fillColor: warna
                     };
-
                 }
-                //memunculkan highlight pada peta
-                function highlightFeature(e) {
-                    var layer = e.target;
-
-                    layer.setStyle({
-                        weight: 5,
-                        color: '#666',
-                        dashArray: '',
-                        fillOpacity: 0.7
-                    });
-
-                    if (!L.Browser.ie && !L.Browser.opera) {
-                        layer.bringToFront();
-                    }
-
-                    info_desa.update(layer.feature.properties);
-                }
-
                 var geojson_desa;
-
-                function resetHighlight(e) {
-                    geojsonLayer_desa.resetStyle(e.target);
-                    info_desa.update();
-                }
 
                 function zoomToFeature(e) {
                     map_desa.fitBounds(e.target.getBounds());
                 }
 
+                function updatePopup(evt) {
+                    geojsonLayer_desa.setStyle({
+                        fillColor: 'transparent'
+                    });
+
+                    var propertyValue;
+                    var feature = evt.target.feature;
+                    var props = feature.properties;
+                    warna = "";
+                    if ((jumlah_desa[dosis][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100 >= 0 && (jumlah_desa[dosis][props.NAMOBJ] / target_desa[
+                            props.NAMOBJ]) * 100 <= 39) {
+                        warna = 'red';
+                    } else if ((jumlah_desa[dosis][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100 >= 40 && (jumlah_desa[dosis][props.NAMOBJ] /
+                            target_desa[props.NAMOBJ]) * 100 <= 69) {
+                        warna = 'yellow';
+                    } else if ((jumlah_desa[dosis][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100 >= 70) {
+                        warna = 'green';
+                    }
+                    evt.target.setStyle({
+                        fillColor: warna
+                    })
+                    evt.popup.setContent('<h4>Desa</h4>' + (props ?
+                        '<b>' + props.NAMOBJ + '</b><br /> Jumlah Vaksin <br/> Dosis 1: ' + jumlah_desa['1'][props.NAMOBJ] +
+                        ' orang (' +
+                        ((jumlah_desa['1'][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
+                        'Dosis 2: ' + jumlah_desa['2'][props.NAMOBJ] + ' orang (' +
+                        ((jumlah_desa['2'][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' +
+                        'Dosis 3: ' + jumlah_desa['3'][props.NAMOBJ] + ' orang (' +
+                        ((jumlah_desa['3'][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100).toFixed(2) + '%)<br /> ' : ""));
+                }
+
+                function zoomToFeature(e) {
+                    console.log(e)
+                    map_desa.fitBounds(e.target.getBounds());
+                }
+
                 function onEachFeature(feature, layer) {
+                    if (feature.properties) {
+                        layer.bindPopup('', {
+                            maxHeight: 200
+                        }), layer.bindTooltip(feature.properties.NAMOBJ, {
+                            permanent: true,
+                            direction: 'center',
+                            className: 'bg-transparent border-0 text-white shadow-none font-weight-bold'
+                        });
+                        layer.on('popupopen', updatePopup);
+                    }
+
                     layer.on({
-                        mouseover: highlightFeature,
-                        mouseout: resetHighlight,
-                        click: zoomToFeature
+
+                        "click": zoomToFeature
                     });
                 }
                 var geojsonLayer_desa = new L.GeoJSON.AJAX({!! json_encode($geofile_desa) !!}, {
                     style: style,
                     onEachFeature: onEachFeature
                 });
-                geojsonLayer_desa.addTo(map_desa);
+                map_desa.addLayer(geojsonLayer_desa);
 
                 var legend_desa = L.control({
                     position: 'bottomright'
                 });
 
-                var markersLayer_desa = new L.LayerGroup(); //layer contain searched elements
-                map_desa.addLayer(markersLayer_desa);
-                var controlSearch = new L.Control.Search({
+                var dosis_desa = '1';
+                legend_desa.onAdd = function(map) {
+                    var div = L.DomUtil.create('div', 'info legend')
+                    var labels = ''
+                    for (var i = 0; i < tematik.length; i++) {
+                        warna = "";
+                        if ((jumlah_desa[dosis][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 0 && (jumlah_desa[dosis][tematik_desa[i]] / target_desa[
+                                tematik_desa[i]]) * 100 <= 39) {
+                            warna = 'red';
+                        } else if ((jumlah_desa[dosis][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 40 && (jumlah_desa[dosis][tematik_desa[i]] /
+                                target_desa[tematik[i]]) * 100 <= 69) {
+                            warna = 'yellow';
+                        } else if ((jumlah_desa[dosis][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 70) {
+                            warna = 'green';
+                        }
+                        geojsonLayer_desa.eachLayer(function(layer) {
+                            if (layer.feature.properties.NAMOBJ == tematik_desa[i]) {
+                                layer.setStyle({
+                                    fillColor: warna
+                                })
+                            }
+                        });
+                    }
+                    labels =
+                        '<i style="background:red"></i> - 0-39 </br></br>' +
+                        '<i style="background:yellow"></i> - 40-69 </br></br> ' +
+                        '<i style="background:green"></i> - 70-100 </br></br>';
+                    div.innerHTML =
+                        '<div class="row mb-2">' +
+                        '<div class="col">' +
+                        '<button class="btn btn-info text-white" id="dosis1_desa" onclick="dosis = \'1\';legend.addTo(map);update()">Dosis 1<button>' +
+                        '</div>' +
+                        '<div class="col">' +
+                        '<button class="btn btn-info text-white" id="dosis2_desa" onclick="dosis = \'2\';legend.addTo(map);update()">Dosis 2</button>' +
+                        '</div>' +
+                        '<div class="col">' +
+                        '<button class="btn btn-info text-white" id="dosis3_desa" onclick="dosis = \'3\';legend.addTo(map);update()">Dosis 3</button>' +
+                        '</div>' +
+                        '</div> <br>' + labels;
+                    return div;
+
+                };
+
+                function update() {
+                    if (dosis == '1') {
+                        document.getElementById('dosis1_desa').style.backgroundColor = '#4FBDBA'
+                        document.getElementById('dosis2_desa').style.backgroundColor = '#35858B'
+                        document.getElementById('dosis3_desa').style.backgroundColor = '#35858B'
+                    } else if (dosis == '2') {
+                        document.getElementById('dosis1_desa').style.backgroundColor = '#35858B'
+                        document.getElementById('dosis2_desa').style.backgroundColor = '#4FBDBA'
+                        document.getElementById('dosis3_desa').style.backgroundColor = '#35858B'
+                    } else if (dosis == '3') {
+                        document.getElementById('dosis1_desa').style.backgroundColor = '#35858B'
+                        document.getElementById('dosis2_desa').style.backgroundColor = '#35858B'
+                        document.getElementById('dosis3_desa').style.backgroundColor = '#4FBDBA'
+                    }
+                }
+                legend_desa.addTo(map_desa);
+                var controlSearch_desa = new L.Control.Search({
                     position: 'topleft',
-                    layer: markersLayer_desa,
+                    layer: geojsonLayer_desa,
                     initial: false,
                     zoom: 12,
                     marker: false,
-                    autoType: false
+                    propertyName: 'NAMOBJ',
+                    autoType: false,
+                    marker: {
+                        icon: false
+                    }
+
                 });
-                map_desa.addControl(controlSearch);
-                for (var i = 0; i < datamap.length; i++) {
-                    var title = datamap[i][0], //value searched
-                        loc = [datamap[i][1], datamap[i][2]], //position found
-                        marker = new L.Marker(new L.latLng(loc), {
-                            title: title
-                        }); //se property searched
-                    // marker.bindPopup(title);
-                    // markersLayer.addLayer(marker);
-                }
+
+
+                map_desa.addControl(controlSearch_desa);
             </script>
         @endpush
