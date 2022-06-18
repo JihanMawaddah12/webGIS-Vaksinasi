@@ -93,7 +93,6 @@ http://www.tooplate.com/view/2091-ziggy
         .info-box-icon {
             font-size: 1.875rem;
         }
-
     </style>
 </head>
 
@@ -305,13 +304,16 @@ http://www.tooplate.com/view/2091-ziggy
                                     <div class="col-md-9">
                                         <div class="chart-responsive" id="pie">
                                             <div id="dosis1-pie" class="collapse show">
-                                                <canvas id="pie-dosis1" height="393" width="789" class="pie">
+                                                <canvas id="pie-dosis1" height="393" width="789"
+                                                    class="pie">
                                             </div>
                                             <div id="dosis2-pie" class="collapse">
-                                                <canvas id="pie-dosis2" height="393" width="789" class="pie">
+                                                <canvas id="pie-dosis2" height="393" width="789"
+                                                    class="pie">
                                             </div>
                                             <div id="dosis3-pie" class="collapse">
-                                                <canvas id="pie-dosis3" height="393" width="789" class="pie">
+                                                <canvas id="pie-dosis3" height="393" width="789"
+                                                    class="pie">
                                             </div>
                                         </div>
                                     </div>
