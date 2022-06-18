@@ -1109,7 +1109,7 @@
                                 tematik_desa[i]]) * 100 <= 39) {
                             warna = 'red';
                         } else if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 40 && (jumlah_desa[dosis_desa][tematik_desa[i]] /
-                                target_desa[tematik[i]]) * 100 <= 69) {
+                                target_desa[tematik_desa[i]]) * 100 <= 69) {
                             warna = 'yellow';
                         } else if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 70) {
                             warna = 'green';
