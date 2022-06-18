@@ -119,7 +119,7 @@ http://www.tooplate.com/view/2091-ziggy
                 </div> --}}
                 <h3 class="card-title text-white">
                     <i class="fas fa-map-marker-alt mr-1 "></i>
-                    Silahkan klik pada peta untuk menentukan lokasi anda saat ini
+                    Pilih Lokasi Vaksinasi Yang Anda Inginkan
                 </h3>
 
             </div>
