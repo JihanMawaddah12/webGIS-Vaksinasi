@@ -123,9 +123,11 @@
             var feature = evt.target.feature;
             var props = feature.properties;
             warna = "";
-            if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 0 && (jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 <= 39) {
+            if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 0 && (jumlah[dosis][props.NAMOBJ] / target[
+                    props.NAMOBJ]) * 100 <= 39) {
                 warna = 'red';
-            } else if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 40 && (jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 <= 69) {
+            } else if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 40 && (jumlah[dosis][props.NAMOBJ] /
+                    target[props.NAMOBJ]) * 100 <= 69) {
                 warna = 'yellow';
             } else if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 70) {
                 warna = 'green';
@@ -179,9 +181,11 @@
             var labels = ''
             for (var i = 0; i < tematik.length; i++) {
                 warna = "";
-                if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 0 && (jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 <= 39) {
+                if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 0 && (jumlah[dosis][tematik[i]] / target[
+                        tematik[i]]) * 100 <= 39) {
                     warna = 'red';
-                } else if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 40 && (jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 <= 69) {
+                } else if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 40 && (jumlah[dosis][tematik[i]] /
+                        target[tematik[i]]) * 100 <= 69) {
                     warna = 'yellow';
                 } else if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 70) {
                     warna = 'green';
@@ -195,9 +199,9 @@
                 });
             }
             labels =
-                '<i style="background:red"></i> - 0-39 </br></br>' +
-                '<i style="background:yellow"></i> - 40-69 </br></br> ' +
-                '<i style="backgound:green"></i> - 70-100 </br></br>';
+                '<i style="background:red"></i>  0%-39% </br></br>' +
+                '<i style="background:yellow"></i>  40%-69% </br></br> ' +
+                '<i style="background:green"></i>  70%-100% </br></br>';
             div.innerHTML =
                 '<div class="row mb-2">' +
                 '<div class="col">' +
