@@ -389,7 +389,8 @@ class HomeController extends Controller
             'jmlh_target' => $jmlh_target,
             'jumlah' => $jmlh,
             'jumlah_desa' => $jmlh_desa,
-            'jmlh_target_desa' => $jmlh_target_desa
+            'jmlh_target_desa' => $jmlh_target_desa,
+            'kecamatan' => $kecamatan
 
         ]);
     }

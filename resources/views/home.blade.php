@@ -820,13 +820,13 @@
                 var s = [5.554630942893766, 95.31709742351293];
                 var color = {!! json_encode($color) !!};
                 var datamap = {!! json_encode($data) !!}
-                var tematik = {!! json_encode($tematik) !!}
+                var tematik = {!! json_encode($kecamatan) !!}
                 var jumlah = {!! json_encode($jumlah) !!}
                 var target = {!! json_encode($jmlh_target) !!}
                 var map = L.map('map').setView(
                     s, 13
                 );
-                var dosis = '1';
+                var dosis_label = '1';
 
 
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -835,14 +835,14 @@
 
                 function style(feature) {
                     warna = "";
-                    if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah[dosis][
+                    if ((jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah[dosis_label][
                             feature.properties.NAMOBJ
                         ] / target[feature.properties.NAMOBJ]) * 100 <= 39) {
                         warna = 'red';
-                    } else if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 40 && (
-                            jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 69) {
+                    } else if ((jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 40 && (
+                            jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 69) {
                         warna = 'yellow';
-                    } else if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 70) {
+                    } else if ((jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 70) {
                         warna = 'green';
                     }
                     return {
@@ -865,13 +865,13 @@
                     var feature = evt.target.feature;
                     var props = feature.properties;
                     warna = "";
-                    if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 0 && (jumlah[dosis][props.NAMOBJ] / target[
+                    if ((jumlah[dosis_label][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 0 && (jumlah[dosis_label][props.NAMOBJ] / target[
                             props.NAMOBJ]) * 100 <= 39) {
                         warna = 'red';
-                    } else if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 40 && (jumlah[dosis][props.NAMOBJ] /
+                    } else if ((jumlah[dosis_label][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 40 && (jumlah[dosis_label][props.NAMOBJ] /
                             target[props.NAMOBJ]) * 100 <= 69) {
                         warna = 'yellow';
-                    } else if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 70) {
+                    } else if ((jumlah[dosis_label][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 70) {
                         warna = 'green';
                     }
                     evt.target.setStyle({
@@ -923,17 +923,18 @@
                     var labels = ''
                     for (var i = 0; i < tematik.length; i++) {
                         warna = "";
-                        if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 0 && (jumlah[dosis][tematik[i]] / target[
+                        if ((jumlah[dosis_label][tematik[i]] / target[tematik[i]]) * 100 >= 0 && (jumlah[dosis_label][tematik[i]] / target[
                                 tematik[i]]) * 100 <= 39) {
                             warna = 'red';
-                        } else if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 40 && (jumlah[dosis][tematik[i]] /
+                        } else if ((jumlah[dosis_label][tematik[i]] / target[tematik[i]]) * 100 >= 40 && (jumlah[dosis_label][tematik[i]] /
                                 target[tematik[i]]) * 100 <= 69) {
                             warna = 'yellow';
-                        } else if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 70) {
+                        } else if ((jumlah[dosis_label][tematik[i]] / target[tematik[i]]) * 100 >= 70) {
                             warna = 'green';
                         }
                         geojsonLayer.eachLayer(function(layer) {
                             if (layer.feature.properties.NAMOBJ == tematik[i]) {
+
                                 layer.setStyle({
                                     fillColor: warna
                                 })
@@ -947,13 +948,13 @@
                     div.innerHTML =
                         '<div class="row mb-2">' +
                         '<div class="col">' +
-                        '<button class="btn btn-info text-white" id="dosis1_label" onclick="dosis = \'1\';legend.addTo(map);update()">Dosis 1<button>' +
+                        '<button class="btn btn-info text-white" id="dosis1_label" onclick="dosis_label = \'1\';legend.addTo(map);update()">Dosis 1<button>' +
                         '</div>' +
                         '<div class="col">' +
-                        '<button class="btn btn-info text-white" id="dosis2_label" onclick="dosis = \'2\';legend.addTo(map);update()">Dosis 2</button>' +
+                        '<button class="btn btn-info text-white" id="dosis2_label" onclick="dosis_label = \'2\';legend.addTo(map);update()">Dosis 2</button>' +
                         '</div>' +
                         '<div class="col">' +
-                        '<button class="btn btn-info text-white" id="dosis3_label" onclick="dosis = \'3\';legend.addTo(map);update()">Dosis 3</button>' +
+                        '<button class="btn btn-info text-white" id="dosis3_label" onclick="dosis_label = \'3\';legend.addTo(map);update()">Dosis 3</button>' +
                         '</div>' +
                         '</div> <br>' + labels;
                     return div;
@@ -961,15 +962,15 @@
                 };
 
                 function update() {
-                    if (dosis == '1') {
+                    if (dosis_label == '1') {
                         document.getElementById('dosis1_label').style.backgroundColor = 'lightGreen'
                         document.getElementById('dosis2_label').style.backgroundColor = '#0dcaf0'
                         document.getElementById('dosis3_label').style.backgroundColor = '#0dcaf0'
-                    } else if (dosis == '2') {
+                    } else if (dosis_label == '2') {
                         document.getElementById('dosis1_label').style.backgroundColor = '#0dcaf0'
                         document.getElementById('dosis2_label').style.backgroundColor = 'lightGreen'
                         document.getElementById('dosis3_label').style.backgroundColor = '#0dcaf0'
-                    } else if (dosis == '3') {
+                    } else if (dosis_label == '3') {
                         document.getElementById('dosis1_label').style.backgroundColor = '#0dcaf0'
                         document.getElementById('dosis2_label').style.backgroundColor = '#0dcaf0'
                         document.getElementById('dosis3_label').style.backgroundColor = 'lightGreen'
@@ -1008,16 +1009,16 @@
                 }).addTo(map_desa);
 
 
-                function style(feature) {
+                function style_desa(feature) {
                     warna = "";
-                    if ((jumlah_desa[dosis][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah_desa[dosis][
+                    if ((jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah_desa[dosis_desa][
                             feature.properties.NAMOBJ
                         ] / target_desa[feature.properties.NAMOBJ]) * 100 <= 39) {
                         warna = 'red';
-                    } else if ((jumlah_desa[dosis][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 >= 40 && (
-                            jumlah_desa[dosis][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 <= 69) {
+                    } else if ((jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 >= 40 && (
+                            jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 <= 69) {
                         warna = 'yellow';
-                    } else if ((jumlah_desa[dosis][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 >= 70) {
+                    } else if ((jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 >= 70) {
                         warna = 'green';
                     }
                     return {
@@ -1044,13 +1045,13 @@
                     var feature = evt.target.feature;
                     var props = feature.properties;
                     warna = "";
-                    if ((jumlah_desa[dosis][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100 >= 0 && (jumlah_desa[dosis][props.NAMOBJ] / target_desa[
+                    if ((jumlah_desa[dosis_desa][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100 >= 0 && (jumlah_desa[dosis_desa][props.NAMOBJ] / target_desa[
                             props.NAMOBJ]) * 100 <= 39) {
                         warna = 'red';
-                    } else if ((jumlah_desa[dosis][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100 >= 40 && (jumlah_desa[dosis][props.NAMOBJ] /
+                    } else if ((jumlah_desa[dosis_desa][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100 >= 40 && (jumlah_desa[dosis_desa][props.NAMOBJ] /
                             target_desa[props.NAMOBJ]) * 100 <= 69) {
                         warna = 'yellow';
-                    } else if ((jumlah_desa[dosis][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100 >= 70) {
+                    } else if ((jumlah_desa[dosis_desa][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100 >= 70) {
                         warna = 'green';
                     }
                     evt.target.setStyle({
@@ -1089,7 +1090,7 @@
                     });
                 }
                 var geojsonLayer_desa = new L.GeoJSON.AJAX({!! json_encode($geofile_desa) !!}, {
-                    style: style,
+                    style: style_desa,
                     onEachFeature: onEachFeature
                 });
                 map_desa.addLayer(geojsonLayer_desa);
@@ -1102,15 +1103,15 @@
                 legend_desa.onAdd = function(map) {
                     var div = L.DomUtil.create('div', 'info legend')
                     var labels = ''
-                    for (var i = 0; i < tematik.length; i++) {
+                    for (var i = 0; i < tematik_desa.length; i++) {
                         warna = "";
-                        if ((jumlah_desa[dosis][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 0 && (jumlah_desa[dosis][tematik_desa[i]] / target_desa[
+                        if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 0 && (jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[
                                 tematik_desa[i]]) * 100 <= 39) {
                             warna = 'red';
-                        } else if ((jumlah_desa[dosis][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 40 && (jumlah_desa[dosis][tematik_desa[i]] /
+                        } else if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 40 && (jumlah_desa[dosis_desa][tematik_desa[i]] /
                                 target_desa[tematik[i]]) * 100 <= 69) {
                             warna = 'yellow';
-                        } else if ((jumlah_desa[dosis][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 70) {
+                        } else if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 70) {
                             warna = 'green';
                         }
                         geojsonLayer_desa.eachLayer(function(layer) {
@@ -1128,13 +1129,13 @@
                     div.innerHTML =
                         '<div class="row mb-2">' +
                         '<div class="col">' +
-                        '<button class="btn btn-info text-white" id="dosis1_desa" onclick="dosis = \'1\';legend.addTo(map);update()">Dosis 1<button>' +
+                        '<button class="btn btn-info text-white" id="dosis1_desa" onclick="dosis_desa = \'1\';legend_desa.addTo(map_desa);update()">Dosis 1<button>' +
                         '</div>' +
                         '<div class="col">' +
-                        '<button class="btn btn-info text-white" id="dosis2_desa" onclick="dosis = \'2\';legend.addTo(map);update()">Dosis 2</button>' +
+                        '<button class="btn btn-info text-white" id="dosis2_desa" onclick="dosis_desa = \'2\';legend_desa.addTo(map_desa);update()">Dosis 2</button>' +
                         '</div>' +
                         '<div class="col">' +
-                        '<button class="btn btn-info text-white" id="dosis3_desa" onclick="dosis = \'3\';legend.addTo(map);update()">Dosis 3</button>' +
+                        '<button class="btn btn-info text-white" id="dosis3_desa" onclick="dosis_desa = \'3\';legend_desa.addTo(map_desa);update()">Dosis 3</button>' +
                         '</div>' +
                         '</div> <br>' + labels;
                     return div;
@@ -1142,15 +1143,15 @@
                 };
 
                 function update() {
-                    if (dosis == '1') {
+                    if (dosis_desa == '1') {
                         document.getElementById('dosis1_desa').style.backgroundColor = '#4FBDBA'
                         document.getElementById('dosis2_desa').style.backgroundColor = '#35858B'
                         document.getElementById('dosis3_desa').style.backgroundColor = '#35858B'
-                    } else if (dosis == '2') {
+                    } else if (dosis_desa == '2') {
                         document.getElementById('dosis1_desa').style.backgroundColor = '#35858B'
                         document.getElementById('dosis2_desa').style.backgroundColor = '#4FBDBA'
                         document.getElementById('dosis3_desa').style.backgroundColor = '#35858B'
-                    } else if (dosis == '3') {
+                    } else if (dosis_desa == '3') {
                         document.getElementById('dosis1_desa').style.backgroundColor = '#35858B'
                         document.getElementById('dosis2_desa').style.backgroundColor = '#35858B'
                         document.getElementById('dosis3_desa').style.backgroundColor = '#4FBDBA'
