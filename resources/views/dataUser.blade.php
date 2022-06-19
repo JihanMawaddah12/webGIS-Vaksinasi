@@ -971,13 +971,9 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         var feature = evt.target.feature;
         var props = feature.properties;
         warna = "";
-        if ((jumlah[dosis_label][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 0 && (jumlah[dosis_label][props
-                .NAMOBJ] / target[
-                    props.NAMOBJ]) * 100 <= 39) {
+        if ((jumlah[dosis_label][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 0 && (jumlah[dosis_label][props.NAMOBJ] / target[props.NAMOBJ]) * 100 <= 39) {
             warna = 'red';
-        } else if ((jumlah[dosis_label][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 40 && (jumlah[dosis_label][props
-                    .NAMOBJ
-                ] /
+        } else if ((jumlah[dosis_label][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 40 && (jumlah[dosis_label][props.NAMOBJ] /
                 target[props.NAMOBJ]) * 100 <= 69) {
             warna = 'yellow';
         } else if ((jumlah[dosis_label][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 70) {
@@ -1152,7 +1148,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         map_desa.fitBounds(e.target.getBounds());
     }
 
-    function updatePopup(evt) {
+    function updatePopup_desa(evt) {
         geojsonLayer_desa.setStyle({
             fillColor: 'transparent'
         });
@@ -1200,7 +1196,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                 direction: 'center',
                 className: 'bg-transparent border-0 text-white shadow-none font-weight-bold'
             });
-            layer.on('popupopen', updatePopup);
+            layer.on('popupopen', updatePopup_desa);
         }
 
         layer.on({
