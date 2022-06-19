@@ -535,7 +535,7 @@ http://www.tooplate.com/view/2091-ziggy
                         </div>
                     </div>
                 </div>
-                <section class="col-lg-6 col-6">
+                <section class="col-lg-6 col-6 mt-4">
                     <div class="card" style="background-color: #D4ECDD">
                         <div class="card-header border-0">
                             <h3 class="card-title">
@@ -551,7 +551,7 @@ http://www.tooplate.com/view/2091-ziggy
                     </div>
                 </section>
 
-                <section class="col-lg-6 col-6">
+                <section class="col-lg-6 col-6 mt-4">
                     <div class="card" style="background-color: #D4ECDD">
                         <div class="card-header border-0">
                             <h3 class="card-title">
