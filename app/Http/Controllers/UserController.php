@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Desa;
 use App\Models\HalamanData;
 use App\Models\HalamanData2;
 use App\Models\Tematik;
@@ -40,6 +41,126 @@ class UserController extends Controller
     }
     public function data($tematik_id = false)
     {
+        $geofile = [];
+        $color = [];
+        $coor = [];
+        $index = 0;
+        $index2 = 0;
+        $tematik = Tematik::all();
+        $data = HalamanData2::all();
+        $vaksins1 = HalamanData::where('kelompok', 'Dosis 1')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('tematik_id'))->get();
+        $vaksins2 = HalamanData::where('kelompok', 'Dosis 2')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('tematik_id'))->get();
+        $vaksins3 = HalamanData::where('kelompok', 'Dosis 3')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('tematik_id'))->get();
+        $targets = HalamanData::where('kelompok', 'Target')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('tematik_id'))->get();
+        foreach ($tematik as $value) {
+            $jmlh['1'][$value->kecamatan] = 0;
+            $jmlh['2'][$value->kecamatan] = 0;
+            $jmlh['3'][$value->kecamatan] = 0;
+        }
+        foreach ($vaksins1 as $vaksin) {
+            if (isset($jmlh['1'][$vaksin->tematik->kecamatan])) {
+                $jmlh['1'][$vaksin->tematik->kecamatan] += $vaksin->total;
+            } else {
+                $jmlh['1'][$vaksin->tematik->kecamatan] = $vaksin->total;
+            }
+        }
+
+        foreach ($vaksins2 as $vaksin) {
+            if (isset($jmlh['2'][$vaksin->tematik->kecamatan])) {
+                $jmlh['2'][$vaksin->tematik->kecamatan] += $vaksin->total;
+            } else {
+                $jmlh['2'][$vaksin->tematik->kecamatan] = $vaksin->total;
+            }
+        }
+        foreach ($vaksins3 as $vaksin) {
+            if (isset($jmlh['3'][$vaksin->tematik->kecamatan])) {
+                $jmlh['3'][$vaksin->tematik->kecamatan] += $vaksin->total;
+            } else {
+                $jmlh['3'][$vaksin->tematik->kecamatan] = $vaksin->total;
+            }
+        }
+        foreach ($targets as $target) {
+            if (isset($jmlh_target[$target->tematik->kecamatan])) {
+                $jmlh_target[$target->tematik->kecamatan] = +$target->total;
+            } else {
+                $jmlh_target[$target->tematik->kecamatan] = $target->total;
+            }
+        }
+
+        foreach ($tematik as $item) {
+            $geofile[$index] = 'storage/' . $item->geojson;
+            $index++;
+        }
+        foreach ($tematik as $item) {
+            $color[$item->kecamatan] = $item->warna;
+        }
+        $kecamatan = $tematik->pluck('kecamatan');
+        foreach ($data as $item) {
+            $coor[$index2] = [$item->alamat, $item->lat, $item->long];
+            $index2++;
+        }
+        $geofile_desa = [];
+        $color_desa = [];
+        $coor_desa = [];
+        $index_desa = 0;
+        $index2_desa = 0;
+        $desa = Desa::all();
+        $data_desa = HalamanData2::all();
+        $jmlh_desa = [];
+        $jmlh_target_desa = [];
+        $vaksins1_desa = HalamanData::where('kelompok', 'Dosis 1')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('desa_id'))->get();
+        $vaksins2_desa = HalamanData::where('kelompok', 'Dosis 2')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('desa_id'))->get();
+        $vaksins3_desa = HalamanData::where('kelompok', 'Dosis 3')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('desa_id'))->get();
+        $targets_desa = HalamanData::where('kelompok', 'Target')->select(DB::raw('(nakes + petugas_publik + lansia + masyarakat_umum + remaja) as total'), DB::raw('desa_id'))->get();
+        foreach ($desa as $value) {
+            $jmlh_desa['1'][$value->desa] = 0;
+            $jmlh_desa['2'][$value->desa] = 0;
+            $jmlh_desa['3'][$value->desa] = 0;
+        }
+        foreach ($vaksins1_desa as $vaksin) {
+            if (isset($jmlh_desa['1'][$vaksin->desa->desa])) {
+                $jmlh_desa['1'][$vaksin->desa->desa] += $vaksin->total;
+            } else {
+                $jmlh_desa['1'][$vaksin->desa->desa] = $vaksin->total;
+            }
+        }
+        foreach ($vaksins2_desa as $vaksin) {
+            if (isset($jmlh_desa['2'][$vaksin->desa->desa])) {
+                $jmlh_desa['2'][$vaksin->desa->desa] += $vaksin->total;
+            } else {
+                $jmlh_desa['2'][$vaksin->desa->desa] = $vaksin->total;
+            }
+        }
+        foreach ($vaksins3_desa as $vaksin) {
+            if (isset($jmlh_desa['3'][$vaksin->desa->desa])) {
+                $jmlh_desa['3'][$vaksin->desa->desa] += $vaksin->total;
+            } else {
+                $jmlh_desa['3'][$vaksin->desa->desa] = $vaksin->total;
+            }
+        }
+
+        foreach ($targets_desa as $target) {
+            if ($target->desa) {
+                if (isset($jmlh_target_desa[$target->desa->desa])) {
+                    $jmlh_target_desa[$target->desa->desa] = +$target->total;
+                } else {
+                    $jmlh_target_desa[$target->desa->desa] = $target->total;
+                }
+            }
+        }
+
+        foreach ($desa as $item) {
+            $geofile_desa[$index_desa] = 'storage/' . $item->geojson;
+            $index_desa++;
+        }
+        foreach ($desa as $item) {
+            $color_desa[$item->desa] = $item->warna;
+        }
+        foreach ($data_desa as $item) {
+            $coor_desa[$index2_desa] = [$item->lokasi, $item->lat, $item->long];
+            $index2_desa++;
+        }
+        $desa = $desa->pluck('desa');
         $kec = [];
         $jumlah = [];
         $kec2 = [];
@@ -223,6 +344,8 @@ class UserController extends Controller
 
 
         return view('dataUser', [
+            'data_desa' => $data_desa,
+            'tematik_desa' => $desa,
             'target_nakes' => $target_nakes,
             'target_petugas' => $target_petugas,
             'target_lansia' => $target_lansia,
@@ -288,7 +411,15 @@ class UserController extends Controller
             'dtpersen2' => $dtpersen2 ? ($dtpersen2->nakes + $dtpersen2->petugas_publik + $dtpersen2->lansia + $dtpersen2->masyarakat_umum + $dtpersen2->remaja) : 0,
             'dtinggi3' => $dtinggi3,
             'dtpersen3' => $dtpersen3 ? ($dtpersen3->nakes + $dtpersen3->petugas_publik + $dtpersen3->lansia + $dtpersen3->masyarakat_umum + $dtpersen3->remaja) : 0,
-            'tem' => $tem->kecamatan
+            'tem' => $tem->kecamatan,
+            'geofile_desa' => $geofile_desa,
+            'color_desa' => $color_desa,
+            'coor_desa' => $coor_desa,
+            'jmlh_target' => $jmlh_target,
+            'jumlah' => $jmlh,
+            'jumlah_desa' => $jmlh_desa,
+            'jmlh_target_desa' => $jmlh_target_desa,
+            'kecamatan' => $kecamatan
         ]);
     }
 }
