@@ -926,7 +926,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     var color = {!! json_encode($color) !!};
     var datamap = {!! json_encode($data) !!}
     var tematik = {!! json_encode($kecamatan) !!}
-    var jumlah = {!! json_encode($jumlah) !!}
+    var jumlah = {!! json_encode($jumlah_kecamatan) !!}
     var target = {!! json_encode($jmlh_target) !!}
     var map = L.map('map').setView(
         s, 13

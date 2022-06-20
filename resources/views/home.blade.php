@@ -821,7 +821,7 @@
                 var color = {!! json_encode($color) !!};
                 var datamap = {!! json_encode($data) !!}
                 var tematik = {!! json_encode($kecamatan) !!}
-                var jumlah = {!! json_encode($jumlah) !!}
+                var jumlah = {!! json_encode($jumlah_kecamatan) !!}
                 var target = {!! json_encode($jmlh_target) !!}
                 var map = L.map('map').setView(
                     s, 13
@@ -835,12 +835,9 @@
 
                 function style(feature) {
                     warna = "";
-                    if ((jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah[dosis_label][
-                            feature.properties.NAMOBJ
-                        ] / target[feature.properties.NAMOBJ]) * 100 <= 39) {
+                    if ((jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 39) {
                         warna = 'red';
-                    } else if ((jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 40 && (
-                            jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 69) {
+                    } else if ((jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 40 && (jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 69) {
                         warna = 'yellow';
                     } else if ((jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 70) {
                         warna = 'green';
@@ -1036,7 +1033,7 @@
                     map_desa.fitBounds(e.target.getBounds());
                 }
 
-                function updatePopup(evt) {
+                function updatePopup_desa(evt) {
                     geojsonLayer_desa.setStyle({
                         fillColor: 'transparent'
                     });
@@ -1081,7 +1078,7 @@
                             direction: 'center',
                             className: 'bg-transparent border-0 text-white shadow-none font-weight-bold'
                         });
-                        layer.on('popupopen', updatePopup);
+                        layer.on('popupopen', updatePopup_desa);
                     }
 
                     layer.on({

@@ -333,14 +333,14 @@ class UserController extends Controller
         $dosis2_lansia = HalamanData::where('kelompok', 'Dosis 2')->sum('lansia');
         $dosis2_masyarakat = HalamanData::where('kelompok', 'Dosis 2')->sum('masyarakat_umum');
         $dosis2_remaja = HalamanData::where('kelompok', 'Dosis 2')->sum('remaja');
-        $dosis2_usia = HalamanData::where('kelompok', 'Dosis 1')->sum('usia');
+        $dosis2_usia = HalamanData::where('kelompok', 'Dosis 2')->sum('usia');
 
         $dosis3_nakes = HalamanData::where('kelompok', 'Dosis 3')->sum('nakes');
         $dosis3_petugas = HalamanData::where('kelompok', 'Dosis 3')->sum('petugas_publik');
         $dosis3_lansia = HalamanData::where('kelompok', 'Dosis 3')->sum('lansia');
         $dosis3_masyarakat = HalamanData::where('kelompok', 'Dosis 3')->sum('masyarakat_umum');
         $dosis3_remaja = HalamanData::where('kelompok', 'Dosis 3')->sum('remaja');
-        $dosis3_usia = HalamanData::where('kelompok', 'Dosis 1')->sum('usia');
+        $dosis3_usia = HalamanData::where('kelompok', 'Dosis 3')->sum('usia');
 
 
         return view('dataUser', [
@@ -416,7 +416,7 @@ class UserController extends Controller
             'color_desa' => $color_desa,
             'coor_desa' => $coor_desa,
             'jmlh_target' => $jmlh_target,
-            'jumlah' => $jmlh,
+            'jumlah_kecamatan' => $jmlh,
             'jumlah_desa' => $jmlh_desa,
             'jmlh_target_desa' => $jmlh_target_desa,
             'kecamatan' => $kecamatan
