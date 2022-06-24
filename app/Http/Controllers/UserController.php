@@ -197,7 +197,7 @@ class UserController extends Controller
         foreach ($dosis2 as $value) {
             $kec2[$id] = $value->date;
             if (isset($jumlah2[$id - 1])) {
-                $jumlah2[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jumlah[$id - 1];
+                $jumlah2[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jumlah2[$id - 1];
             } else {
                 $jumlah2[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
             }
@@ -212,7 +212,7 @@ class UserController extends Controller
         foreach ($dosis3 as $value) {
             $kec3[$id] = $value->date;
             if (isset($jumlah3[$id - 1])) {
-                $jumlah3[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jumlah[$id - 1];
+                $jumlah3[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jumlah3[$id - 1];
             } else {
                 $jumlah3[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
             }

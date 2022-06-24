@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Imports\Vaksin;
 use App\Models\Desa;
 use App\Models\HalamanData as ModelsHalamanData;
+use App\Models\Pendaftaran;
 use App\Models\Tematik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -20,7 +21,8 @@ class HalamanData extends Controller
     public function index()
     {
         return view("halaman_data", [
-            'data' => ModelsHalamanData::orderBy('tanggal','DESC')->get()
+            'data' => ModelsHalamanData::orderBy('tanggal','DESC')->get(),
+            'pendaftaran' => Pendaftaran::where('status',1)->get(),
         ]);
     }
 
