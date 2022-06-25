@@ -185,10 +185,10 @@ class UserController extends Controller
         }
         $pendaftaran = Pendaftaran::where(['status' => 1, 'dosis' => 'Dosis 1','tematik_id'=>$tematik_id])->get();
         foreach ($pendaftaran as $value) {
-            if (isset($jumlah[$value->created_at->format('yyyy-mm-dd')])) {
-                $jumlah[$value->created_at->format('yyyy-mm-dd')] += 1;
+            if (isset($jumlah[$value->created_at->format('Y-m-d')])) {
+                $jumlah[$value->created_at->format('Y-m-d')] += 1;
             } else {
-                $jumlah[$value->created_at->format('yyyy-mm-dd')] = 1 + $jml_old;
+                $jumlah[$value->created_at->format('Y-m-d')] = 1 + $jml_old;
             }
         }
         $id = 0;
@@ -211,10 +211,10 @@ class UserController extends Controller
         }
         $pendaftaran2 = Pendaftaran::where(['status' => 1, 'dosis' =>'Dosis 2', 'tematik_id' => $tematik_id])->get();
         foreach ($pendaftaran2 as $value) {
-            if (isset($jumlah2[$value->created_at->format('yyyy-mm-dd')])) {
-                $jumlah2[$value->created_at->format('yyyy-mm-dd')] += 1;
+            if (isset($jumlah2[$value->created_at->format('Y-m-d')])) {
+                $jumlah2[$value->created_at->format('Y-m-d')] += 1;
             } else {
-                $jumlah2[$value->created_at->format('yyyy-mm-dd')] = 1 + $jml_old;
+                $jumlah2[$value->created_at->format('Y-m-d')] = 1 + $jml_old;
             }
         }
         $id = 0;
@@ -236,10 +236,10 @@ class UserController extends Controller
         }
         $pendaftaran3 = Pendaftaran::where(['status' => 1, 'dosis' =>'Dosis 3', 'tematik_id' => $tematik_id])->get();
         foreach ($pendaftaran3 as $value) {
-            if (isset($jumlah3[$value->created_at->format('yyyy-mm-dd')])) {
-                $jumlah3[$value->created_at->format('yyyy-mm-dd')] += 1;
+            if (isset($jumlah3[$value->created_at->format('Y-m-d')])) {
+                $jumlah3[$value->created_at->format('Y-m-d')] += 1;
             } else {
-                $jumlah3[$value->created_at->format('yyyy-mm-dd')] = 1 + $jml_old;
+                $jumlah3[$value->created_at->format('Y-m-d')] = 1 + $jml_old;
             }
         }
         $id = 0;
