@@ -247,7 +247,6 @@
 
         });
 
-
         map.addControl(controlSearch);
         $("#printBtn").click(function() {
             $('#map').print();

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Desa;
 use App\Models\HalamanData;
 use App\Models\HalamanData2;
+use App\Models\Pendaftaran;
 use App\Models\Tematik;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -177,51 +178,89 @@ class UserController extends Controller
         $dosis1 = HalamanData::with('tematik')->where([['kelompok', 'dosis 1'], ['tematik_id', $tematik_id]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
             ->groupBy(['date', 'tematik_id'])
             ->get();
-
-
-        $id = 0;
+        $jml_old = 0;
         foreach ($dosis1 as $value) {
-            $kec[$id] = $value->date;
-            if (isset($jumlah[$id - 1])) {
-                $jumlah[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jumlah[$id - 1];
+            $jumlah[$value->date] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jml_old;
+            $jml_old = $jumlah[$value->date];
+        }
+        $pendaftaran = Pendaftaran::where(['status' => 1, 'dosis' => 'Dosis 1','tematik_id'=>$tematik_id])->get();
+        foreach ($pendaftaran as $value) {
+            if (isset($jumlah[$value->created_at->format('yyyy-mm-dd')])) {
+                $jumlah[$value->created_at->format('yyyy-mm-dd')] += 1;
             } else {
-                $jumlah[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
+                $jumlah[$value->created_at->format('yyyy-mm-dd')] = 1 + $jml_old;
             }
+        }
+        $id = 0;
+        $val = [];
+        foreach ($jumlah as $key => $value) {
+            $kec[$id] = $key;
+            $val[$id] = $value;
             $id += 1;
         }
+        $jumlah = $val;
         $dosis2 = HalamanData::with('tematik')->where([['kelompok', 'dosis 2'], ['tematik_id', $tematik_id]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
             ->groupBy(['date', 'tematik_id'])
             ->get();
 
         $id = 0;
+        $jml_old = 0;
         foreach ($dosis2 as $value) {
-            $kec2[$id] = $value->date;
-            if (isset($jumlah2[$id - 1])) {
-                $jumlah2[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jumlah2[$id - 1];
+            $jumlah2[$value->date] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jml_old;
+            $jml_old = $jumlah2[$value->date];
+        }
+        $pendaftaran2 = Pendaftaran::where(['status' => 1, 'dosis' =>'Dosis 2', 'tematik_id' => $tematik_id])->get();
+        foreach ($pendaftaran2 as $value) {
+            if (isset($jumlah2[$value->created_at->format('yyyy-mm-dd')])) {
+                $jumlah2[$value->created_at->format('yyyy-mm-dd')] += 1;
             } else {
-                $jumlah2[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
+                $jumlah2[$value->created_at->format('yyyy-mm-dd')] = 1 + $jml_old;
             }
+        }
+        $id = 0;
+        $val2 = [];
+        foreach ($jumlah2 as $key => $value) {
+            $kec2[$id] = $key;
+            $val2[$id] = $value;
             $id += 1;
         }
+        $jumlah2 = $val2;
         $dosis3 = HalamanData::with('tematik')->where([['kelompok', 'dosis 3'], ['tematik_id', $tematik_id]])->select('*', DB::raw('DATE(tanggal) as date'), 'tematik_id')
             ->groupBy(['date', 'tematik_id'])
             ->get();
-
-
         $id = 0;
+        $jml_old = 0;
         foreach ($dosis3 as $value) {
-            $kec3[$id] = $value->date;
-            if (isset($jumlah3[$id - 1])) {
-                $jumlah3[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jumlah3[$id - 1];
+            $jumlah3[$value->date] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jml_old;
+            $jml_old = $jumlah3[$value->date];
+        }
+        $pendaftaran3 = Pendaftaran::where(['status' => 1, 'dosis' =>'Dosis 3', 'tematik_id' => $tematik_id])->get();
+        foreach ($pendaftaran3 as $value) {
+            if (isset($jumlah3[$value->created_at->format('yyyy-mm-dd')])) {
+                $jumlah3[$value->created_at->format('yyyy-mm-dd')] += 1;
             } else {
-                $jumlah3[$id] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja;
+                $jumlah3[$value->created_at->format('yyyy-mm-dd')] = 1 + $jml_old;
             }
+        }
+        $id = 0;
+        $val3 = [];
+        foreach ($jumlah3 as $key => $value) {
+            $kec3[$id] = $key;
+            $val3[$id] = $value;
             $id += 1;
         }
+        $jumlah3 = $val3;
         $target = HalamanData::where('kelompok', 'target')->sum(DB::raw('nakes + petugas_publik + lansia + masyarakat_umum + remaja + usia'));
+        $jmlh_user1 = Pendaftaran::where(['status' => 1, 'dosis' => 'Dosis 1'])->count();
         $jmlh_dosis1 = HalamanData::where('kelompok', 'dosis 1')->sum(DB::raw('nakes + petugas_publik + lansia + masyarakat_umum + remaja + usia'));
+        $jmlh_dosis1 += $jmlh_user1;
+        $jmlh_user2 = Pendaftaran::where(['status' => 1, 'dosis' => 'Dosis 2'])->count();
         $jmlh_dosis2 = HalamanData::where('kelompok', 'dosis 2')->sum(DB::raw('nakes + petugas_publik + lansia + masyarakat_umum + remaja + usia'));
+        $jmlh_dosis2 += $jmlh_user2;
+        $jmlh_user3 = Pendaftaran::where(['status' => 1, 'dosis' => 'Dosis 3'])->count();
         $jmlh_dosis3 = HalamanData::where('kelompok', 'dosis 3')->sum(DB::raw('nakes + petugas_publik + lansia + masyarakat_umum + remaja + usia'));
+        $jmlh_dosis3 += $jmlh_user3;
+
         $geofile = [];
         $color = [];
         $coor = [];
