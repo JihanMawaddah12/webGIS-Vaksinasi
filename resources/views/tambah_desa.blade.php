@@ -36,7 +36,6 @@
         #mapid {
             min-height: 500px;
         }
-
     </style>
 @endsection
 

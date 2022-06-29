@@ -10,8 +10,8 @@
                             <h2>Data <b>Desa</b></h2>
                         </div>
                         <div class="col-sm-6 text-end">
-                            <a href="{{ route('tambah desa') }}" class="btn"
-                                style="background-color: #417D7A"><i class="material-icons">&#xE147;</i> <span>Masukkan Data
+                            <a href="{{ route('tambah desa') }}" class="btn" style="background-color: #417D7A"><i
+                                    class="material-icons">&#xE147;</i> <span>Masukkan Data
                                     Baru</span></a>
 
                         </div>

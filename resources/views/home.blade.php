@@ -488,8 +488,8 @@
         @endsection
         @push('scripts')
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
-                        integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
-                        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             <script>
                 $('#kecamatan').change(function() {
                     window.location.href = '/home/' + this.value;
@@ -809,11 +809,11 @@
             <!-- Leaflet JavaScript -->
             <!-- Make sure you put this AFTER Leaflet's CSS -->
             <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-                        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-                        crossorigin=""></script>
+                integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+                crossorigin=""></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
-                        integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
-                        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
             <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
             <script type="text/javascript">
@@ -835,9 +835,11 @@
 
                 function style(feature) {
                     warna = "";
-                    if ((jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 39) {
+                    if ((jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah[
+                            dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 39) {
                         warna = 'red';
-                    } else if ((jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 40 && (jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 69) {
+                    } else if ((jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 40 && (
+                            jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 69) {
                         warna = 'yellow';
                     } else if ((jumlah[dosis_label][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 70) {
                         warna = 'green';
@@ -862,10 +864,13 @@
                     var feature = evt.target.feature;
                     var props = feature.properties;
                     warna = "";
-                    if ((jumlah[dosis_label][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 0 && (jumlah[dosis_label][props.NAMOBJ] / target[
-                            props.NAMOBJ]) * 100 <= 39) {
+                    if ((jumlah[dosis_label][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 0 && (jumlah[dosis_label][props
+                            .NAMOBJ] / target[
+                                props.NAMOBJ]) * 100 <= 39) {
                         warna = 'red';
-                    } else if ((jumlah[dosis_label][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 40 && (jumlah[dosis_label][props.NAMOBJ] /
+                    } else if ((jumlah[dosis_label][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 40 && (jumlah[dosis_label][props
+                                .NAMOBJ
+                            ] /
                             target[props.NAMOBJ]) * 100 <= 69) {
                         warna = 'yellow';
                     } else if ((jumlah[dosis_label][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 70) {
@@ -920,10 +925,13 @@
                     var labels = ''
                     for (var i = 0; i < tematik.length; i++) {
                         warna = "";
-                        if ((jumlah[dosis_label][tematik[i]] / target[tematik[i]]) * 100 >= 0 && (jumlah[dosis_label][tematik[i]] / target[
+                        if ((jumlah[dosis_label][tematik[i]] / target[tematik[i]]) * 100 >= 0 && (jumlah[dosis_label][tematik[
+                                i]] / target[
                                 tematik[i]]) * 100 <= 39) {
                             warna = 'red';
-                        } else if ((jumlah[dosis_label][tematik[i]] / target[tematik[i]]) * 100 >= 40 && (jumlah[dosis_label][tematik[i]] /
+                        } else if ((jumlah[dosis_label][tematik[i]] / target[tematik[i]]) * 100 >= 40 && (jumlah[dosis_label][
+                                    tematik[i]
+                                ] /
                                 target[tematik[i]]) * 100 <= 69) {
                             warna = 'yellow';
                         } else if ((jumlah[dosis_label][tematik[i]] / target[tematik[i]]) * 100 >= 70) {
@@ -939,9 +947,9 @@
                         });
                     }
                     labels =
-                        '<i style="background:red"></i> - 0-39 </br></br>' +
-                        '<i style="background:yellow"></i> - 40-69 </br></br> ' +
-                        '<i style="backgound:green"></i> - 70-100 </br></br>';
+                        '<i style="background:red"></i> - 0% - 39% </br></br>' +
+                        '<i style="background:yellow"></i> - 40% - 69% </br></br> ' +
+                        '<i style="backgound:green"></i> - 70% - 100% </br></br>';
                     div.innerHTML =
                         '<div class="row mb-2">' +
                         '<div class="col">' +
@@ -1008,14 +1016,18 @@
 
                 function style_desa(feature) {
                     warna = "";
-                    if ((jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah_desa[dosis_desa][
+                    if ((jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 >= 0 &&
+                        (jumlah_desa[dosis_desa][
                             feature.properties.NAMOBJ
                         ] / target_desa[feature.properties.NAMOBJ]) * 100 <= 39) {
                         warna = 'red';
-                    } else if ((jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 >= 40 && (
-                            jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 <= 69) {
+                    } else if ((jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) *
+                        100 >= 40 && (
+                            jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 <= 69
+                        ) {
                         warna = 'yellow';
-                    } else if ((jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 >= 70) {
+                    } else if ((jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) *
+                        100 >= 70) {
                         warna = 'green';
                     }
                     return {
@@ -1042,10 +1054,13 @@
                     var feature = evt.target.feature;
                     var props = feature.properties;
                     warna = "";
-                    if ((jumlah_desa[dosis_desa][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100 >= 0 && (jumlah_desa[dosis_desa][props.NAMOBJ] / target_desa[
+                    if ((jumlah_desa[dosis_desa][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100 >= 0 && (jumlah_desa[dosis_desa][
+                            props.NAMOBJ
+                        ] / target_desa[
                             props.NAMOBJ]) * 100 <= 39) {
                         warna = 'red';
-                    } else if ((jumlah_desa[dosis_desa][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100 >= 40 && (jumlah_desa[dosis_desa][props.NAMOBJ] /
+                    } else if ((jumlah_desa[dosis_desa][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100 >= 40 && (jumlah_desa[
+                                dosis_desa][props.NAMOBJ] /
                             target_desa[props.NAMOBJ]) * 100 <= 69) {
                         warna = 'yellow';
                     } else if ((jumlah_desa[dosis_desa][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100 >= 70) {
@@ -1102,10 +1117,12 @@
                     var labels = ''
                     for (var i = 0; i < tematik_desa.length; i++) {
                         warna = "";
-                        if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 0 && (jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[
-                                tematik_desa[i]]) * 100 <= 39) {
+                        if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 0 && (
+                                jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[
+                                    tematik_desa[i]]) * 100 <= 39) {
                             warna = 'red';
-                        } else if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 40 && (jumlah_desa[dosis_desa][tematik_desa[i]] /
+                        } else if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 40 && (
+                                jumlah_desa[dosis_desa][tematik_desa[i]] /
                                 target_desa[tematik_desa[i]]) * 100 <= 69) {
                             warna = 'yellow';
                         } else if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 70) {
@@ -1120,9 +1137,9 @@
                         });
                     }
                     labels =
-                        '<i style="background:red"></i> - 0-39 </br></br>' +
-                        '<i style="background:yellow"></i> - 40-69 </br></br> ' +
-                        '<i style="background:green"></i> - 70-100 </br></br>';
+                        '<i style="background:red"></i> - 0% - 39% </br></br>' +
+                        '<i style="background:yellow"></i> - 40% - 69% </br></br> ' +
+                        '<i style="background:green"></i> - 70% - 100% </br></br>';
                     div.innerHTML =
                         '<div class="row mb-2">' +
                         '<div class="col">' +
