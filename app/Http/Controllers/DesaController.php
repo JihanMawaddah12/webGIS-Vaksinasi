@@ -43,7 +43,6 @@ class DesaController extends Controller
         $fileName = str_replace("public/", "", $fileName);
         Desa::create([
             'desa' => $request->desa,
-            'warna' => $request->warna,
             'geojson' => $fileName
         ]);
         return redirect()->route('halaman desa');
@@ -94,7 +93,6 @@ class DesaController extends Controller
         }
         Desa::find($id)->update([
             'desa' => $request->desa,
-            'warna' => $request->warna,
             'geojson' => $fileName
         ]);
         return redirect()->route('halaman desa');

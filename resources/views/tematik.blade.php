@@ -10,8 +10,8 @@
                             <h2>Data <b>Tematik</b></h2>
                         </div>
                         <div class="col-sm-6 text-end">
-                            <a href="{{ route('tambah tematik') }}" class="btn"
-                                style="background-color: #417D7A"><i class="material-icons">&#xE147;</i> <span>Masukkan Data
+                            <a href="{{ route('tambah tematik') }}" class="btn" style="background-color: #417D7A"><i
+                                    class="material-icons">&#xE147;</i> <span>Masukkan Data
                                     Baru</span></a>
 
                         </div>
@@ -24,7 +24,6 @@
                                 no
                             </th>
                             <th>Kecamatan</th>
-                            <th>Warna</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -35,13 +34,11 @@
                                     {{ $loop->iteration }}
                                 </td>
                                 <td>{{ $item->kecamatan }}</td>
-                                <td><input type="color" disabled value="{{ $item->warna }}"></td>
                                 <td class="w-25">
 
                                     <form action="{{ route('delete tematik', ['id' => $item->id]) }}" method="get">
-                                        <a href="{{ route('edit tematik', ['id' => $item->id]) }}"
-                                            class="edit"><i class="material-icons" data-toggle="tooltip"
-                                                title="Edit">&#xE254;</i></a>
+                                        <a href="{{ route('edit tematik', ['id' => $item->id]) }}" class="edit"><i
+                                                class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                         <button type="submit" class="delete show_confirm border-0 p-0 bg-transparent"><i
                                                 class="material-icons" data-toggle="tooltip"
                                                 title="Hapus">&#xE872;</i></button>

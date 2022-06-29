@@ -45,7 +45,6 @@ class TematikController extends Controller
         }
         Tematik::create([
             'kecamatan' => $request->kecamatan,
-            'warna' => $request->warna,
             'geojson' => $fileName
         ]);
         return redirect()->route('halaman tematik');
@@ -96,7 +95,6 @@ class TematikController extends Controller
         }
         Tematik::find($id)->update([
             'kecamatan' => $request->kecamatan,
-            'warna' => $request->warna,
             'geojson' => $fileName
         ]);
         return redirect()->route('halaman tematik');

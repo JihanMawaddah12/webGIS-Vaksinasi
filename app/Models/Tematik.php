@@ -10,7 +10,6 @@ class Tematik extends Model
     use HasFactory;
     protected $fillable = [
         'kecamatan',
-        'warna',
         'geojson'
     ];
     function data1()

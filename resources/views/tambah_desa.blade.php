@@ -12,10 +12,6 @@
                             <input name="desa" type="text" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>Warna</label>
-                            <input name="warna" type="color" class="form-control" required>
-                        </div>
-                        <div class="form-group">
                             <label>GeoJson</label>
                             <input name="geojson" type="file" class="form-control" required>
                         </div>

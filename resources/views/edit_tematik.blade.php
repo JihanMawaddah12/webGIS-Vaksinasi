@@ -13,10 +13,6 @@
                                 value="{{ $data->kecamatan }}">
                         </div>
                         <div class="form-group">
-                            <label>Warna</label>
-                            <input name="warna" type="color" class="form-control" required value="{{ $data->warna }}">
-                        </div>
-                        <div class="form-group">
                             <label>GeoJson</label>
                             <input name="geojson" type="file" class="form-control" required>
                             <input name="geojson_lama" type="hidden" value="{{ $data->geojson }}">
@@ -39,7 +35,6 @@
         #mapid {
             min-height: 500px;
         }
-
     </style>
 @endsection
 
