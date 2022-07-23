@@ -865,8 +865,9 @@
                     var props = feature.properties;
                     warna = "";
                     if ((jumlah[dosis_label][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 0 && (jumlah[dosis_label][props
-                            .NAMOBJ] / target[
-                                props.NAMOBJ]) * 100 <= 39) {
+                            .NAMOBJ
+                        ] / target[
+                            props.NAMOBJ]) * 100 <= 39) {
                         warna = 'red';
                     } else if ((jumlah[dosis_label][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 40 && (jumlah[dosis_label][props
                                 .NAMOBJ
@@ -947,9 +948,10 @@
                         });
                     }
                     labels =
+                        ' Persentase Capaian </br></br>' +
                         '<i style="background:red"></i> - 0% - 39% </br></br>' +
                         '<i style="background:yellow"></i> - 40% - 69% </br></br> ' +
-                        '<i style="backgound:green"></i> - 70% - 100% </br></br>';
+                        '<i style="background:green"></i> - 70% - 100% </br></br>';
                     div.innerHTML =
                         '<div class="row mb-2">' +
                         '<div class="col">' +
@@ -1024,7 +1026,7 @@
                     } else if ((jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) *
                         100 >= 40 && (
                             jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 <= 69
-                        ) {
+                    ) {
                         warna = 'yellow';
                     } else if ((jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) *
                         100 >= 70) {
@@ -1119,11 +1121,11 @@
                         warna = "";
                         if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 0 && (
                                 jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[
-                                    tematik_desa[i]]) * 100 <= 39) {
+                                    tematik_desa[i]]) * 100 <= 39.99) {
                             warna = 'red';
                         } else if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 40 && (
                                 jumlah_desa[dosis_desa][tematik_desa[i]] /
-                                target_desa[tematik_desa[i]]) * 100 <= 69) {
+                                target_desa[tematik_desa[i]]) * 100 <= 69.99) {
                             warna = 'yellow';
                         } else if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 70) {
                             warna = 'green';
@@ -1137,6 +1139,7 @@
                         });
                     }
                     labels =
+                        ' Persentase Capaian </br></br>' +
                         '<i style="background:red"></i> - 0% - 39% </br></br>' +
                         '<i style="background:yellow"></i> - 40% - 69% </br></br> ' +
                         '<i style="background:green"></i> - 70% - 100% </br></br>';

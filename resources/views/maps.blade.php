@@ -62,7 +62,8 @@
 @push('scripts')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-    <script src="https://www.jqueryscript.net/demo/jQuery-Plugin-To-Print-Any-Part-Of-Your-Page-Print/jQuery.print.js"></script>
+    <script src="https://www.jqueryscript.net/demo/jQuery-Plugin-To-Print-Any-Part-Of-Your-Page-Print/jQuery.print.js">
+    </script>
     <!-- Leaflet JavaScript -->
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
@@ -198,6 +199,7 @@
                 });
             }
             labels =
+                ' Persentase Capaian </br></br>' +
                 '<i style="background:red"></i>  0%-39% </br></br>' +
                 '<i style="background:yellow"></i>  40%-69% </br></br> ' +
                 '<i style="background:green"></i>  70%-100% </br></br>';

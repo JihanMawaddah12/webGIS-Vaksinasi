@@ -349,192 +349,6 @@ http://www.tooplate.com/view/2091-ziggy
                 </div>
             </div>
             <div class="row">
-                {{-- <div class="col-md-3">
-                    <div class="card card-primary">
-                        <div class="card-header" style="background-color:#D0CAB2">
-                            <h3 class="card-title">Dosis Terendah (Kecamatan)</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn" data-bs-toggle="collapse"
-                                    data-bs-target="#dosis1">
-                                    <i class="fa fa-caret-down"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body collapse" id="dosis1">
-                            <h3 style="font-size:20px !important">Dosis 1</h3>
-                            @if ($krendah1)
-                                <h6>Kecamatan {{ $krendah1->tematik->kecamatan }}</h6>
-                                <h6>Jumlah {{ $krendah1->total }}</h6>
-                                <h3 style="font-size:20px !important">
-                                    {{ $krpersen1 ? number_format((float) ($krendah1->total / $krpersen1) * 100, 2, '.', '') : 0 }}%
-                                </h3>
-                            @endif
-
-                            <hr class="text-white bg-black" />
-                            <h3 style="font-size:20px !important">Dosis 2</h3>
-                            @if ($krendah2)
-                                <h6>Kecamatan {{ $krendah2->tematik->kecamatan }}</h6>
-                                <h6>Jumlah {{ $krendah2->total }}</h6>
-                                <h3 style="font-size:20px !important">
-                                    {{ $krpersen2 ? number_format((float) ($krendah2->total / $krpersen2) * 100, 2, '.', '') : 0 }}%
-                                </h3>
-                            @endif
-
-                            <hr class="text-white bg-black" />
-                            <h3 style="font-size:20px !important">Dosis 3</h3>
-                            @if ($krendah3)
-                                <h6>Kecamatan {{ $krendah3->tematik->kecamatan }}</h6>
-                                <h6>Jumlah {{ $krendah3->total }}</h6>
-                                <h3 style="font-size:20px !important">
-                                    {{ $krpersen3 ? number_format((float) ($krendah3->total / $krpersen3) * 100, 2, '.', '') : 0 }}%
-                                </h3>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ./col -->
-                <div class="col-md-3">
-                    <div class="card">
-                        <div class="card-header" style="background-color:#96C7C1">
-                            <h3 class="card-title text-white">Dosis Tertinggi (Kecamatan)</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn" data-bs-toggle="collapse"
-                                    data-bs-target="#dosis2">
-                                    <i class="fa fa-caret-down"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body collapse" id="dosis2">
-                            <h3 style="font-size:20px !important">Dosis 1</h3>
-                            @if ($ktinggi1)
-                                <h6>Kecamatan {{ $ktinggi1->tematik->kecamatan }}</h6>
-                                <h6>Jumlah {{ $ktinggi1->total }}</h6>
-                                <h3 style="font-size:20px !important">
-                                    {{ $ktpersen1 ? number_format((float) ($ktinggi1->total / $ktpersen1) * 100, 2, '.', '') : 0 }}%
-                                </h3>
-                            @endif
-
-                            <hr class="text-white bg-green" />
-                            <h3 style="font-size:20px !important">Dosis 2</h3>
-                            @if ($ktinggi2)
-                                <h6>Kecamatan {{ $ktinggi2->tematik->kecamatan }}</h6>
-                                <h6>Jumlah {{ $ktinggi2->total }}</h6>
-                                <h3 style="font-size:20px !important">
-                                    {{ $ktpersen2 ? number_format((float) ($ktinggi2->total / $ktpersen2) * 100, 2, '.', '') : 0 }}%
-                                </h3>
-                            @endif
-
-                            <hr class="text-white bg-green" />
-                            <h3 style="font-size:20px !important">Dosis 3</h4>
-                                @if ($ktinggi3)
-                                    <h6>Kecamatan {{ $ktinggi3->tematik->kecamatan }}</h6>
-                                    <h6>Jumlah {{ $ktinggi3->total }}</h6>
-                                    <h3 style="font-size:20px !important">
-                                        {{ $ktpersen3 ? number_format((float) ($ktinggi3->total / $ktpersen3) * 100, 2, '.', '') : 0 }}%
-                                    </h3>
-                                @endif
-                        </div>
-                    </div>
-                </div> --}}
-
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header" style="background-color:#DED9C4">
-                            <h3 class="card-title text-white">Capaian Terendah</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn" data-bs-toggle="collapse"
-                                    data-bs-target="#dosis3">
-                                    <i class="fa fa-caret-down"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body collapse" id="dosis3">
-                            <h3 style="font-size:20px !important">Dosis 1</h3>
-                            @if ($drendah1)
-                                <h6>Kecamatan {{ $krendah1->tematik->kecamatan }}</h6>
-                                <h6>Desa {{ $drendah1->desa->desa }}</h6>
-                                <h6>Jumlah {{ $drendah1->total }}</h6>
-                                <h3 style="font-size:20px !important">
-                                    {{ $drpersen1 ? number_format((float) ($drendah1->total / $drpersen1) * 100, 2, '.', '') : 0 }}%
-                                </h3>
-                            @endif
-
-                            <hr class="text-white bg-black" />
-                            <h3 style="font-size:20px !important">Dosis 2</h3>
-                            @if ($drendah2)
-                                <h6>Kecamatan {{ $krendah2->tematik->kecamatan }}</h6>
-                                <h6>Desa {{ $drendah2->desa->desa }}</h6>
-                                <h6>Jumlah {{ $drendah2->total }}</h6>
-                                <h3 style="font-size:20px !important">
-                                    {{ $drpersen2 ? number_format((float) ($drendah2->total / $drpersen2) * 100, 2, '.', '') : 0 }}%
-                                </h3>
-                            @endif
-
-                            <hr class="text-white bg-black" />
-                            <h3 style="font-size:20px !important">Dosis 3</h3>
-                            @if ($drendah3)
-                                <h6>Kecamatan {{ $krendah3->tematik->kecamatan }}</h6>
-                                <h6>Desa {{ $drendah3->desa->desa }}</h6>
-                                <h6>Jumlah {{ $drendah3->total }}</h6>
-                                <h3 style="font-size:20px !important">
-                                    {{ $drpersen3 ? number_format((float) ($drendah3->total / $drpersen3) * 100, 2, '.', '') : 0 }}%
-                                </h3>
-                            @endif
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ./col -->
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header" style="background-color:#89b5af">
-                            <h3 class="card-title text-white">Capaian Tertinggi</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn" data-bs-toggle="collapse"
-                                    data-bs-target="#dosis4">
-                                    <i class="fa fa-caret-down"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body collapse" id="dosis4">
-                            <h3 style="font-size:20px !important"> Dosis 1 </h3>
-                            @if ($dtinggi1)
-                                <h6>Kecamatan {{ $ktinggi1->tematik->kecamatan }}</h6>
-                                <h6>Desa {{ $dtinggi1->desa->desa }}</h6>
-                                <h6>Jumlah {{ $dtinggi1->total }}</h6>
-                                <h3 style="font-size:20px !important">
-                                    {{ $dtpersen1 ? number_format((float) ($dtinggi1->total / $dtpersen1) * 100, 2, '.', '') : 0 }}%
-                                </h3>
-                            @endif
-
-                            <hr class="text-white bg-black">
-                            <h3 style="font-size:20px !important"> Dosis 2 </h3>
-                            @if ($dtinggi2)
-                                <h6>Kecamatan {{ $ktinggi2->tematik->kecamatan }}</h6>
-                                <h6>Desa {{ $dtinggi2->desa->desa }}</h6>
-                                <h6>Jumlah {{ $dtinggi2->total }}</h6>
-                                <h3 style="font-size:20px !important">
-                                    {{ $dtpersen2 ? number_format((float) ($dtinggi2->total / $dtpersen2) * 100, 2, '.', '') : 0 }}%
-                                </h3>
-                            @endif
-
-                            <hr class="text-white bg-black">
-                            <h3 style="font-size:20px !important">
-                                Dosis 3 </h3>
-                            @if ($dtinggi3)
-                                <h6>Kecamatan {{ $ktinggi3->tematik->kecamatan }}</h6>
-                                <h6>Desa {{ $dtinggi3->desa->desa }}</h6>
-                                <h6>Jumlah {{ $dtinggi3->total }}</h6>
-                                <h3 style="font-size:20px !important">
-                                    {{ $dtpersen3 ? number_format((float) ($dtinggi3->total / $dtpersen3) * 100, 2, '.', '') : 0 }}%
-                                </h3>
-                            @endif
-
-                        </div>
-                    </div>
-                </div>
                 <section class="col-lg-6 col-6 mt-4">
                     <div class="card" style="background-color: #D4ECDD">
                         <div class="card-header border-0">
@@ -972,7 +786,8 @@ http://www.tooplate.com/view/2091-ziggy
         var props = feature.properties;
         warna = "";
         if ((jumlah[dosis_label][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 0 && (jumlah[dosis_label][props
-                .NAMOBJ] / target[props.NAMOBJ]) * 100 <= 39) {
+                .NAMOBJ
+            ] / target[props.NAMOBJ]) * 100 <= 39) {
             warna = 'red';
         } else if ((jumlah[dosis_label][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 40 && (jumlah[dosis_label][props
                     .NAMOBJ
@@ -1053,9 +868,10 @@ http://www.tooplate.com/view/2091-ziggy
             });
         }
         labels =
+            ' Persentase Capaian </br></br>' +
             '<i style="background:red"></i> - 0% - 39% </br></br>' +
             '<i style="background:yellow"></i> - 40% - 69% </br></br> ' +
-            '<i style="backgound:green"></i> - 70% - 100% </br></br>';
+            '<i style="background:green"></i> - 70% - 100% </br></br>';
         div.innerHTML =
             '<div class="row mb-2">' +
             '<div class="col">' +
@@ -1125,11 +941,12 @@ http://www.tooplate.com/view/2091-ziggy
         if ((jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 >= 0 &&
             (jumlah_desa[dosis_desa][
                 feature.properties.NAMOBJ
-            ] / target_desa[feature.properties.NAMOBJ]) * 100 <= 39) {
+            ] / target_desa[feature.properties.NAMOBJ]) * 100 <= 39.99) {
             warna = 'red';
         } else if ((jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) *
             100 >= 40 && (
-                jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 <= 69
+                jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 <=
+            69.99
         ) {
             warna = 'yellow';
         } else if ((jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) *
@@ -1243,6 +1060,7 @@ http://www.tooplate.com/view/2091-ziggy
             });
         }
         labels =
+            ' Persentase Capaian </br></br>' +
             '<i style="background:red"></i> - 0% - 39% </br></br>' +
             '<i style="background:yellow"></i> - 40% - 69% </br></br> ' +
             '<i style="background:green"></i> - 70% - 100% </br></br>';

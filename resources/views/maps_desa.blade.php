@@ -131,10 +131,10 @@
             var props = feature.properties;
             warna = "";
             if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 0 && (jumlah[dosis][props.NAMOBJ] / target[
-                    props.NAMOBJ]) * 100 <= 39) {
+                    props.NAMOBJ]) * 100 <= 39.99) {
                 warna = 'red';
             } else if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 40 && (jumlah[dosis][props.NAMOBJ] /
-                    target[props.NAMOBJ]) * 100 <= 69) {
+                    target[props.NAMOBJ]) * 100 <= 69.99) {
                 warna = 'yellow';
             } else if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 70) {
                 warna = 'green';
@@ -208,6 +208,7 @@
                 });
             }
             labels =
+                ' Persentase Capaian </br></br>' +
                 '<i style="background:red"></i>  0%-39% </br></br>' +
                 '<i style="background:yellow"></i>  40%-69% </br></br> ' +
                 '<i style="background:green"></i>  70%-100% </br></br>';
