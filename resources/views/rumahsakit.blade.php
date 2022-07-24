@@ -7,11 +7,11 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>Data <b>Rumah Sakit</b></h2>
+                            <h2>Data <b>User</b></h2>
                         </div>
                         <div class="col-sm-6 text-end">
-                            <a href="{{ route('tambah rumahsakit') }}" class="btn"
-                                style="background-color: #417D7A"><i class="material-icons">&#xE147;</i> <span>Masukkan Data
+                            <a href="{{ route('tambah rumahsakit') }}" class="btn" style="background-color: #417D7A"><i
+                                    class="material-icons">&#xE147;</i> <span>Masukkan Data
                                     Baru</span></a>
                         </div>
                     </div>
@@ -63,8 +63,7 @@
                     @csrf
                     <div class="modal-header">
                         <h4 class="modal-title">Tambah Data</h4>
-                        <button type="button" class="close" data-bs-dismiss="modal"
-                            aria-hidden="true">&times;</button>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
@@ -95,8 +94,7 @@
                 <form>
                     <div class="modal-header">
                         <h4 class="modal-title">Edit Employee</h4>
-                        <button type="button" class="close" data-dismiss="modal"
-                            aria-hidden="true">&times;</button>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
@@ -131,8 +129,7 @@
                 <form>
                     <div class="modal-header">
                         <h4 class="modal-title">Delete Employee</h4>
-                        <button type="button" class="close" data-dismiss="modal"
-                            aria-hidden="true">&times;</button>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
                         <p>Are you sure you want to delete these Records?</p>

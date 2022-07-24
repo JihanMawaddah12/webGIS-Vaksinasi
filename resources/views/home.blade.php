@@ -217,8 +217,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
 
@@ -230,12 +228,10 @@
                             <i class="fas fa-map-marker-alt mr-1"></i>
                             Capaian Kecamatan
                         </h3>
-
                     </div>
                     <div class="card-body">
                         <div id="map" style="height: 400px; width: 100%;"></div>
                     </div>
-
                 </div>
             </section>
 
@@ -246,22 +242,16 @@
                             <i class="fas fa-map-marker-alt mr-1"></i>
                             Capaian Desa
                         </h3>
-
                     </div>
                     <div class="card-body">
                         <div id="map_desa" style="height: 400px; width: 100%;"></div>
                     </div>
-
                 </div>
             </section>
-
-
             <div class="row">
-
-
-
             </div>
         @endsection
+
         @section('styles')
             <!-- Leaflet CSS -->
             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -301,6 +291,7 @@
                 }
             </style>
         @endsection
+
         @push('scripts')
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
                 integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="

@@ -7,7 +7,7 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>Data <b>Tematik</b></h2>
+                            <h2>Data <b>Kecamatan</b></h2>
                         </div>
                         <div class="col-sm-6 text-end">
                             <a href="{{ route('tambah tematik') }}" class="btn" style="background-color: #417D7A"><i
