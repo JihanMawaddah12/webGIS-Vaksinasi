@@ -95,10 +95,10 @@
             warna = "";
             if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 0 && (jumlah[dosis][
                     feature.properties.NAMOBJ
-                ] / target[feature.properties.NAMOBJ]) * 100 <= 39) {
+                ] / target[feature.properties.NAMOBJ]) * 100 <= 34.99) {
                 warna = 'red';
-            } else if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 40 && (
-                    jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 69) {
+            } else if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 35 && (
+                    jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 <= 69.99) {
                 warna = 'yellow';
             } else if ((jumlah[dosis][feature.properties.NAMOBJ] / target[feature.properties.NAMOBJ]) * 100 >= 70) {
                 warna = 'green';
@@ -124,10 +124,10 @@
             var props = feature.properties;
             warna = "";
             if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 0 && (jumlah[dosis][props.NAMOBJ] / target[
-                    props.NAMOBJ]) * 100 <= 39) {
+                    props.NAMOBJ]) * 100 <= 34.99) {
                 warna = 'red';
-            } else if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 40 && (jumlah[dosis][props.NAMOBJ] /
-                    target[props.NAMOBJ]) * 100 <= 69) {
+            } else if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 35 && (jumlah[dosis][props.NAMOBJ] /
+                    target[props.NAMOBJ]) * 100 <= 69.99) {
                 warna = 'yellow';
             } else if ((jumlah[dosis][props.NAMOBJ] / target[props.NAMOBJ]) * 100 >= 70) {
                 warna = 'green';
@@ -182,10 +182,10 @@
             for (var i = 0; i < tematik.length; i++) {
                 warna = "";
                 if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 0 && (jumlah[dosis][tematik[i]] / target[
-                        tematik[i]]) * 100 <= 39) {
+                        tematik[i]]) * 100 <= 34.99) {
                     warna = 'red';
-                } else if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 40 && (jumlah[dosis][tematik[i]] /
-                        target[tematik[i]]) * 100 <= 69) {
+                } else if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 35 && (jumlah[dosis][tematik[i]] /
+                        target[tematik[i]]) * 100 <= 69.99) {
                     warna = 'yellow';
                 } else if ((jumlah[dosis][tematik[i]] / target[tematik[i]]) * 100 >= 70) {
                     warna = 'green';
@@ -200,8 +200,8 @@
             }
             labels =
                 ' Persentase Capaian </br></br>' +
-                '<i style="background:red"></i>  0%-39% </br></br>' +
-                '<i style="background:yellow"></i>  40%-69% </br></br> ' +
+                '<i style="background:red"></i>  0%-34% </br></br>' +
+                '<i style="background:yellow"></i>  35%-69% </br></br> ' +
                 '<i style="background:green"></i>  70%-100% </br></br>';
             div.innerHTML =
                 '<div class="row mb-2">' +

@@ -848,9 +848,9 @@ http://www.tooplate.com/view/2091-ziggy
             warna = "";
             if ((jumlah[dosis_label][tematik[i]] / target[tematik[i]]) * 100 >= 0 && (jumlah[dosis_label][tematik[
                     i]] / target[
-                    tematik[i]]) * 100 <= 39) {
+                    tematik[i]]) * 100 <= 34) {
                 warna = 'red';
-            } else if ((jumlah[dosis_label][tematik[i]] / target[tematik[i]]) * 100 >= 40 && (jumlah[dosis_label][
+            } else if ((jumlah[dosis_label][tematik[i]] / target[tematik[i]]) * 100 >= 35 && (jumlah[dosis_label][
                         tematik[i]
                     ] /
                     target[tematik[i]]) * 100 <= 69) {
@@ -869,13 +869,13 @@ http://www.tooplate.com/view/2091-ziggy
         }
         labels =
             ' Persentase Capaian </br></br>' +
-            '<i style="background:red"></i> - 0% - 39% </br></br>' +
-            '<i style="background:yellow"></i> - 40% - 69% </br></br> ' +
+            '<i style="background:red"></i> - 0% - 34% </br></br>' +
+            '<i style="background:yellow"></i> - 35% - 69% </br></br> ' +
             '<i style="background:green"></i> - 70% - 100% </br></br>';
         div.innerHTML =
             '<div class="row mb-2">' +
             '<div class="col">' +
-            '<button class="btn btn-info text-white" id="dosis1_label" onclick="dosis_label = \'1\';legend.addTo(map);update()">Dosis 1<button>' +
+            '<button class="btn btn-info text-white" id="dosis1_label" onclick="dosis_label = \'1\';legend.addTo(map);update()">Dosis 1</button>' +
             '</div>' +
             '<div class="col">' +
             '<button class="btn btn-info text-white" id="dosis2_label" onclick="dosis_label = \'2\';legend.addTo(map);update()">Dosis 2</button>' +
@@ -1042,11 +1042,11 @@ http://www.tooplate.com/view/2091-ziggy
             warna = "";
             if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 0 && (
                     jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[
-                        tematik_desa[i]]) * 100 <= 39) {
+                        tematik_desa[i]]) * 100 <= 34.99) {
                 warna = 'red';
-            } else if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 40 && (
+            } else if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 35 && (
                     jumlah_desa[dosis_desa][tematik_desa[i]] /
-                    target_desa[tematik_desa[i]]) * 100 <= 69) {
+                    target_desa[tematik_desa[i]]) * 100 <= 69.99) {
                 warna = 'yellow';
             } else if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 70) {
                 warna = 'green';
@@ -1061,13 +1061,13 @@ http://www.tooplate.com/view/2091-ziggy
         }
         labels =
             ' Persentase Capaian </br></br>' +
-            '<i style="background:red"></i> - 0% - 39% </br></br>' +
-            '<i style="background:yellow"></i> - 40% - 69% </br></br> ' +
+            '<i style="background:red"></i> - 0% - 34% </br></br>' +
+            '<i style="background:yellow"></i> - 35% - 69% </br></br> ' +
             '<i style="background:green"></i> - 70% - 100% </br></br>';
         div.innerHTML =
             '<div class="row mb-2">' +
             '<div class="col">' +
-            '<button class="btn btn-info text-white" id="dosis1_desa" onclick="dosis_desa = \'1\';legend_desa.addTo(map_desa);update()">Dosis 1<button>' +
+            '<button class="btn btn-info text-white" id="dosis1_desa" onclick="dosis_desa = \'1\';legend_desa.addTo(map_desa);update()">Dosis 1</button>' +
             '</div>' +
             '<div class="col">' +
             '<button class="btn btn-info text-white" id="dosis2_desa" onclick="dosis_desa = \'2\';legend_desa.addTo(map_desa);update()">Dosis 2</button>' +

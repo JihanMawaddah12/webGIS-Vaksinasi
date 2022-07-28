@@ -10,8 +10,8 @@
                         </div>
 
                         <div class="col text-end ms-4">
-                            <a href="{{ route('tambah data') }}" class="btn"
-                                style="background-color: #417D7A"><i class="material-icons">&#xE147;</i>
+                            <a href="{{ route('tambah data') }}" class="btn" style="background-color: #417D7A"><i
+                                    class="material-icons">&#xE147;</i>
                                 <span>Masukkan Data Baru</span></a>
                             <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
@@ -87,7 +87,7 @@
                                 </td>
                             </tr>
                         @endforeach
-                         {{-- @foreach ($pendaftaran as $item)
+                        {{-- @foreach ($pendaftaran as $item)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->created_at->format('yyyy-mm-dd') }}</td>
@@ -144,7 +144,6 @@
             color: white;
             float: left;
         }
-
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 
@@ -174,7 +173,8 @@
                 buttons: [{
                     extend: 'pdfHtml5',
                     orientation: 'landscape',
-                    pageSize: 'LEGAL'
+                    pageSize: 'LEGAL',
+                    text: 'Cetak Laporan'
                 }]
             });
         });

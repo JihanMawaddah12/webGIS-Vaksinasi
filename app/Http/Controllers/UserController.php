@@ -89,7 +89,7 @@ class UserController extends Controller
         }
 
         foreach ($tematik as $item) {
-            $geofile[$index] = 'storage/' . $item->geojson;
+            $geofile[$index] = '/storage/' . $item->geojson;
             $index++;
         }
         foreach ($tematik as $item) {
@@ -151,7 +151,7 @@ class UserController extends Controller
         }
 
         foreach ($desa as $item) {
-            $geofile_desa[$index_desa] = 'storage/' . $item->geojson;
+            $geofile_desa[$index_desa] = '/storage/' . $item->geojson;
             $index_desa++;
         }
         foreach ($desa as $item) {
@@ -183,7 +183,7 @@ class UserController extends Controller
             $jumlah[$value->date] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jml_old;
             $jml_old = $jumlah[$value->date];
         }
-        $pendaftaran = Pendaftaran::where(['status' => 1, 'dosis' => 'Dosis 1','tematik_id'=>$tematik_id])->get();
+        $pendaftaran = Pendaftaran::where(['status' => 1, 'dosis' => 'Dosis 1', 'tematik_id' => $tematik_id])->get();
         foreach ($pendaftaran as $value) {
             if (isset($jumlah[$value->created_at->format('Y-m-d')])) {
                 $jumlah[$value->created_at->format('Y-m-d')] += 1;
@@ -209,7 +209,7 @@ class UserController extends Controller
             $jumlah2[$value->date] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jml_old;
             $jml_old = $jumlah2[$value->date];
         }
-        $pendaftaran2 = Pendaftaran::where(['status' => 1, 'dosis' =>'Dosis 2', 'tematik_id' => $tematik_id])->get();
+        $pendaftaran2 = Pendaftaran::where(['status' => 1, 'dosis' => 'Dosis 2', 'tematik_id' => $tematik_id])->get();
         foreach ($pendaftaran2 as $value) {
             if (isset($jumlah2[$value->created_at->format('Y-m-d')])) {
                 $jumlah2[$value->created_at->format('Y-m-d')] += 1;
@@ -234,7 +234,7 @@ class UserController extends Controller
             $jumlah3[$value->date] = $value->nakes + $value->petugas_publik + $value->lansia + $value->masyarakat_umum + $value->remaja + $jml_old;
             $jml_old = $jumlah3[$value->date];
         }
-        $pendaftaran3 = Pendaftaran::where(['status' => 1, 'dosis' =>'Dosis 3', 'tematik_id' => $tematik_id])->get();
+        $pendaftaran3 = Pendaftaran::where(['status' => 1, 'dosis' => 'Dosis 3', 'tematik_id' => $tematik_id])->get();
         foreach ($pendaftaran3 as $value) {
             if (isset($jumlah3[$value->created_at->format('Y-m-d')])) {
                 $jumlah3[$value->created_at->format('Y-m-d')] += 1;

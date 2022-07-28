@@ -653,7 +653,7 @@
                     return {
                         weight: 2,
                         opacity: 1,
-                        color: 'white',
+                        color: 'black',
                         dashArray: '3',
                         fillOpacity: 1.0,
                         fillColor: warna
@@ -708,7 +708,7 @@
                         }), layer.bindTooltip(feature.properties.NAMOBJ, {
                             permanent: true,
                             direction: 'center',
-                            className: 'bg-transparent border-0 text-white shadow-none font-weight-bold'
+                            className: 'bg-transparent border-0 text-black shadow-none font-weight-bold'
                         });
 
                         layer.on('popupopen', updatePopup);
@@ -734,12 +734,12 @@
                         warna = "";
                         if ((jumlah[dosis_label][tematik[i]] / target[tematik[i]]) * 100 >= 0 && (jumlah[dosis_label][tematik[
                                 i]] / target[
-                                tematik[i]]) * 100 <= 39) {
+                                tematik[i]]) * 100 <= 34.99) {
                             warna = 'red';
-                        } else if ((jumlah[dosis_label][tematik[i]] / target[tematik[i]]) * 100 >= 40 && (jumlah[dosis_label][
+                        } else if ((jumlah[dosis_label][tematik[i]] / target[tematik[i]]) * 100 >= 35 && (jumlah[dosis_label][
                                     tematik[i]
                                 ] /
-                                target[tematik[i]]) * 100 <= 69) {
+                                target[tematik[i]]) * 100 <= 69.99) {
                             warna = 'yellow';
                         } else if ((jumlah[dosis_label][tematik[i]] / target[tematik[i]]) * 100 >= 70) {
                             warna = 'green';
@@ -755,8 +755,8 @@
                     }
                     labels =
                         ' Persentase Capaian </br></br>' +
-                        '<i style="background:red"></i> - 0% - 39% </br></br>' +
-                        '<i style="background:yellow"></i> - 40% - 69% </br></br> ' +
+                        '<i style="background:red"></i> - 0% - 34% </br></br>' +
+                        '<i style="background:yellow"></i> - 35% - 69% </br></br> ' +
                         '<i style="background:green"></i> - 70% - 100% </br></br>';
                     div.innerHTML =
                         '<div class="row mb-2">' +
@@ -827,11 +827,12 @@
                     if ((jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 >= 0 &&
                         (jumlah_desa[dosis_desa][
                             feature.properties.NAMOBJ
-                        ] / target_desa[feature.properties.NAMOBJ]) * 100 <= 39) {
+                        ] / target_desa[feature.properties.NAMOBJ]) * 100 <= 34.99) {
                         warna = 'red';
                     } else if ((jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) *
-                        100 >= 40 && (
-                            jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 <= 69
+                        100 >= 35 && (
+                            jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) * 100 <=
+                        69.99
                     ) {
                         warna = 'yellow';
                     } else if ((jumlah_desa[dosis_desa][feature.properties.NAMOBJ] / target_desa[feature.properties.NAMOBJ]) *
@@ -865,11 +866,11 @@
                     if ((jumlah_desa[dosis_desa][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100 >= 0 && (jumlah_desa[dosis_desa][
                             props.NAMOBJ
                         ] / target_desa[
-                            props.NAMOBJ]) * 100 <= 39) {
+                            props.NAMOBJ]) * 100 <= 34.99) {
                         warna = 'red';
-                    } else if ((jumlah_desa[dosis_desa][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100 >= 40 && (jumlah_desa[
+                    } else if ((jumlah_desa[dosis_desa][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100 >= 35 && (jumlah_desa[
                                 dosis_desa][props.NAMOBJ] /
-                            target_desa[props.NAMOBJ]) * 100 <= 69) {
+                            target_desa[props.NAMOBJ]) * 100 <= 69.99) {
                         warna = 'yellow';
                     } else if ((jumlah_desa[dosis_desa][props.NAMOBJ] / target_desa[props.NAMOBJ]) * 100 >= 70) {
                         warna = 'green';
@@ -927,9 +928,9 @@
                         warna = "";
                         if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 0 && (
                                 jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[
-                                    tematik_desa[i]]) * 100 <= 39.99) {
+                                    tematik_desa[i]]) * 100 <= 34.99) {
                             warna = 'red';
-                        } else if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 40 && (
+                        } else if ((jumlah_desa[dosis_desa][tematik_desa[i]] / target_desa[tematik_desa[i]]) * 100 >= 35 && (
                                 jumlah_desa[dosis_desa][tematik_desa[i]] /
                                 target_desa[tematik_desa[i]]) * 100 <= 69.99) {
                             warna = 'yellow';
@@ -946,8 +947,8 @@
                     }
                     labels =
                         ' Persentase Capaian </br></br>' +
-                        '<i style="background:red"></i> - 0% - 39% </br></br>' +
-                        '<i style="background:yellow"></i> - 40% - 69% </br></br> ' +
+                        '<i style="background:red"></i> - 0% - 34% </br></br>' +
+                        '<i style="background:yellow"></i> - 35% - 69% </br></br> ' +
                         '<i style="background:green"></i> - 70% - 100% </br></br>';
                     div.innerHTML =
                         '<div class="row mb-2">' +

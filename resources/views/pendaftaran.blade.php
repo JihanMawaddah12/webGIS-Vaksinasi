@@ -96,7 +96,6 @@ http://www.tooplate.com/view/2091-ziggy
         .leaflet-right {
             max-width: 50%;
         }
-
     </style>
 </head>
 
