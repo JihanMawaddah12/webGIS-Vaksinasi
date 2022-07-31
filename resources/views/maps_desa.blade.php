@@ -111,7 +111,7 @@
                 opacity: 1,
                 color: 'white',
                 dashArray: '3',
-                fillOpacity: 1.0,
+                fillOpacity: 0.5,
                 fillColor: warna
             };
         }
@@ -164,7 +164,7 @@
                 }), layer.bindTooltip(feature.properties.NAMOBJ, {
                     permanent: true,
                     direction: 'center',
-                    className: 'bg-transparent border-0 text-white shadow-none font-weight-bold'
+                    className: 'bg-transparent border-0 text-black shadow-none font-weight-bold'
                 });
                 layer.on('popupopen', updatePopup);
             }

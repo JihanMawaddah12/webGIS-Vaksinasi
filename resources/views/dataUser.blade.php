@@ -770,7 +770,7 @@ http://www.tooplate.com/view/2091-ziggy
             opacity: 1,
             color: 'white',
             dashArray: '3',
-            fillOpacity: 1.0,
+            fillOpacity: 0.7,
             fillColor: warna
         };
     }
@@ -822,7 +822,7 @@ http://www.tooplate.com/view/2091-ziggy
             }), layer.bindTooltip(feature.properties.NAMOBJ, {
                 permanent: true,
                 direction: 'center',
-                className: 'bg-transparent border-0 text-white shadow-none font-weight-bold'
+                className: 'bg-transparent border-0 text-black shadow-none font-weight-bold'
             });
 
             layer.on('popupopen', updatePopup);
@@ -958,7 +958,7 @@ http://www.tooplate.com/view/2091-ziggy
             opacity: 1,
             color: 'white',
             dashArray: '3',
-            fillOpacity: 1.0,
+            fillOpacity: 0.7,
             fillColor: warna
         };
     }
@@ -1014,7 +1014,7 @@ http://www.tooplate.com/view/2091-ziggy
             }), layer.bindTooltip(feature.properties.NAMOBJ, {
                 permanent: true,
                 direction: 'center',
-                className: 'bg-transparent border-0 text-white shadow-none font-weight-bold'
+                className: 'bg-transparent border-0 text-black shadow-none font-weight-bold'
             });
             layer.on('popupopen', updatePopup_desa);
         }

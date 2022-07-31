@@ -63,7 +63,6 @@
         .nav-link.active {
             background-color: #1A3C40 !important;
         }
-
     </style>
     @yield('styles')
 </head>
@@ -72,7 +71,7 @@
     <div id="app">
         <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="background-color: #EDE6DB">
             <!-- Left navbar links -->
-            <ul class="navbar-nav">
+            {{-- <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="{{ route('Data user') }}" role="button"><i
                             class="fas fa-bars"></i></a>
@@ -81,7 +80,7 @@
                     <a href={{ route('Data user') }} class="nav-link">Home</a>
                 </li>
 
-            </ul>
+            </ul> --}}
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
