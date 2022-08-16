@@ -157,11 +157,11 @@ http://www.tooplate.com/view/2091-ziggy
 <!-- Leaflet JavaScript -->
 <!-- Make sure you put this AFTER Leaflet's CSS -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin=""></script>
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
-integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
-crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
 
 <script src="{{ asset('storage/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}"></script>
@@ -181,35 +181,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
-    var info = L.control();
-    info.onAdd = function(map) {
-        this._div = L.DomUtil.create('div', 'info');
-        this.update();
-        return this._div;
-    };
-    //menampilkan pop up info tematik
-    info.update = function(props) {
-        this._div.innerHTML = '<h4>Kecamatan</h4>' + (props ?
-            '<b>' + props.NAMOBJ + '</b><br />' + props.MhsSIF + ' orang' :
-            'Gerakkan mouse Anda');
-    };
-    //memunculkan highlight pada peta
-    function highlightFeature(e) {
-        var layer = e.target;
 
-        layer.setStyle({
-            weight: 5,
-            color: '#666',
-            dashArray: '',
-            fillOpacity: 0.7
-        });
-
-        if (!L.Browser.ie && !L.Browser.opera) {
-            layer.bringToFront();
-        }
-
-        info.update(layer.feature.properties);
-    }
     var icon = L.icon({
         iconUrl: "{{ asset('storage/img/hospital.png') }}",
         iconSize: [38, 38], // size of the icon
@@ -221,25 +193,12 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         map.fitBounds(e.target.getBounds());
     }
 
-    function onEachFeature(feature, layer) {
-        layer.on({
-            mouseover: highlightFeature,
-            mouseout: resetHighlight,
-            click: zoomToFeature
-        });
-    }
-
     function updateMarker(lat, lng) {
-        latPoint = lat;
-        longPoint = lng;
         userMarker
             .setLatLng([lat, lng]);
         return false;
     };
-    // var dataPoint = [];
-    // for (var i = 0; i < data.length; i++) {
-    //     dataPoint[i] = L.latLng(data[i][1], data[i][2]);
-    // }
+
     var control = L.Routing.control({
         waypoints: [],
         routeWhileDragging: true,
@@ -254,8 +213,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     function showPosition(position) {
         var latPoint = position.coords.latitude;
         var longPoint = position.coords.longitude;
-
-
 
         updateMarker(latPoint, longPoint)
         control.setWaypoints(L.latLng(latPoint, longPoint))
@@ -291,9 +248,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                 }); //se property searched
             marker.bindPopup("<strong>" + data[i][3] +
                 "</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i]
-                [
-                    1
-                ] + "," + data[i][2] + ")'>Ke Sini</button>");
+                [1] + "," + data[i][2] + ")'>Ke Sini</button>");
             markersLayer.addLayer(marker);
         }
     }

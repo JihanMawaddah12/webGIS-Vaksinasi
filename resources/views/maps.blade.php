@@ -76,7 +76,6 @@
     <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
     <script type="text/javascript">
         var s = [5.554630942893766, 95.31709742351293];
-        var color = {!! json_encode($color) !!};
         var data = {!! json_encode($data) !!}
         var tematik = {!! json_encode($tematik) !!}
         var jumlah = {!! json_encode($jumlah) !!}
@@ -85,7 +84,6 @@
             s, 13
         );
         var dosis = '1';
-
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -119,7 +117,6 @@
             geojsonLayer.setStyle({
                 fillColor: 'transparent'
             });
-            var propertyValue;
             var feature = evt.target.feature;
             var props = feature.properties;
             warna = "";

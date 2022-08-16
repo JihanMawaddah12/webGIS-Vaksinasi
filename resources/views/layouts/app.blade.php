@@ -167,11 +167,6 @@
                                     <div class="collapse  {{ in_array(request()->route()->getName(),['maps lokasi', 'maps desa', 'maps', 'Rute'])? 'show': '' }}"
                                         id="maps" style="">
                                         <ul class="nav ms-4 ps-3">
-                                            <li class="nav-item w-100">
-                                                <a class="item {{ request()->route()->getName() == 'maps lokasi'? 'text-white active': '' }}"
-                                                    href="{{ route('maps lokasi') }}">Lokasi
-                                                    Vaksinasi</a>
-                                            </li>
                                             <li class="nav-item  w-100">
                                                 <a class="item {{ request()->route()->getName() == 'maps desa'? 'text-white active': '' }}"
                                                     href="{{ route('maps desa') }}">Desa</a>

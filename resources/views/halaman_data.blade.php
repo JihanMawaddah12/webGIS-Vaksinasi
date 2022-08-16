@@ -87,46 +87,6 @@
                                 </td>
                             </tr>
                         @endforeach
-                        {{-- @foreach ($pendaftaran as $item)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->created_at->format('yyyy-mm-dd') }}</td>
-                                <td>{{ $item->data2->tematik->kecamatan }}</td>
-                                <td>{{ $item->desa ? $item->desa->desa : '' }}</td>
-                                <td>{{ $item->Kelompok }}</td>
-                                <td>{{ $item->nakes +$item->pendaftaran->where('kelompok', 'nakes')->where('desa_id', $item->desa_id)->count() }}
-                                </td>
-                                <td>{{ $item->petugas_publik +$item->pendaftaran->where('kelompok', 'petugas publik')->where('desa_id', $item->desa_id)->count() }}
-                                </td>
-                                <td>{{ $item->lansia +$item->pendaftaran->where('kelompok', 'lansia')->where('desa_id', $item->desa_id)->count() }}
-                                </td>
-                                <td>{{ $item->masyarakat_umum +$item->pendaftaran->where('kelompok', 'masyarakat umum')->where('desa_id', $item->desa_id)->count() }}
-                                </td>
-                                <td>{{ $item->remaja +$item->pendaftaran->where('kelompok', 'remaja')->where('desa_id', $item->desa_id)->count() }}
-                                </td>
-                                <td>{{ $item->usia +$item->pendaftaran->where('kelompok', 'usia 6-11 tahun')->where('desa_id', $item->desa_id)->count() }}
-                                </td>
-                                <td>{{ $item->nakes +
-                                    $item->petugas_publik +
-                                    $item->lansia +
-                                    $item->masyarakat_umum +
-                                    $item->remaja +
-                                    $item->usia +
-                                    +$item->pendaftaran->where('desa_id', $item->desa_id)->count() }}
-                                </td>
-
-                                <td class="w-25">
-
-                                    <form action="{{ route('delete data', ['id' => $item->id]) }}" method="get">
-                                        <a href="{{ route('edit data', ['id' => $item->id]) }}" class="edit"><i
-                                                class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                        <button type="submit" class="delete show_confirm border-0 p-0 bg-transparent"><i
-                                                class="material-icons" data-toggle="tooltip"
-                                                title="Hapus">&#xE872;</i></button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach --}}
                     </tbody>
                 </table>
             </div>
